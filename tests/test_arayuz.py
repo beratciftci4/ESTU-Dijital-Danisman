@@ -1,0 +1,67 @@
+"""6. aşama testleri: Streamlit arayüzü (tarayıcı olmadan, streamlit.testing ile)."""
+import sys
+from pathlib import Path
+
+import pytest
+from streamlit.testing.v1 import AppTest
+
+KLASOR = Path(__file__).parent.parent
+sys.path.insert(0, str(KLASOR))
+
+
+def uygulama():
+    return AppTest.from_file(str(KLASOR / "app.py"), default_timeout=120).run()
+
+
+def sor(soru):
+    at = uygulama()
+    at.text_input(key="soru").set_value(soru)
+    at.button[0].click()
+    at.run()
+    assert not at.exception, at.exception
+    return [m.value for m in at.markdown]
+
+
+def test_acilis_hatasiz():
+    at = uygulama()
+    assert not at.exception
+    metin = " ".join(m.value for m in at.markdown)
+    assert "Dijital Danışman" in metin
+
+
+def test_kenar_cubugunda_tum_belgeler():
+    at = uygulama()
+    kenar = " ".join(m.value for m in at.sidebar.markdown)
+    assert kenar.count('class="belge-satir"') == 11
+    assert "Yürürlük 22.09.2025, son değişiklik 08.02.2026" in kenar
+
+
+def test_soru_kaynakli_cevap():
+    md = sor("Derslere devam zorunluluğu yüzde kaç?")
+    assert any('class="durum bulundu"' in m for m in md)
+    kaynaklar = [m for m in md if 'class="kaynak"' in m]
+    assert len(kaynaklar) == 3
+    assert any("Madde 12" in m and "%80" in m and "Sayfa 4" in m for m in kaynaklar)
+
+
+def test_alakasiz_soru():
+    md = sor("Kampüste kaç tane kantin var?")
+    assert any('class="durum bulunamadi"' in m and "bulamadım" in m for m in md)
+    assert not any('class="kaynak"' in m for m in md)
+
+
+def test_html_kaciriliyor():
+    md = sor("<script>alert(1)</script> AKTS")
+    assert not any("<script>alert(1)</script>" in m for m in md if 'class="durum' in m or 'class="kaynak"' in m)
+
+
+def test_ornek_sorular_net_cevapli():
+    import ast
+    agac = ast.parse((KLASOR / "app.py").read_text(encoding="utf-8"))
+    ORNEK_SORULAR = next(ast.literal_eval(d.value) for d in agac.body
+                         if isinstance(d, ast.Assign) and d.targets[0].id == "ORNEK_SORULAR")
+    from arama import Arayici
+    from cevap import cevapla
+    a = Arayici()
+    for s in ORNEK_SORULAR:
+        assert cevapla(s, a)["durum"] == "bulundu", s

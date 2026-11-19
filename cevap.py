@@ -57,14 +57,21 @@ def konum(p):
     return p["baslik"] or p["tur"]
 
 
+def sayfa_metni(p):
+    if not p["sayfa_bas"]:
+        return None
+    if p["sayfa_bas"] == p["sayfa_bit"]:
+        return str(p["sayfa_bas"])
+    return f"{p['sayfa_bas']}-{p['sayfa_bit']}"
+
+
 def atif(p):
     """'Ön Lisans ve Lisans ... Yönetmeliği, Madde 10 (Kayıt yenileme ve ders kaydı), s. 3'"""
     metin = f"{BELGE_KISA_ADI.get(p['belge_id'], p['belge_adi'])}, {konum(p)}"
     if p["baslik"] and p["tur"] == "madde":
         metin += f" ({p['baslik']})"
     if p["sayfa_bas"]:
-        s = p["sayfa_bas"] if p["sayfa_bas"] == p["sayfa_bit"] else f"{p['sayfa_bas']}-{p['sayfa_bit']}"
-        metin += f", s. {s}"
+        metin += f", s. {sayfa_metni(p)}"
     return metin
 
 
@@ -136,6 +143,10 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI):
             kaynaklar.append({
                 "id": p["id"],
                 "atif": atif(p),
+                "belge": BELGE_KISA_ADI.get(p["belge_id"], p["belge_adi"]),
+                "konum": konum(p),
+                "baslik": p["baslik"] if p["tur"] == "madde" else None,
+                "sayfa": sayfa_metni(p),
                 "gecerlilik": gecerlilik(p),
                 "alinti": ilgili_kisim(p, soru, arayici.bm25.idf),
                 "tam_metin": p["metin"],

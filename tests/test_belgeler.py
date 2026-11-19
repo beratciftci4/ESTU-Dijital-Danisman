@@ -33,6 +33,25 @@ def test_turkce_karakterler():
         assert harf in y["ad"]
 
 
+def test_hepsi_aktif_ve_dosyasi_var():
+    from belge_kontrol import KAYNAK_KLASORU, sha256
+    for b in belgeler:
+        assert b["durum"] == "aktif", b["id"]
+        yol = KAYNAK_KLASORU / b["dosya"]
+        assert yol.exists(), b["dosya"]
+        assert sha256(yol) == b["sha256"], b["id"]
+
+
+def test_yonetmelik_dogru_pdf():
+    # eski 2018 sürümü (RG 30540) yanlışlıkla gelmesin
+    import pymupdf
+    from belge_kontrol import KAYNAK_KLASORU
+    metin = "".join(s.get_text() for s in pymupdf.open(KAYNAK_KLASORU / "yonetmelik.pdf"))
+    assert "33012" in metin and "33162" in metin
+    assert "MADDE 20/A" in metin
+    assert "45 AKTS" in metin
+
+
 def test_ayni_id_yakalaniyor():
     bozuk = belgeler + [copy.deepcopy(belgeler[0])]
     assert any("iki kere" in h for h in hatalari_bul(bozuk))
@@ -58,7 +77,8 @@ def test_nfd_yakalaniyor():
 
 def test_aktif_belge_eksik_olamaz():
     bozuk = copy.deepcopy(belgeler)
-    bozuk[0]["durum"] = "aktif"
+    bozuk[0]["sha256"] = None
+    bozuk[0]["indirme_tarihi"] = None
     hatalar = hatalari_bul(bozuk)
     assert any("sha256 boş" in h for h in hatalar)
     assert any("indirme_tarihi boş" in h for h in hatalar)

@@ -1,5 +1,5 @@
 """
-belgeler.yaml'daki kayıtları kontrol eder, pdfler/ klasörüyle karşılaştırır.
+belgeler.yaml'daki kayıtları kontrol eder, kaynaklar/ klasörüyle karşılaştırır.
 
     python belge_kontrol.py
 """
@@ -13,7 +13,7 @@ from pathlib import Path
 import yaml
 
 KLASOR = Path(__file__).parent
-PDF_KLASORU = KLASOR / "pdfler"
+KAYNAK_KLASORU = KLASOR / "kaynaklar"
 
 ALANLAR = ["id", "ad", "dosya", "url", "yayim", "yururluk", "son_degisiklik",
            "dayanak", "indirme_tarihi", "sha256", "durum", "not"]
@@ -41,8 +41,8 @@ def hatalari_bul(belgeler):
         idler.add(bid)
 
         # dosya adında türkçe karakter olmasın (mac'te NFD sorunu çıkarıyor)
-        if not re.fullmatch(r"[a-z0-9_]+\.pdf", b["dosya"]):
-            hatalar.append(f"{bid}: dosya adı sadece a-z, 0-9, _ olmalı")
+        if not re.fullmatch(r"[a-z0-9_]+\.(pdf|html)", b["dosya"]):
+            hatalar.append(f"{bid}: dosya adı sadece a-z, 0-9, _ olmalı (.pdf ya da .html)")
 
         if unicodedata.normalize("NFC", b["ad"]) != b["ad"]:
             hatalar.append(f"{bid}: ad NFC değil, türkçe karakterler bozuk olabilir")
@@ -56,8 +56,12 @@ def hatalari_bul(belgeler):
             hatalar.append(f"{bid}: durum bekleniyor ya da aktif olmalı")
 
         # aktif belgede tarih ve hash boş kalmasın
+        # bologna sayfalarının yürürlük tarihi yok, onlarda erişim tarihi yeterli
         if b["durum"] == "aktif":
-            for alan in ["yururluk", "indirme_tarihi", "sha256"]:
+            gerekli = ["indirme_tarihi", "sha256"]
+            if b["dosya"].endswith(".pdf"):
+                gerekli.append("yururluk")
+            for alan in gerekli:
                 if not b[alan]:
                     hatalar.append(f"{bid}: aktif ama {alan} boş")
     return hatalar
@@ -73,23 +77,26 @@ def main():
     for h in hatalar:
         print("HATA:", h)
 
-    print(f"\n{'id':20} {'pdf':5} {'yürürlük':12} {'son değişiklik':15} durum")
+    print(f"\n{'id':20} {'dosya':5} {'yürürlük':12} {'son değişiklik':15} durum")
     for b in belgeler:
-        yol = PDF_KLASORU / b["dosya"]
+        yol = KAYNAK_KLASORU / b["dosya"]
         var = "var" if yol.exists() else "yok"
         print(f"{b['id']:20} {var:5} {str(b['yururluk'] or '-'):12} "
               f"{str(b['son_degisiklik'] or '-'):15} {b['durum']}")
         if yol.exists():
             h = sha256(yol)
             if b["sha256"] and b["sha256"] != h:
-                print("   ! pdf değişmiş, sha256 tutmuyor")
+                print("   ! dosya değişmiş, sha256 tutmuyor")
+                hatalar.append(f"{b['id']}: sha256 tutmuyor")
             elif not b["sha256"]:
                 print(f"   sha256: {h}")
+        elif b["durum"] == "aktif":
+            hatalar.append(f"{b['id']}: aktif ama dosya yok")
 
     kayitli = {b["dosya"] for b in belgeler}
-    for pdf in PDF_KLASORU.glob("*.pdf"):
-        if pdf.name not in kayitli:
-            print("   ! listede olmayan pdf:", pdf.name)
+    for f in KAYNAK_KLASORU.iterdir():
+        if f.suffix in (".pdf", ".html") and f.name not in kayitli:
+            print("   ! listede olmayan dosya:", f.name)
 
     return 1 if hatalar else 0
 

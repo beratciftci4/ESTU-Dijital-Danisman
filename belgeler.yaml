@@ -1,61 +1,63 @@
-# Asistanın kullanacağı belgeler
-# durum: bekleniyor -> pdf henüz yok / aktif -> kontrol edildi, kullanılabilir
+# Asistanın kullandığı belgeler
+# durum: bekleniyor -> dosya henüz yok / aktif -> indirildi, kontrol edildi
 # tarihler YYYY-AA-GG, bilinmiyorsa null
-# kontrol tarihi: 2026-11-19
+# hepsi 2026-11-19'da resmi sitelerden indirildi
 
 - id: yonetmelik
   ad: Eskişehir Teknik Üniversitesi Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği
   dosya: yonetmelik.pdf
-  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonetmelikler-2
+  url: https://www.mevzuat.gov.tr/MevzuatMetin/yonetmelik/8.5.42595.pdf
   yayim: 2025-09-09          # RG 33012
   yururluk: 2025-09-22       # md. 28: 2025-2026 eğitim-öğretim yılı başı
-  son_degisiklik: 2026-02-08 # RG 33162 (yaz okulu, AKTS sınırları)
+  son_degisiklik: 2026-02-08 # RG 33162
   dayanak: "RG 09.09.2025/33012, değişiklik RG 08.02.2026/33162"
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
+  indirme_tarihi: 2026-11-19
+  sha256: 17475971dfacff8d8bbb0989ce120f9f285d35104494a112760b0258f6d750f2
+  durum: aktif
   not: >
-    2018 tarihli eski yönetmelik (RG 30540) yürürlükten kalktı (md. 27).
-    Sitedeki bazı eski linkler hâlâ onu açıyor, ilk sayfada 30540 yazıyorsa yanlış dosya.
+    mevzuat.gov.tr'deki işlenmiş metin, 2026 değişikliği içinde.
+    ESTÜ'nün yönetmelikler sayfası da buraya link veriyor. 29 madde + 20/A.
 
 - id: fen_staj
   ad: Eskişehir Teknik Üniversitesi Fen Fakültesi Staj Yönergesi
   dosya: fen_staj_yonergesi.pdf
-  url: https://fen.eskisehir.edu.tr/Uploads/fen/files/stajyonerge.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonergeler
   yayim: 2018-10-05          # Senato 5/4
   yururluk: 2018-10-05
-  son_degisiklik: 2022-11-08 # Senato 27/2
+  son_degisiklik: 2022-11-08 # Senato 27/2, revizyon 1
   dayanak: "Senato 05.10.2018/5-4, son değişiklik 08.11.2022/27-2"
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
-  not: İstatistik için 20 iş günü staj şartı bu yönergede.
+  indirme_tarihi: 2026-11-19
+  sha256: 365cd2c438964c7d2304cd08e244b22d6faa2e3ec214df4dfae9422d489c4c50
+  durum: aktif
+  not: >
+    fen.eskisehir.edu.tr'deki stajyonerge.pdf eski sürüm (23 sayfa), bu 26 sayfalık revizyon 1.
+    Dayanak maddesi hâlâ kaldırılan 2018 yönetmeliğini gösteriyor.
 
 - id: ders_plani
-  ad: İstatistik Bölümü Lisans Ders Planı (Bologna)
-  dosya: istatistik_ders_plani.pdf
-  url: https://akts.eskisehir.edu.tr
+  ad: İstatistik Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: istatistik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/189/13
   yayim: null
-  yururluk: null
+  yururluk: null             # web sayfası, erişim tarihi esas
   son_degisiklik: null
   dayanak: null
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
-  not: Bologna'daki "Dersler - AKTS Kredileri" sayfası PDF olarak yazdırılacak. Hangi giriş yılının planı olduğu not edilmeli.
+  indirme_tarihi: 2026-11-19
+  sha256: e2ebaed658f6ffd5ad5fcfae06afc83c6f3ca2f2220fab6cf87fd86c40fcb759
+  durum: aktif
+  not: Yarıyıllara göre ders kodu, adı, dili, T+U ve AKTS. Seçmeli ders havuzları bu sayfada yok.
 
 - id: program_bilgileri
-  ad: İstatistik Bölümü Program Bilgileri ve Mezuniyet Koşulları (Bologna)
-  dosya: istatistik_program_bilgileri.pdf
-  url: https://akts.eskisehir.edu.tr
+  ad: İstatistik Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: istatistik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/189/25/1
   yayim: null
   yururluk: null
   son_degisiklik: null
   dayanak: null
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
-  not: Mezuniyet koşulları ve seçmeli grup şartları.
+  indirme_tarihi: 2026-11-19
+  sha256: 32b6dbd8424ad408b89104f5822eddd1cdd19e4bdbca62eb30acd4d5f7142ab3
+  durum: aktif
+  not: 240 AKTS, GNO en az 2,00, FF/DZ/YZ olmaması.
 
 - id: danismanlik
   ad: Eskişehir Teknik Üniversitesi Akademik Danışmanlık Yönergesi
@@ -65,36 +67,75 @@
   yururluk: 2025-09-11
   son_degisiklik: null
   dayanak: "Senato 11.09.2025/9-4"
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
+  indirme_tarihi: 2026-11-19
+  sha256: 810b3fd4241f8fd9cec2fa5a132b34797ef183967a6d5f1b60f2f8b8e035e931
+  durum: aktif
   not: Ders seçimi ve danışman onayı.
 
 - id: hakli_nedenler
-  ad: Eskişehir Teknik Üniversitesi Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar
+  ad: Eskişehir Teknik Üniversitesinde Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar
   dosya: hakli_gecerli_nedenler.pdf
-  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonergeler
-  yayim: 2025-09-11
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/usul-ve-esas-politika-ilkeler-ve-olcutler
+  yayim: 2025-09-11          # Senato 9/5
   yururluk: 2025-09-11
   son_degisiklik: null
-  dayanak: "Senato 11.09.2025"
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
-  not: Mazeret sınavı sorularında lazım.
+  dayanak: "Senato 11.09.2025/9-5"
+  indirme_tarihi: 2026-11-19
+  sha256: ac84179c4e59c2a59230bc20fefcf6ea604a1deb2cf81d525d97213d2f75b57b
+  durum: aktif
+  not: Madde yerine 1), 2) ... numaralı. Mazeret sınavı ve kayıt dondurma.
+
+- id: tek_ders
+  ad: Eskişehir Teknik Üniversitesi Tek Ders Sınavı Uygulama Esasları
+  dosya: tek_ders_sinavi_esaslari.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/usul-ve-esas-politika-ilkeler-ve-olcutler
+  yayim: 2025-12-18          # Senato 12/2
+  yururluk: 2025-12-18
+  son_degisiklik: null
+  dayanak: "Senato 18.12.2025/12-2"
+  indirme_tarihi: 2026-11-19
+  sha256: 323ed3eaeb1abf4aee51834bf00d571654166beae871bcef748ae788f034de0c
+  durum: aktif
+  not: Numaralı maddeler + dilekçe formu.
+
+- id: ek_sinav
+  ad: Azami Süre Sonunda Mezun Olamayan Önlisans-Lisans Öğrencilerine Verilen Ek Sınav Esasları
+  dosya: ek_sinav_esaslari.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/usul-ve-esas-politika-ilkeler-ve-olcutler
+  yayim: 2018-11-23          # Senato 8/3
+  yururluk: 2018-11-23
+  son_degisiklik: 2021-10-05 # Senato 29/2
+  dayanak: "Senato 23.11.2018/8-3, son değişiklik 05.10.2021/29-2"
+  indirme_tarihi: 2026-11-19
+  sha256: 3d0caf021e31f5e7b34122c846463b70c8ecfb09135c66ad895bd34caf8714c6
+  durum: aktif
+  not: Taranmış PDF, metin katmanı yok. 2. aşamada OCR gerekecek.
+
+- id: yaz_okulu
+  ad: Eskişehir Teknik Üniversitesi Yaz Okulu Uygulama Esasları
+  dosya: yaz_okulu_esaslari.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/usul-ve-esas-politika-ilkeler-ve-olcutler
+  yayim: 2025-09-11          # Senato 9/6
+  yururluk: 2025-09-11
+  son_degisiklik: 2026-03-10 # Senato 2/2, 16. madde
+  dayanak: "Senato 11.09.2025/9-6, değişiklik 10.03.2026/2-2"
+  indirme_tarihi: 2026-11-19
+  sha256: d6a0e5a93e6d5808e29331bdfe76ab3fd346b8d2fe5717b713c9068914d619c1
+  durum: aktif
+  not: Numaralı maddeler (1-23).
 
 - id: not_karsiliklari
-  ad: Kredili ve Mutlak Sistemdeki Not Karşılıkları ve Eşdeğerlikler
+  ad: Kredili ve Mutlak Sistemdeki Not Karşılıkları, ECTS Harf Notları ve Yabancı Dil Eşdeğerlikleri Uygulama Esasları
   dosya: not_karsiliklari.pdf
-  url: https://eskisehir.edu.tr/Uploads/www/files/EK2-OIDB-KrediliveMutlakSistemdekiNotkarşılıkları-Eşdeğerlikler-4-8-2025.pdf
-  yayim: null                # dosya adında 4-8-2025 yazıyor, pdf'ten bakılacak
-  yururluk: null
-  son_degisiklik: null
-  dayanak: null
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
-  not: Harf notu karşılıkları ve dil sınavı eşdeğerlikleri.
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/usul-ve-esas-politika-ilkeler-ve-olcutler
+  yayim: 2018-07-10          # Senato 2/5
+  yururluk: 2018-07-10
+  son_degisiklik: 2025-07-29 # Senato 3/2
+  dayanak: "Senato 10.07.2018/2-5, son değişiklik 29.07.2025/3-2"
+  indirme_tarihi: 2026-11-19
+  sha256: d56acbd7a20575bf93dfadb65cce1f9588ac5c079355d9fdb8ceaa096bbc9fd9
+  durum: aktif
+  not: 1-, 2- şeklinde numaralı, içinde tablolar var.
 
 - id: proje_temelli_staj
   ad: Eskişehir Teknik Üniversitesi Proje Temelli Staj Yönergesi
@@ -102,9 +143,9 @@
   url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonergeler
   yayim: 2024-01-04          # Senato 1/2
   yururluk: 2024-01-04
-  son_degisiklik: 2025-06-26
-  dayanak: "Senato 04.01.2024/1-2, değişiklik 26.06.2025"
-  indirme_tarihi: null
-  sha256: null
-  durum: bekleniyor
-  not: İsteğe bağlı. Değişikliğin işlendiği son halini indir.
+  son_degisiklik: 2025-06-26 # Senato 7/3
+  dayanak: "Senato 04.01.2024/1-2, değişiklik 26.06.2025/7-3"
+  indirme_tarihi: 2026-11-19
+  sha256: b1ecc562c2d852685740763c4d7c392f71a120c81801be4e38749973ad75b7a5
+  durum: aktif
+  not: İsteğe bağlı staj türü.

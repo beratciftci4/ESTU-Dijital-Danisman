@@ -4,3 +4,4 @@ __pycache__/
 .env
 cikti/*
 !cikti/.gitkeep
+model/

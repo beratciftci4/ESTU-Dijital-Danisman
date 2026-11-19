@@ -27,7 +27,7 @@ from belge_kontrol import KAYNAK_KLASORU, KLASOR, belgeleri_oku
 
 CIKTI = KLASOR / "cikti" / "parcalar.jsonl"
 ONBELLEK = KLASOR / "cikti" / "onbellek"
-ONBELLEK_SURUMU = "1"   # satır okuma mantığı değişince artır, eski önbellek kullanılmasın
+ONBELLEK_SURUMU = "2"   # satır okuma mantığı değişince artır, eski önbellek kullanılmasın
 
 # madde numarasından sonra gelebilen ayraçlar: - – ‒ — ya da hiçbiri ("MADDE 14 Öğrencinin")
 MADDE_DESENI = re.compile(r"^MADDE\s+(\d+(?:/[A-ZÇĞİÖŞÜ])?)\s*[-–‒—]?\s*(.*)$")
@@ -158,11 +158,15 @@ def _pdf_satirlari_oku(yol):
             if s:
                 satirlar.append((i + 1, s))
 
-    # 3+ sayfalı belgelerde neredeyse her sayfada tekrar eden satırlar üst/alt bilgidir
+    # Üst/alt bilgi: sayfanın ilk 6 ya da son 3 satırında olup en az 3 sayfada aynen tekrar eden
+    # satırlar ("Karar Tarihi | 08/11/2022", "Revizyon | 1" gibi). Ekler sayfa sayısını şişirdiği
+    # için oran yerine sayfa sayısına bakıyoruz.
     if len(doc) >= 3:
-        sayac = Counter(s for _, s in set(satirlar))
-        esik = max(3, int(len(doc) * 0.6))
-        tekrar = {s for s, n in sayac.items() if n >= esik and len(s) < 120}
+        kenarlar = Counter()
+        for sayfa_no in {p for p, _ in satirlar}:
+            sayfadakiler = [s for p, s in satirlar if p == sayfa_no]
+            kenarlar.update(set(sayfadakiler[:6] + sayfadakiler[-3:]))
+        tekrar = {s for s, n in kenarlar.items() if n >= 3 and len(s) < 120}
         satirlar = [(p, s) for p, s in satirlar if s not in tekrar]
     return satirlar, resimli_sayfalar
 

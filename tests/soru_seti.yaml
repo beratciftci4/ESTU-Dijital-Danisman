@@ -1,0 +1,123 @@
+# 30 soruluk test seti
+# Her sorunun cevabı belgelerden tek tek kontrol edildi (2026-11-20).
+#   kaynak  : cevabın geçtiği parça(lar). Arama bunlardan birini bulursa "isabet".
+#   anahtar : cevapta mutlaka geçmesi gereken ifade(ler) (gösterilen madde metninde)
+#   cevapsiz: true ise belgelerde cevabı yok, asistan "bulamadım" demeli
+
+- soru: Kaç AKTS üst sınırım var?
+  kaynak: [yonetmelik#madde-10, danismanlik#madde-10]
+  anahtar: ["en çok 45 AKTS"]
+
+- soru: Çift anadal yapan öğrenci bir dönemde en fazla kaç AKTS alabilir?
+  kaynak: [yonetmelik#madde-10, danismanlik#madde-10]
+  anahtar: ["en çok 60 AKTS"]
+
+- soru: Yaz okulunda en fazla kaç AKTS ders alabilirim?
+  kaynak: [yonetmelik#madde-20/A, yaz_okulu#bent-9]
+  anahtar: ["20 AKTS"]
+
+- soru: Mezun olmak için kaç AKTS tamamlamam gerekiyor?
+  kaynak: [yonetmelik#madde-25, program_bilgileri#bolum-Mezuniyet_Koşulları, program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları, danismanlik#madde-10]
+  anahtar: ["240"]
+
+- soru: Mezun olmak için neyim eksik, hangi şartları sağlamam lazım?
+  kaynak: [yonetmelik#madde-25, program_bilgileri#bolum-Mezuniyet_Koşulları, program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  anahtar: ["240"]
+
+- soru: Mezuniyet için genel not ortalaması en az kaç olmalı?
+  kaynak: [yonetmelik#madde-25, program_bilgileri#bolum-Mezuniyet_Koşulları, program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  anahtar: ["2,00"]
+
+- soru: Aldığım bir dersten çekilebilir miyim?
+  kaynak: [yonetmelik#madde-10]
+  anahtar: ["sadece birinden çekilebilir"]
+
+- soru: Derslere devam zorunluluğu yüzde kaç?
+  kaynak: [yonetmelik#madde-12]
+  anahtar: ["%80"]
+
+- soru: Tek ders sınavına kimler girebilir?
+  kaynak: [tek_ders#bent-1, tek_ders#giris-0, yonetmelik#madde-20]
+  anahtar: ["tek dersten FF veya YZ"]
+
+- soru: Tek ders sınavı için mazeret sınavı hakkı var mı?
+  kaynak: [tek_ders#bent-5]
+  anahtar: ["mazeret sınav hakkı verilmez"]
+
+- soru: Azami süreyi dolduran son sınıf öğrencisine kaç ek sınav hakkı verilir?
+  kaynak: [ek_sinav#bent-2, yonetmelik#madde-7]
+  anahtar: ["iki ek sınav"]
+
+- soru: Ek sınavlar için mazeret sınavı yapılıyor mu?
+  kaynak: [ek_sinav#bent-3]
+  anahtar: ["Ek sınavlar için mazeret sınavı yapılmaz"]
+
+- soru: Ek sınavda 77-83 arası alan öğrencinin harf notu ne olur?
+  kaynak: [ek_sinav#kunye-1]
+  anahtar: ["77-83 | 3.70 | AB"]
+
+- soru: Mazeret sınavına girmek için belgemi ne zamana kadar vermeliyim?
+  kaynak: [yonetmelik#madde-17, hakli_nedenler#bent-6]
+  anahtar: ["üç iş günü içinde"]
+
+- soru: Sağlık raporu alırsam rapor süresince sınava girebilir miyim?
+  kaynak: [hakli_nedenler#bent-1]
+  anahtar: ["rapor süresi içinde hiçbir sınava giremez"]
+
+- soru: Sınav notuma itiraz etmek için kaç günüm var?
+  kaynak: [yonetmelik#madde-21]
+  anahtar: ["üç iş günü içinde"]
+
+- soru: CC harf notunun katsayısı kaç?
+  kaynak: [yonetmelik#madde-18, not_karsiliklari#bent-1]
+  anahtar: ["CC 2,00", "CC | 2,00"]
+
+- soru: Yüksek onur öğrencisi olmak için ortalamam kaç olmalı?
+  kaynak: [yonetmelik#madde-22]
+  anahtar: ["3,50"]
+
+- soru: Kaydımı en fazla kaç dönem dondurabilirim?
+  kaynak: [yonetmelik#madde-24]
+  anahtar: ["en çok dört yarıyıl"]
+
+- soru: İstatistik bölümü öğrencileri kaç iş günü staj yapmak zorunda?
+  kaynak: [fen_staj#madde-7, fen_staj#madde-8, fen_staj#ek-4]
+  anahtar: ["20 iş günü"]
+
+- soru: Stajın başarılı sayılması için değerlendirme notu en az kaç olmalı?
+  kaynak: [fen_staj#madde-14, fen_staj#ek-5]
+  anahtar: ["en az 3"]
+
+- soru: Staj sonucuna itiraz süresi ne kadar?
+  kaynak: [fen_staj#madde-14]
+  anahtar: ["5 (beş) iş günü"]
+
+- soru: Proje temelli stajda devamsızlık sınırı nedir?
+  kaynak: [proje_temelli_staj#madde-18]
+  anahtar: ["%10"]
+
+- soru: Yaz okulunda uygulamalı dersler açılır mı?
+  kaynak: [yaz_okulu#bent-5]
+  anahtar: ["Uygulamalı dersler “Yaz Okulu”nda açılamaz"]
+
+- soru: Ders seçimimi danışmanım onaylamazsa ne olur?
+  kaynak: [danismanlik#madde-10]
+  anahtar: ["uygun bulunmayan dersi/dersleri, ekle/sil tarihlerinden sonra üzerinden silinir"]
+
+- soru: Olasılık I dersi kaç AKTS ve hangi dönemde?
+  kaynak: [ders_plani#bolum-III.YARIYIL]
+  anahtar: ["Probability I (Olasılık I) | İngilizce | 4+0 | 6.0"]
+
+- soru: Data Visualization dersi mesleki seçmeli mi?
+  kaynak: [ders_plani#bolum-Mesleki_Seçmeli_Dersler]
+  anahtar: ["Data Visualization"]
+
+- soru: Bütünleme sınavına kimler girebilir?
+  cevapsiz: true
+  not: Yeni yönetmelikte bütünleme sınavı yok (madde 7 ek sınav, madde 17 mazeret sınavı var).
+
+- soru: Yemekhane ücreti ne kadar?
+  cevapsiz: true
+
+- soru: Erasmus başvuruları ne zaman başlıyor?
+  cevapsiz: true

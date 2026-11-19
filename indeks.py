@@ -47,7 +47,32 @@ def turkce_kucuk(s):
 
 
 ETKISIZ = set("""ve veya ile bu bir da de için olan olarak ise gibi ki mi mı mu mü ne
-ya ancak her en çok az daha üzere tarafından göre kadar sonra önce ilgili""".split())
+ya ancak her daha üzere tarafından göre kadar sonra önce ilgili""".split())
+# "en çok", "en az" yönetmelikte anlamlı olduğu için etkisiz sayılmıyor
+# soru kalıpları: belgede geçmedikleri için BM25'te sadece gürültü yapıyorlar
+SORU_KELIMELERI = set("""kaç nedir nasıl hangi hangisi kimler kim var yok miyim mıyım misin
+mısın mıdır midir mudur müdür olmalı olur gerekir gerekiyor gerekli lazım ben benim bana
+acaba istiyorum alabilirim yapabilirim""".split())
+
+# öğrencinin kullandığı kelime ile yönetmelikteki kelime farklı olabiliyor
+ESANLAMLI = {
+    "üst sınır": "en çok", "en fazla": "en çok", "maksimum": "en çok",
+    "dondur": "kayıt hakkı saklı izinli",
+    "kredi": "akts",
+    "ortalama": "gno not ortalaması",
+    "mezun": "mezuniyet diploma",
+    "harç": "katkı payı",
+    "devamsızlık": "devam",
+}
+# "bütünleme"yi "ek sınav"a eşlemiyoruz: ikisi aynı şey değil, yeni yönetmelikte bütünleme yok
+
+
+def soru_kelimeleri(soru):
+    """Sorudaki kelimeler: soru kalıpları atılır, eş anlamlılar eklenir."""
+    kucuk = turkce_kucuk(soru)
+    ekler = [karsilik for ifade, karsilik in ESANLAMLI.items() if ifade in kucuk]
+    temiz = [k for k in re.findall(r"\S+", kucuk) if re.sub(r"\W", "", k) not in SORU_KELIMELERI]
+    return kelimeler(" ".join(temiz + ekler))
 
 
 def kelimeler(metin, kok_uzunlugu=5):

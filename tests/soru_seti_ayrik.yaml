@@ -1,0 +1,49 @@
+# Ayrık (holdout) test seti: 12 soru
+# Eş anlamlı listesi ve birleştirme ağırlığı ayarlanırken bu sorulara BAKILMADI.
+# Ayarların sadece ana test setine uymadığını görmek için kullanılıyor.
+
+- soru: Ön lisans programından mezun olmak için kaç AKTS gerekir?
+  kaynak: [yonetmelik#madde-25, danismanlik#madde-10]
+  anahtar: ["en az 120 AKTS"]
+
+- soru: Staja hangi dönemden sonra başlayabilirim?
+  kaynak: [fen_staj#madde-7]
+  anahtar: ["dördüncü yarıyılın sonundan"]
+
+- soru: Stajda gidemediğim günleri telafi edebilir miyim?
+  kaynak: [fen_staj#madde-8]
+  anahtar: ["telafi edilir"]
+
+- soru: Yaz okulunda dersler başladıktan sonra ders bırakabilir miyim?
+  kaynak: [yaz_okulu#bent-11, yonetmelik#madde-20/A]
+  anahtar: ["ekle/sil"]
+
+- soru: Ders seçimimi yapmazsam danışmanım benim yerime seçebilir mi?
+  kaynak: [danismanlik#madde-10]
+  anahtar: ["ders seçimi yapamaz"]
+
+- soru: TOEFL IBT'den kaç puan almam gerekiyor?
+  kaynak: [not_karsiliklari#bent-7]
+  anahtar: ["TOEFL IBT Sınavı* | 84"]
+
+- soru: Proje temelli staj en az kaç gün sürer?
+  kaynak: [proje_temelli_staj#madde-10]
+  anahtar: ["en az 45 iş günü"]
+
+- soru: Bir yarıyıl kaç haftadan oluşur?
+  kaynak: [yonetmelik#madde-4]
+  anahtar: ["en az 14 hafta"]
+
+- soru: Yakınım vefat ederse kaç gün mazeretli sayılırım?
+  kaynak: [hakli_nedenler#bent-3]
+  anahtar: ["bir hafta"]
+
+- soru: Hangi derslerin ara sınavı olmaz?
+  kaynak: [yonetmelik#madde-17]
+  anahtar: ["uygulamalı dersler için sadece dönem sonu"]
+
+- soru: Kampüs otopark ücreti ne kadar?
+  cevapsiz: true
+
+- soru: Yurt başvurusu nasıl yapılır?
+  cevapsiz: true

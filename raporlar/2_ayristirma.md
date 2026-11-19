@@ -1,6 +1,6 @@
 # 2. Aşama: Maddelere ayrıştırma
 
-`python ayristir.py` kaynaklar/ altındaki 11 belgeyi 189 parçaya ayırıyor (`cikti/parcalar.jsonl`).
+`python ayristir.py` kaynaklar/ altındaki 11 belgeyi 190 parçaya ayırıyor (`cikti/parcalar.jsonl`).
 
 | Belge | Parçalar | Not |
 |---|---|---|
@@ -12,7 +12,7 @@
 | Tek Ders Sınavı Esasları | giriş, 9 bent, 1 ek (dilekçe), künye | |
 | Yaz Okulu Esasları | 23 bent, künye | |
 | Not Karşılıkları | giriş, 9 bent, künye, 4 görsel tablo uyarısı | `1-` numaralı, tablolu |
-| Ek Sınav Esasları | giriş, 3 bölüm, künye | taranmış, OCR |
+| Ek Sınav Esasları | giriş, 3 bölüm, künye, not dönüşüm tablosu | taranmış, OCR |
 | Bologna ders planı | 8 yarıyıl + mesleki seçmeli + seçmeli | html tablo |
 | Bologna program bilgileri | 9 başlık | html |
 

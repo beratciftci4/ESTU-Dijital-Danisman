@@ -1,3 +1,4 @@
 pyyaml
 pytest
-pymupdf
+pymupdf==2.1
+beautifulsoup4

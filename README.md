@@ -7,6 +7,10 @@ numarası ve sayfasıyla cevap veren bir arama asistanı.
 Cevap olarak metin üretmiyor; soruya en uygun maddeyi bulup ilgili fıkrasını olduğu gibi
 gösteriyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da servis kullanmıyor.
 
+"Mezun olmak için neyim eksik?" sorusu için ayrı bir **mezuniyet kontrolü** sekmesi var:
+tamamlanan AKTS, GNO, kalan FF/YZ/DZ/EK/ÇK notları ve staj gününü girince yönetmeliğin
+25. maddesine ve staj yönergesinin 7. maddesine göre neyin eksik olduğunu, maddesiyle birlikte gösteriyor.
+
 ![Ekran görüntüsü](docs/ekran.png)
 
 ## Kaynak belgeler
@@ -105,7 +109,7 @@ python belge_kontrol.py   # belge listesi, tarihler ve sha256 kontrolü
 python ayristir.py        # parçaları yeniden üret
 python indeks.py          # indeksi yeniden kur
 python degerlendir.py     # test setleriyle ölç, raporlar/ güncellenir
-pytest                    # 89 test
+pytest                    # 96 test
 ```
 
 ## Ücretsiz yayınlama (Streamlit Community Cloud)
@@ -136,6 +140,7 @@ API anahtarı ya da gizli bilgi gerekmiyor.
 | `indeks.py` | Embedding modeli, BM25 kelime ayırma, FAISS indeksi |
 | `arama.py` | Hibrit arama |
 | `cevap.py` | Atıflı cevap ve "bulamadım" kararı |
+| `mezuniyet.py` | Mezuniyet koşulları kontrolü |
 | `degerlendir.py` | Test setleriyle ölçüm, `raporlar/` |
 | `app.py` | Streamlit arayüzü |
 | `tests/` | Testler ve soru setleri |

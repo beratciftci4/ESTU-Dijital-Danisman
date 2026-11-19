@@ -16,7 +16,7 @@ def uygulama():
 def sor(soru):
     at = uygulama()
     at.text_input(key="soru").set_value(soru)
-    at.button[0].click()
+    at.button[0].click()  # ilk sekmedeki "Sor" düğmesi
     at.run()
     assert not at.exception, at.exception
     return [m.value for m in at.markdown]
@@ -65,3 +65,19 @@ def test_ornek_sorular_net_cevapli():
     a = Arayici()
     for s in ORNEK_SORULAR:
         assert cevapla(s, a)["durum"] == "bulundu", s
+
+
+def test_mezuniyet_sekmesi():
+    at = uygulama()
+    at.number_input(key="akts").set_value(228.0)
+    at.number_input(key="gno").set_value(2.4)
+    at.number_input(key="staj").set_value(20)
+    at.number_input(key="not_FF").set_value(1)
+    at.button[1].click()  # "Kontrol et"
+    at.run()
+    assert not at.exception
+    md = " ".join(m.value for m in at.markdown)
+    assert "2 koşul henüz sağlanmıyor" in md
+    assert "12 AKTS eksik" in md and "1 ders FF" in md
+    assert "Madde 25 (Diplomalar ve belgeler), s. 9" in md
+    assert any("tek ders sınavına" in i.value for i in at.info)

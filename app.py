@@ -10,9 +10,12 @@ import html
 import streamlit as st
 import yaml
 
+import json
+
 from arama import Arayici
 from belge_kontrol import KLASOR
-from cevap import cevapla, tarih
+from cevap import atif, cevapla, gecerlilik, tarih
+from mezuniyet import ENGEL_NOTLAR, kontrol
 
 st.set_page_config(page_title="ESTÜ Dijital Danışman", page_icon="📘", layout="centered")
 
@@ -58,6 +61,14 @@ div.kunye { color: var(--soluk); font-size: .85rem; margin: .2rem 0 .3rem; }
 .kunye a { color: var(--bordo); }
 div.ocr { color: var(--amber); font-size: .85rem; }
 
+div.kural { display: grid; grid-template-columns: 4.2rem 1fr; gap: .2rem .9rem; padding: .8rem 0;
+            border-top: 1px solid var(--cizgi); color: var(--murekkep); }
+div.kural .etiket { font-weight: 600; font-size: .85rem; padding-top: .1rem; }
+div.kural .etiket.tamam { color: var(--yesil); }
+div.kural .etiket.eksik { color: var(--bordo); }
+div.kural .ad { font-weight: 600; }
+div.kural .kaynakca { color: var(--soluk); font-size: .82rem; grid-column: 2; }
+
 section[data-testid="stSidebar"] { background: #fff; border-right: 1px solid var(--cizgi); }
 .belge-satir { font-size: .88rem; line-height: 1.4; margin: 0 0 .7rem; color: var(--murekkep); }
 .belge-satir span { color: var(--soluk); display: block; font-size: .8rem; }
@@ -72,6 +83,12 @@ def arayici_yukle():
     a = Arayici()
     _ = a.gomucu  # modeli şimdi yükle, ilk soruda beklemesin (tek başına yazınca streamlit ekrana basıyor)
     return a
+
+
+@st.cache_data
+def parca_sozlugu():
+    parcalar = json.loads((KLASOR / "indeks" / "parcalar.json").read_text(encoding="utf-8"))
+    return {p["id"]: p for p in parcalar}
 
 
 @st.cache_data
@@ -122,14 +139,7 @@ def kaynak_goster(k):
         st.text(k["tam_metin"])
 
 
-def main():
-    st.markdown(CSS, unsafe_allow_html=True)
-    kenar_cubugu()
-    st.markdown('<div class="baslik">ESTÜ <span>Dijital Danışman</span></div>'
-                '<div class="altbaslik">Eğitim-öğretim yönetmeliği, staj yönergesi ve İstatistik bölümü '
-                'ders planı hakkındaki sorularınızı resmi metinden, madde ve sayfa numarasıyla yanıtlar.</div>',
-                unsafe_allow_html=True)
-
+def soru_sekmesi():
     if "soru" not in st.session_state:
         st.session_state.soru = ""
     secilen = st.pills("Örnek sorular", ORNEK_SORULAR, label_visibility="collapsed", key="ornek")
@@ -152,5 +162,57 @@ def main():
     for k in c["kaynaklar"]:
         kaynak_goster(k)
 
+
+def mezuniyet_sekmesi():
+    st.caption("Transkriptinizdeki bilgileri girin. Sonuç yalnızca yönetmelik ve staj yönergesindeki "
+               "mezuniyet kurallarına göre hesaplanır, bilgiler hiçbir yere kaydedilmez.")
+    with st.form("mezuniyet_formu", border=False):
+        sol, sag = st.columns(2)
+        akts = sol.number_input("Başarıyla tamamlanan AKTS", 0.0, 400.0, 0.0, 0.5, key="akts")
+        gno = sag.number_input("GNO", 0.0, 4.0, 0.0, 0.01, format="%.2f", key="gno")
+        staj = sol.number_input("Tamamlanan staj (iş günü)", 0, 120, 0, 1, key="staj")
+        st.markdown("**Kalan notlar** (o notla duran ders sayısı)")
+        kolonlar = st.columns(len(ENGEL_NOTLAR))
+        notlar = {n: k.number_input(n, 0, 30, 0, 1, key=f"not_{n}") for n, k in zip(ENGEL_NOTLAR, kolonlar)}
+        hesapla = st.form_submit_button("Kontrol et", type="primary")
+    if not hesapla:
+        return
+
+    sonuc = kontrol(akts, gno, notlar, staj)
+    parcalar = parca_sozlugu()
+    if sonuc["mezun_olabilir"]:
+        st.markdown('<div class="durum bulundu">Girdiğiniz bilgilere göre belgelerdeki mezuniyet '
+                    'koşullarının hepsi sağlanıyor. Kesin durum için Öğrenci İşleri onayı gerekir.</div>',
+                    unsafe_allow_html=True)
+    else:
+        eksik = sum(not s["tamam"] for s in sonuc["satirlar"])
+        st.markdown(f'<div class="durum belirsiz">{eksik} koşul henüz sağlanmıyor.</div>',
+                    unsafe_allow_html=True)
+    for s in sonuc["satirlar"]:
+        p = parcalar[s["kaynak"]]
+        etiket = '<span class="etiket tamam">Tamam</span>' if s["tamam"] else '<span class="etiket eksik">Eksik</span>'
+        st.markdown(f'<div class="kural">{etiket}<div><div class="ad">{html.escape(s["ad"])}</div>'
+                    f'{html.escape(s["aciklama"])}</div>'
+                    f'<div class="kaynakca">{html.escape(atif(p))}. {html.escape(gecerlilik(p))}.</div></div>',
+                    unsafe_allow_html=True)
+    for o in sonuc["oneriler"]:
+        p = parcalar[o["kaynak"]]
+        st.info(f'{o["metin"]}\n\nKaynak: {atif(p)}')
+    st.caption("Bölümün zorunlu/seçmeli ders dağılımı gibi programa özel şartlar burada kontrol edilmez; "
+               "bunun için akademik danışmanınızla transkriptinizi birlikte inceleyin.")
+
+
+def main():
+    st.markdown(CSS, unsafe_allow_html=True)
+    kenar_cubugu()
+    st.markdown('<div class="baslik">ESTÜ <span>Dijital Danışman</span></div>'
+                '<div class="altbaslik">Eğitim-öğretim yönetmeliği, staj yönergesi ve İstatistik bölümü '
+                'ders planı hakkındaki sorularınızı resmi metinden, madde ve sayfa numarasıyla yanıtlar.</div>',
+                unsafe_allow_html=True)
+    soru_tab, mezuniyet_tab = st.tabs(["Soru sor", "Mezuniyet kontrolü"])
+    with soru_tab:
+        soru_sekmesi()
+    with mezuniyet_tab:
+        mezuniyet_sekmesi()
 
 main()

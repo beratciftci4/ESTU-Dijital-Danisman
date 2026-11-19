@@ -1,0 +1,72 @@
+"""
+"Mezun olmak için neyim eksik?" kontrolü.
+
+Öğrencinin girdiği bilgileri (tamamlanan AKTS, GNO, kalan notlar, staj günü) sadece
+kaynak belgelerdeki mezuniyet kurallarıyla karşılaştırır. Her satırda kuralın geçtiği madde var.
+
+Kurallar:
+  - Yönetmelik md. 25/1: lisansta en az 240 AKTS, ÇK/DZ/EK/FF/YZ notu yok, GNO en az 2,00
+  - Fen Fakültesi Staj Yönergesi md. 7: en az 20 iş günü staj
+  - Tek Ders Sınavı Esasları 1. madde: tek dersten FF/YZ kalan, mezun olabilecek durumdaki öğrenci
+"""
+
+GEREKEN_AKTS = 240
+GEREKEN_GNO = 2.00
+GEREKEN_STAJ_GUNU = 20
+ENGEL_NOTLAR = ["FF", "YZ", "DZ", "EK", "ÇK"]   # md. 25'te sayılan, mezuniyete engel notlar
+
+KAYNAK_MEZUNIYET = "yonetmelik#madde-25"
+KAYNAK_STAJ = "fen_staj#madde-7"
+KAYNAK_TEK_DERS = "tek_ders#bent-1"
+
+
+def kontrol(akts, gno, notlar, staj_gunu):
+    """notlar: {"FF": 1, "YZ": 0, ...} -> kalan ders sayıları.
+    Dönen liste: [{"ad", "tamam", "aciklama", "kaynak"}, ...] ve varsa "oneriler"."""
+    satirlar = []
+
+    eksik_akts = max(0, GEREKEN_AKTS - akts)
+    satirlar.append({
+        "ad": "En az 240 AKTS",
+        "tamam": eksik_akts == 0,
+        "aciklama": f"{akts:g} AKTS tamamlanmış." + (f" {eksik_akts:g} AKTS eksik." if eksik_akts else ""),
+        "kaynak": KAYNAK_MEZUNIYET,
+    })
+
+    satirlar.append({
+        "ad": "GNO en az 2,00",
+        "tamam": gno >= GEREKEN_GNO,
+        "aciklama": f"GNO {gno:.2f}".replace(".", ",") + ("." if gno >= GEREKEN_GNO else ", 2,00'ın altında."),
+        "kaynak": KAYNAK_MEZUNIYET,
+    })
+
+    kalan = {n: s for n, s in notlar.items() if n in ENGEL_NOTLAR and s > 0}
+    satirlar.append({
+        "ad": "ÇK, DZ, EK, FF ve YZ notu olmaması",
+        "tamam": not kalan,
+        "aciklama": ("Bu notlardan ders yok." if not kalan else
+                     "Kalan: " + ", ".join(f"{s} ders {n}" for n, s in kalan.items()) + "."),
+        "kaynak": KAYNAK_MEZUNIYET,
+    })
+
+    satirlar.append({
+        "ad": "En az 20 iş günü staj",
+        "tamam": staj_gunu >= GEREKEN_STAJ_GUNU,
+        "aciklama": f"{staj_gunu} iş günü staj." +
+                    (f" {GEREKEN_STAJ_GUNU - staj_gunu} iş günü eksik." if staj_gunu < GEREKEN_STAJ_GUNU else ""),
+        "kaynak": KAYNAK_STAJ,
+    })
+
+    oneriler = []
+    ff_yz = kalan.get("FF", 0) + kalan.get("YZ", 0)
+    diger_engel = sum(s for n, s in kalan.items() if n not in ("FF", "YZ"))
+    # tek ders sınavı: sadece tek dersten FF/YZ kalmış, mezun olabilecek durumdaki öğrenci
+    if ff_yz == 1 and diger_engel == 0 and staj_gunu >= GEREKEN_STAJ_GUNU:
+        oneriler.append({
+            "metin": "Tek dersten FF/YZ kalmış görünüyorsunuz. O derste devam koşulunu sağladıysanız ve "
+                     "o ders dışında mezuniyet için eksiğiniz yoksa (eksik AKTS'niz sadece bu dersten "
+                     "geliyorsa) tek ders sınavına girebilirsiniz.",
+            "kaynak": KAYNAK_TEK_DERS,
+        })
+
+    return {"mezun_olabilir": all(s["tamam"] for s in satirlar), "satirlar": satirlar, "oneriler": oneriler}

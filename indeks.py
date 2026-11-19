@@ -22,17 +22,19 @@ from pathlib import Path
 import faiss
 import numpy as np
 import onnxruntime as ort
-from tokenizers import Tokenizer
+import sentencepiece as spm
 
-from ayristir import CIKTI as PARCA_DOSYASI
-from ayristir import tum_belgeler
 from belge_kontrol import KLASOR
 
 INDEKS_KLASORU = KLASOR / "indeks"
+PARCA_DOSYASI = KLASOR / "cikti" / "parcalar.jsonl"
 MODEL_KLASORU = Path(os.environ.get("DANISMAN_MODEL_KLASORU", KLASOR / "model"))
 MODEL_REPO = "Xenova/multilingual-e5-small"
-MODEL_DOSYALARI = {"onnx/model_quantized.onnx": "model_quantized.onnx",
-                   "tokenizer.json": "tokenizer.json"}
+MODEL_DOSYALARI = {"onnx/model_quantized.onnx": "model_quantized.onnx"}
+# tokenizer.json yerine onun SentencePiece hali (aynı token id'leri, ~230 MB daha az bellek),
+# bkz. tokenizer_donustur.py
+TOKENIZER = INDEKS_KLASORU / "tokenizer.model"
+MAKS_TOKEN = 512
 
 # embedding için parçaları en fazla bu kadar karakterlik pencerelere bölüyoruz.
 # e5 en fazla 512 token alıyor, uzun maddelerin sonu kesilmesin diye.
@@ -116,25 +118,29 @@ class Gomucu:
 
     def __init__(self):
         modeli_hazirla()
-        self.tok = Tokenizer.from_file(str(MODEL_KLASORU / "tokenizer.json"))
-        self.tok.enable_truncation(512)
-        self.tok.enable_padding()
+        self.sp = spm.SentencePieceProcessor(model_file=str(TOKENIZER))
         ayar = ort.SessionOptions()
         ayar.intra_op_num_threads = max(1, (os.cpu_count() or 2) // 2)
+        ayar.enable_cpu_mem_arena = False   # tek tek vektörlediğimiz için büyük bellek havuzuna gerek yok
+        # Not: ORT_ENABLE_BASIC ~45 MB daha az bellek kullanıyor ama int8 modelde vektörleri biraz
+        # değiştiriyor (~1e-3), eşikler varsayılan seviyeyle ayarlandığı için varsayılanda kalıyoruz.
         self.oturum = ort.InferenceSession(str(MODEL_KLASORU / "model_quantized.onnx"), ayar,
                                            providers=["CPUExecutionProvider"])
 
-    def vektor(self, metinler, onek, grup=1):
+    def token_idleri(self, metin):
+        """<s> + metin + </s>, en fazla 512 token (Hugging Face tokenizer'ıyla aynı sonuç)."""
+        return [0] + self.sp.encode(metin)[:MAKS_TOKEN - 2] + [2]
+
+    def vektor(self, metinler, onek):
         # int8 model ölçekleri tüm grup üzerinden hesaplıyor, yani aynı metnin vektörü yanındaki
-        # metinlere göre biraz değişiyor. Tekrarlanabilir olsun diye varsayılan olarak tek tek.
+        # metinlere göre biraz değişiyor. Tekrarlanabilir olsun diye metinleri tek tek veriyoruz.
         sonuc = []
-        for i in range(0, len(metinler), grup):
-            kodlar = self.tok.encode_batch([f"{onek}: {m}" for m in metinler[i:i + grup]])
-            ids = np.array([k.ids for k in kodlar], dtype=np.int64)
-            maske = np.array([k.attention_mask for k in kodlar], dtype=np.int64)
+        for m in metinler:
+            ids = np.array([self.token_idleri(f"{onek}: {m}")], dtype=np.int64)
+            maske = np.ones_like(ids)
             cikti = self.oturum.run(None, {"input_ids": ids, "attention_mask": maske,
                                            "token_type_ids": np.zeros_like(ids)})[0]
-            v = (cikti * maske[..., None]).sum(1) / maske.sum(1, keepdims=True)
+            v = cikti.mean(axis=1)
             sonuc.append(v / np.linalg.norm(v, axis=1, keepdims=True))
         return np.vstack(sonuc).astype("float32")
 
@@ -168,6 +174,8 @@ def pencerelere_bol(p):
 
 def parcalari_oku():
     if not PARCA_DOSYASI.exists():
+        # PDF okuma kütüphaneleri ağır, sadece gerektiğinde yükleniyor (uygulama bunlara ihtiyaç duymuyor)
+        from ayristir import tum_belgeler
         parcalar = tum_belgeler()
     else:
         parcalar = [json.loads(s) for s in PARCA_DOSYASI.read_text(encoding="utf-8").splitlines()]

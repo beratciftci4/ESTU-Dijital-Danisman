@@ -59,6 +59,9 @@ Birkaç ayrıntı:
   tablosu görüntüye bakılarak elle düzeltildi (`kaynaklar/ek_sinav_esaslari.ocr.txt`).
 - **Model.** [intfloat/multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small)
   modelinin int8 ONNX hali (~118 MB). CPU'da çalışıyor, ilk açılışta Hugging Face'ten ücretsiz iniyor.
+  Tokenizer, Hugging Face `tokenizer.json`'ın SentencePiece'e çevrilmiş hali (`indeks/tokenizer.model`,
+  `tokenizer_donustur.py`): aynı token id'lerini veriyor ama bellekte ~300 MB yerine ~70 MB tutuyor.
+  Uygulamanın toplam belleği ~290 MB, bir soru ~0,01 sn.
 - **"Bulamadım".** En iyi parçanın benzerliği 0.850'nin üstündeyse cevap gösteriliyor, 0.825'in
   altındaysa "bulamadım" deniyor, arada kalırsa "kesin cevap bulamadım, ilgili olabilecek maddeler" deniyor.
 
@@ -91,7 +94,7 @@ Ayrıntılar ve hatalı sorular: [raporlar/4_arama.md](raporlar/4_arama.md),
 
 ## Kurulum
 
-Python 3.10+ yeterli.
+Python 3.12 ya da 3.13 (sabitlenen numpy sürümü 3.12+ istiyor).
 
 ```bash
 git clone https://github.com/beratciftci4/ESTU-Dijital-Danisman.git
@@ -109,14 +112,15 @@ python belge_kontrol.py   # belge listesi, tarihler ve sha256 kontrolü
 python ayristir.py        # parçaları yeniden üret
 python indeks.py          # indeksi yeniden kur
 python degerlendir.py     # test setleriyle ölç, raporlar/ güncellenir
-pytest                    # 96 test
+pytest                    # 97 test
 ```
 
 ## Ücretsiz yayınlama (Streamlit Community Cloud)
 
 1. https://share.streamlit.io adresine GitHub hesabıyla gir.
 2. **Create app** → bu repo, `main` dalı, dosya `app.py`.
-3. **Deploy**. Kart bilgisi istemiyor; ücretsiz planda çalışıyor.
+3. **Advanced settings** → Python sürümü olarak 3.12 ya da 3.13 seç.
+4. **Deploy**. Kart bilgisi istemiyor; ücretsiz planda çalışıyor.
 
 API anahtarı ya da gizli bilgi gerekmiyor.
 
@@ -138,6 +142,7 @@ API anahtarı ya da gizli bilgi gerekmiyor.
 | `belge_kontrol.py` | Belge listesini ve dosyaları kontrol eder |
 | `ayristir.py` | Belgeleri madde/bent parçalarına ayırır |
 | `indeks.py` | Embedding modeli, BM25 kelime ayırma, FAISS indeksi |
+| `tokenizer_donustur.py` | tokenizer.json'ı küçük SentencePiece modeline çevirir |
 | `arama.py` | Hibrit arama |
 | `cevap.py` | Atıflı cevap ve "bulamadım" kararı |
 | `mezuniyet.py` | Mezuniyet koşulları kontrolü |

@@ -84,3 +84,21 @@ def test_arama_metni_etiketli(indeks):
     assert arama_metni(p).startswith(
         "Eskişehir Teknik Üniversitesi Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği "
         "Madde 10 Kayıt yenileme ve ders kaydı.")
+
+
+@pytest.mark.skipif(not (Path(__file__).parent.parent / "model" / "tokenizer.json").exists(),
+                    reason="model/tokenizer.json yok (sadece dönüştürme kontrolü için gerekli)")
+def test_sentencepiece_hf_tokenizer_ile_ayni(gomucu, indeks):
+    """indeks/tokenizer.model, orijinal tokenizer.json ile birebir aynı id'leri vermeli."""
+    import yaml
+    from tokenizers import Tokenizer
+    klasor = Path(__file__).parent
+    hf = Tokenizer.from_file(str(klasor.parent / "model" / "tokenizer.json"))
+    hf.enable_truncation(512)
+    parcalar, _, _ = indeks
+    metinler = ["passage: " + w for p in parcalar for w in pencerelere_bol(p)]
+    for ad in ["soru_seti", "soru_seti_ayrik", "soru_seti_dogrulama"]:
+        metinler += ["query: " + s["soru"] for s in yaml.safe_load((klasor / f"{ad}.yaml").read_text(encoding="utf-8"))]
+    metinler += ["query: İIıi ÇĞÖŞÜ “tırnak” – ‒ … %80 3,50 20/A", "query: ＡＢＣ　😀 中文 ﬁ ½", "query: a\tb\nc  d"]
+    for m in metinler:
+        assert gomucu.token_idleri(m) == hf.encode(m).ids, m[:60]

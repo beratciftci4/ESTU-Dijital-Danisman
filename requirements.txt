@@ -5,7 +5,7 @@ pyyaml==6.0.3
 rank-bm25==0.2.2
 faiss-cpu==1.16.0
 onnxruntime==1.29.0
-tokenizers==0.23.3
-huggingface_hub==2.4.0
+sentencepiece==0.2.3
+huggingface_hub==2.3.0
 numpy==2.5.3
 pytest==9.1.1

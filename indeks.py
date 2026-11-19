@@ -15,6 +15,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -110,7 +111,7 @@ def modeli_hazirla():
     MODEL_KLASORU.mkdir(parents=True, exist_ok=True)
     for kaynak in eksik:
         yol = hf_hub_download(MODEL_REPO, kaynak)
-        (MODEL_KLASORU / MODEL_DOSYALARI[kaynak]).write_bytes(Path(yol).read_bytes())
+        shutil.copyfile(yol, MODEL_KLASORU / MODEL_DOSYALARI[kaynak])   # 118 MB'ı belleğe almadan kopyala
 
 
 class Gomucu:

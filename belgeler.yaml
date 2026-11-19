@@ -1,0 +1,110 @@
+# Asistanın kullanacağı belgeler
+# durum: bekleniyor -> pdf henüz yok / aktif -> kontrol edildi, kullanılabilir
+# tarihler YYYY-AA-GG, bilinmiyorsa null
+# kontrol tarihi: 2026-11-19
+
+- id: yonetmelik
+  ad: Eskişehir Teknik Üniversitesi Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği
+  dosya: yonetmelik.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonetmelikler-2
+  yayim: 2025-09-09          # RG 33012
+  yururluk: 2025-09-22       # md. 28: 2025-2026 eğitim-öğretim yılı başı
+  son_degisiklik: 2026-02-08 # RG 33162 (yaz okulu, AKTS sınırları)
+  dayanak: "RG 09.09.2025/33012, değişiklik RG 08.02.2026/33162"
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: >
+    2018 tarihli eski yönetmelik (RG 30540) yürürlükten kalktı (md. 27).
+    Sitedeki bazı eski linkler hâlâ onu açıyor, ilk sayfada 30540 yazıyorsa yanlış dosya.
+
+- id: fen_staj
+  ad: Eskişehir Teknik Üniversitesi Fen Fakültesi Staj Yönergesi
+  dosya: fen_staj_yonergesi.pdf
+  url: https://fen.eskisehir.edu.tr/Uploads/fen/files/stajyonerge.pdf
+  yayim: 2018-10-05          # Senato 5/4
+  yururluk: 2018-10-05
+  son_degisiklik: 2022-11-08 # Senato 27/2
+  dayanak: "Senato 05.10.2018/5-4, son değişiklik 08.11.2022/27-2"
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: İstatistik için 20 iş günü staj şartı bu yönergede.
+
+- id: ders_plani
+  ad: İstatistik Bölümü Lisans Ders Planı (Bologna)
+  dosya: istatistik_ders_plani.pdf
+  url: https://akts.eskisehir.edu.tr
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: Bologna'daki "Dersler - AKTS Kredileri" sayfası PDF olarak yazdırılacak. Hangi giriş yılının planı olduğu not edilmeli.
+
+- id: program_bilgileri
+  ad: İstatistik Bölümü Program Bilgileri ve Mezuniyet Koşulları (Bologna)
+  dosya: istatistik_program_bilgileri.pdf
+  url: https://akts.eskisehir.edu.tr
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: Mezuniyet koşulları ve seçmeli grup şartları.
+
+- id: danismanlik
+  ad: Eskişehir Teknik Üniversitesi Akademik Danışmanlık Yönergesi
+  dosya: akademik_danismanlik_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonergeler
+  yayim: 2025-09-11          # Senato 9/4
+  yururluk: 2025-09-11
+  son_degisiklik: null
+  dayanak: "Senato 11.09.2025/9-4"
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: Ders seçimi ve danışman onayı.
+
+- id: hakli_nedenler
+  ad: Eskişehir Teknik Üniversitesi Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar
+  dosya: hakli_gecerli_nedenler.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonergeler
+  yayim: 2025-09-11
+  yururluk: 2025-09-11
+  son_degisiklik: null
+  dayanak: "Senato 11.09.2025"
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: Mazeret sınavı sorularında lazım.
+
+- id: not_karsiliklari
+  ad: Kredili ve Mutlak Sistemdeki Not Karşılıkları ve Eşdeğerlikler
+  dosya: not_karsiliklari.pdf
+  url: https://eskisehir.edu.tr/Uploads/www/files/EK2-OIDB-KrediliveMutlakSistemdekiNotkarşılıkları-Eşdeğerlikler-4-8-2025.pdf
+  yayim: null                # dosya adında 4-8-2025 yazıyor, pdf'ten bakılacak
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: Harf notu karşılıkları ve dil sınavı eşdeğerlikleri.
+
+- id: proje_temelli_staj
+  ad: Eskişehir Teknik Üniversitesi Proje Temelli Staj Yönergesi
+  dosya: proje_temelli_staj_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/tr/Icerik/Detay/yonergeler
+  yayim: 2024-01-04          # Senato 1/2
+  yururluk: 2024-01-04
+  son_degisiklik: 2025-06-26
+  dayanak: "Senato 04.01.2024/1-2, değişiklik 26.06.2025"
+  indirme_tarihi: null
+  sha256: null
+  durum: bekleniyor
+  not: İsteğe bağlı. Değişikliğin işlendiği son halini indir.

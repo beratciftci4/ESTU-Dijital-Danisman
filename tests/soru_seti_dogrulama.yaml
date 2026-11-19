@@ -1,0 +1,58 @@
+# Doğrulama seti: eşikler seçildikten SONRA yazıldı, eşik ayarında kullanılmadı.
+# "bulamadım" kararının yeni sorularda da tutup tutmadığını görmek için.
+
+- soru: ÇK harf notu ne demek?
+  kaynak: [yonetmelik#madde-18]
+  anahtar: ["Çekildi (ÇK)"]
+
+- soru: Kaydımı yenilemezsem azami öğrenim sürem işlemeye devam eder mi?
+  kaynak: [yonetmelik#madde-6]
+  anahtar: ["azami öğrenim süresinin işlemesini durdurmaz"]
+
+- soru: Yaz okulu en az kaç hafta sürer?
+  kaynak: [yonetmelik#madde-20/A, yaz_okulu#bent-7]
+  anahtar: ["beş haftadan", "en az 5 (beş) haftadır"]
+
+- soru: Disiplin cezası alan öğrenci onur öğrencisi olabilir mi?
+  kaynak: [yonetmelik#madde-22]
+  anahtar: ["disiplin cezası alan"]
+
+- soru: Stajımı yaptığım kurumu değiştirebilir miyim?
+  kaynak: [fen_staj#madde-12]
+  anahtar: ["Staj yeri değişikli", "staj yeri değişikli"]
+
+- soru: Katkı payını ödemezsem kaydım yenilenir mi?
+  kaynak: [yonetmelik#madde-10, yonetmelik#madde-6, yonetmelik#madde-5]
+  anahtar: ["katkı payı"]
+
+- soru: Ortalamam 3,20 olursa onur öğrencisi sayılır mıyım?
+  kaynak: [yonetmelik#madde-22]
+  anahtar: ["3,00 ile 3,49"]
+
+- soru: Staj değerlendirme formunu kim dolduruyor?
+  kaynak: [fen_staj#madde-14, fen_staj#madde-9]
+  anahtar: ["tarafından doldurulan"]
+
+- soru: Harç ücretleri ne kadar?
+  cevapsiz: true
+
+- soru: Kampüse hangi otobüsle gidebilirim?
+  cevapsiz: true
+
+- soru: Bilgisayar laboratuvarı kaçta açılıyor?
+  cevapsiz: true
+
+- soru: Psikolojik danışmanlık randevusu nasıl alınır?
+  cevapsiz: true
+
+- soru: Mezunlar derneğine nasıl üye olurum?
+  cevapsiz: true
+
+- soru: Kampüste kaç tane kantin var?
+  cevapsiz: true
+
+- soru: Akademik takvime göre güz dönemi ne zaman bitiyor?
+  cevapsiz: true
+
+- soru: Yatay geçiş başvuruları ne zaman?
+  cevapsiz: true

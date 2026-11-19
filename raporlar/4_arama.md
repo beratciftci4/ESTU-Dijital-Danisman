@@ -8,13 +8,12 @@ Hibrit = BM25 ve e5 sıralamalarının Reciprocal Rank Fusion ile eşit ağırl�
 
 | Yöntem | hit@1 | hit@3 | hit@5 | MRR |
 |---|---|---|---|---|
-| bm25 | 0.48 | 0.89 | 0.96 | 0.68 |
+| bm25 | 0.52 | 0.93 | 0.96 | 0.70 |
 | e5 | 0.59 | 0.89 | 0.93 | 0.74 |
-| hibrit | 0.59 | 0.93 | 0.96 | 0.76 |
+| hibrit | 0.63 | 0.96 | 0.96 | 0.79 |
 
 Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
-- Ek sınavda 77-83 arası alan öğrencinin harf notu ne olur? (sıra: 4; ilk 3: yonetmelik#madde-18, program_bilgileri#bolum-Ölçme_ve_Değerlendirme, tek_ders#bent-4)
 - Kaydımı en fazla kaç dönem dondurabilirim? (sıra: 12; ilk 3: hakli_nedenler#bent-3, danismanlik#madde-10, yonetmelik#madde-10)
 
 ## Ayrık test seti (tests/soru_seti_ayrik.yaml)
@@ -25,7 +24,7 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 |---|---|---|---|---|
 | bm25 | 0.60 | 1.00 | 1.00 | 0.77 |
 | e5 | 0.60 | 0.80 | 0.80 | 0.73 |
-| hibrit | 0.70 | 1.00 | 1.00 | 0.85 |
+| hibrit | 0.80 | 1.00 | 1.00 | 0.90 |
 
 Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 

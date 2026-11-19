@@ -263,13 +263,30 @@ def maddelere_ayir(satirlar, bicim):
     return giris, maddeler, kuyruk
 
 
+def turkce_baslik(metin):
+    """'ESKİŞEHİR TEKNİK' -> 'Eskişehir Teknik'. str.title() Türkçe İ/ı harflerini bozuyor."""
+    def kucuk(x):
+        return x.replace("I", "ı").replace("İ", "i").lower()
+
+    def buyuk(x):
+        return x.replace("i", "İ").replace("ı", "I").upper()
+    return " ".join(buyuk(k[0]) + kucuk(k[1:]) if k else k for k in metin.split(" "))
+
+
 def kuyrugu_bol(kuyruk):
     """Son maddeden sonrasını künye ve EK-1, EK-2 ... parçalarına böler."""
     bloklar = []
-    for sayfa, s in kuyruk:
-        if EK_DESENI.match(s) or not bloklar:
-            bloklar.append({"ad": s if EK_DESENI.match(s) else "Kabul ve değişiklik bilgisi",
-                            "satirlar": []})
+    for i, (sayfa, s) in enumerate(kuyruk):
+        # künyeden sonra büyük harfli başlıkla başlayan tablo (ek sınavdaki not dönüşüm tablosu gibi)
+        # künyeye karışmasın, ayrı ek olsun
+        yeni_tablo = (bloklar and bloklar[-1]["ad"] == "Kabul ve değişiklik bilgisi" and s.isupper()
+                      and any("TABLO" in x for _, x in kuyruk[i:i + 3]))
+        if EK_DESENI.match(s) or not bloklar or yeni_tablo:
+            if yeni_tablo:
+                ad = turkce_baslik(" ".join(x for _, x in kuyruk[i:i + 3] if x.isupper()))
+            else:
+                ad = s if EK_DESENI.match(s) else "Kabul ve değişiklik bilgisi"
+            bloklar.append({"ad": ad, "satirlar": []})
         bloklar[-1]["satirlar"].append((sayfa, s))
     return bloklar
 
@@ -319,7 +336,7 @@ def pdf_ayristir(belge):
         parcalar.append(parca(belge, madde_turu, m["no"], m["baslik"], m["bolum"],
                               m["satirlar"], ocr))
     for i, blok in enumerate(kuyrugu_bol(kuyruk)):
-        tur = "ek" if EK_DESENI.match(blok["ad"]) else "kunye"
+        tur = "kunye" if blok["ad"] == "Kabul ve değişiklik bilgisi" else "ek"
         parcalar.append(parca(belge, tur, str(i + 1), blok["ad"], None, blok["satirlar"], ocr))
 
     # görüntü olarak eklenmiş tablolar okunamıyor, bunu açıkça kaydediyoruz

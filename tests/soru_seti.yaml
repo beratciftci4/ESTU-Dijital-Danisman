@@ -53,7 +53,7 @@
   anahtar: ["Ek sınavlar için mazeret sınavı yapılmaz"]
 
 - soru: Ek sınavda 77-83 arası alan öğrencinin harf notu ne olur?
-  kaynak: [ek_sinav#kunye-1]
+  kaynak: [ek_sinav#ek-2]
   anahtar: ["77-83 | 3.70 | AB"]
 
 - soru: Mazeret sınavına girmek için belgemi ne zamana kadar vermeliyim?

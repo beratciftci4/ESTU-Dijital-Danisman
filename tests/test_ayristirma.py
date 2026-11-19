@@ -148,7 +148,10 @@ def test_ocr_belgesi():
     assert "iki ek sınav hakkı verilir" in m2["metin"]
     assert "sınırsız ek sınav hakkı" in m2["metin"]
     # elle düzeltilen tablo
-    assert "50-55 | 2.00 | CC" in bul("ek_sinav#kunye-1")["metin"]
+    tablo = bul("ek_sinav#ek-2")
+    assert "50-55 | 2.00 | CC" in tablo["metin"]
+    assert tablo["baslik"] == "Eskişehir Teknik Üniversitesi Ek Sınav Sonuçları Mutlak Sistem Notlarının Harf Notuna Dönüşüm Tablosu"
+    assert "Senato Kararı" in bul("ek_sinav#kunye-1")["metin"] and "50-55" not in bul("ek_sinav#kunye-1")["metin"]
 
 
 def test_bologna_sayfalari():
@@ -166,8 +169,10 @@ def test_bologna_sayfalari():
 def test_turkce_karakter_bozulmasi_yok():
     bozuk = re.compile(r"[�̇]|Ã|Ä±|Å[Ÿž]|Ä[Ÿž]")
     for p in PARCALAR:
-        assert not bozuk.search(p["metin"]), p["id"]
-        assert unicodedata.normalize("NFC", p["metin"]) == p["metin"], p["id"]
+        for alan in ("metin", "baslik", "bolum"):
+            deger = p[alan] or ""
+            assert not bozuk.search(deger), (p["id"], alan)
+            assert unicodedata.normalize("NFC", deger) == deger, (p["id"], alan)
 
 
 @pytest.mark.parametrize("belge_id", BELGELER)

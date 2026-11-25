@@ -7,16 +7,44 @@ Hiçbir ücretli API kullanmıyor. Kısa cevaplar elle yazılmış özetlerden, 
 """
 import hashlib
 import html
+import importlib
+import json
+import os
+import sys
 
 import streamlit as st
 import yaml
 
-import json
+
+def eski_modulleri_yenile():
+    """Streamlit Cloud yeni kodu çekince app.py'yi yeniden çalıştırıyor ama import edilmiş modüllerin
+    eski hali bellekte kalabiliyor (ImportError, AttributeError). Dosyası yüklendiğinden sonra değişen
+    yerel modülleri bağımlılık sırasıyla yeniden yüklüyoruz; böylece elle Reboot gerekmiyor."""
+    for ad in ["belge_kontrol", "indeks", "arama", "cevap", "mezuniyet"]:
+        m = sys.modules.get(ad)
+        if m is None:
+            continue
+        degisme = os.path.getmtime(m.__file__)
+        if degisme > getattr(m, "_yuklenme", degisme):
+            m = importlib.reload(m)
+            m._yuklenme = degisme
+
+
+def yuklenme_zamanini_kaydet():
+    for ad in ["belge_kontrol", "indeks", "arama", "cevap", "mezuniyet"]:
+        m = sys.modules[ad]
+        if not hasattr(m, "_yuklenme"):
+            m._yuklenme = os.path.getmtime(m.__file__)
+
+
+eski_modulleri_yenile()
 
 from arama import Arayici
 from belge_kontrol import KLASOR, programlari_oku
 from cevap import atif, cevapla, gecerlilik, tarih
 from mezuniyet import ENGEL_NOTLAR, kontrol, staj_birimi
+
+yuklenme_zamanini_kaydet()
 
 st.set_page_config(page_title="ESTÜ Dijital Danışman", page_icon="📘", layout="centered")
 

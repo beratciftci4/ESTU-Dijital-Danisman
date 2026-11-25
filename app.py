@@ -50,6 +50,14 @@ div.altbaslik { color: var(--soluk); font-size: 1rem; line-height: 1.5; margin: 
 .durum.bulundu { border-color: var(--yesil); }
 .durum.belirsiz { border-color: var(--amber); }
 
+div.cevap { background: #fff; border: 1px solid var(--cizgi); border-top: 3px solid var(--bordo);
+            padding: 1.1rem 1.25rem .9rem; margin: 1.25rem 0 .4rem; }
+div.cevap.belirsiz { border-top-color: var(--amber); }
+div.cevap .uyari { color: var(--amber); font-size: .88rem; font-weight: 500; margin: 0 0 .5rem; }
+div.cevap p.metin { font-size: 1.12rem; line-height: 1.6; color: var(--murekkep); margin: 0 0 .7rem; }
+div.cevap .dayanak { color: var(--soluk); font-size: .84rem; line-height: 1.45; }
+div.ara-baslik { color: var(--soluk); font-size: .9rem; font-weight: 600; margin: 1.6rem 0 0; }
+
 .kaynak { padding: 1.1rem 0 .4rem; border-top: 1px solid var(--cizgi); }
 div.kaynak-belge { color: var(--soluk); font-size: .85rem; margin: 0; }
 div.kaynak-madde { color: var(--bordo); font-size: 1.35rem; font-weight: 600; margin: .1rem 0 0; line-height: 1.3; }
@@ -114,8 +122,11 @@ def kenar_cubugu():
         st.markdown("#### Nasıl çalışır")
         st.caption(
             "Sorunuz hem kelime eşleşmesiyle (BM25) hem anlam benzerliğiyle (e5) aranır. "
-            "En uygun maddeler, ilgili fıkraları seçilerek gösterilir. Metin üretilmez, "
-            "gördüğünüz her cümle resmi belgeden alınmıştır.")
+            "Kısa cevap, her madde için önceden elle yazılmış sade özet cümlelerinden seçilir; "
+            "yapay zekâ ile anlık metin üretilmez. Altındaki alıntılar resmi metnin aynısıdır.")
+        st.caption("Fen Fakültesi İstatistik Bölümü için hazırlandı. Yönetmelik ve yönergeler tüm "
+                   "lisans öğrencileri için geçerli; staj kuralları Fen Fakültesi'ne, ders planı ve "
+                   "mezuniyet koşulları İstatistik Bölümü'ne özel.")
         st.caption("Bu araç resmi görüş değildir. Kesin bilgi için Öğrenci İşleri'ne "
                    "ya da akademik danışmanınıza başvurun.")
 
@@ -158,7 +169,20 @@ def soru_sekmesi():
     with st.spinner("Belgelerde aranıyor..."):
         c = cevapla(soru, arayici)
 
-    st.markdown(f'<div class="durum {c["durum"]}">{html.escape(c["mesaj"])}</div>', unsafe_allow_html=True)
+    if not c.get("ozet"):
+        st.markdown(f'<div class="durum {c["durum"]}">{html.escape(c["mesaj"])}</div>', unsafe_allow_html=True)
+        return
+
+    uyari = ""
+    if c["durum"] == "belirsiz":
+        uyari = ('<div class="uyari">Belgelerde bu soruya birebir uyan bir hüküm bulamadım. '
+                 'En yakın bilgi aşağıda, maddeleri kontrol edin.</div>')
+    st.markdown(
+        f'<div class="cevap {c["durum"]}">{uyari}<p class="metin">{html.escape(c["ozet"]["metin"])}</p>'
+        f'<div class="dayanak">Dayanak: {html.escape("; ".join(c["ozet"]["dayanak"]))}. '
+        'Bu özet resmi metnin sade anlatımıdır; bağlayıcı olan aşağıdaki madde metinleridir.</div></div>',
+        unsafe_allow_html=True)
+    st.markdown('<div class="ara-baslik">Resmi metin, okumak isteyenler için</div>', unsafe_allow_html=True)
     for k in c["kaynaklar"]:
         kaynak_goster(k)
 
@@ -206,8 +230,9 @@ def main():
     st.markdown(CSS, unsafe_allow_html=True)
     kenar_cubugu()
     st.markdown('<div class="baslik">ESTÜ <span>Dijital Danışman</span></div>'
-                '<div class="altbaslik">Eğitim-öğretim yönetmeliği, staj yönergesi ve İstatistik bölümü '
-                'ders planı hakkındaki sorularınızı resmi metinden, madde ve sayfa numarasıyla yanıtlar.</div>',
+                '<div class="altbaslik">Fen Fakültesi İstatistik Bölümü öğrencileri için. Yönetmelik, staj '
+                've ders planı sorularınıza kısa bir cevap verir; dayandığı resmi maddeyi sayfa '
+                'numarasıyla altında gösterir.</div>',
                 unsafe_allow_html=True)
     soru_tab, mezuniyet_tab = st.tabs(["Soru sor", "Mezuniyet kontrolü"])
     with soru_tab:

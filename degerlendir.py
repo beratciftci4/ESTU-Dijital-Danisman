@@ -47,7 +47,8 @@ def cevap_olc(arayici, sorular):
     Cevapsız soru doğru: asistan "bulundu" demedi (bulamadım ya da "kesin cevap yok" dedi)."""
     from cevap import cevapla
     sonuc = {"cevapli": 0, "cevapli_dogru": 0, "cevapsiz": 0, "cevapsiz_dogru": 0,
-             "cevapsiz_tam_red": 0, "durumlar": [], "hatalar": []}
+             "cevapsiz_tam_red": 0, "ozetli": 0, "ozet_dogru": 0, "ozet_ilk_dogru": 0,
+             "durumlar": [], "hatalar": []}
     for s in sorular:
         c = cevapla(s["soru"], arayici)
         alinti = " ".join(" ".join(k["alinti"]) for k in c["kaynaklar"])
@@ -60,6 +61,11 @@ def cevap_olc(arayici, sorular):
             sonuc["cevapli"] += 1
             dogru = c["durum"] != "bulunamadi" and any(a in alinti for a in s["anahtar"])
             sonuc["cevapli_dogru"] += dogru
+            if c.get("ozet"):
+                # kısa cevap doğru maddeye mi dayanıyor? (tümü / ilk cümle)
+                sonuc["ozetli"] += 1
+                sonuc["ozet_dogru"] += any(p in s["kaynak"] for p in c["ozet"]["parcalar"])
+                sonuc["ozet_ilk_dogru"] += c["ozet"]["ilk_parca"] in s["kaynak"]
         sonuc["durumlar"].append(c["durum"])
         if not dogru:
             sonuc["hatalar"].append((s["soru"], c["durum"], c["en_iyi_benzerlik"]))
@@ -68,23 +74,29 @@ def cevap_olc(arayici, sorular):
 
 def cevap_tablosu(arayici, setler):
     satirlar = ["# 5. Aşama: Cevap doğruluğu (API'siz)", "",
-                "Cevap = en uygun 3 parçadan seçilen 1-2 fıkra/cümle + belge, madde, sayfa, yürürlük tarihi.",
-                "Metin üretilmiyor, gösterilen her şey resmi metnin aynısı.", "",
+                "Cevap = kısa cevap (ozetler.yaml'daki elle yazılmış sade cümlelerden seçilir) + en uygun 3 "
+                "parçadan seçilen 1-2 fıkra/cümle + belge, madde, sayfa, yürürlük tarihi.",
+                "Çalışırken metin üretilmiyor; kaynak alıntıları resmi metnin aynısı.", "",
                 "- Cevaplı soru doğru: asistan \"bulamadım\" demedi ve beklenen ifade gösterilen alıntıda geçiyor.",
                 "- Cevapsız soru doğru: asistan cevabı bulduğunu iddia etmedi (\"bulamadım\" ya da "
                 "\"kesin cevap bulamadım, ilgili olabilecek maddeler\").", "",
                 f"Eşikler: e5 benzerliği >= {__import__('cevap').ESIK_YUKSEK} ise \"bulundu\", "
                 f"< {__import__('cevap').ESIK_DUSUK} ise \"bulamadım\", arası \"belirsiz\".", "",
-                "| Set | Cevaplı doğru | Cevapsız doğru | Cevapsızda doğrudan \"bulamadım\" |",
-                "|---|---|---|---|"]
+                "- Kısa cevap doğru: kısa cevabın dayandığı maddelerden biri sorunun doğru kaynağı "
+                "(\"ilk cümle\" sütununda en üstteki cümlenin maddesi).", "",
+                "| Set | Cevaplı doğru | Cevapsız doğru | Cevapsızda doğrudan \"bulamadım\" "
+                "| Kısa cevap doğru maddeye dayanıyor | İlk cümle doğru maddeden |",
+                "|---|---|---|---|---|---|"]
     hatalar = []
     for ad, sorular in setler:
         o = cevap_olc(arayici, sorular)
         cvp = f"{o['cevapli_dogru']}/{o['cevapli']}" if o["cevapli"] else "-"
         cvs = f"{o['cevapsiz_dogru']}/{o['cevapsiz']}" if o["cevapsiz"] else "-"
         red = f"{o['cevapsiz_tam_red']}/{o['cevapsiz']}" if o["cevapsiz"] else "-"
-        satirlar.append(f"| {ad} | {cvp} | {cvs} | {red} |")
-        print("cevap", ad, cvp, cvs, red)
+        oz = f"{o['ozet_dogru']}/{o['ozetli']}" if o["ozetli"] else "-"
+        oz1 = f"{o['ozet_ilk_dogru']}/{o['ozetli']}" if o["ozetli"] else "-"
+        satirlar.append(f"| {ad} | {cvp} | {cvs} | {red} | {oz} | {oz1} |")
+        print("cevap", ad, cvp, cvs, red, "özet", oz, oz1)
         hatalar += [(ad, *h) for h in o["hatalar"]]
     satirlar += ["", "## Hatalı sonuçlar", ""]
     satirlar += [f"- [{ad}] {soru} -> {durum} (benzerlik {b})" for ad, soru, durum, b in hatalar] or ["- Yok."]
@@ -142,7 +154,23 @@ def main():
                  "- Cevapsız bir soruya \"bulundu\" denmesi en riskli hata. Bu durumda bile asistan metin "
                  "uydurmuyor, sadece alakasız bir maddeyi gösteriyor; kaynak ve sayfa her zaman yazılı.",
                  "- Benzerlik eşiği tek başına sınırlı: \"Mezunlar derneği\" gibi yönetmelikteki kelimelere "
-                 "yakın sorular eşiği geçebiliyor. Kelime kapsamı gibi ek sinyaller denendi, net ayırmadı."]
+                 "yakın sorular eşiği geçebiliyor. Kelime kapsamı gibi ek sinyaller denendi, net ayırmadı.",
+                 "",
+                 "## Kısa cevap",
+                 "",
+                 "- Her parça için 1-13 sade özet cümlesi elle yazıldı (ozetler.yaml, 181 parça, ~400 cümle). "
+                 "Cümleler madde metninin dışına çıkmıyor ve tek başına okunduğunda anlaşılacak şekilde yazıldı.",
+                 "- Seçim: en iyi 5 parçanın cümleleri; puan = e5(soru, cümle) + 0,10 x kelime örtüşmesi "
+                 "(idf ağırlıklı) + 1,0 x e5(soru, madde) + ilk cümleye 0,02. En iyi puana 0,015'ten "
+                 "yakın olan en fazla 3 cümle, aynı kuralı tekrar edenler elenerek gösteriliyor.",
+                 "- Ağırlıklar 19 soruluk ayrı bir listede (arayüzdeki 6 örnek soru dahil) doğru cümlenin "
+                 "ilk sırada gelmesine bakılarak seçildi: 17/19. Hiç kullanılmamış 11 yeni soruda doğru "
+                 "cümle 8/11 ilk sırada, 9/11 cevabın içinde.",
+                 "- Yalnızca e5 benzerliği kısa cümlelerde gürültülü çıktı (\"Kaç iş günü staj yapmalıyım?\" "
+                 "sorusuna proje temelli staj cümlesi geliyordu); maddenin bütününün benzerliği eklenince düzeldi.",
+                 "- Kısa cevap \"bulamadım\" durumunda gösterilmiyor. \"Belirsiz\" durumda uyarıyla gösteriliyor.",
+                 "- Sınır: özet cümleleri elle yazıldığı için belge güncellenince ilgili cümlelerin de "
+                 "güncellenmesi gerekiyor (test, her parçanın özeti olduğunu kontrol ediyor)."]
     (KLASOR / "raporlar" / "5_cevap.md").write_text("\n".join(satirlar) + "\n", encoding="utf-8")
 
 

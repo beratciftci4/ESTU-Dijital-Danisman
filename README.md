@@ -1,11 +1,18 @@
 # ESTÜ Dijital Danışman
 
-ESTÜ öğrencilerinin "Kaç AKTS üst sınırım var?", "Tek ders sınavına kimler girebilir?",
-"Kaç iş günü staj yapmam lazım?" gibi sorularına **resmi belgelerden**, belge adı, madde
-numarası ve sayfasıyla cevap veren bir arama asistanı.
+ESTÜ **Fen Fakültesi İstatistik Bölümü** öğrencilerinin "Kaç AKTS üst sınırım var?",
+"Tek ders sınavına kimler girebilir?", "Kaç iş günü staj yapmam lazım?" gibi sorularına
+**resmi belgelerden**, belge adı, madde numarası ve sayfasıyla cevap veren bir arama asistanı.
 
-Cevap olarak metin üretmiyor; soruya en uygun maddeyi bulup ilgili fıkrasını olduğu gibi
-gösteriyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da servis kullanmıyor.
+Önce sade dille kısa bir cevap veriyor, altında dayandığı resmi maddeleri olduğu gibi gösteriyor.
+Kısa cevap, her madde için önceden elle yazılmış özet cümlelerinden seçiliyor; çalışırken yapay
+zekâ ile metin üretilmiyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da
+servis kullanmıyor.
+
+Hangi bölüm için: Eğitim-öğretim yönetmeliği ve usul-esaslar bütün ESTÜ lisans öğrencileri için
+geçerli. Staj yönergesi Fen Fakültesi'nin, ders planı ve mezuniyet koşulları İstatistik Bölümü'nün.
+Başka bir bölüm için o bölümün staj yönergesi ve Bologna sayfaları eklenip `ozetler.yaml`'a
+özetleri yazılmalı.
 
 "Mezun olmak için neyim eksik?" sorusu için ayrı bir **mezuniyet kontrolü** sekmesi var:
 tamamlanan AKTS, GNO, kalan FF/YZ/DZ/EK/ÇK notları ve staj gününü girince yönetmeliğin
@@ -46,7 +53,8 @@ cikti/parcalar.jsonl  (190 parça)
    ▼
 indeks/
    │  arama.py      BM25 ve e5 sıralamaları Reciprocal Rank Fusion ile birleşiyor
-   │  cevap.py      en uygun 3 parçadan ilgili fıkralar + atıf + "bulamadım" eşiği
+   │  cevap.py      kısa cevap (ozetler.yaml'dan cümle seçimi) + ilgili fıkralar + atıf
+   │                + "bulamadım" eşiği
    ▼
 app.py (Streamlit)
 ```
@@ -66,6 +74,10 @@ Birkaç ayrıntı:
   Uygulamanın toplam belleği ~290 MB, bir soru ~0,01 sn.
 - **"Bulamadım".** En iyi parçanın benzerliği 0.850'nin üstündeyse cevap gösteriliyor, 0.825'in
   altındaysa "bulamadım" deniyor, arada kalırsa "kesin cevap bulamadım, ilgili olabilecek maddeler" deniyor.
+- **Kısa cevap.** `ozetler.yaml`'da her parça için sade özet cümleleri var (181 parça, 396 cümle,
+  elle yazıldı). Soruya göre en iyi 5 parçanın cümleleri puanlanıyor (e5 benzerliği + kelime örtüşmesi
+  + maddenin benzerliği) ve en uygun 1-3 cümle gösteriliyor. Cümlelerin vektörleri
+  `indeks/ozet_vektorleri.npz`'de; `ozetler.yaml` değişirse ilk soruda kendiliğinden yeniden hesaplanıyor (~4 sn).
 
 ## Sonuçlar
 
@@ -89,6 +101,9 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Kalibrasyon (sadece cevapsız) | | 15/15 |
 | Ayrık set | 10/10 | 2/2 |
 | Doğrulama (eşikten sonra yazıldı) | 7/8 | 6/8 |
+
+**Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
+doğrulama 7/8. Ayarlamada kullanılmayan 11 yeni soruda doğru cümle 8'inde ilk sırada.
 
 Ayrıntılar ve hatalı sorular: [raporlar/4_arama.md](raporlar/4_arama.md),
 [raporlar/5_cevap.md](raporlar/5_cevap.md). Parçalama kontrolleri:
@@ -135,6 +150,10 @@ API anahtarı ya da gizli bilgi gerekmiyor.
   bir soru (örneğin "mezunlar derneği") bazen eşiği geçebiliyor. Bu durumda bile gösterilen
   metin resmi metnin aynısı, kaynak ve sayfası yazılı.
 - Bologna sayfalarının yürürlük tarihi yok, erişim tarihi esas alınıyor.
+- Kısa cevap madde metninin sade anlatımı; bağlayıcı olan altındaki resmi metin. Bazen soruya
+  tam uymayan bir cümle seçilebiliyor, bu yüzden kaynak maddeler her zaman altında gösteriliyor.
+- Özetler elle yazıldığı için bir belge güncellenince `ozetler.yaml`'daki cümleleri de
+  güncellemek gerekiyor (testler her parçanın özeti olduğunu kontrol ediyor).
 
 ## Dosyalar
 
@@ -146,7 +165,8 @@ API anahtarı ya da gizli bilgi gerekmiyor.
 | `indeks.py` | Embedding modeli, BM25 kelime ayırma, FAISS indeksi |
 | `tokenizer_donustur.py` | tokenizer.json'ı küçük SentencePiece modeline çevirir |
 | `arama.py` | Hibrit arama |
-| `cevap.py` | Atıflı cevap ve "bulamadım" kararı |
+| `cevap.py` | Kısa cevap, atıflı alıntılar ve "bulamadım" kararı |
+| `ozetler.yaml` | Her madde için elle yazılmış sade özet cümleleri |
 | `mezuniyet.py` | Mezuniyet koşulları kontrolü |
 | `degerlendir.py` | Test setleriyle ölçüm, `raporlar/` |
 | `app.py` | Streamlit arayüzü |

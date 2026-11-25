@@ -1,0 +1,603 @@
+# Her parça için sade dilde özet cümleleri (elle yazıldı, kaynak metinden çıkmadan).
+# Uygulama soruya en uygun 1-3 cümleyi seçip kısa cevap olarak gösteriyor.
+# İlk cümle genel özet, soru hiçbir cümleyle eşleşmezse o gösterilir.
+# Anahtar = cikti/parcalar.jsonl içindeki parça id'si.
+
+# ---------------- Yönetmelik ----------------
+yonetmelik#madde-1:
+  - Bu yönetmelik ESTÜ'deki ön lisans ve lisans programlarının eğitim, öğretim ve sınav kurallarını belirler.
+  - Pilotaj programı hariç bütün programlar bu yönetmeliğe tabidir.
+yonetmelik#madde-2:
+  - Yönetmelik, 2547 sayılı Yükseköğretim Kanunu'na dayanılarak hazırlanmıştır.
+yonetmelik#madde-3:
+  - Bu madde yönetmelikte geçen kısaltmaları açıklar.
+  - AKTS Avrupa Kredi Transfer Sistemi, DNO dönem not ortalaması, GNO ise genel not ortalaması demektir.
+  - Çift anadal, iki programdan aynı anda ders alıp iki ayrı diploma almayı sağlayan programdır.
+  - Kredili sistemde başarı notu bağıl olarak, yani sınıfın genel başarısına göre değerlendirilir.
+yonetmelik#madde-4:
+  - Bir öğretim yılı güz ve bahar yarıyıllarından oluşur; her yarıyıl final sınavları hariç en az 14 haftadır.
+  - Akademik takvimi Senato belirler.
+  - Yaz okulu, birim yönetim kurulunun teklifi ve Üniversite Yönetim Kurulunun onayıyla açılabilir.
+yonetmelik#madde-5:
+  - ESTÜ'de öğretim ders geçme esasına dayalı kredili sistemle yürütülür.
+  - Dersler teorik ders, laboratuvar, atölye, staj ve uygulamalardan oluşur ve yarıyıllık düzenlenir.
+  - Bazı dersler uzaktan ya da hem yüz yüze hem uzaktan verilebilir; bu dersler için ek ücret istenmez.
+yonetmelik#madde-6:
+  - Lisans programının normal süresi 8 yarıyıl (4 yıl), azami süresi ise 14 yarıyıldır (7 yıl); hazırlık sınıfı bu sürelere dahil değildir.
+  - Kaydını yenilemesen bile azami süren işlemeye devam eder.
+  - Normal süre içinde mezun olamazsan katkı payı veya öğrenim ücreti ödemen gerekir.
+  - Bütün derslerini bitirip yalnızca zorunlu stajı kalan öğrenciden katkı payı alınmaz.
+  - Azami süre sonunda da mezun olamazsan yalnızca derslere ve sınavlara girebilirsin, diğer öğrencilik haklarından yararlanamazsın.
+  - Yabancı dil hazırlık süresi en çok 2 yıldır ve normal ya da azami süreden sayılmaz.
+  - Erasmus gibi değişim programlarında geçen dönemler program süresine ve azami süreye dahildir.
+yonetmelik#madde-7:
+  - Azami süre sonunda mezun olamayan son sınıf öğrencilerine ek sınav hakkı verilir.
+  - Bütün derslerini geçip yalnızca 2,00 GNO şartını sağlayamadığı için ilişiği kesilecek öğrenciler de ek sınav hakkından yararlanır.
+  - Ek sınavların ayrıntıları Senato'nun kabul ettiği ek sınav uygulama esaslarındadır.
+yonetmelik#madde-8:
+  - Derslerin kredisi, öğrencinin iş yüküne göre belirlenen AKTS kredisidir.
+  - Lisans ders planlarında seçmeli derslerin toplamı en az 60 AKTS olmalıdır.
+  - Ders planındaki seçmeli kredini tamamladıktan sonra yeni seçmeli dersi ancak "yerine" işlemiyle alabilirsin.
+  - Ön koşullu bir dersi alabilmek için ön koşul dersini en az bir kez almış ve devam şartını sağlamış olman gerekir.
+  - Bitirme projesi gibi 7. ve 8. yarıyıl derslerini alabilmek için ilk dört yarıyılın bütün zorunlu derslerini geçmiş ya da en az 180 AKTS'lik ders başarmış olman gerekir.
+  - Bitirme Projesi I'i geçmeden Bitirme Projesi II'yi alamazsın.
+  - AA veya YT aldığın bir dersi tekrar alamazsın.
+  - Staj, kamu ya da özel kurumlarda birimin staj yönergesine göre yapılır.
+yonetmelik#madde-9:
+  - Üniversiteyi kazanan aday, YÖK ve üniversitenin belirlediği esaslara göre kaydını yaptırır.
+  - e-Devlet'ten doğrulanabilen belgeler kayıtta ayrıca istenmez.
+  - Kesin kaydını yaptırmayan aday öğrencilik hakkından vazgeçmiş sayılır.
+yonetmelik#madde-10:
+  - Her yarıyıl başında kaydını yenilemen gerekir; katkı payın varsa ve ödemezsen kaydın yenilenmez.
+  - Güz ve bahar yarıyıllarının her birinde danışman onayıyla en çok 45 AKTS'lik derse kayıt olabilirsin; çift anadal öğrencileri için bu sınır 60 AKTS'dir.
+  - Başka üniversiteden aldığın derslerin kredisi de bu 45 AKTS sınırına dahildir.
+  - Ekle/sil haftasında danışman onayıyla ders değiştirebilir, bırakabilir ya da yeni ders ekleyebilirsin.
+  - Ekle/sil tarihlerinden sonraki üç hafta içinde, danışman onayıyla ilk kez aldığın derslerden yalnızca birinden çekilebilirsin.
+yonetmelik#madde-11:
+  - Her öğrenciye bölüm başkanının önerisiyle bir öğretim elemanı akademik danışman olarak atanır.
+  - Danışman, her dönem başında ders seçiminde seni bilgilendirir ve seçtiğin dersleri onaylar.
+  - Danışman ayrıca üniversiteye uyum, mesleki gelişim ve kariyer konularında seni yönlendirir.
+  - Danışman görüşme saatlerini kayıtlar başlamadan önce ilan eder; ekle/sil haftasında yoksa yerine geçici danışman atanır.
+yonetmelik#madde-12:
+  - Derslere en az %80 devam etmek zorunludur; yani devamsızlık sınırı derslerin %20'sidir.
+  - Teorik ve uygulama kısmı olan derslerde herhangi bir kısımdan devamsızlık sınırını aşarsan o dersten devamsız sayılırsın.
+  - Devam şartını sağlamadığın dersin final sınavına giremezsin.
+  - Üniversiteyi veya Türkiye'yi temsil ettiğin günlerde, yönetim kurulu kararıyla izinli sayılırsın ve devamsız yazılmazsın.
+yonetmelik#madde-13:
+  - Yatay geçiş, dikey geçiş, çift anadal ya da değişim programıyla gelen öğrencilerin ders kredi ve not transferi yapılır.
+  - Önceki okulunda en az DD veya YT aldığın derslerin transferini, GNO'n 2,00'nin altına düşmeyecek şekilde isteyebilirsin.
+  - Transfer için belgelerini bir dilekçeyle, kayıt olduğun ilk dönem derslerin başlamasından itibaren üç hafta içinde birimine vermelisin.
+  - Transfer kararı bütün öğrenim süreni kapsayacak şekilde bir defaya mahsus verilir.
+  - Daha önce geçtiğin Atatürk İlkeleri, Türk Dili ve yabancı dil derslerini GNO şartı aranmadan transfer ettirebilirsin.
+yonetmelik#madde-14:
+  - Transkriptte aldığın bütün dersler, harf notların, dönem ortalamaların (DNO) ve genel ortalaman (GNO) yer alır.
+yonetmelik#madde-15:
+  - Zorunlu hazırlık sınıfı olan programlarda bölüme başlamak için hazırlığı en çok 2 yıl içinde bitirmen gerekir.
+  - Öğretim dili kısmen ya da tamamen yabancı dil olan bir programın hazırlığını 2 yılda bitiremezsen programdan ilişiğin kesilir.
+yonetmelik#madde-16:
+  - Mezuniyet aşamasındaysan ve ders o dönem açılmıyorsa ya da çakışıyorsa, eşdeğer dersi başka bir üniversiteden alabilirsin.
+  - Başka üniversitelerin yaz okulundan da yönetim kurulu kararıyla ders alabilirsin.
+  - Başka üniversiteden alınan derslerin kredi ve not transferine birim yönetim kurulu karar verir.
+yonetmelik#madde-17:
+  - Her ders için en az bir ara sınav ve bir final sınavı yapılır; uygulamalı derslerde yalnızca final yapılabilir.
+  - Sınav tarihleri sınavlardan en az 15 gün önce ilan edilir.
+  - Final sınavına girebilmek için o dersin devam şartını sağlamış olman gerekir.
+  - Ders notun ara sınav, ödev ve uygulama notlarıyla final notunun birlikte değerlendirilmesiyle belirlenir.
+  - Haklı ve geçerli bir mazeretle sınava giremezsen, yönetim kurulu kararıyla mazeret sınavı hakkı verilir.
+  - Mazeret sınavı için sınavın bittiği günden sonraki üç iş günü içinde mazeret belgeni bir dilekçeyle birimine teslim etmelisin.
+  - Sınav kağıtları en az 2 yıl saklanır.
+yonetmelik#madde-18:
+  - Bir dersin ara sınav, ödev ve final ağırlıkları dönemin ilk iki haftası içinde dersin sayfasında duyurulur.
+  - Dönem içi notların başarı notuna katkısı en az %30, en fazla %60 olabilir.
+  - Harf notun, dersi alan bütün öğrencilerin genel başarısı da dikkate alınarak öğretim elemanınca belirlenir.
+  - Harf notlarının katsayıları AA 4,00, AB 3,70, BA 3,30, BB 3,00, BC 2,70, CB 2,30, CC 2,00, CD 1,70, DC 1,30, DD 1,00 ve FF 0,00'dır.
+  - ÇK, ekle/sil sonrası üç hafta içinde çekildiğin dersler için verilir.
+  - DZ devamsızlık notudur; DZ alan öğrenci finale giremez ve DZ, FF ya da YZ ile aynı sayılır.
+  - EK (eksik) notu haklı bir nedenle dersin gereklerini zamanında yapamayan öğrenciye verilir; eksiklerini bir sonraki dönem başlamadan tamamlamazsan EK, FF veya YZ'ye dönüşür.
+  - YT (yeterli) ve YZ (yetersiz) ortalamaya katılmayan dersler için kullanılır.
+  - GNO'n en az 2,00 ise bir dersten DD ya da üstü (veya YT) alman o dersi geçmen için yeterlidir.
+yonetmelik#madde-19:
+  - Başarı durumun her dönem sonunda dönem ortalaması (DNO) ve genel ortalama (GNO) ile belirlenir.
+  - Ortalama, her dersin AKTS kredisi ile harf notu katsayısının çarpımlarının toplamının toplam krediye bölünmesiyle hesaplanır.
+  - Tekrar aldığın bir dersin ortalamaya en son aldığın notu ve kredisi katılır.
+  - Başarılı sayılmak için her dönem sonunda GNO'nun en az 2,00 olması gerekir; yaz okulu notları da GNO'ya katılır.
+  - Zorunlu derslerden FF, YZ veya DZ aldıysan bu dersleri, ders planındaki döneminde ve en alt yarıyıldan başlayarak tekrar almak zorundasın.
+  - Seçmeli bir dersten kalırsan o dersi tekrarlayabilir ya da danışman onayıyla yerine aynı türden başka bir seçmeli alabilirsin.
+  - Güz veya bahar sonunda GNO'n 2,00'nin altındaysa akademik yetersizlik uyarısı alırsın; yaz okulunda ya da sonraki dönemde 2,00'ye çıkarırsan uyarı kalkar.
+  - Uyarıdan sonraki dönemde de GNO'nu 2,00'ye çıkaramazsan, kaldığın derslere ek olarak CC'nin altında not aldığın dersleri de tekrar etmek zorunda kalırsın; 2,00'yi sağladığında tekrar zorunluluğu biter.
+yonetmelik#madde-20:
+  - Devam şartını sağladığın tek bir dersten FF veya YZ ile kalmış, mezun olabilecek durumdaki son sınıf öğrencisiysen tek ders sınavına girebilirsin.
+  - Tek ders sınavı için ilan edilen tarihlerde birimine dilekçeyle başvurman gerekir.
+  - Tamamen uygulamalı derslerde ve finali uygulamalı yapılan derslerde tek ders sınavı yapılmaz.
+yonetmelik#madde-20/A:
+  - Yaz okulu birim yönetim kurulunun teklifi ve Üniversite Yönetim Kurulunun onayıyla açılır; katılmak tamamen isteğe bağlıdır.
+  - Yaz okulu sınavlar dahil en az beş hafta sürer ve azami süreden sayılmaz.
+  - Yaz okulu bahar döneminin devamı sayılır ve yaz okulu notların GNO'na katılır.
+  - Yaz okulunda en çok 20 AKTS'lik derse kayıt olabilirsin; yaz okulu sonunda mezun olacak durumdaysan sınır 25 AKTS'dir.
+  - Bahar döneminde kaydını dondurduysan da yaz okulundan ders alabilirsin.
+  - Yaz okulunda dersler başladıktan sonra ekle/sil ve dersten çekilme yapılamaz.
+  - Yaz okulunda da derslere %80 devam zorunludur.
+  - Yaz okulu ücretlidir; haklı bir nedenle kaydın iptal edilirse ücretin iade edilir.
+  - Haklı bir mazeretle yaz okulu sınavına giremezsen mazeret sınavı hakkı verilebilir.
+  - ESTÜ'de açılan bir dersin yerine, Üniversite Yönetim Kurulu kabul etmedikçe başka üniversitenin yaz okulundan ders alamazsın.
+yonetmelik#madde-21:
+  - Sınav sonucuna yalnızca maddi hata, yani notun yanlış hesaplanması ya da yanlış girilmesi gibi bir hata nedeniyle itiraz edebilirsin.
+  - İtirazı, sonuçların öğrenci bilgi sisteminde ilan edilmesinden sonraki üç iş günü içinde birimine dilekçeyle yapmalısın.
+yonetmelik#madde-22:
+  - Bir dönemde en az 30 AKTS'lik ders geçen ve program süresini aşmamış öğrencilerden DNO'su 3,50 ve üstü olanlar yüksek onur, 3,00-3,49 arası olanlar onur öğrencisi olur.
+  - O dönem FF, YZ, DZ veya EK notun varsa ya da disiplin cezası aldıysan onur listesine giremezsin.
+  - Mezuniyette GNO'su 3,50 ve üstü olanlar yüksek onur, 3,00-3,49 arası olanlar onur öğrencisi olarak mezun olur.
+yonetmelik#madde-23:
+  - Usule aykırı kayıt yaptırdığı anlaşılan öğrencinin kaydı iptal edilir.
+  - Kendi isteğinle kaydını sildirmek için birimine dilekçeyle başvurman yeterlidir.
+  - Sınırsız sınav hakkı olup üç öğretim yılı boyunca hiç sınava girmeyen öğrencinin ilişiği kesilir.
+  - Azami süre içinde dört yıl üst üste katkı payını ödemeyen ve kayıt yenilemeyen öğrencinin ilişiği kesilebilir.
+  - Ek sınavlar ve verilen ek süreler sonunda da mezun olamayan öğrencinin ilişiği kesilir.
+yonetmelik#madde-24:
+  - Kayıt dondurma (kayıt hakkının saklı tutulması), haklı ve geçerli bir nedene dayanarak birim yönetim kurulu kararıyla yapılır.
+  - Kaydını bir seferde en çok iki yarıyıl, öğrenimin boyunca toplam en çok dört yarıyıl dondurabilirsin.
+  - Kaydının dondurulduğu süre azami öğrenim süresinden sayılmaz.
+  - Tedavisi süren hastalık ya da hükümlülük durumunda dört yarıyıldan fazla dondurma da verilebilir.
+yonetmelik#madde-25:
+  - Lisanstan mezun olmak için en az 240 AKTS'lik dersi başarıyla tamamlaman, GNO'nun en az 2,00 olması ve ÇK, DZ, EK, FF ya da YZ notunun bulunmaması gerekir.
+  - Mezuniyet için derslerin yanında staj gibi diğer yükümlülüklerini de yerine getirmiş olmalısın.
+  - Mezuniyet derecen diplomaya yazılmaz.
+  - İlk dört yarıyılı başarıyla bitirip GNO'su en az 2,00 olan lisans öğrencisi isterse kaydını sildirip ön lisans diploması alabilir.
+yonetmelik#madde-26:
+  - Yönetmelikte hüküm olmayan durumlarda 2547 sayılı Kanun ve ilgili diğer mevzuat uygulanır.
+yonetmelik#madde-27:
+  - Bu yönetmelikle 2018 tarihli eski ESTÜ Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği yürürlükten kaldırılmıştır.
+yonetmelik#madde-28:
+  - Yönetmelik 2025-2026 eğitim-öğretim yılı başında yürürlüğe girmiştir.
+yonetmelik#madde-29:
+  - Yönetmeliği ESTÜ Rektörü yürütür.
+
+# ---------------- Fen Fakültesi Staj Yönergesi ----------------
+fen_staj#madde-1:
+  - Bu yönerge Fen Fakültesi öğrencilerinin yapmakla yükümlü olduğu stajın planlanma, uygulanma ve değerlendirilme kurallarını düzenler.
+fen_staj#madde-2:
+  - Yönerge, eğitim-öğretim yönetmeliğinin 8. maddesine ve Yükseköğretimde Uygulamalı Eğitimler Çerçeve Yönetmeliği'ne dayanır.
+fen_staj#madde-3:
+  - Bu madde yönergede geçen kavramları tanımlar.
+  - Bölüm Staj Komisyonu, bölümde staj işlerini yürüten komisyondur.
+  - İsteğe bağlı staj, ders planında zorunlu olmadığı halde öğrencinin kendi isteğiyle yaptığı stajdır.
+  - Yaz dönemi, bahar finallerinin bittiği tarihten güz derslerinin başladığı tarihe kadar olan dönemdir.
+fen_staj#madde-4:
+  - Fakülte Staj Komisyonu, dekan yardımcısı başkanlığında bölüm staj komisyonu başkanlarından oluşur.
+  - Komisyon staj esaslarını ve staja başlama dönemlerini belirler, staj itirazlarını ve muafiyet taleplerini yönetim kuruluna sunar.
+fen_staj#madde-5:
+  - Bölüm Staj Komisyonu, bölüm başkanlığının görevlendirdiği üç öğretim elemanından oluşur.
+  - Komisyon staj kılavuzunu hazırlar, başvuru belgelerini inceler, staj yeri bulmana yardımcı olur ve stajını başarılı ya da başarısız olarak değerlendirir.
+fen_staj#madde-6:
+  - Staj yapan her grup için yönetim kurulu bir sorumlu öğretim elemanı görevlendirir.
+  - Sorumlu öğretim elemanı staj raporunu değerlendirip komisyona sunar ve staj notunu öğrenci bilgi sistemine girer.
+fen_staj#madde-7:
+  - Staj yapmaya dördüncü yarıyılın sonundan itibaren başlayabilirsin.
+  - Stajı yaz döneminde ya da güz ile bahar arasındaki yarıyıl tatilinde yapabilirsin; ders dönemi devam ederken staj yapılamaz.
+  - Mezuniyete yalnızca stajı kalmışsan ya da haftada en az 3 tam gün dersin yoksa, komisyon kararıyla dönem içinde derssiz günlerinde staj yapabilirsin.
+  - Zorunlu staj süresi en az 20 iş günüdür; yani mezun olmak için en az 20 iş günü staj yapmak zorundasın.
+  - Komisyon uygun görürse isteğe bağlı olarak daha uzun staj yapabilirsin, ama bu fazla süre mezuniyet kredisine sayılmaz.
+  - Zorunlu stajla isteğe bağlı staja aynı anda devam edemezsin.
+  - Komisyon uygun görürse yaptığın isteğe bağlı staj zorunlu staj yerine sayılabilir.
+  - Staj süresince sigortan fakülte tarafından yapılır.
+fen_staj#madde-8:
+  - Staja devam zorunludur.
+  - Geçerli bir mazeretle gidemediğin günleri telafi etmen gerekir ve bu günler 20 iş günlük stajın %10'unu, yani 2 iş gününü geçemez.
+  - Kurallara uymazsan kurum stajını sonlandırabilir; bu durumda stajda başarısız sayılırsın.
+  - Mücbir bir sebeple stajı yarıda bırakırsan, yaptığın günlerin sayılıp sayılmayacağına yönetim kurulu karar verir.
+fen_staj#madde-9:
+  - Staj için hazırlaman ve takip etmen gereken belgeler bu maddede sayılır.
+  - Gerekli belgeler staj akış şeması, staj başvuru ve kabul formu, genel sağlık sigortası durum belgesi, SGK işe giriş bildirgesi, devam çizelgesi, kurum değerlendirme formu ve staj raporu dosyasıdır.
+  - SGK işe giriş bildirgesini Öğrenci İşleri hazırlar ve stajdan önce sana verir.
+  - Kurum değerlendirme formu staj bitince kapalı zarfta sana verilir ya da postayla dekanlığa gönderilir.
+fen_staj#madde-10:
+  - Staja başlamadan en az 15 gün önce staj başvuru ve kabul formunu doldurup Bölüm Staj Komisyonu'na teslim etmelisin.
+  - Başvuru sonucu bölüm veya fakülte web sayfasında ilan edilir.
+  - Başvurun onaylanınca değerlendirme formunu, staj raporu dosyasını ve diğer belgeleri fakülte web sayfasından alırsın.
+fen_staj#madde-11:
+  - Staj yeri bulmak tamamen senin sorumluluğundadır; komisyonlar yalnızca kolaylaştırıcı girişimlerde bulunabilir.
+  - Kendi bulduğun yerde staja başlamadan önce Bölüm Staj Komisyonu'nun onayını alman zorunludur.
+  - Yurt dışında da, değişim programıyla ya da kendi bulduğun bir kurumda komisyon önerisi ve yönetim kurulu kararıyla staj yapabilirsin; yurt dışı stajda sigorta primi ödenmez.
+  - ARİNKOM'un iş birliği yaptığı kurumlarda proje tabanlı staj yapabilirsin; bölüm komisyonu uygun görürse bu staj zorunlu stajın yerine sayılır.
+fen_staj#madde-12:
+  - Staja başladıktan sonra Bölüm Staj Komisyonu'nun onayı olmadan staj yerini değiştiremezsin.
+  - Kurumda grev, yangın, iflas, iş kazası ya da doğal afet olursa veya staj amacı dışında çalıştırılırsan, komisyon onayıyla stajını başka bir yerde tamamlayabilirsin.
+  - Diğer mazeretlerle staj yeri değişikliğine Bölüm Staj Komisyonu karar verir.
+fen_staj#madde-13:
+  - Staja giderken SGK işe giriş bildirgesini, devam çizelgesini ve kurum değerlendirme formunu kurumdaki staj yetkilisine teslim edersin.
+  - Staj bitince devam çizelgesi ve değerlendirme formu kaşeli ve kapalı zarfta sana verilir ya da kurum tarafından postayla dekanlığa gönderilir; kaşesiz formlar geçersizdir.
+  - Yaptığın çalışmaları staj raporu sayfalarına düzenli işleyip kurum yetkilisine onaylatman gerekir; imzasız ve kaşesiz rapor kabul edilmez.
+  - Kurumun gizli bilgilerini paylaşamazsın ve kurumun çalışma, disiplin ve iş güvenliği kurallarına uymak zorundasın.
+  - Kurallara uymadığın için stajın sonlandırılırsa stajı tekrarlarsın.
+  - Stajı yapacağın yarıyılda açılan staj ders gruplarından birine kaydolman ve staj raporunu belirlenen tarihe kadar sorumlu öğretim elemanına teslim etmen gerekir.
+fen_staj#madde-14:
+  - Stajın başarılı sayılması için kurumun doldurduğu değerlendirme formundaki notun 5 üzerinden en az 3 olması ön koşuldur.
+  - Bölüm Staj Komisyonu stajını başarılı ya da başarısız olarak değerlendirir; gerekirse sözlü sunum isteyebilir.
+  - Staj değerlendirmesine, kararın ilanından sonraki 5 iş günü içinde dekanlığa yazılı olarak itiraz edebilirsin.
+  - Staj notu sisteme başarılıysa YT, başarısızsa YZ olarak işlenir.
+  - Derslerini bitirip zorunlu stajını yapmayan ya da stajdan kalan öğrenciye mezuniyet belgeleri verilmez; başarılı olana kadar stajı tekrarlar.
+  - Yalnızca stajı kalan öğrenci kaydını katkı payı ödemeden yeniler; kaydını yenilemeyen staj yapamaz.
+fen_staj#madde-15:
+  - Yatay ya da dikey geçişle geldiysen önceki okulunda yaptığın stajın kabulüne yönetim kurulu karar verir.
+  - Geçişle geldiysen staj muafiyeti başvurunu ilk kayıt olduğun dönemin ikinci haftası sonuna kadar bölüm başkanlığına yapmalısın.
+  - İlgili sektörde SGK'lı olarak staj süresi kadar çalıştığını belgelersen stajdan muaf tutulabilirsin.
+  - Yandal öğrencilerinin yandal için zorunlu stajı yoktur.
+  - Muafiyet kararına, ilandan sonraki 5 iş günü içinde dekanlığa yazılı itiraz edebilirsin.
+fen_staj#madde-16:
+  - Yönergede hüküm olmayan durumlarda eğitim-öğretim yönetmeliği ve Uygulamalı Eğitimler Çerçeve Yönetmeliği uygulanır.
+fen_staj#madde-17:
+  - Yönerge, Senato'nun kabul ettiği tarihte yürürlüğe girmiştir.
+fen_staj#madde-18:
+  - Yönergeyi ESTÜ Rektörü yürütür.
+fen_staj#ek-2:
+  - Staj akış şemasına göre önce kılavuzu ve yönergeyi incelersin, staj yeri bulursun ve başvuru formunu iki nüsha doldurursun.
+  - Formu kuruma onaylatıp Bölüm ve Fakülte Staj Komisyonu başkanlarına onaylatırsın, sonra sigorta belgesiyle birlikte Öğrenci İşleri'ne iletip SGK girişini yaptırırsın.
+  - Stajı bitirince staj raporu dosyasını, kurum değerlendirme formunu ve devam çizelgesini imza karşılığı teslim edersin.
+fen_staj#ek-3:
+  - Bu, staj başvuru ve kabul formunun örneğidir; öğrenci, staj yeri ve onay bilgileri bu forma yazılır.
+  - Staj tarihin değişirse ya da stajdan vazgeçersen en az 10 gün önceden Öğrenci İşleri'ne haber vermen gerekir, yoksa doğacak SGK zararını sen karşılarsın.
+  - Form iki asıl nüsha hazırlanır; biri kurumda kalır, diğerini fakülteye teslim edersin.
+fen_staj#ek-4:
+  - Bu, stajda her gün imzaladığın devam çizelgesinin örneğidir.
+  - İstatistik, Fizik ve Biyoloji bölümlerinde 20 iş günü staj zorunludur; Kimya ve Matematik bölümlerinde staj isteğe bağlıdır.
+  - Raporlu olduğun günleri telafi etmen ve raporunu Öğrenci İşleri'ne bildirmen gerekir.
+fen_staj#ek-5:
+  - Bu, kurumun seni 10 ölçüte göre 1-5 arasında puanladığı staj değerlendirme formudur.
+  - Değerlendirme notunun ortalaması en az 3 olursa stajın başarılı sayılır.
+fen_staj#ek-6:
+  - Bu, staj raporu sayfasının örneğidir; her sayfaya çalıştığın bölüm ve tarih yazılır ve birim sorumlusuna imzalatılır.
+fen_staj#ek-7:
+  - Bu, staj raporunun kapak sayfası örneğidir (Times New Roman, kalın yazı).
+fen_staj#ek-8:
+  - Bu, staj raporunun İngilizce kapak sayfası örneğidir.
+fen_staj#ek-9:
+  - Bu, staj raporunun iç kapak sayfası örneğidir; öğrenci ve kurum bilgileri ile kurum yetkilisinin imzası yer alır.
+fen_staj#ek-10:
+  - Bu, staj raporunun İngilizce iç kapak sayfası örneğidir.
+fen_staj#ek-11:
+  - Bu, Bölüm Staj Komisyonu'nun seni değerlendirdiği formdur.
+  - Stajın başarılı sayılması için hem kurumun değerlendirmesinden hem de komisyonun rapor değerlendirmesinden 5 üzerinden en az 3 alman gerekir.
+fen_staj#ek-12:
+  - Bu, stajı yarıda bırakan öğrenci için kurumun dekanlığa gönderdiği ayrılış formudur; SGK çıkışı bu formla yapılır.
+
+# ---------------- İstatistik ders planı (Bologna) ----------------
+ders_plani#bolum-I.YARIYIL:
+  - 1. yarıyıl zorunlu dersleri Veri Yapıları ve Algoritmalar, İstatistik I, İstatistik Laboratuvarı I, Calculus I, Atatürk İlkeleri I ve Türk Dili I'dir; ayrıca 5 AKTS seçmeli alınır ve toplam 30 AKTS'dir.
+ders_plani#bolum-II.YARIYIL:
+  - 2. yarıyıl zorunlu dersleri Bilgisayar Programlama, İstatistik II, İstatistik Laboratuvarı II, Calculus II, Atatürk İlkeleri II ve Türk Dili II'dir; ayrıca 4,5 AKTS seçmeli alınır ve toplam 30 AKTS'dir.
+ders_plani#bolum-III.YARIYIL:
+  - 3. yarıyıl zorunlu dersleri Olasılık I, Yöneylem Araştırması, Veritabanı ve Yönetimi ve Analiz I'dir; ayrıca 2 AKTS seçmeli ve 5,5 AKTS mesleki seçmeli alınır, toplam 30 AKTS'dir.
+ders_plani#bolum-IV.YARIYIL:
+  - 4. yarıyıl zorunlu dersleri Görsel Programlama, Olasılık II, Lineer Cebir ve Analiz II'dir; ayrıca 3 AKTS seçmeli ve 6,5 AKTS mesleki seçmeli alınır, toplam 30 AKTS'dir.
+ders_plani#bolum-V.YARIYIL:
+  - 5. yarıyıl zorunlu dersleri Matematiksel İstatistik I, Parametrik Olmayan İstatistiksel Teknikler, Regresyon Analizi ve Staj'dır (5 AKTS); ayrıca 2 AKTS seçmeli ve 5,5 AKTS mesleki seçmeli alınır.
+ders_plani#bolum-VI.YARIYIL:
+  - 6. yarıyıl zorunlu dersleri Ekonometri, Matematiksel İstatistik II, Örnekleme ve İstatistiksel Yazılımlar'dır; ayrıca 2 AKTS seçmeli ve 5 AKTS mesleki seçmeli alınır.
+ders_plani#bolum-VII.YARIYIL:
+  - 7. yarıyıl zorunlu dersleri Zaman Serileri Analizi, Bitirme Projesi I, Çok Değişkenli İstatistik ve Deney Tasarımı I'dir; ayrıca 2 AKTS seçmeli ve 6,5 AKTS mesleki seçmeli alınır.
+ders_plani#bolum-VIII.YARIYIL:
+  - 8. yarıyıl zorunlu dersleri Stokastik Süreçler, Bitirme Projesi II, İstatistiksel Kalite Kontrolü ve Hesap Tabloları Uygulamaları'dır; ayrıca 2,5 AKTS seçmeli ve 10 AKTS mesleki seçmeli alınır.
+ders_plani#bolum-Mesleki_Seçmeli_Dersler:
+  - İstatistik bölümünün mesleki seçmeli dersleri arasında R Programlamaya Giriş, Python ile Programlama, Veri Bilimine Giriş, Makine Öğrenmesi Yöntemleri, Yapay Sinir Ağlarına Giriş, Veri Görselleştirme, Benzetim, Demografi ve Deney Tasarımı II gibi dersler vardır.
+ders_plani#bolum-Seçmeli_Dersler:
+  - Bölümün seçmeli (alan dışı) dersleri arasında Veri Okuryazarlığı, Finansal Okuryazarlık, Genel İktisat, Genel İşletme, Girişimcilik, Akademik İngilizce III-IV ve Gönüllülük Çalışmaları gibi dersler vardır.
+
+# ---------------- İstatistik program bilgileri (Bologna) ----------------
+program_bilgileri#bolum-Program_Profili:
+  - İstatistik Bölümü İstatistik Teorisi ve Uygulamalı İstatistik ana bilim dallarından oluşur ve programda eğitim dili %30 İngilizcedir.
+  - Program veri toplayıp analiz edebilen ve yorumlayabilen istatistikçiler yetiştirmeyi amaçlar.
+  - Mezunlar akademide, kamuda, bankacılık ve sigortacılıkta, araştırma şirketlerinde, sağlık ve medya kuruluşlarında çalışabilir.
+program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - İstatistik Bölüm Başkanı Prof. Dr. Betül Kan Kılınç, bölüm başkan yardımcıları Dr. Öğr. Üyesi Halil Eryılmaz ve Dr. Öğr. Üyesi Levent Terlemez'dir.
+  - Bölümün AKTS koordinatörü Doç. Dr. Mustafa Çavuş, yardımcısı Arş. Gör. Dr. Cenk İçöz'dür.
+program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
+  - Programa kabul için Türk ve yabancı öğrencilere yönelik genel kabul şartları geçerlidir.
+program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Programda zorunlu İngilizce hazırlık vardır; üniversitenin yeterlik sınavından 100 üzerinden 70 alanlar ya da YDS, TOEFL gibi sınavlardan yeterli puanı olanlar muaf olur.
+program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - İstatistik programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
+program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+  - Mezunlar her alanda yüksek lisans ve doktora programlarına başvurabilir.
+program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - İstatistik bölümünden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir.
+program_bilgileri#bolum-İstihdam_Olanakları:
+  - İstatistik mezunları akademide, banka ve sigorta sektöründe, araştırma şirketlerinde, kalite kontrol ve stok birimlerinde, medya kuruluşlarında ve hastanelerde çalışabilir.
+program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
+  - Bologna sayfasına göre dönem içi değerlendirmelerin başarı notuna katkısı %30 ile %70 arasındadır; ancak güncel yönetmelikte üst sınır %60'tır.
+  - Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.
+  - DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür.
+
+# ---------------- Akademik Danışmanlık Yönergesi ----------------
+danismanlik#madde-1:
+  - Bu yönerge ESTÜ öğrencilerine verilen akademik danışmanlık hizmetinin kurallarını düzenler.
+danismanlik#madde-2:
+  - Yönerge 2547 sayılı Kanun ile ESTÜ'nün eğitim-öğretim yönetmeliklerine dayanır.
+danismanlik#madde-3:
+  - Bu madde yönergedeki kavramları tanımlar; örneğin ders seçim onayı, danışmanın ders seçimini uygun bulduğunu gösteren onaydır.
+danismanlik#madde-4:
+  - Akademik danışmanlığın amacı seni üniversite yaşamı, mesleki gelişim ve kariyer konusunda yönlendirmek, ders seçiminde bilgilendirmek ve derslerini onaylamaktır.
+danismanlik#madde-5:
+  - Akademik danışman öncelikle öğretim üyeleri arasından, bölüm başkanlığının önerisi ve yönetim kurulu kararıyla atanır.
+  - Danışmanın ilke olarak mezun olana kadar aynı kalır; gerekçeli bir durumda aynı usulle danışman değişikliği yapılabilir.
+  - Danışman değişikliği sana öğrenci bilgi sistemi üzerinden duyurulur.
+  - Çift anadal veya yandal yapıyorsan her program için ayrı danışman atanır.
+danismanlik#madde-6:
+  - Danışman kaydını onaylar, mezuniyet için alman gereken dersler konusunda öneride bulunur ve ders seçiminde sana yardım eder.
+  - Tekrar alman gereken derslerde önce FF, YZ ve DZ notlu derslere kaydolmanı, çakışma varsa en alt yarıyıldaki dersi almanı sağlar.
+  - Ekle/sil sonrası üç hafta içinde tek bir dersten çekilme talebini danışman onaylar.
+  - Danışman dönemin ilk haftasında haftalık görüşme saatlerini ilan eder.
+  - Danışman gerektiğinde seni psikolojik danışmanlık birimlerine yönlendirir; değişim programları, yatay ve dikey geçiş ve kariyer konusunda bilgilendirir.
+  - Dönem sonunda mezuniyet koşullarını sağlayıp sağlamadığını kontrol eder ve mezun onayını verir.
+  - Ek sınav veya tek ders sınavı dilekçeni de danışman kontrol edip onaylar.
+danismanlik#madde-7:
+  - Ders seçimi, ekle/sil, dersten çekilme ve mezuniyet kurallarını bilmek senin sorumluluğundadır.
+  - Kayıt yenileme ve ders seçimini akademik takvimdeki tarihlerde obs.eskisehir.edu.tr üzerinden yapar, sonra danışmanınla iletişime geçip onay alırsın.
+  - Danışman seçimini uygun bulmayıp onayı kaldırırsa ders seçimini güncellemen gerekir.
+  - İletişim bilgilerin değişirse 15 gün içinde Öğrenci İşleri'ne yazılı bildirmelisin.
+danismanlik#madde-8:
+  - Bölüm başkanları danışmanlık sistemindeki sorunları çözmek için çalışır; dekanlıklar da öğrenci ve danışman taleplerine göre önlem alır.
+danismanlik#madde-9:
+  - Kayıt yenileme ve ders seçimi akademik takvimdeki kayıt yenileme haftasında öğrenci bilgi sistemi üzerinden yapılır.
+  - Lisans öğrencileri için ders seçim günleri 7. yarıyıl ve üstü Pazartesi-Salı, 5. yarıyıl ve üstü Çarşamba, 3. yarıyıl ve üstü Perşembe, 1. yarıyıl ve üstü Cuma'dır.
+danismanlik#madde-10:
+  - Ders seçimini yapmazsan danışmanın senin yerine ders seçemez ve onay veremez.
+  - Ders seçimini bitirince danışmanından onay alman zorunludur; onaylanmayan dersler ekle/sil sonrası üzerinden silinir.
+  - Seçmeli kredini tamamladıysan yeni seçmeli ders ancak "yerine" işlemiyle alınabilir.
+  - Mezun olabilmek için lisansta en az 240 AKTS'yi tamamlayacak şekilde ders alman gerekir.
+  - Kısmen yabancı dille eğitim yapan programlarda mezuniyete kadar kredilerinin en az %30'unu yabancı dilde verilen derslerden alman gerekir.
+  - Zorunlu derslerden FF, YZ veya DZ aldıysan bunları çakışma durumunda en alt yarıyıldan başlayarak tekrar almak zorundasın.
+  - Seçmeli bir dersten kalırsan dersi tekrarlayabilir ya da danışman onayıyla yerine başka bir seçmeli alabilirsin.
+  - GNO'n 2,00'nin altına düşerse akademik yetersizlik uyarısı alırsın; sonraki dönemde de yükseltemezsen CC altındaki derslerini de tekrar etmen gerekir.
+  - Güz ve bahar dönemlerinde en çok 45 AKTS'lik derse kayıt olabilirsin; çift anadalda bu sınır 60 AKTS'dir.
+  - Ekle/sil sonrası üç hafta içinde danışman onayıyla bir dersten çekilebilirsin; bir dönemde en fazla bir, lisans boyunca en fazla sekiz dersten çekilebilirsin.
+  - Tekrar ettiğin bir dersten çekilemezsin.
+  - GNO'nu yükseltmek için daha önce aldığın dersleri tekrar alabilirsin; ortalamaya en son aldığın not katılır.
+  - Ders planında olmayan başka bir programın dersini yönetim kurulu kararıyla seçmeli olarak alabilirsin.
+danismanlik#madde-11:
+  - Normal süreyi aştıysan katkı payını öğrenci bilgi sistemi üzerinden ilgili bankaya yatırdıktan sonra kayıt yenileyebilirsin.
+  - Katkı payını yatırmayan öğrenci kayıt yenileme sistemine giriş yapamaz; ücret yükümlülüğü olmayan öğrenci doğrudan kayıt yeniler.
+  - Ders seçiminden önce birimin duyurularını ve transkriptindeki durum bilgisini incelemelisin.
+  - Seçmeli bir dersin yerine farklı kodlu ders aldığında "yerine" işlemi yapman zorunludur; zorunlu ders için bu işlem dilekçeyle yapılır.
+  - Ders seçimini tamamladıktan sonra ekle/sil tarihlerinde danışmanından onayı kaldırmasını isteyerek düzeltme yapabilirsin.
+  - Çift anadal veya yandal yapıyorsan her program için ders seçimini ve danışman onayını ayrı ayrı alırsın.
+danismanlik#madde-12:
+  - Yönergede hüküm olmayan durumlarda ilgili mevzuat uygulanır.
+danismanlik#madde-13:
+  - Bu yönergeyle 2019 tarihli eski akademik danışmanlık yönergesi yürürlükten kaldırılmıştır.
+danismanlik#madde-14:
+  - Yönerge Senato'nun kabul ettiği tarihte yürürlüğe girmiştir.
+danismanlik#madde-15:
+  - Yönergeyi ESTÜ Rektörü yürütür.
+
+# ---------------- Haklı ve Geçerli Nedenler ----------------
+hakli_nedenler#giris-0:
+  - Bu belge, yönetmeliklerde geçen haklı ve geçerli mazeret nedenlerini ve bunlarla ilgili kuralları açıklar.
+hakli_nedenler#bent-1:
+  - Sağlık raporun varsa mazeretli kayıt, mazeret sınavı, kayıt dondurma ve laboratuvar tekrarı taleplerine birim yönetim kurulu karar verir.
+  - Rapor süresi içinde hiçbir sınava giremezsin; girersen o sınav geçersiz sayılır.
+  - Rapor saatinden önce girdiğin sınavlar geçerlidir ve o dersin mazeret sınavına giremezsin.
+hakli_nedenler#bent-2:
+  - Üniversiteyi temsilen ya da uluslararası düzeydeki spor müsabakalarına katılırsan organizasyon boyunca izinli sayılırsın ve bu günler devamsızlığa sayılmaz.
+  - Federasyon, kulüp veya dernek etkinlikleri ve milli takım seçmeleri için izinli sayılmazsın.
+hakli_nedenler#bent-3:
+  - Mazeret belgeni bir dilekçeyle birimine teslim edersen, aşağıdaki durumlardaki taleplerine birim yönetim kurulu karar verir.
+  - Belgelenmiş doğal afet, birinci ila üçüncü derece yakınının ağır hastalığı ya da ölümü mazeret sayılır; ölüm halinde mazeret ölüm gününden itibaren bir haftadır.
+  - Ekonomik nedenle kayıt dondurmak için durumunu en geç dönemin 4. haftası mesai bitimine kadar belgelemelisin.
+  - Askere alınma, resmi görevle Eskişehir dışına tayin ve yurt dışında burs, staj veya araştırma imkanı kayıt dondurma nedeni olabilir (dil okulu ve Erasmus+ stajı hariç).
+  - Sınavların aynı gün ve saatte çakışırsa ya da bir sınavdan diğerine yetişmen mümkün değilse, belgelemen şartıyla mazeret sınavı isteyebilirsin.
+hakli_nedenler#bent-4:
+  - Belgede sayılmayan başka mazeretler de birim yönetim kurulunca değerlendirilir ve Rektörlük onayına sunulur.
+hakli_nedenler#bent-5:
+  - Üniversiteyi ya da Türkiye'yi bilimsel, sanatsal, sportif veya kültürel bir etkinlikte temsil edersen, yol dahil katıldığın süre için mazeretli kayıt, mazeret sınavı ve kayıt dondurma talep edebilirsin.
+hakli_nedenler#bent-6:
+  - Mazeret sınavına girebilmek için sınavın bittiği günden sonraki üç iş günü içinde mazeret belgeni bir dilekçeyle birimine vermen zorunludur.
+  - Üç iş günü içinde başvurmazsan mazeret sınavı hakkından vazgeçmiş sayılırsın.
+hakli_nedenler#bent-7:
+  - Laboratuvar dersi tekrarı için mazeret belgeni ders gününden itibaren üç iş günü içinde dilekçeyle birimine vermelisin.
+  - Bir dönemde en fazla iki laboratuvar dersi için mazeret kullanabilirsin.
+hakli_nedenler#bent-8:
+  - Bu esaslarda hüküm olmayan durumlarda ilgili mevzuat geçerlidir.
+hakli_nedenler#bent-9:
+  - Bu esaslarla 2018 tarihli eski haklı ve geçerli nedenler düzenlemesi yürürlükten kaldırılmıştır.
+hakli_nedenler#bent-10:
+  - Bu esaslar Senato'nun kabul ettiği tarihten itibaren geçerlidir.
+hakli_nedenler#bent-11:
+  - Bu esasları ESTÜ Rektörü yürütür.
+
+# ---------------- Tek Ders Sınavı ----------------
+tek_ders#giris-0:
+  - Bu belge, devam şartını sağladığı tek dersten FF veya YZ alan ve mezun olabilecek durumdaki öğrenciler için yapılan tek ders sınavının kurallarını açıklar.
+tek_ders#bent-1:
+  - Devam şartını sağladığın tek dersten FF veya YZ ile kaldıysan ve başka eksiğin yoksa, dersin hangi dönem açıldığına bakılmadan her dönem sonunda tek ders sınavına girebilirsin.
+tek_ders#bent-2:
+  - Tek ders sınavı için ilan edilen tarihlerde, danışmanının görüşünü de içeren bir dilekçeyle birimine başvurman gerekir.
+tek_ders#bent-3:
+  - Tamamen uygulamalı derslerde ve finali uygulamalı yapılan derslerde tek ders sınavı yapılmaz.
+tek_ders#bent-4:
+  - Tek ders sınavında 100 üzerinden aldığın not harf notuna çevrilir; örneğin 84-100 AA, 50-55 CC, 33-39 DD ve 0-32 FF'dir.
+tek_ders#bent-5:
+  - Tek ders sınavı için mazeret sınavı hakkı verilmez.
+tek_ders#bent-6:
+  - Hiç almadığın, devamsızlıktan kaldığın bir dersten ya da not yükseltmek için tek ders sınavına giremezsin.
+tek_ders#bent-7:
+  - Tek ders sınavından kalırsan aynı dersten yeniden tek ders sınavına girebilirsin.
+tek_ders#bent-8:
+  - Bu esaslar Senato'nun kabul ettiği tarihte yürürlüğe girmiştir.
+tek_ders#bent-9:
+  - Bu esasları ESTÜ Rektörü yürütür.
+tek_ders#ek-2:
+  - Bu, tek ders sınavı başvuru dilekçesinin örneğidir; dersin kodu, adı, türü ve AKTS'si yazılır ve danışman onaylar.
+
+# ---------------- Ek Sınav Esasları ----------------
+ek_sinav#giris-0:
+  - Bu belge, azami süre sonunda mezun olamayan son sınıf öğrencilerine verilen ek sınav hakkının kurallarını açıklar.
+ek_sinav#bent-1:
+  - Ek sınava girebilmek için azami öğrenim süreni (lisansta 14 yarıyıl) doldurmuş ve son sınıf öğrencisi olman gerekir.
+ek_sinav#bent-2:
+  - Azami süreyi dolduran son sınıf öğrencisine FF ve YZ notlu, hiç almadığı ya da devamsız kaldığı bütün dersler için iki ek sınav hakkı verilir.
+  - Ek sınavlar sonunda başarısız ders sayını beşe veya daha aşağıya indiremezsen kaydın silinir.
+  - Ek sınavlardan önce 2-5 dersin kaldıysa dört yarıyıl, ek sınavlardan sonra 2-5 dersin kaldıysa üç yarıyıl ek süre verilir.
+  - Mezuniyete tek dersin kaldıysa o dersin ek sınavlarına sınırsız girebilirsin, ama öğrencilik haklarından yararlanamazsın.
+  - Ek süre kullanan öğrenci öğrencilik haklarından yararlanamaz.
+  - Bütün derslerini geçtiğin halde GNO'n 2,00'nin altındaysa, ortalamanı yükseltmek için istediğin derslerden sınırsız ek sınava girebilirsin.
+ek_sinav#bent-3:
+  - Son sınıf öğrencisi olmadan azami süreyi dolduran öğrenciye ek sınav hakkı tanınmaz ve kaydı silinir.
+  - Ek sınav için kaldığın dersleri gösteren, danışman onaylı bir dilekçeyle birimin öğrenci işlerine başvurmalısın.
+  - Bütün derslerini geçip yalnızca stajı kalan öğrenciye stajı bitirmesi için üç yıl (altı yarıyıl) ek süre verilir.
+  - Sınırsız sınav hakkı kullanan öğrenciden her ders kredisi için ücret alınır.
+  - Sınırsız sınav hakkın varken üç yıl boyunca hiç sınava girmezsen hakkından vazgeçmiş sayılır ve kaydın silinir.
+  - Ek sınavlara not yükseltmek için girilemez; yalnızca GNO'su 2,00'nin altında olan öğrenciler bu amaçla girebilir.
+  - Ek sınavlar için mazeret sınavı yapılmaz.
+  - Ek sınavlar akademik takvimdeki tarihlerde yapılır ve sonuçlar mutlak sistem dönüşüm tablosuyla harf notuna çevrilir.
+ek_sinav#ek-2:
+  - Ek sınavda 100 üzerinden aldığın not harf notuna çevrilir; örneğin 84-100 AA, 50-55 CC, 33-39 DD ve 0-32 FF'dir.
+
+# ---------------- Yaz Okulu ----------------
+yaz_okulu#bent-1:
+  - Yaz okulunda ders açma, kayıt, dersler ve sınavlar Senato'nun belirlediği akademik takvime göre yürür.
+yaz_okulu#bent-2:
+  - Yaz okulunda açılacak dersleri bölümler önerir, birim kurulu karar verir ve Senato onaylar.
+yaz_okulu#bent-3:
+  - Yaz okulunda bir dersin açılması için gereken en az öğrenci sayısını birim kurulu belirler.
+yaz_okulu#bent-4:
+  - Kayıt yetersizliği nedeniyle açılamayan dersin yerine, derslerin ilk 2 günü içinde (varsa fark ücretini ödeyerek) başka ders alabilirsin; istemezsen ücretin iade edilir.
+yaz_okulu#bent-5:
+  - Uygulamalı dersler yaz okulunda açılamaz.
+yaz_okulu#bent-6:
+  - Ön koşullu bir dersi yaz okulunda alabilmen için danışmanının ön koşulu kontrol edip onay vermesi gerekir.
+yaz_okulu#bent-7:
+  - Yaz okulu ara sınavlar dahil en az 5 hafta sürer.
+yaz_okulu#bent-8:
+  - Yaz okulu bahar döneminin devamı sayıldığı için azami öğrenim sürene eklenmez.
+yaz_okulu#bent-9:
+  - Yaz okulunda en çok 20 AKTS'lik derse kayıt olabilirsin.
+  - Yaz okulu sonunda mezun olacak durumdaysan yaz okulunda en çok 25 AKTS alabilirsin.
+  - Başka üniversitenin yaz okulundan aldığın derslerin kredisi de yaz okulu AKTS sınırına dahildir.
+yaz_okulu#bent-10:
+  - Yaz okulundan ders alabilmek için yaz okulu ders alma talep formunu danışmanına imzalatman gerekir.
+yaz_okulu#bent-11:
+  - Yaz okulunda dersler başladıktan sonra ekle/sil ve dersten çekilme yapılamaz.
+  - Haklı bir nedenle hatalı kaydın düzeltilmesi için kayıtlardan sonraki ilk iş günü birimine dilekçe vermelisin.
+yaz_okulu#bent-12:
+  - Yaz okulu ücreti seçtiğin derslerin saatine göre hesaplanır ve duyurulan bankaya tamamını ödemen gerekir.
+  - Ödeme yapmazsan yaz okulu kaydın onaylanmaz ve seçtiğin dersler silinir.
+yaz_okulu#bent-13:
+  - Ödediğin tutar seçtiğin derslerin tutarıyla eşitse yaz okulu kayıt onayın sistemden otomatik verilir.
+yaz_okulu#bent-14:
+  - Şehit ve gazi yakınları, terörle mücadelede hayatını kaybedenlerin ve malullerin yakınları, İstiklal Madalyası sahiplerinin çocukları ve Devlet burslusu öğrencilerden yaz okulu ücreti alınmaz.
+yaz_okulu#bent-15:
+  - Seçmeli bir dersin yerine farklı kodlu ders alırsan "yerine" işlemini mutlaka yaptırmalısın; bunun için ödeme yapmadan önce dilekçeyle birimine onaylatmalısın.
+  - Kayıtlar bittikten sonra "yerine" işlemi yapılmaz.
+yaz_okulu#bent-16:
+  - Başka üniversitelerin yaz okulundan, yönetim kurulu kararıyla ders alabilirsin; o üniversitenin kayıt kurallarına da uymalısın.
+yaz_okulu#bent-17:
+  - ESTÜ'nün yaz okulunda açılan bir dersin eşdeğerini, çakışma olmadıkça başka üniversitenin yaz okulundan alamazsın.
+yaz_okulu#bent-18:
+  - Başka üniversiteden alınacak dersin eşdeğerliğine Alan Komisyonu karar verir; yönetim kurulu onayı olmadan alınan dersler sayılmaz.
+yaz_okulu#bent-19:
+  - Başka üniversiteden alacağın zorunlu dersin kredisi ESTÜ'deki dersin kredisine eşit ya da fazla olmalı ve içeriği en az %80 örtüşmelidir.
+  - Seçmeli ve mesleki seçmeli dersler için Alan Komisyonu görüşü aranmadan yönetim kurulu karar verir.
+yaz_okulu#bent-20:
+  - Başka üniversitenin yaz okulunda aldığın notlar, ESTÜ'nün not karşılıkları uygulama esaslarına göre transkriptine aktarılır.
+yaz_okulu#bent-21:
+  - ESTÜ yaz okuluna diğer üniversitelerin öğrencileri de misafir öğrenci olarak katılabilir.
+yaz_okulu#bent-22:
+  - Misafir öğrenciler kendi üniversitelerinden izin alarak kayıt olur; ücretlerini ESTÜ Yönetim Kurulu belirler.
+yaz_okulu#bent-23:
+  - Misafir öğrencilere aldıkları dersleri ve notlarını gösteren bir belge düzenlenir ve kendi üniversitelerine resmi yazıyla bildirilir.
+
+# ---------------- Not Karşılıkları ----------------
+not_karsiliklari#giris-0:
+  - Bu belge, kredili ve mutlak sistemdeki notların birbirine nasıl çevrileceğini açıklar.
+not_karsiliklari#bent-1:
+  - Başka bir üniversitede ya da mutlak sistemde aldığın ve kabul edilen ders notları, 100'lük nottan harf notuna dönüşüm tablosuyla çevrilip transfer edilir.
+  - Dönüşüm tablosuna göre 84-100 AA, 77-83 AB, 71-76 BA, 66-70 BB, 61-65 BC, 56-60 CB, 50-55 CC, 46-49 CD, 40-45 DC, 33-39 DD ve 0-32 FF'dir.
+not_karsiliklari#bent-2:
+  - Benzer not sistemi olan yurt içi ve yurt dışı üniversitelerden alınan notlar, Üniversite Yönetim Kurulu'nun kabul ettiği tablolara göre çevrilir ve GNO'ya katılır.
+not_karsiliklari#bent-3:
+  - Başka üniversitede mezun olmuş öğrenciler için de aynı kurallar geçerlidir; o kurumun kendi dönüşüm tabloları dikkate alınmaz.
+not_karsiliklari#bent-4:
+  - Hangi not sisteminde okuduysan o sistemdeki ortalaman esas alınır.
+  - Bir başvuruda diğer sisteme göre ortalama şartı aranıyorsa, 4'lük veya 5'lik sistemdeki GNO'n tablolarla 100'lük sisteme çevrilir; bu tablolar belgede görüntü olarak yer alır.
+not_karsiliklari#bent-5:
+  - ESTÜ lisans notlarının ECTS karşılıkları AA ve AB için A, BA ve BB için B, BC ve CB için C, CC ve CD için D, DC ve DD için E, FF için F'dir.
+not_karsiliklari#bent-6:
+  - Bu madde GRE ve GMAT puanlarının ALES karşılıklarını tablo halinde verir; örneğin eski sistem GRE 800 ALES 100'e karşılık gelir.
+not_karsiliklari#bent-7:
+  - ESTÜ'de İngilizce yeterlik için YDYO sınavından ya da YDS/YÖKDİL'den 70, TOEFL IBT'den 84, PTE Academic'ten 71 puan gerekir.
+  - Almanca, Fransızca, Rusça, İtalyanca ve İspanyolca için de YDYO sınavından 70 ya da tabloda belirtilen uluslararası sınav seviyeleri kabul edilir.
+  - TOEFL IBT'nin evden yapılan Home Edition sürümü kabul edilmez.
+not_karsiliklari#bent-8:
+  - Bu uygulama esasları Senato'nun kabul ettiği tarihte yürürlüğe girmiştir.
+not_karsiliklari#bent-9:
+  - Bu uygulama esaslarını ESTÜ Rektörü yürütür.
+not_karsiliklari#tablo_gorsel-2:
+  - Bu sayfadaki dönüşüm tablosu belgede görüntü olarak yer aldığı için okunamıyor; değerler için belgenin 2. sayfasına bakmalısın.
+not_karsiliklari#tablo_gorsel-3:
+  - Bu sayfadaki dönüşüm tablosu belgede görüntü olarak yer aldığı için okunamıyor; değerler için belgenin 3. sayfasına bakmalısın.
+not_karsiliklari#tablo_gorsel-4:
+  - Bu sayfadaki dönüşüm tablosu belgede görüntü olarak yer aldığı için okunamıyor; değerler için belgenin 4. sayfasına bakmalısın.
+not_karsiliklari#tablo_gorsel-5:
+  - Bu sayfadaki dönüşüm tablosu belgede görüntü olarak yer aldığı için okunamıyor; değerler için belgenin 5. sayfasına bakmalısın.
+
+# ---------------- Proje Temelli Staj ----------------
+proje_temelli_staj#madde-1:
+  - Bu yönerge ESTÜ'deki proje temelli staj (PTS) uygulamasının kurallarını düzenler.
+proje_temelli_staj#madde-2:
+  - Yönerge, eğitim-öğretim yönetmeliğinin 8. maddesine ve 2547 sayılı Kanun'a dayanır.
+proje_temelli_staj#madde-3:
+  - Proje temelli staj, kurumların belirlediği bir projeye katkı sağlayarak deneyim kazandığın proje esaslı bir stajdır.
+  - Stajda biri üniversiteden akademik danışman, biri kurumdan sektör danışmanı olmak üzere iki danışmanın olur.
+proje_temelli_staj#madde-4:
+  - PTS uygulamasını Kariyer Gelişimi ve Öğrenci Destek Birimi içindeki PTS Koordinatörlüğü yürütür.
+proje_temelli_staj#madde-5:
+  - PTS Koordinatörlüğü kurumlardan gelen proje taleplerini duyurur, aday öğrencileri belirleyip mülakata gönderir ve yerleştirir.
+  - Koordinatörlük stajın iş birliği protokolüne uygun yürümesini sağlar ve iş yerinde karşılaştığın sorunlara çözüm arar.
+proje_temelli_staj#madde-6:
+  - PTS koordinatörünü Kariyer Gelişimi ve Öğrenci Destek Birimi Müdürü görevlendirir.
+proje_temelli_staj#madde-7:
+  - Koordinatör PTS çalışmalarını düzenler, yıllık rapor hazırlar ve iş yeri isterse öğrencinin stajını sonlandırabilir.
+proje_temelli_staj#madde-8:
+  - Fakülte staj komisyonları kendi staj yönergelerine göre belirlenir ve PTS koordinatörlüğüyle birlikte çalışır.
+proje_temelli_staj#madde-9:
+  - Fakülte staj komisyonları firmaların PTS taleplerini öğrencilere duyurur ve başvuruları koordinatörlüğe iletir.
+proje_temelli_staj#madde-10:
+  - İsteğe bağlı proje temelli staj (PTS) en az 45, en fazla 90 iş günü sürer.
+  - Firma, haftada en az yarım gün akademik danışmanınla görüşmen için izin verir.
+  - Staj komisyonu onaylarsa PTS en fazla bir zorunlu stajın yerine sayılabilir.
+  - Başvurmak için lisansta 4. yarıyılı tamamlamış olman ve disiplin cezası almamış olman gerekir.
+proje_temelli_staj#madde-11:
+  - Süreç kurumların proje talebiyle başlar; başvurular kurumlara iletilir, kurumlar mülakat yapıp stajyerleri seçer.
+  - PTS öğrenim boyunca bir kez ve dersler yokken yapılır; hafta içi en az üç günü boş olan öğrenciler herhangi bir ayda başlayabilir.
+proje_temelli_staj#madde-12:
+  - PTS başvurusu için transkript, başvuru formu, özgeçmiş ve kurumun istediği diğer belgeler gerekir.
+proje_temelli_staj#madde-13:
+  - PTS'ye başlayan her öğrenciye bölümünden bir akademik danışman atanır.
+  - Akademik danışman projenin ilerleyişini izler, staj raporunu hazırlamana rehberlik eder ve raporu değerlendirir.
+proje_temelli_staj#madde-14:
+  - İş yeri, kendi çalışanlarından birini sektör danışmanın olarak atar.
+  - Sektör danışmanı projedeki performansını takip eder ve staj raporunu değerlendirir.
+proje_temelli_staj#madde-15:
+  - PTS'de kurum sana en az yasal oranda ücret öder; ulaşım ve diğer sosyal imkanlardan da yararlandırılman beklenir.
+  - Staj süresince sigorta primlerini üniversite öder.
+proje_temelli_staj#madde-16:
+  - Staj bitince akademik danışmanının rehberliğinde staj raporunu hazırlar, iki danışmana imzalatıp ilgili birimlere teslim edersin.
+  - PTS, birim staj komisyonunun önerisi ve yönetim kurulu kararıyla zorunlu staj olarak kabul edilebilir.
+  - Raporun iki danışman tarafından ayrı ayrı 100 üzerinden puanlanır; başarılı olmak için ortalamanın en az 70 ve her iki puanın da en az 50 olması gerekir.
+proje_temelli_staj#madde-17:
+  - PTS süresince kurumun çalışma, disiplin ve iş güvenliği kurallarına uymak zorundasın.
+proje_temelli_staj#madde-18:
+  - PTS'ye devam zorunludur; mazeretler dahil devamsızlığın sürenin %10'unu aşarsa stajın iptal edilir.
+  - Haklı bir gerekçe olmadan stajı iptal edilen öğrenci bir daha PTS'ye başvuramaz.
+proje_temelli_staj#madde-19:
+  - Yönergede hüküm olmayan durumlarda ilgili diğer mevzuat uygulanır.
+proje_temelli_staj#madde-20:
+  - Bu yönergeyle 2018 tarihli eski Proje Tabanlı Staj Yönergesi yürürlükten kaldırılmıştır.
+proje_temelli_staj#madde-21:
+  - Yönerge Senato'da onaylandığı tarihte yürürlüğe girmiştir.
+proje_temelli_staj#madde-22:
+  - Yönergeyi Rektör yürütür.
+proje_temelli_staj#ek-2:
+  - Bu, üniversite ile firma arasında imzalanan PTS iş birliği protokolünün örneğidir.
+  - Protokole göre firma stajyerin ulaşım ve yemek giderlerini karşılar ve her ay en az yasal oranda ücret öder; sigorta primlerini üniversite öder.

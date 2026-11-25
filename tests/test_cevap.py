@@ -92,3 +92,50 @@ def test_cevap_dogrulugu(arayici):
     assert ayrik["cevapli_dogru"] >= 9
     kal = cevap_olc(arayici, [{"soru": q, "cevapsiz": True} for q in sorulari_oku(KALIBRASYON)])
     assert kal["cevapsiz_dogru"] == kal["cevapsiz"]
+
+
+# --- kısa cevap (ozetler.yaml) ---
+
+def test_her_parcanin_ozeti_var(arayici):
+    from cevap import ozetleri_oku
+    ozetler = ozetleri_oku()
+    idler = {p["id"] for p in arayici.parcalar if p["tur"] != "kunye"}
+    assert idler == set(ozetler), "ozetler.yaml ile parçalar uyuşmuyor"
+    for pid, cumleler in ozetler.items():
+        assert cumleler and all(isinstance(c, str) and c.strip() for c in cumleler), pid
+
+
+def test_ozet_vektorleri_guncel():
+    """ozetler.yaml değişip vektörler yeniden hesaplanmadıysa uygulama ilk soruda bekler."""
+    import numpy as np
+    from cevap import OZET_DOSYASI, OZET_VEKTORLERI, dosya_hash, ozet_cumleleri
+    v = np.load(OZET_VEKTORLERI)
+    assert str(v["ozet_hash"]) == dosya_hash(OZET_DOSYASI)
+    assert v["vektorler"].shape[0] == len(ozet_cumleleri())
+
+
+@pytest.mark.parametrize("soru, beklenen, madde", [
+    ("Derslere devam zorunluluğu yüzde kaç?", "%80", "yonetmelik#madde-12"),
+    ("Mezuniyet şartları neler?", "240 AKTS", "program_bilgileri#bolum-Mezuniyet_Koşulları"),
+    ("Kaç iş günü staj yapmalıyım?", "20 iş günü", "fen_staj#madde-7"),
+    ("Mazeret sınavına nasıl başvurulur?", "üç iş günü", "hakli_nedenler#bent-6"),
+])
+def test_kisa_cevap(arayici, soru, beklenen, madde):
+    c = cevapla(soru, arayici)
+    assert beklenen in c["ozet"]["cumleler"][0]
+    assert c["ozet"]["ilk_parca"] == madde
+
+
+def test_kisa_cevabin_dayanagi_kaynaklarda(arayici):
+    """Kısa cevabın dayandığı her madde aşağıdaki kaynaklarda da gösterilmeli."""
+    for s in sorulari_oku() + sorulari_oku(AYRIK_SET):
+        c = cevapla(s["soru"], arayici)
+        if c["ozet"]:
+            gosterilen = {k["id"] for k in c["kaynaklar"]}
+            assert set(c["ozet"]["parcalar"]) <= gosterilen, s["soru"]
+            assert len(c["ozet"]["cumleler"]) <= 3
+
+
+def test_bulunamayinca_kisa_cevap_yok(arayici):
+    c = cevapla("Kampüste kaç tane kantin var?", arayici)
+    assert c["durum"] == "bulunamadi" and c["ozet"] is None

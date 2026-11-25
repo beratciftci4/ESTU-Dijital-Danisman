@@ -38,9 +38,12 @@ def test_kenar_cubugunda_tum_belgeler():
 
 def test_soru_kaynakli_cevap():
     md = sor("Derslere devam zorunluluğu yüzde kaç?")
-    assert any('class="durum bulundu"' in m for m in md)
+    # önce sade kısa cevap, altında resmi maddeler
+    kisa = [m for m in md if 'class="cevap bulundu"' in m]
+    assert len(kisa) == 1 and "%80" in kisa[0] and "Dayanak:" in kisa[0] and "Madde 12" in kisa[0]
+    assert md.index(kisa[0]) < min(i for i, m in enumerate(md) if 'class="kaynak"' in m)
     kaynaklar = [m for m in md if 'class="kaynak"' in m]
-    assert len(kaynaklar) == 3
+    assert len(kaynaklar) >= 3
     assert any("Madde 12" in m and "%80" in m and "Sayfa 4" in m for m in kaynaklar)
 
 

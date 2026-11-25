@@ -32,9 +32,15 @@ class Arayici:
     def bm25_skorlari(self, soru):
         return self.bm25.get_scores(soru_kelimeleri(soru))
 
+    def soru_vektoru(self, soru):
+        """Aynı soru için vektörü bir kez hesaplıyoruz (kısa cevap da kullanıyor)."""
+        if getattr(self, "_son_soru", None) != soru:
+            self._son_soru, self._son_vektor = soru, self.gomucu.soru(soru)
+        return self._son_vektor
+
     def e5_skorlari(self, soru):
         """Her parça için en benzer penceresinin kosinüs benzerliği."""
-        benzerlik, idx = self.faiss.search(self.gomucu.soru(soru)[None], self.faiss.ntotal)
+        benzerlik, idx = self.faiss.search(self.soru_vektoru(soru)[None], self.faiss.ntotal)
         skor = np.full(len(self.parcalar), -1.0)
         for b, i in zip(benzerlik[0], idx[0]):
             j = self.sahip[i]

@@ -3,7 +3,7 @@
 
     streamlit run app.py
 
-Hiçbir ücretli API kullanmıyor. Cevaplar resmi metinlerin kendisi.
+Hiçbir ücretli API kullanmıyor. Kısa cevaplar elle yazılmış özetlerden, alıntılar resmi metnin aynısı.
 """
 import hashlib
 import html
@@ -14,7 +14,7 @@ import yaml
 import json
 
 from arama import Arayici
-from belge_kontrol import KLASOR
+from belge_kontrol import KLASOR, programlari_oku
 from cevap import atif, cevapla, gecerlilik, tarih
 from mezuniyet import ENGEL_NOTLAR, kontrol
 
@@ -96,27 +96,67 @@ def arayici_yukle(kod_surumu):
     return a
 
 
+def surum(*dosyalar):
+    """Dosyaların içeriğinden kısa bir özet. Önbelleğe alınan fonksiyonlara argüman olarak veriliyor,
+    dosya değişince Streamlit Cloud eski sonucu kullanmaya devam etmesin diye."""
+    return hashlib.sha256(b"".join((KLASOR / f).read_bytes() for f in dosyalar)).hexdigest()[:16]
+
+
 def kod_surumu():
-    return hashlib.sha256(b"".join((KLASOR / f).read_bytes() for f in ("arama.py", "indeks.py"))).hexdigest()
+    return surum("arama.py", "indeks.py", "cevap.py", "ozetler.yaml", "programlar.yaml", "indeks/parcalar.json")
 
 
 @st.cache_data
-def parca_sozlugu():
+def parca_sozlugu(dosya_surumu):
     parcalar = json.loads((KLASOR / "indeks" / "parcalar.json").read_text(encoding="utf-8"))
     return {p["id"]: p for p in parcalar}
 
 
 @st.cache_data
-def belgeler():
+def belgeler(dosya_surumu):
     return yaml.safe_load((KLASOR / "belgeler.yaml").read_text(encoding="utf-8"))
 
 
-def kenar_cubugu():
+@st.cache_data
+def programlar(dosya_surumu):
+    fakulteler, liste = programlari_oku()
+    return fakulteler, {p["id"]: p for p in liste}
+
+
+def gecerli_mi(belge, program):
+    """Belge seçilen bölüm için geçerli mi (arama.py'deki izinli_mi ile aynı kural)."""
+    if belge.get("kapsam", "genel") == "genel":
+        return True
+    if program is None:
+        return False
+    fakulte = programlar(surum("programlar.yaml"))[1][program]["fakulte"]
+    return belge["kapsam"] in (f"program:{program}", f"fakulte:{fakulte}")
+
+
+def bolum_sec():
+    """Bölüm seçimi. Adres çubuğunda ?bolum=fizik olarak kalıyor, link paylaşılabiliyor."""
+    fakulteler, liste = programlar(surum("programlar.yaml"))
+    varsayilan = st.query_params.get("bolum")
+    secenekler = list(liste)
+    secim = st.selectbox(
+        "Bölümün", secenekler, index=secenekler.index(varsayilan) if varsayilan in liste else None,
+        format_func=lambda p: f"{liste[p]['ad']} ({fakulteler[liste[p]['fakulte']]['ad']})",
+        placeholder="Bölümünü seç", key="bolum")
+    if secim:
+        st.query_params["bolum"] = secim
+    else:
+        st.query_params.pop("bolum", None)
+        st.caption("Bölüm seçmezsen sadece herkes için ortak olan yönetmelik ve yönergelerde aranır; "
+                   "staj ve ders planı soruları için bölümünü seç.")
+    return secim
+
+
+def kenar_cubugu(program):
     with st.sidebar:
         st.markdown("#### Kaynak belgeler")
         st.caption("Cevaplar yalnızca bu belgelerden geliyor.")
-        for b in belgeler():
-            if b["durum"] != "aktif":
+        for b in belgeler(surum("belgeler.yaml")):
+            if b["durum"] != "aktif" or not gecerli_mi(b, program):
                 continue
             if b["yururluk"]:
                 bilgi = f"Yürürlük {tarih(str(b['yururluk']))}"
@@ -131,9 +171,9 @@ def kenar_cubugu():
             "Sorunuz hem kelime eşleşmesiyle (BM25) hem anlam benzerliğiyle (e5) aranır. "
             "Kısa cevap, her madde için önceden elle yazılmış sade özet cümlelerinden seçilir; "
             "yapay zekâ ile anlık metin üretilmez. Altındaki alıntılar resmi metnin aynısıdır.")
-        st.caption("Fen Fakültesi İstatistik Bölümü için hazırlandı. Yönetmelik ve yönergeler tüm "
-                   "lisans öğrencileri için geçerli; staj kuralları Fen Fakültesi'ne, ders planı ve "
-                   "mezuniyet koşulları İstatistik Bölümü'ne özel.")
+        st.caption("Şu an Fen Fakültesi bölümleri var, diğer fakülteler sırayla ekleniyor. Yönetmelik ve "
+                   "usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders "
+                   "planı ve mezuniyet koşulları bölüme özel.")
         st.caption("Bu araç resmi görüş değildir. Kesin bilgi için Öğrenci İşleri'ne "
                    "ya da akademik danışmanınıza başvurun.")
 
@@ -157,7 +197,7 @@ def kaynak_goster(k):
         st.text(k["tam_metin"])
 
 
-def soru_sekmesi():
+def soru_sekmesi(program):
     if "soru" not in st.session_state:
         st.session_state.soru = ""
     secilen = st.pills("Örnek sorular", ORNEK_SORULAR, label_visibility="collapsed", key="ornek")
@@ -174,7 +214,7 @@ def soru_sekmesi():
 
     arayici = arayici_yukle(kod_surumu())
     with st.spinner("Belgelerde aranıyor..."):
-        c = cevapla(soru, arayici)
+        c = cevapla(soru, arayici, program=program or "genel")
 
     if not c.get("ozet"):
         st.markdown(f'<div class="durum {c["durum"]}">{html.escape(c["mesaj"])}</div>', unsafe_allow_html=True)
@@ -194,7 +234,10 @@ def soru_sekmesi():
         kaynak_goster(k)
 
 
-def mezuniyet_sekmesi():
+def mezuniyet_sekmesi(program):
+    if not program:
+        st.info("Mezuniyet kontrolü için önce yukarıdan bölümünü seç; staj şartı bölüme göre değişiyor.")
+        return
     st.caption("Transkriptinizdeki bilgileri girin. Sonuç yalnızca yönetmelik ve staj yönergesindeki "
                "mezuniyet kurallarına göre hesaplanır, bilgiler hiçbir yere kaydedilmez.")
     with st.form("mezuniyet_formu", border=False):
@@ -209,8 +252,8 @@ def mezuniyet_sekmesi():
     if not hesapla:
         return
 
-    sonuc = kontrol(akts, gno, notlar, staj)
-    parcalar = parca_sozlugu()
+    sonuc = kontrol(akts, gno, notlar, staj, program=program)
+    parcalar = parca_sozlugu(surum("indeks/parcalar.json"))
     if sonuc["mezun_olabilir"]:
         st.markdown('<div class="durum bulundu">Girdiğiniz bilgilere göre belgelerdeki mezuniyet '
                     'koşullarının hepsi sağlanıyor. Kesin durum için Öğrenci İşleri onayı gerekir.</div>',
@@ -229,22 +272,29 @@ def mezuniyet_sekmesi():
     for o in sonuc["oneriler"]:
         p = parcalar[o["kaynak"]]
         st.info(f'{o["metin"]}\n\nKaynak: {atif(p)}')
+    ozel = parcalar.get(f"{program}_program_bilgileri#bolum-Mezuniyet_Koşulları")
+    standart = parcalar["istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları"]
+    if ozel and ozel["metin"] != standart["metin"]:
+        # bazı bölümlerin Bologna sayfasında ek koşul var (ör. Kimya: 72 AKTS İngilizce ders)
+        st.info(f'Bölümünün Bologna sayfasında ek mezuniyet koşulları var:\n\n'
+                f'{ozel["metin"].replace(standart["metin"], "").strip()}\n\nKaynak: {atif(ozel)}')
     st.caption("Bölümün zorunlu/seçmeli ders dağılımı gibi programa özel şartlar burada kontrol edilmez; "
                "bunun için akademik danışmanınızla transkriptinizi birlikte inceleyin.")
 
 
 def main():
     st.markdown(CSS, unsafe_allow_html=True)
-    kenar_cubugu()
     st.markdown('<div class="baslik">ESTÜ <span>Dijital Danışman</span></div>'
-                '<div class="altbaslik">Fen Fakültesi İstatistik Bölümü öğrencileri için. Yönetmelik, staj '
-                've ders planı sorularınıza kısa bir cevap verir; dayandığı resmi maddeyi sayfa '
-                'numarasıyla altında gösterir.</div>',
+                '<div class="altbaslik">ESTÜ lisans öğrencileri için. Yönetmelik, staj ve ders planı '
+                'sorularına kısa bir cevap verir; dayandığı resmi maddeyi sayfa numarasıyla altında '
+                'gösterir.</div>',
                 unsafe_allow_html=True)
+    program = bolum_sec()
+    kenar_cubugu(program)
     soru_tab, mezuniyet_tab = st.tabs(["Soru sor", "Mezuniyet kontrolü"])
     with soru_tab:
-        soru_sekmesi()
+        soru_sekmesi(program)
     with mezuniyet_tab:
-        mezuniyet_sekmesi()
+        mezuniyet_sekmesi(program)
 
 main()

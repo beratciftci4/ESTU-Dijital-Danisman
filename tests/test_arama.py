@@ -42,14 +42,14 @@ def test_test_setleri_gecerli():
 
 
 def test_sonuclar_tekil_ve_sirali(arayici):
-    sonuc = arayici.ara("Mazeret sınavı", k=10)
+    sonuc = arayici.ara("Mazeret sınavı", k=10, program="istatistik")
     idler = [p["id"] for p, _ in sonuc]
     assert len(idler) == len(set(idler)) == 10
 
 
 def test_ayni_soru_ayni_sonuc(arayici):
-    a = [p["id"] for p, _ in arayici.ara("Tek ders sınavına kimler girebilir?")]
-    b = [p["id"] for p, _ in arayici.ara("Tek ders sınavına kimler girebilir?")]
+    a = [p["id"] for p, _ in arayici.ara("Tek ders sınavına kimler girebilir?", program="istatistik")]
+    b = [p["id"] for p, _ in arayici.ara("Tek ders sınavına kimler girebilir?", program="istatistik")]
     assert a == b
 
 

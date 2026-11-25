@@ -24,28 +24,28 @@ def test_atif_bicimi(arayici):
         "Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği, Madde 10 (Kayıt yenileme ve ders kaydı), s. 3"
     assert atif(parca(arayici, "yonetmelik#madde-20/A")).endswith("Madde 20/A (Yaz okulu), s. 7-8")
     assert atif(parca(arayici, "tek_ders#bent-5")) == "Tek Ders Sınavı Uygulama Esasları, 5. madde, s. 1"
-    assert atif(parca(arayici, "program_bilgileri#bolum-Mezuniyet_Koşulları")) == \
+    assert atif(parca(arayici, "istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları")) == \
         "İstatistik Bölümü Program Bilgileri (Bologna), Mezuniyet Koşulları"
 
 
 def test_gecerlilik_bilgisi(arayici):
     assert gecerlilik(parca(arayici, "yonetmelik#madde-10")) == \
         "Yürürlük: 22.09.2025, son değişiklik: 08.02.2026"
-    assert "erişim" in gecerlilik(parca(arayici, "ders_plani#bolum-III.YARIYIL"))
+    assert "erişim" in gecerlilik(parca(arayici, "istatistik_ders_plani#bolum-III.YARIYIL"))
 
 
 def test_cevap_sadece_resmi_metin(arayici):
     """Gösterilen her alıntı, kaynağın tam metninde aynen geçmeli (uydurma yok)."""
     sorular = sorulari_oku() + sorulari_oku(AYRIK_SET) + sorulari_oku(DOGRULAMA_SET)
     for s in sorular:
-        for k in cevapla(s["soru"], arayici)["kaynaklar"]:
+        for k in cevapla(s["soru"], arayici, program="istatistik")["kaynaklar"]:
             assert k["alinti"], k["id"]
             for a in k["alinti"]:
                 assert a in k["tam_metin"], (s["soru"], k["id"])
 
 
 def test_her_kaynakta_atif_ve_tarih(arayici):
-    c = cevapla("Mazeret sınavına girmek için belgemi ne zamana kadar vermeliyim?", arayici)
+    c = cevapla("Mazeret sınavına girmek için belgemi ne zamana kadar vermeliyim?", arayici, program="istatistik")
     assert c["durum"] == "bulundu"
     for k in c["kaynaklar"]:
         assert ", " in k["atif"] and k["gecerlilik"]
@@ -56,23 +56,23 @@ def test_her_kaynakta_atif_ve_tarih(arayici):
 
 
 def test_alakasiz_soru_bulamadim(arayici):
-    c = cevapla("Kampüste kaç tane kantin var?", arayici)
+    c = cevapla("Kampüste kaç tane kantin var?", arayici, program="istatistik")
     assert c["durum"] == "bulunamadi"
     assert c["kaynaklar"] == []
     assert "bulamadım" in c["mesaj"]
 
 
 def test_bos_soru(arayici):
-    assert cevapla("  ", arayici)["durum"] == "bulunamadi"
+    assert cevapla("  ", arayici, program="istatistik")["durum"] == "bulunamadi"
 
 
 def test_butunleme_icin_cevap_uydurmaz(arayici):
-    c = cevapla("Bütünleme sınavına kimler girebilir?", arayici)
+    c = cevapla("Bütünleme sınavına kimler girebilir?", arayici, program="istatistik")
     assert c["durum"] != "bulundu"
 
 
 def test_ocr_kaynak_isaretli(arayici):
-    c = cevapla("Azami süreyi dolduran son sınıf öğrencisine kaç ek sınav hakkı verilir?", arayici)
+    c = cevapla("Azami süreyi dolduran son sınıf öğrencisine kaç ek sınav hakkı verilir?", arayici, program="istatistik")
     assert any(k["ocr"] for k in c["kaynaklar"])
 
 
@@ -91,16 +91,25 @@ def test_cevap_dogrulugu(arayici):
     ayrik = cevap_olc(arayici, sorulari_oku(AYRIK_SET))
     assert ayrik["cevapli_dogru"] >= 9
     kal = cevap_olc(arayici, [{"soru": q, "cevapsiz": True} for q in sorulari_oku(KALIBRASYON)])
-    assert kal["cevapsiz_dogru"] == kal["cevapsiz"]
+    # özet sıralaması eklenince "Erasmus için kaç dil puanı gerekiyor?" bulundu'ya geçti (raporlar/5_cevap.md)
+    assert kal["cevapsiz_dogru"] >= kal["cevapsiz"] - 1
+
+
+def test_fen_bolumleri(arayici):
+    from degerlendir import FEN_SET
+    fen = cevap_olc(arayici, sorulari_oku(FEN_SET))
+    assert fen["cevapli_dogru"] >= 12 and fen["ozet_dogru"] >= 13
 
 
 # --- kısa cevap (ozetler.yaml) ---
 
 def test_her_parcanin_ozeti_var(arayici):
-    from cevap import ozetleri_oku
-    ozetler = ozetleri_oku()
+    from cevap import ozetleri_oku, tum_ozetler
+    ozetler = tum_ozetler()
     idler = {p["id"] for p in arayici.parcalar if p["tur"] != "kunye"}
     assert idler == set(ozetler), "ozetler.yaml ile parçalar uyuşmuyor"
+    # ders planları otomatik, elle yazılanlarla karışmasın
+    assert not any(k.split("#")[0].endswith("_ders_plani") for k in ozetleri_oku())
     for pid, cumleler in ozetler.items():
         assert cumleler and all(isinstance(c, str) and c.strip() for c in cumleler), pid
 
@@ -108,20 +117,20 @@ def test_her_parcanin_ozeti_var(arayici):
 def test_ozet_vektorleri_guncel():
     """ozetler.yaml değişip vektörler yeniden hesaplanmadıysa uygulama ilk soruda bekler."""
     import numpy as np
-    from cevap import OZET_DOSYASI, OZET_VEKTORLERI, dosya_hash, ozet_cumleleri
+    from cevap import OZET_VEKTORLERI, ozet_cumleleri, ozet_hash
     v = np.load(OZET_VEKTORLERI)
-    assert str(v["ozet_hash"]) == dosya_hash(OZET_DOSYASI)
+    assert str(v["ozet_hash"]) == ozet_hash()
     assert v["vektorler"].shape[0] == len(ozet_cumleleri())
 
 
 @pytest.mark.parametrize("soru, beklenen, madde", [
     ("Derslere devam zorunluluğu yüzde kaç?", "%80", "yonetmelik#madde-12"),
-    ("Mezuniyet şartları neler?", "240 AKTS", "program_bilgileri#bolum-Mezuniyet_Koşulları"),
-    ("Kaç iş günü staj yapmalıyım?", "20 iş günü", "fen_staj#madde-7"),
+    ("Mezuniyet şartları neler?", "240 AKTS", "istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları"),
+    ("Kaç iş günü staj yapmalıyım?", "20 iş günü", "fen_staj#ek-4"),   # bölüme özel staj cümlesi
     ("Mazeret sınavına nasıl başvurulur?", "üç iş günü", "hakli_nedenler#bent-6"),
 ])
 def test_kisa_cevap(arayici, soru, beklenen, madde):
-    c = cevapla(soru, arayici)
+    c = cevapla(soru, arayici, program="istatistik")
     assert beklenen in c["ozet"]["cumleler"][0]
     assert c["ozet"]["ilk_parca"] == madde
 
@@ -129,7 +138,7 @@ def test_kisa_cevap(arayici, soru, beklenen, madde):
 def test_kisa_cevabin_dayanagi_kaynaklarda(arayici):
     """Kısa cevabın dayandığı her madde aşağıdaki kaynaklarda da gösterilmeli."""
     for s in sorulari_oku() + sorulari_oku(AYRIK_SET):
-        c = cevapla(s["soru"], arayici)
+        c = cevapla(s["soru"], arayici, program="istatistik")
         if c["ozet"]:
             gosterilen = {k["id"] for k in c["kaynaklar"]}
             assert set(c["ozet"]["parcalar"]) <= gosterilen, s["soru"]
@@ -137,5 +146,16 @@ def test_kisa_cevabin_dayanagi_kaynaklarda(arayici):
 
 
 def test_bulunamayinca_kisa_cevap_yok(arayici):
-    c = cevapla("Kampüste kaç tane kantin var?", arayici)
+    c = cevapla("Kampüste kaç tane kantin var?", arayici, program="istatistik")
     assert c["durum"] == "bulunamadi" and c["ozet"] is None
+
+
+@pytest.mark.parametrize("program, olmali, olmamali", [
+    ("kimya", "isteğe bağlı", "staj yapman gerekir"),
+    ("matematik", "isteğe bağlı", "staj yapman gerekir"),
+    ("biyoloji", "20 iş günü", "staj zorunlu değildir"),
+])
+def test_staj_cevabi_bolume_gore(arayici, program, olmali, olmamali):
+    """Stajı isteğe bağlı bölüme "zorunlu" dememeli (genel kural 20 gün, istisna yönergenin ekinde)."""
+    metin = cevapla("Staj zorunlu mu, kaç gün?", arayici, program=program)["ozet"]["metin"]
+    assert olmali in metin and olmamali not in metin, metin

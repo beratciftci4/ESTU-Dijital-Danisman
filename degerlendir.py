@@ -18,10 +18,16 @@ SORU_SETI = KLASOR / "tests" / "soru_seti.yaml"
 AYRIK_SET = KLASOR / "tests" / "soru_seti_ayrik.yaml"
 DOGRULAMA_SET = KLASOR / "tests" / "soru_seti_dogrulama.yaml"
 KALIBRASYON = KLASOR / "tests" / "kalibrasyon_cevapsiz.yaml"
+FEN_SET = KLASOR / "tests" / "soru_seti_fen.yaml"
 
 
 def sorulari_oku(yol=SORU_SETI):
     return yaml.safe_load(yol.read_text(encoding="utf-8"))
+
+
+def bolum(s):
+    """Sorunun hangi bölüm seçiliyken sorulduğu. İlk setler İstatistik için yazıldı."""
+    return s.get("program", "istatistik")
 
 
 def arama_olc(arayici, sorular, yontem, k_lar=(1, 3, 5)):
@@ -30,7 +36,7 @@ def arama_olc(arayici, sorular, yontem, k_lar=(1, 3, 5)):
     mrr = 0.0
     kacan = []
     for s in cevapli:
-        idler = [p["id"] for p, _ in arayici.ara(s["soru"], k=20, yontem=yontem)]
+        idler = [p["id"] for p, _ in arayici.ara(s["soru"], k=20, yontem=yontem, program=bolum(s))]
         sira = next((i + 1 for i, x in enumerate(idler) if x in s["kaynak"]), None)
         for k in k_lar:
             hit[k] += bool(sira and sira <= k)
@@ -50,7 +56,7 @@ def cevap_olc(arayici, sorular):
              "cevapsiz_tam_red": 0, "ozetli": 0, "ozet_dogru": 0, "ozet_ilk_dogru": 0,
              "durumlar": [], "hatalar": []}
     for s in sorular:
-        c = cevapla(s["soru"], arayici)
+        c = cevapla(s["soru"], arayici, program=bolum(s))
         alinti = " ".join(" ".join(k["alinti"]) for k in c["kaynaklar"])
         if s.get("cevapsiz"):
             sonuc["cevapsiz"] += 1
@@ -128,6 +134,9 @@ def main():
                 "Hibrit = BM25 ve e5 sıralamalarının Reciprocal Rank Fusion ile eşit ağırlıkla birleşimi.", ""]
     satirlar += tablo(arayici, sorulari_oku(), "Ana test seti (tests/soru_seti.yaml)")
     satirlar += tablo(arayici, sorulari_oku(AYRIK_SET), "Ayrık test seti (tests/soru_seti_ayrik.yaml)")
+    satirlar += tablo(arayici, sorulari_oku(DOGRULAMA_SET), "Doğrulama seti (tests/soru_seti_dogrulama.yaml)")
+    satirlar += tablo(arayici, sorulari_oku(FEN_SET),
+                      "Fen Fakültesi diğer bölümler (tests/soru_seti_fen.yaml, Biyoloji/Fizik/Kimya/Matematik)")
     satirlar += ["## Notlar", "",
                  "- Eş anlamlı listesi (\"üst sınır\" -> \"en çok\" gibi) ve soru kalıbı listesi ana test "
                  "setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.",
@@ -138,6 +147,22 @@ def main():
                  ".93/.83, 1.00/.95, .88/.77; Snowball + ilk 5 harf .96/.81, 1.00/.95, 1.00/.81. "
                  "Farklar 45 soruda 1-2 soru, tutarlı bir kazanan yok. Ek paket gerektirmeyen ilk 5 harf "
                  "yönteminde kalındı.",
+                 "- Bölüm seçimi (2026-11-25): arama sadece genel belgeler + bölümün fakültesinin staj "
+                 "yönergesi + bölümün Bologna sayfalarında yapılıyor. İlk setler İstatistik seçiliyken ölçülüyor; "
+                 "İstatistik'in parçaları eskisiyle aynı olduğu için sonuçlar karşılaştırılabilir.",
+                 "- Bölümün kendi Bologna sayfalarının arama metninden bölüm adı çıkarıldı. Yoksa "
+                 "\"Kimya bölümünde staj zorunlu mu?\" gibi sorularda o bölümün ders planı öne çıkıyordu. "
+                 "Adı sorudan çıkarmak da denendi, daha kötü oldu (Fen seti hit@3 .62): staj yönergesindeki "
+                 "\"Kimya ve Matematik için staj isteğe bağlı\" notu tam da bölüm adıyla bulunuyor.",
+                 "- RRF'ye üçüncü sıralama olarak elle yazılmış özet cümleleriyle e5 benzerliği eklendi "
+                 "(özetler öğrencinin kullandığı kelimelerle yazıldı). MRR: ana .79 -> .85, doğrulama .83 -> .92, "
+                 "Fen seti .66 -> .78. \"Bulundu/bulamadım\" eşiği değişmedi, hâlâ madde metninin benzerliğine bakıyor.",
+                 "- Staj kuralı bölüme göre değişiyor (Fen'de Kimya ve Matematik isteğe bağlı) ama yönergenin "
+                 "maddesi genel (\"en az 20 iş günü\"). Kimya seçiliyken \"Staj zorunlu mu?\" sorusuna \"20 gün "
+                 "zorundasın\" deniyordu. Her bölüme kendi staj cümlesi eklendi (programlar.yaml'dan, yönergenin "
+                 "EK-3 notuna bağlı), sadece o bölüm seçiliyken kullanılıyor.",
+                 "- Ders planı sorularında \"birinci dönem\" ile \"I.YARIYIL\" eşleşmesi için yarıyıl numarası "
+                 "arama metnine ve eş anlamlılara eklendi.",
                  "- \"Bütünleme\" sorusu bilerek cevapsız: yeni yönetmelikte bütünleme sınavı yok. "
                  "\"bütünleme\" kelimesi \"ek sınav\"a eşlenmedi, çünkü ikisi aynı şey değil."]
     (KLASOR / "raporlar" / "4_arama.md").write_text("\n".join(satirlar) + "\n", encoding="utf-8")
@@ -146,13 +171,17 @@ def main():
     setler = [("Ana set (eşik ayarında kullanıldı)", sorulari_oku()),
               ("Kalibrasyon, cevapsız (eşik ayarında kullanıldı)", kalibrasyon),
               ("Ayrık set", sorulari_oku(AYRIK_SET)),
-              ("Doğrulama seti (eşikten sonra yazıldı)", sorulari_oku(DOGRULAMA_SET))]
+              ("Doğrulama seti (eşikten sonra yazıldı)", sorulari_oku(DOGRULAMA_SET)),
+              ("Fen Fakültesi diğer bölümler", sorulari_oku(FEN_SET))]
     satirlar = cevap_tablosu(arayici, setler)
     satirlar += ["", "## Notlar", "",
                  "- Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra "
                  "yazıldı. Doğrulama sonucuna göre eşik değiştirilmedi, yoksa o set de bağımsız olmazdı.",
                  "- Cevapsız bir soruya \"bulundu\" denmesi en riskli hata. Bu durumda bile asistan metin "
                  "uydurmuyor, sadece alakasız bir maddeyi gösteriyor; kaynak ve sayfa her zaman yazılı.",
+                 "- Özet sıralaması eklenince kalibrasyonda bir soru (\"Erasmus için kaç dil puanı gerekiyor?\") "
+                 "\"bulundu\"ya geçti (15/15 -> 14/15): yönetmelik 6. madde özetinde \"Erasmus\" kelimesi geçiyor "
+                 "ve dil sınavı eşdeğerlikleri maddesi de soruya yakın. Diğer setlerdeki kazanç daha büyük olduğu için tutuldu.",
                  "- Benzerlik eşiği tek başına sınırlı: \"Mezunlar derneği\" gibi yönetmelikteki kelimelere "
                  "yakın sorular eşiği geçebiliyor. Kelime kapsamı gibi ek sinyaller denendi, net ayırmadı.",
                  "",

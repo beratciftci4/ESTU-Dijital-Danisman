@@ -4,8 +4,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from indeks import parcalari_oku
-from mezuniyet import (GEREKEN_AKTS, GEREKEN_GNO, GEREKEN_STAJ_GUNU, KAYNAK_MEZUNIYET, KAYNAK_STAJ,
-                       KAYNAK_TEK_DERS, kontrol)
+from belge_kontrol import programlari_oku
+from mezuniyet import GEREKEN_AKTS, GEREKEN_GNO, KAYNAK_MEZUNIYET, KAYNAK_TEK_DERS, kontrol, staj_kurali
 
 PARCALAR = {p["id"]: p["metin"] for p in parcalari_oku()}
 HIC = {"FF": 0, "YZ": 0, "DZ": 0, "EK": 0, "ÇK": 0}
@@ -17,7 +17,8 @@ def test_kurallar_kaynakla_ayni():
     assert f"lisans programında en az {GEREKEN_AKTS} AKTS" in md25
     assert "ÇK, DZ, EK, FF ve YZ harf notu olmayan" in md25
     assert f"GNO’su en az {GEREKEN_GNO:.2f}".replace(".", ",") in md25
-    assert f"en az {GEREKEN_STAJ_GUNU} iş günü staj yapmak zorundadır" in PARCALAR[KAYNAK_STAJ]
+    gun, kaynak = staj_kurali("istatistik")
+    assert f"en az {gun} iş günü staj yapmak zorundadır" in PARCALAR[kaynak]
     assert "tek dersten FF veya YZ" in PARCALAR[KAYNAK_TEK_DERS]
 
 
@@ -54,3 +55,21 @@ def test_tek_ders_onerisi():
 def test_her_satirin_kaynagi_var():
     for x in kontrol(100, 1.5, HIC, 5)["satirlar"]:
         assert x["kaynak"] in PARCALAR
+
+
+def test_bolumlerin_staj_kurali_yonergeyle_ayni():
+    """programlar.yaml'daki staj süreleri Fen staj yönergesinin EK-3 notuyla tutarlı olmalı."""
+    ek3 = PARCALAR["fen_staj#ek-4"]
+    assert "Kimya ve Matematik Bölümü öğrencileri için staj isteğe bağlıdır" in ek3
+    assert "Fizik, İstatistik ve Biyoloji Bölümlerinin öğrencileri ise 20 iş günü staj yapmak zorundadır" in ek3
+    _, programlar = programlari_oku()
+    gun = {p["id"]: p["staj_gunu"] for p in programlar}
+    assert gun["kimya"] is None and gun["matematik"] is None
+    assert gun["fizik"] == gun["biyoloji"] == gun["istatistik"] == 20
+
+
+def test_stajsiz_bolum():
+    s = kontrol(240, 2.5, HIC, 0, program="matematik")
+    assert s["mezun_olabilir"]
+    assert any(x["ad"] == "Zorunlu staj yok" for x in s["satirlar"])
+    assert not kontrol(240, 2.5, HIC, 0, program="fizik")["mezun_olabilir"]

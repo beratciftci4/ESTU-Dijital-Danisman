@@ -311,6 +311,8 @@ def parca(belge, tur, no, baslik, bolum, satirlar, ocr=False):
         "url": belge["url"],
         "yururluk": str(belge["yururluk"]) if belge["yururluk"] else None,
         "son_degisiklik": str(belge["son_degisiklik"]) if belge["son_degisiklik"] else None,
+        "kapsam": belge.get("kapsam", "genel"),
+        "indirme_tarihi": str(belge["indirme_tarihi"]) if belge.get("indirme_tarihi") else None,   # genel | fakulte:fen | program:istatistik
     }
 
 
@@ -353,7 +355,7 @@ def html_ayristir(belge):
     soup = BeautifulSoup(yol.read_text(encoding="utf-8"), "html.parser")
     parcalar = []
 
-    if belge["id"] == "ders_plani":
+    if belge["id"].endswith("_ders_plani"):
         for h in soup.find_all("h2"):
             # sayfanın html'i bozuk: seçmeli ders başlıklarında tablo <h2>'nin içinde kalmış,
             # bu yüzden adı sadece ilk metin parçasından alıyoruz
@@ -381,6 +383,8 @@ def html_ayristir(belge):
                 for s in kap.get_text("\n", strip=True).split("\n")[1:]:
                     if temizle(s):
                         satirlar.append((None, temizle(s)))
+            # bazı bölüm sayfalarında aynı paragraf html'de iki kere geçiyor
+            satirlar = list(dict.fromkeys(satirlar))
             parcalar.append(parca(belge, "bolum", ad, ad, "Program Hakkında", satirlar))
     return parcalar
 

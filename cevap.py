@@ -16,12 +16,14 @@ Eşikler tests/ altındaki cevaplı ve cevapsız sorulara bakılarak seçildi (r
     python cevap.py "Kaç AKTS üst sınırım var?"
 """
 import hashlib
+import json
 import re
 import sys
 
 import numpy as np
 import yaml
 
+from belge_kontrol import programlari_oku
 from indeks import INDEKS_KLASORU, KLASOR, kelimeler, soru_kelimeleri
 
 ESIK_YUKSEK = 0.850
@@ -57,9 +59,25 @@ BELGE_KISA_ADI = {
     "ek_sinav": "Ek Sınav Esasları",
     "yaz_okulu": "Yaz Okulu Uygulama Esasları",
     "not_karsiliklari": "Not Karşılıkları ve Eşdeğerlikler Uygulama Esasları",
-    "ders_plani": "İstatistik Bölümü Ders Planı (Bologna)",
-    "program_bilgileri": "İstatistik Bölümü Program Bilgileri (Bologna)",
 }
+PROGRAM_ADI = {p["id"]: p["ad"] for p in programlari_oku()[1]}
+
+
+def program_id(p):
+    """Bologna parçasıysa bölüm id'si (istatistik_ders_plani -> istatistik), değilse None."""
+    for son in ("_ders_plani", "_program_bilgileri"):
+        if p["belge_id"].endswith(son):
+            return p["belge_id"][: -len(son)]
+    return None
+
+
+def kisa_ad(p):
+    """Atıflarda kullanılan kısa belge adı."""
+    pid = program_id(p)
+    if pid:
+        tur = "Ders Planı" if p["belge_id"].endswith("_ders_plani") else "Program Bilgileri"
+        return f"{PROGRAM_ADI[pid]} Bölümü {tur} (Bologna)"
+    return BELGE_KISA_ADI.get(p["belge_id"], p["belge_adi"])
 
 
 def tarih(t):
@@ -92,7 +110,7 @@ def sayfa_metni(p):
 
 def atif(p):
     """'Ön Lisans ve Lisans ... Yönetmeliği, Madde 10 (Kayıt yenileme ve ders kaydı), s. 3'"""
-    metin = f"{BELGE_KISA_ADI.get(p['belge_id'], p['belge_adi'])}, {konum(p)}"
+    metin = f"{kisa_ad(p)}, {konum(p)}"
     if p["baslik"] and p["tur"] == "madde":
         metin += f" ({p['baslik']})"
     if p["sayfa_bas"]:
@@ -107,7 +125,7 @@ def gecerlilik(p):
         if p["son_degisiklik"]:
             metin += f", son değişiklik: {tarih(p['son_degisiklik'])}"
         return metin
-    return "Bologna web sayfası, erişim: 19.11.2026"
+    return f"Bologna web sayfası, erişim: {tarih(p.get('indirme_tarihi') or '2026-11-19')}"
 
 
 def birimlere_bol(metin):
@@ -143,21 +161,122 @@ def ilgili_kisim(p, soru, idf, en_fazla=2):
     return [birimler[i] for i in secilen]
 
 
+ROMA = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8}
+
+
+def akts(x):
+    """'4.5' -> '4,5', '6.0' -> '6'"""
+    x = float(x)
+    return str(int(x)) if x == int(x) else str(x).replace(".", ",")
+
+
+def ders_plani_ozeti(p):
+    """Ders planı tablosundan özet cümleleri üretir (elle yazmak yerine, 31 bölüm var).
+    Satırlar: 'KOD | Ad | Dil | T+U | AKTS', 'Seçmeli Dersler | 5.0', 'Toplam | 30'."""
+    bolum = PROGRAM_ADI[program_id(p)]
+    dersler, ekler, toplam = [], [], None
+    for satir in p["metin"].split("\n"):
+        h = [x.strip() for x in satir.split("|")]
+        if len(h) == 5 and h[0] != "Ders Kodu":
+            dersler.append((h[1], akts(h[4])))
+        elif len(h) == 2 and h[0] == "Toplam":
+            toplam = akts(h[1])
+        elif len(h) == 2:
+            ekler.append(f"{akts(h[1])} AKTS {h[0].lower().replace('dersler', 'ders')}")
+
+    # aynı ders Türkçe ve İngilizce iki şube olarak açılabiliyor:
+    # "Biyokimya II" ve "Biochemistry II (Biyokimya II)" -> "Biyokimya II (Türkçe ya da İngilizce)"
+    turkce_adlar = {ad for ad, _ in dersler}
+    listelenen = []
+    for ad, kredi in dersler:
+        ic = re.search(r"\(([^()]+)\)\s*$", ad)
+        if ic and ic.group(1) in turkce_adlar:
+            continue
+        iki_dil = any(re.search(r"\(" + re.escape(ad) + r"\)\s*$", a) for a, _ in dersler)
+        listelenen.append(f"{ad} ({'Türkçe ya da İngilizce, ' if iki_dil else ''}{kredi} AKTS)")
+
+    yariyil = ROMA.get(p["no"].replace(".YARIYIL", ""))
+    if yariyil:
+        cumleler = [f"{bolum} bölümünde {yariyil}. yarıyılın zorunlu dersleri şunlardır: {', '.join(listelenen)}."]
+        if ekler or toplam:
+            ek = f"ayrıca {' ve '.join(ekler)} alınır" if ekler else "seçmeli ders yoktur"
+            cumleler.append(f"{bolum} bölümünde {yariyil}. yarıyılda {ek}"
+                            + (f"; yarıyılın toplamı {toplam} AKTS'dir." if toplam else "."))
+        return cumleler
+    # seçmeli ders havuzları: uzun listeyi 10'arlı cümlelere böl
+    havuz = p["no"].lower()
+    return [f"{bolum} bölümünün {havuz} listesinde şunlar var: {', '.join(listelenen[i:i + 10])}."
+            for i in range(0, len(listelenen), 10)]
+
+
+_parca_listesi = None
+
+
+def parcalar_oku():
+    global _parca_listesi
+    if _parca_listesi is None:
+        _parca_listesi = json.loads((INDEKS_KLASORU / "parcalar.json").read_text(encoding="utf-8"))
+    return _parca_listesi
+
+
+def tum_ozetler():
+    """ozetler.yaml + ders planlarından otomatik üretilen özetler {parça id: [cümleler]}"""
+    ozetler = dict(ozetleri_oku())
+    for p in parcalar_oku():
+        if p["belge_id"].endswith("_ders_plani") and p["id"] not in ozetler:
+            ozetler[p["id"]] = ders_plani_ozeti(p)
+    return ozetler
+
+
+def bolum_staj_cumleleri():
+    """Bölüme özel staj cümleleri: [(parça id, cümle, bölüm id), ...].
+    Staj yönergesindeki kural genel ("en az 20 iş günü"), hangi bölümde zorunlu olduğu ekteki bir
+    notta. Bölüm seçiliyken doğru cevabı vermek için her bölüme kendi cümlesi, o notun parçasına bağlı.
+    Bilgi programlar.yaml'dan (staj_gunu), o da yönergenin notundan alındı; testte karşılaştırılıyor."""
+    fakulteler, programlar = programlari_oku()
+    sonuc = []
+    for p in programlar:
+        parca_id = fakulteler[p["fakulte"]]["staj_listesi"]
+        if p["staj_gunu"]:
+            c = (f"{p['ad']} bölümünde staj zorunludur; mezun olmak için en az {p['staj_gunu']} iş günü "
+                 "staj yapman gerekir.")
+        else:
+            c = f"{p['ad']} bölümünde staj zorunlu değildir, isteğe bağlıdır; mezuniyet için staj şartı yok."
+        sonuc.append((parca_id, c, p["id"]))
+    return sonuc
+
+
 def ozet_cumleleri():
-    """[(parça id, cümle no, cümle), ...] ozetler.yaml'daki sırayla."""
-    return [(pid, i, c) for pid, cumleler in ozetleri_oku().items() for i, c in enumerate(cumleler)]
+    """[(parça id, cümle no, cümle), ...]  Bölüme özel cümleler en sonda, cümle no'ları 0."""
+    genel = [(pid, i, c) for pid, cumleler in tum_ozetler().items() for i, c in enumerate(cumleler)]
+    return genel + [(pid, 0, c) for pid, c, _ in bolum_staj_cumleleri()]
+
+
+def ozet_bolumleri():
+    """ozet_cumleleri() ile aynı sırada: cümle sadece bir bölüm içinse o bölümün id'si, yoksa None."""
+    genel = sum(len(v) for v in tum_ozetler().values())
+    return [None] * genel + [b for _, _, b in bolum_staj_cumleleri()]
+
+
+def cumle_gecerli_mi(bolum, program):
+    return bolum is None or bolum == program
 
 
 def ozet_indeksi_olustur(gomucu):
     """Özet cümlelerinin e5 vektörlerini indeks/ klasörüne kaydeder (özetler değişince yeniden çalıştır)."""
     cumleler = ozet_cumleleri()
     vektorler = gomucu.vektor([c for _, _, c in cumleler], "passage")
-    np.savez(OZET_VEKTORLERI, vektorler=vektorler, ozet_hash=dosya_hash(OZET_DOSYASI))
+    np.savez(OZET_VEKTORLERI, vektorler=vektorler, ozet_hash=ozet_hash())
     return len(cumleler)
 
 
 def dosya_hash(yol):
     return hashlib.sha256(open(yol, "rb").read()).hexdigest()
+
+
+def ozet_hash():
+    """Özet cümleleri hem ozetler.yaml'a hem parçalara (otomatik ders planı özetleri) bağlı."""
+    return hashlib.sha256("\n".join(c for _, _, c in ozet_cumleleri()).encode("utf-8")).hexdigest()
 
 
 _ozet_vektorleri = None
@@ -166,8 +285,8 @@ _ozet_vektorleri = None
 def ozet_vektorleri(gomucu):
     global _ozet_vektorleri
     if _ozet_vektorleri is None:
-        if not OZET_VEKTORLERI.exists() or str(np.load(OZET_VEKTORLERI)["ozet_hash"]) != dosya_hash(OZET_DOSYASI):
-            print("ozetler.yaml değişmiş, özet vektörleri yeniden hesaplanıyor...")
+        if not OZET_VEKTORLERI.exists() or str(np.load(OZET_VEKTORLERI)["ozet_hash"]) != ozet_hash():
+            print("özetler değişmiş, özet vektörleri yeniden hesaplanıyor...")
             ozet_indeksi_olustur(gomucu)
         _ozet_vektorleri = np.load(OZET_VEKTORLERI)["vektorler"]
     return _ozet_vektorleri
@@ -179,23 +298,24 @@ def benzer_mi(a, b):
     return len(ka & kb) / max(1, min(len(ka), len(kb))) >= 0.6
 
 
-def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None):
+def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None, program=None):
     """En iyi 3 parçanın özet cümlelerinden soruya en uygun 1-3 tanesini seçip paragraf yapar.
     Cümle puanı = e5 benzerliği + kelime örtüşmesi (idf ağırlıklı, 0-1 arası) * KELIME_AGIRLIGI
                   + parçanın arama sırasına göre küçük bir pay. En iyi cümle başa yazılır."""
     kelime_agirligi, sira_payi, ilk_payi, madde_agirligi = agirlik or (
         KELIME_AGIRLIGI, SIRA_PAYI, ILK_CUMLE_PAYI, MADDE_AGIRLIGI)
     cumleler = ozet_cumleleri()
+    bolumler = ozet_bolumleri()
     vektorler = ozet_vektorleri(arayici.gomucu)
     q = arayici.soru_vektoru(soru)
-    idf = arayici.bm25.idf
+    idf = arayici.bm25_icin(program).idf
     sorudakiler = set(soru_kelimeleri(soru))
     toplam_idf = sum(idf.get(k, 0) for k in sorudakiler) or 1
 
     adaylar = []
     for sira, (p, b) in enumerate(sonuclar[:ADAY_PARCA]):
         for j, (pid, i, c) in enumerate(cumleler):
-            if pid != p["id"]:
+            if pid != p["id"] or not cumle_gecerli_mi(bolumler[j], program):
                 continue
             ortak = sum(idf.get(k, 0) for k in sorudakiler & set(kelimeler(c))) / toplam_idf
             puan = (float(vektorler[j] @ q) + kelime_agirligi * ortak - sira_payi * sira
@@ -222,16 +342,16 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
         "cumleler": [x[3] for x in secilen],
         "parcalar": [p["id"] for p in kullanilan],
         "ilk_parca": secilen[0][4]["id"],
-        "dayanak": [f"{BELGE_KISA_ADI.get(p['belge_id'], p['belge_adi'])}, {konum(p)}" for p in kullanilan],
+        "dayanak": [f"{kisa_ad(p)}, {konum(p)}" for p in kullanilan],
     }
 
 
-def cevapla(soru, arayici, k=KAYNAK_SAYISI):
+def cevapla(soru, arayici, k=KAYNAK_SAYISI, program=None):
     soru = soru.strip()
     if len(soru) < 3:
         return {"durum": "bulunamadi", "mesaj": "Lütfen bir soru yazın.", "kaynaklar": []}
 
-    tum = arayici.ara(soru, k=max(k, ADAY_PARCA))
+    tum = arayici.ara(soru, k=max(k, ADAY_PARCA), program=program)
     sonuclar = tum[:k]   # güven seviyesi ilk k parçaya göre (eşikler buna göre seçildi)
     en_iyi = max(b["e5"] for _, b in sonuclar)
     if en_iyi >= ESIK_YUKSEK:
@@ -247,7 +367,7 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI):
                  "Öğrenci İşleri'ne ya da akademik danışmanınıza sorabilirsiniz.")
 
     kaynaklar = []
-    ozet = kisa_cevap(soru, tum, arayici) if durum != "bulunamadi" else None
+    ozet = kisa_cevap(soru, tum, arayici, program=program) if durum != "bulunamadi" else None
     if durum != "bulunamadi":
         # kısa cevabın dayandığı parça ilk k'nın dışındaysa o da kaynaklara eklenir
         ekler = [(p, b) for p, b in tum[k:] if p["id"] in ozet["parcalar"]]
@@ -255,12 +375,12 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI):
             kaynaklar.append({
                 "id": p["id"],
                 "atif": atif(p),
-                "belge": BELGE_KISA_ADI.get(p["belge_id"], p["belge_adi"]),
+                "belge": kisa_ad(p),
                 "konum": konum(p),
                 "baslik": p["baslik"] if p["tur"] == "madde" else None,
                 "sayfa": sayfa_metni(p),
                 "gecerlilik": gecerlilik(p),
-                "alinti": ilgili_kisim(p, soru, arayici.bm25.idf),
+                "alinti": ilgili_kisim(p, soru, arayici.bm25_icin(program).idf),
                 "tam_metin": p["metin"],
                 "url": p["url"],
                 "ocr": p["ocr"],

@@ -175,14 +175,14 @@ fen_staj#madde-7:
   - Staj yapmaya dördüncü yarıyılın sonundan itibaren başlayabilirsin.
   - Stajı yaz döneminde ya da güz ile bahar arasındaki yarıyıl tatilinde yapabilirsin; ders dönemi devam ederken staj yapılamaz.
   - Mezuniyete yalnızca stajı kalmışsan ya da haftada en az 3 tam gün dersin yoksa, komisyon kararıyla dönem içinde derssiz günlerinde staj yapabilirsin.
-  - Zorunlu staj süresi en az 20 iş günüdür; yani mezun olmak için en az 20 iş günü staj yapmak zorundasın.
+  - Zorunlu staj süresi en az 20 iş günüdür; bu İstatistik, Fizik ve Biyoloji için geçerlidir, Kimya ve Matematik bölümlerinde staj zorunlu değil, isteğe bağlıdır.
   - Komisyon uygun görürse isteğe bağlı olarak daha uzun staj yapabilirsin, ama bu fazla süre mezuniyet kredisine sayılmaz.
   - Zorunlu stajla isteğe bağlı staja aynı anda devam edemezsin.
   - Komisyon uygun görürse yaptığın isteğe bağlı staj zorunlu staj yerine sayılabilir.
   - Staj süresince sigortan fakülte tarafından yapılır.
 fen_staj#madde-8:
   - Staja devam zorunludur.
-  - Geçerli bir mazeretle gidemediğin günleri telafi etmen gerekir ve bu günler 20 iş günlük stajın %10'unu, yani 2 iş gününü geçemez.
+  - Geçerli bir mazeretle gidemediğin staj günlerini telafi etmen gerekir ve bu günler 20 iş günlük zorunlu stajın %10'unu, yani 2 iş gününü geçemez.
   - Kurallara uymazsan kurum stajını sonlandırabilir; bu durumda stajda başarısız sayılırsın.
   - Mücbir bir sebeple stajı yarıda bırakırsan, yaptığın günlerin sayılıp sayılmayacağına yönetim kurulu karar verir.
 fen_staj#madde-9:
@@ -260,50 +260,138 @@ fen_staj#ek-11:
 fen_staj#ek-12:
   - Bu, stajı yarıda bırakan öğrenci için kurumun dekanlığa gönderdiği ayrılış formudur; SGK çıkışı bu formla yapılır.
 
-# ---------------- İstatistik ders planı (Bologna) ----------------
-ders_plani#bolum-I.YARIYIL:
-  - 1. yarıyıl zorunlu dersleri Veri Yapıları ve Algoritmalar, İstatistik I, İstatistik Laboratuvarı I, Calculus I, Atatürk İlkeleri I ve Türk Dili I'dir; ayrıca 5 AKTS seçmeli alınır ve toplam 30 AKTS'dir.
-ders_plani#bolum-II.YARIYIL:
-  - 2. yarıyıl zorunlu dersleri Bilgisayar Programlama, İstatistik II, İstatistik Laboratuvarı II, Calculus II, Atatürk İlkeleri II ve Türk Dili II'dir; ayrıca 4,5 AKTS seçmeli alınır ve toplam 30 AKTS'dir.
-ders_plani#bolum-III.YARIYIL:
-  - 3. yarıyıl zorunlu dersleri Olasılık I, Yöneylem Araştırması, Veritabanı ve Yönetimi ve Analiz I'dir; ayrıca 2 AKTS seçmeli ve 5,5 AKTS mesleki seçmeli alınır, toplam 30 AKTS'dir.
-ders_plani#bolum-IV.YARIYIL:
-  - 4. yarıyıl zorunlu dersleri Görsel Programlama, Olasılık II, Lineer Cebir ve Analiz II'dir; ayrıca 3 AKTS seçmeli ve 6,5 AKTS mesleki seçmeli alınır, toplam 30 AKTS'dir.
-ders_plani#bolum-V.YARIYIL:
-  - 5. yarıyıl zorunlu dersleri Matematiksel İstatistik I, Parametrik Olmayan İstatistiksel Teknikler, Regresyon Analizi ve Staj'dır (5 AKTS); ayrıca 2 AKTS seçmeli ve 5,5 AKTS mesleki seçmeli alınır.
-ders_plani#bolum-VI.YARIYIL:
-  - 6. yarıyıl zorunlu dersleri Ekonometri, Matematiksel İstatistik II, Örnekleme ve İstatistiksel Yazılımlar'dır; ayrıca 2 AKTS seçmeli ve 5 AKTS mesleki seçmeli alınır.
-ders_plani#bolum-VII.YARIYIL:
-  - 7. yarıyıl zorunlu dersleri Zaman Serileri Analizi, Bitirme Projesi I, Çok Değişkenli İstatistik ve Deney Tasarımı I'dir; ayrıca 2 AKTS seçmeli ve 6,5 AKTS mesleki seçmeli alınır.
-ders_plani#bolum-VIII.YARIYIL:
-  - 8. yarıyıl zorunlu dersleri Stokastik Süreçler, Bitirme Projesi II, İstatistiksel Kalite Kontrolü ve Hesap Tabloları Uygulamaları'dır; ayrıca 2,5 AKTS seçmeli ve 10 AKTS mesleki seçmeli alınır.
-ders_plani#bolum-Mesleki_Seçmeli_Dersler:
-  - İstatistik bölümünün mesleki seçmeli dersleri arasında R Programlamaya Giriş, Python ile Programlama, Veri Bilimine Giriş, Makine Öğrenmesi Yöntemleri, Yapay Sinir Ağlarına Giriş, Veri Görselleştirme, Benzetim, Demografi ve Deney Tasarımı II gibi dersler vardır.
-ders_plani#bolum-Seçmeli_Dersler:
-  - Bölümün seçmeli (alan dışı) dersleri arasında Veri Okuryazarlığı, Finansal Okuryazarlık, Genel İktisat, Genel İşletme, Girişimcilik, Akademik İngilizce III-IV ve Gönüllülük Çalışmaları gibi dersler vardır.
+# Ders planı özetleri yok: cevap.py tablodan otomatik üretiyor (ders_plani_ozeti).
 
 # ---------------- İstatistik program bilgileri (Bologna) ----------------
-program_bilgileri#bolum-Program_Profili:
+istatistik_program_bilgileri#bolum-Program_Profili:
   - İstatistik Bölümü İstatistik Teorisi ve Uygulamalı İstatistik ana bilim dallarından oluşur ve programda eğitim dili %30 İngilizcedir.
   - Program veri toplayıp analiz edebilen ve yorumlayabilen istatistikçiler yetiştirmeyi amaçlar.
   - Mezunlar akademide, kamuda, bankacılık ve sigortacılıkta, araştırma şirketlerinde, sağlık ve medya kuruluşlarında çalışabilir.
-program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+istatistik_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
   - İstatistik Bölüm Başkanı Prof. Dr. Betül Kan Kılınç, bölüm başkan yardımcıları Dr. Öğr. Üyesi Halil Eryılmaz ve Dr. Öğr. Üyesi Levent Terlemez'dir.
   - Bölümün AKTS koordinatörü Doç. Dr. Mustafa Çavuş, yardımcısı Arş. Gör. Dr. Cenk İçöz'dür.
-program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
+istatistik_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
   - Programa kabul için Türk ve yabancı öğrencilere yönelik genel kabul şartları geçerlidir.
-program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+istatistik_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
   - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
   - Programda zorunlu İngilizce hazırlık vardır; üniversitenin yeterlik sınavından 100 üzerinden 70 alanlar ya da YDS, TOEFL gibi sınavlardan yeterli puanı olanlar muaf olur.
-program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+istatistik_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
   - İstatistik programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
-program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+istatistik_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
   - Mezunlar her alanda yüksek lisans ve doktora programlarına başvurabilir.
-program_bilgileri#bolum-Mezuniyet_Koşulları:
+istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları:
   - İstatistik bölümünden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir.
-program_bilgileri#bolum-İstihdam_Olanakları:
+istatistik_program_bilgileri#bolum-İstihdam_Olanakları:
   - İstatistik mezunları akademide, banka ve sigorta sektöründe, araştırma şirketlerinde, kalite kontrol ve stok birimlerinde, medya kuruluşlarında ve hastanelerde çalışabilir.
-program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
+istatistik_program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
+  - Bologna sayfasına göre dönem içi değerlendirmelerin başarı notuna katkısı %30 ile %70 arasındadır; ancak güncel yönetmelikte üst sınır %60'tır.
+  - Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.
+  - DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür.
+
+# ---------------- Biyoloji program bilgileri (Bologna) ----------------
+biyoloji_program_bilgileri#bolum-Program_Profili:
+  - Biyoloji Bölümü Genel Biyoloji, Zooloji, Botanik, Moleküler Biyoloji, Ekoloji ve Temel ve Endüstriyel Mikrobiyoloji olmak üzere altı anabilim dalından oluşur.
+  - Biyoloji öğrencileri danışmanlarıyla hedeflerine uygun ders seçerek kariyerlerini planlar; mesleki seçmeli dersler alt dallarda uzmanlaşmayı sağlar.
+  - Biyoloji öğrencileri laboratuvarlarda ve öğretim üyelerinin TÜBİTAK gibi projelerinde araştırma deneyimi kazanabilir.
+biyoloji_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Biyoloji Bölüm Başkanı Prof. Dr. Mehmet Candan, bölüm başkan yardımcıları Dr. Öğr. Üyesi Handan Açelya Kapkaç ve Dr. Öğr. Üyesi Caner Aydınlı'dır.
+  - Biyoloji Bölümü'nün AKTS koordinatörü yardımcısı Dr. Öğr. Üyesi Caner Aydınlı'dır; sayfada Prof. Dr. Hülya Altuntaş da AKTS görevlisi olarak geçiyor.
+biyoloji_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
+  - Biyoloji programına kabul için Türk ve yabancı öğrencilere yönelik genel kabul şartları geçerlidir.
+biyoloji_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Biyoloji Bölümü'nde İngilizce hazırlık isteğe bağlıdır.
+biyoloji_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - Biyoloji programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
+biyoloji_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+  - Biyoloji mezunları her alanda yüksek lisans ve doktora programlarına başvurabilir.
+biyoloji_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Biyoloji bölümünden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir.
+biyoloji_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Biyoloji mezunları biyoloji, biyoteknoloji, tıp, gıda ve ziraat alanlarındaki araştırma enstitülerinde ve AR-GE merkezlerinde araştırmacı olarak çalışabilir.
+  - Biyoloji mezunları sağlık kurumlarının laboratuvarlarında, bakanlık kuruluşlarında, gıda ve ilaç sanayisinde ve belediyelerin ilgili birimlerinde görev alabilir.
+  - Gerekli sertifikası olan biyoloji mezunları okullarda biyoloji öğretmenliği yapabilir.
+biyoloji_program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
+  - Bologna sayfasına göre dönem içi değerlendirmelerin başarı notuna katkısı %30 ile %70 arasındadır; ancak güncel yönetmelikte üst sınır %60'tır.
+  - Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.
+  - DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür.
+
+# ---------------- Fizik program bilgileri (Bologna) ----------------
+fizik_program_bilgileri#bolum-Program_Profili:
+  - Fizik lisans programı 4 yıldır, eğitim dili %100 Türkçedir ve 1 yıllık hazırlık sınıfı isteğe bağlıdır.
+  - Fizik bölümünden mezun olmak için GNO'nun en az 2,00 olmasının yanında son sınıfta proje hazırlama ve poster sunumu zorunludur.
+  - Fizik programında zorunlu staj vardır.
+  - Fizik Bölümü'nde nanoteknoloji, yarıiletkenler, optoelektronik, plazma fiziği, atom ve molekül fiziği ve astrofizik gibi konularda araştırma yapılır.
+fizik_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Fizik Bölüm Başkanı Prof. Dr. Metin Kul, bölüm başkan yardımcıları Prof. Dr. Evren Turan ve Dr. Öğr. Üyesi Halil Gamsızkan'dır.
+  - Fizik Bölümü'nün AKTS koordinatörü Dr. Öğr. Üyesi Halil Gamsızkan, yardımcısı Arş. Gör. Burak Aratan'dır.
+fizik_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
+  - Fizik programına kabul için Türk ve yabancı öğrencilere yönelik genel kabul şartları geçerlidir.
+fizik_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan kredi ve not transferin bir defaya mahsus değerlendirilir; Fizik sayfasında başvuru süresi hem ilk hafta hem ilk iki hafta olarak geçiyor, kesin süreyi bölüme sor.
+fizik_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - Fizik programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
+fizik_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+  - Fizik mezunları her alanda yüksek lisans ve doktora programlarına başvurabilir.
+fizik_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Fizik bölümünden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir.
+fizik_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Fizik mezunları üniversitelerde ve sanayinin AR-GE laboratuvarlarında araştırmacı olarak çalışabilir.
+  - Pedagojik formasyon alan fizik mezunları fizik öğretmeni olabilir; sertifika alırlarsa iş güvenliği uzmanı, medikal fizik yüksek lisansı yaparlarsa sağlık kuruluşlarında uzman olarak çalışabilir.
+fizik_program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
+  - Bologna sayfasına göre dönem içi değerlendirmelerin başarı notuna katkısı %30 ile %70 arasındadır; ancak güncel yönetmelikte üst sınır %60'tır.
+  - Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.
+  - DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür.
+
+# ---------------- Kimya program bilgileri (Bologna) ----------------
+kimya_program_bilgileri#bolum-Program_Profili:
+  - Kimya programı %30 İngilizce eğitim veren 4 yıllık bir programdır ve öncesinde 1 yıl İngilizce hazırlık zorunludur.
+  - Kimya Bölümü Analitik Kimya, Anorganik Kimya, Organik Kimya, Biyokimya ve Fizikokimya olmak üzere beş anabilim dalından oluşur.
+  - Kimya mezunları araştırmacı olarak, AR-GE ve kalite kontrol laboratuvarlarında, formasyon alırlarsa eğitim kurumlarında çalışabilir.
+kimya_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Kimya Bölüm Başkanı Prof. Dr. Murat Erdem, bölüm başkan yardımcıları Prof. Dr. Ayça Özcan ve Prof. Dr. Hakan Ünver'dir.
+  - Kimya Bölümü'nün AKTS koordinatörü Prof. Dr. Ayça Özcan, yardımcısı Dr. Öğr. Üyesi Sultan Funda Görkem'dir.
+kimya_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
+  - Kimya programına kabul için Türk ve yabancı öğrencilere yönelik genel kabul şartları geçerlidir.
+kimya_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Kimya programında zorunlu İngilizce hazırlık vardır; yeterlik sınavından 100 üzerinden 70 alanlar ya da YDS, TOEFL gibi sınavlardan yeterli puanı olanlar muaf olur.
+kimya_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - Kimya programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
+kimya_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+  - Kimya mezunları her alanda yüksek lisans ve doktora programlarına başvurabilir.
+kimya_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Kimya bölümünden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir.
+  - Kimya programında ayrıca 72 AKTS İngilizce ders, 23 AKTS mesleki seçmeli ders ve giriş yılına göre 44-48 AKTS seçmeli ders alman gerekir.
+kimya_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Kimya mezunları araştırmacı olarak, kurumların AR-GE, modern analiz ve kalite kontrol laboratuvarlarında, eğitim formasyonu alırlarsa eğitim kurumlarında çalışabilir.
+kimya_program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
+  - Bologna sayfasına göre dönem içi değerlendirmelerin başarı notuna katkısı %30 ile %70 arasındadır; ancak güncel yönetmelikte üst sınır %60'tır.
+  - Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.
+  - DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür.
+
+# ---------------- Matematik program bilgileri (Bologna) ----------------
+matematik_program_bilgileri#bolum-Program_Profili:
+  - Matematik Bölümü'nde analiz, cebir, geometri, topoloji, uygulamalı matematik ve matematik eğitimi alanlarında eğitim ve araştırma yapılır.
+  - Matematik öğrencileri fen ve mühendislik derslerinin yanında işletme ve iktisat gibi dersleri de seçmeli olarak alabilir.
+  - Başarılı matematik öğrencileri ikinci anadal ya da yandal yapabilir.
+matematik_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Matematik Bölüm Başkanı Prof. Dr. Murat Limoncu, bölüm başkan yardımcısı Dr. Öğr. Üyesi Samet Bila'dır.
+  - Matematik Bölümü'nün AKTS koordinatörü Doç. Dr. Utku Erdoğan, yardımcısı Dr. Öğr. Üyesi Samet Bila'dır.
+matematik_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
+  - Matematik programına kabul için Türk ve yabancı öğrencilere yönelik genel kabul şartları geçerlidir.
+matematik_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan kredi ve not transferin bir defaya mahsus değerlendirilir; Matematik sayfasında başvuru süresi hem ilk hafta hem ilk iki hafta olarak geçiyor, kesin süreyi bölüme sor.
+matematik_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - Matematik programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
+matematik_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+  - Matematik mezunları her alanda yüksek lisans ve doktora programlarına başvurabilir.
+matematik_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Matematik bölümünden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir.
+matematik_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Pedagojik formasyonu olan matematik mezunları ortaöğretim kurumlarında matematik öğretmeni olabilir.
+  - Matematik mezunları kamu ve özel kuruluşlarda ve bankalarda araştırmacı, planlamacı ya da bilgisayarcı olarak çalışabilir; başarılı mezunlar araştırma görevlisi olabilir.
+matematik_program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
   - Bologna sayfasına göre dönem içi değerlendirmelerin başarı notuna katkısı %30 ile %70 arasındadır; ancak güncel yönetmelikte üst sınır %60'tır.
   - Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.
   - DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür.

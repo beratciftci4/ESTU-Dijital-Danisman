@@ -17,15 +17,15 @@
   anahtar: ["20 AKTS"]
 
 - soru: Mezun olmak için kaç AKTS tamamlamam gerekiyor?
-  kaynak: [yonetmelik#madde-25, program_bilgileri#bolum-Mezuniyet_Koşulları, program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları, danismanlik#madde-10]
+  kaynak: [yonetmelik#madde-25, istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları, istatistik_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları, danismanlik#madde-10]
   anahtar: ["240"]
 
 - soru: Mezun olmak için neyim eksik, hangi şartları sağlamam lazım?
-  kaynak: [yonetmelik#madde-25, program_bilgileri#bolum-Mezuniyet_Koşulları, program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  kaynak: [yonetmelik#madde-25, istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları, istatistik_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
   anahtar: ["240"]
 
 - soru: Mezuniyet için genel not ortalaması en az kaç olmalı?
-  kaynak: [yonetmelik#madde-25, program_bilgileri#bolum-Mezuniyet_Koşulları, program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  kaynak: [yonetmelik#madde-25, istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları, istatistik_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
   anahtar: ["2,00"]
 
 - soru: Aldığım bir dersten çekilebilir miyim?
@@ -105,11 +105,11 @@
   anahtar: ["uygun bulunmayan dersi/dersleri, ekle/sil tarihlerinden sonra üzerinden silinir"]
 
 - soru: Olasılık I dersi kaç AKTS ve hangi dönemde?
-  kaynak: [ders_plani#bolum-III.YARIYIL]
+  kaynak: [istatistik_ders_plani#bolum-III.YARIYIL]
   anahtar: ["Probability I (Olasılık I) | İngilizce | 4+0 | 6.0"]
 
 - soru: Data Visualization dersi mesleki seçmeli mi?
-  kaynak: [ders_plani#bolum-Mesleki_Seçmeli_Dersler]
+  kaynak: [istatistik_ders_plani#bolum-Mesleki_Seçmeli_Dersler]
   anahtar: ["Data Visualization"]
 
 - soru: Bütünleme sınavına kimler girebilir?

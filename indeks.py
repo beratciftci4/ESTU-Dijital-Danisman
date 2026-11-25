@@ -66,6 +66,9 @@ ESANLAMLI = {
     "mezun": "mezuniyet diploma",
     "harç": "katkı payı",
     "devamsızlık": "devam",
+    "birinci": "1", "ikinci": "2", "üçüncü": "3", "dördüncü": "4",
+    "beşinci": "5", "altıncı": "6", "yedinci": "7", "sekizinci": "8",
+    "dönem": "yarıyıl",
 }
 # "bütünleme"yi "ek sınav"a eşlemiyoruz: ikisi aynı şey değil, yeni yönetmelikte bütünleme yok
 
@@ -91,13 +94,23 @@ def kelimeler(metin, kok_uzunlugu=5):
 
 
 def arama_metni(p):
-    """Bir parçanın aranacak metni: belge adı + madde başlığı + metin."""
+    """Bir parçanın aranacak metni: belge adı + madde başlığı + metin.
+    Bölümün kendi Bologna sayfalarında bölüm adını yazmıyoruz: arama zaten o bölüme filtreli,
+    ad kalınca "Kimya bölümünde staj zorunlu mu?" gibi her soruda ders planı öne çıkıyor."""
     etiket = p["belge_adi"]
+    if p.get("kapsam", "").startswith("program:"):
+        etiket = re.sub(r"^.*? Bölümü ", "Bölüm ", etiket)
     if p["tur"] in ("madde", "bent"):
         etiket += f" Madde {p['no']}"
     if p["baslik"]:
         etiket += f" {p['baslik']}"
+    yariyil = YARIYIL_NO.get(p["no"]) if p["belge_id"].endswith("_ders_plani") else None
+    if yariyil:   # "I.YARIYIL" -> öğrenci "1. yarıyıl" ya da "birinci dönem" diye soruyor
+        etiket += f" {yariyil}. yarıyıl {yariyil}. dönem"
     return f"{etiket}. {p['metin']}"
+
+
+YARIYIL_NO = {f"{r}.YARIYIL": i for i, r in enumerate(["I", "II", "III", "IV", "V", "VI", "VII", "VIII"], 1)}
 
 
 # ---------- embedding modeli ----------

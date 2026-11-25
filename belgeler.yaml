@@ -13,6 +13,7 @@
   dayanak: "RG 09.09.2025/33012, değişiklik RG 08.02.2026/33162"
   indirme_tarihi: 2026-11-19
   sha256: 17475971dfacff8d8bbb0989ce120f9f285d35104494a112760b0258f6d750f2
+  kapsam: genel
   durum: aktif
   not: >
     mevzuat.gov.tr'deki işlenmiş metin, 2026 değişikliği içinde.
@@ -28,12 +29,13 @@
   dayanak: "Senato 05.10.2018/5-4, son değişiklik 08.11.2022/27-2"
   indirme_tarihi: 2026-11-19
   sha256: 365cd2c438964c7d2304cd08e244b22d6faa2e3ec214df4dfae9422d489c4c50
+  kapsam: fakulte:fen
   durum: aktif
   not: >
     fen.eskisehir.edu.tr'deki stajyonerge.pdf eski sürüm (23 sayfa), bu 26 sayfalık revizyon 1.
     Dayanak maddesi hâlâ kaldırılan 2018 yönetmeliğini gösteriyor.
 
-- id: ders_plani
+- id: istatistik_ders_plani
   ad: İstatistik Bölümü Dersler - AKTS Kredileri (Bologna)
   dosya: istatistik_ders_plani.html
   url: https://akts.eskisehir.edu.tr/tr/program/dersler/189/13
@@ -43,10 +45,11 @@
   dayanak: null
   indirme_tarihi: 2026-11-19
   sha256: e2ebaed658f6ffd5ad5fcfae06afc83c6f3ca2f2220fab6cf87fd86c40fcb759
+  kapsam: program:istatistik
   durum: aktif
   not: Yarıyıllara göre ders kodu, adı, dili, T+U ve AKTS. Seçmeli ders havuzları bu sayfada yok.
 
-- id: program_bilgileri
+- id: istatistik_program_bilgileri
   ad: İstatistik Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
   dosya: istatistik_program_bilgileri.html
   url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/189/25/1
@@ -56,6 +59,7 @@
   dayanak: null
   indirme_tarihi: 2026-11-19
   sha256: 32b6dbd8424ad408b89104f5822eddd1cdd19e4bdbca62eb30acd4d5f7142ab3
+  kapsam: program:istatistik
   durum: aktif
   not: 240 AKTS, GNO en az 2,00, FF/DZ/YZ olmaması.
 
@@ -69,6 +73,7 @@
   dayanak: "Senato 11.09.2025/9-4"
   indirme_tarihi: 2026-11-19
   sha256: 810b3fd4241f8fd9cec2fa5a132b34797ef183967a6d5f1b60f2f8b8e035e931
+  kapsam: genel
   durum: aktif
   not: Ders seçimi ve danışman onayı.
 
@@ -82,6 +87,7 @@
   dayanak: "Senato 11.09.2025/9-5"
   indirme_tarihi: 2026-11-19
   sha256: ac84179c4e59c2a59230bc20fefcf6ea604a1deb2cf81d525d97213d2f75b57b
+  kapsam: genel
   durum: aktif
   not: Madde yerine 1), 2) ... numaralı. Mazeret sınavı ve kayıt dondurma.
 
@@ -95,6 +101,7 @@
   dayanak: "Senato 18.12.2025/12-2"
   indirme_tarihi: 2026-11-19
   sha256: 323ed3eaeb1abf4aee51834bf00d571654166beae871bcef748ae788f034de0c
+  kapsam: genel
   durum: aktif
   not: Numaralı maddeler + dilekçe formu.
 
@@ -108,6 +115,7 @@
   dayanak: "Senato 23.11.2018/8-3, son değişiklik 05.10.2021/29-2"
   indirme_tarihi: 2026-11-19
   sha256: 3d0caf021e31f5e7b34122c846463b70c8ecfb09135c66ad895bd34caf8714c6
+  kapsam: genel
   durum: aktif
   not: Taranmış PDF, metin katmanı yok. 2. aşamada OCR gerekecek.
 
@@ -121,6 +129,7 @@
   dayanak: "Senato 11.09.2025/9-6, değişiklik 10.03.2026/2-2"
   indirme_tarihi: 2026-11-19
   sha256: d6a0e5a93e6d5808e29331bdfe76ab3fd346b8d2fe5717b713c9068914d619c1
+  kapsam: genel
   durum: aktif
   not: Numaralı maddeler (1-23).
 
@@ -134,6 +143,7 @@
   dayanak: "Senato 10.07.2018/2-5, son değişiklik 29.07.2025/3-2"
   indirme_tarihi: 2026-11-19
   sha256: d56acbd7a20575bf93dfadb65cce1f9588ac5c079355d9fdb8ceaa096bbc9fd9
+  kapsam: genel
   durum: aktif
   not: 1-, 2- şeklinde numaralı, içinde tablolar var.
 
@@ -147,5 +157,118 @@
   dayanak: "Senato 04.01.2024/1-2, değişiklik 26.06.2025/7-3"
   indirme_tarihi: 2026-11-19
   sha256: b1ecc562c2d852685740763c4d7c392f71a120c81801be4e38749973ad75b7a5
+  kapsam: genel
   durum: aktif
   not: İsteğe bağlı staj türü.
+
+- id: biyoloji_ders_plani
+  ad: Biyoloji Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: biyoloji_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/188/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 485e4171879e6fd673118f5d561e60eec9db3852fb8f97f3f50c3762757e9618
+  kapsam: program:biyoloji
+  durum: aktif
+  not: null
+
+- id: biyoloji_program_bilgileri
+  ad: Biyoloji Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: biyoloji_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/188/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: b2a30d29b9ffc696949390d8b08ad841241dcfbc8bcfe58e5dac22a6a2fdfb03
+  kapsam: program:biyoloji
+  durum: aktif
+  not: null
+
+- id: fizik_ders_plani
+  ad: Fizik Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: fizik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/186/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 92ddfe252e8f3337f10812484b7ac855973fe5a68be6f55960e6f003fa06a72a
+  kapsam: program:fizik
+  durum: aktif
+  not: null
+
+- id: fizik_program_bilgileri
+  ad: Fizik Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: fizik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/186/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: d7af1c3c3cb3d9539dc1b78a91b26abb07e533b7e9a710bdaa6101e5395c31d0
+  kapsam: program:fizik
+  durum: aktif
+  not: null
+
+- id: kimya_ders_plani
+  ad: Kimya Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: kimya_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/187/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: f0ae9b2bbf1b02726dddebba47c5b3e9b44da7d4858a7a3efabbe1e8242007ca
+  kapsam: program:kimya
+  durum: aktif
+  not: null
+
+- id: kimya_program_bilgileri
+  ad: Kimya Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: kimya_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/187/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 441dcd233a08b7a2ae2e9d7052dff3ea0c2cb824c260a4404a41fbd9ffcfc309
+  kapsam: program:kimya
+  durum: aktif
+  not: null
+
+- id: matematik_ders_plani
+  ad: Matematik Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: matematik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/185/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: d5b62fc0e9460254f64ec64f507365996d883475ee338eda9ffadf6934bd53a3
+  kapsam: program:matematik
+  durum: aktif
+  not: null
+
+- id: matematik_program_bilgileri
+  ad: Matematik Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: matematik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/185/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: ecf71bbeed494a02bf23edb173c2a74bf72c2af5f89409f8b7b0573755178d32
+  kapsam: program:matematik
+  durum: aktif
+  not: null

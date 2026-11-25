@@ -1,0 +1,91 @@
+# Fen Fakültesi'nin diğer bölümleri için soru seti (2026-11-25).
+# Sonuçlara bakmadan, belgeler okunarak yazıldı. Alanlar soru_seti.yaml'daki gibi,
+# ayrıca program: soru hangi bölüm seçiliyken soruluyor.
+
+- soru: Kimya bölümünde staj zorunlu mu?
+  program: kimya
+  kaynak: [fen_staj#ek-4]
+  anahtar: ["Kimya ve Matematik Bölümü öğrencileri için staj isteğe bağlıdır"]
+
+- soru: Matematik öğrencisi olarak staj yapmak zorunda mıyım?
+  program: matematik
+  kaynak: [fen_staj#ek-4]
+  anahtar: ["staj isteğe bağlıdır"]
+
+- soru: Biyoloji bölümünde kaç gün staj yapmam gerekiyor?
+  program: biyoloji
+  kaynak: [fen_staj#ek-4, fen_staj#madde-7]
+  anahtar: ["20 iş günü"]
+
+- soru: Fizik bölümünde birinci yarıyılda hangi dersler var?
+  program: fizik
+  kaynak: [fizik_ders_plani#bolum-I.YARIYIL]
+  anahtar: ["Fizik I"]
+
+- soru: Kimya birinci dönem dersleri neler?
+  program: kimya
+  kaynak: [kimya_ders_plani#bolum-I.YARIYIL]
+  anahtar: ["Genel Kimya I"]
+
+- soru: Matematik bölümünde Fonksiyonel Analiz hangi dönemde?
+  program: matematik
+  kaynak: [matematik_ders_plani#bolum-VII.YARIYIL, matematik_ders_plani#bolum-VIII.YARIYIL]
+  anahtar: ["Fonksiyonel Analiz"]
+
+- soru: Biyolojide evrim dersi kaçıncı yarıyılda?
+  program: biyoloji
+  kaynak: [biyoloji_ders_plani#bolum-VIII.YARIYIL]
+  anahtar: ["Evrim"]
+
+- soru: Fizik bölümünde bitirme projesi kaç AKTS?
+  program: fizik
+  kaynak: [fizik_ders_plani#bolum-VII.YARIYIL, fizik_ders_plani#bolum-VIII.YARIYIL]
+  anahtar: ["Bitirme Projesi"]
+
+- soru: Kimya bölümünden mezun olmak için kaç AKTS İngilizce ders almalıyım?
+  program: kimya
+  kaynak: [kimya_program_bilgileri#bolum-Mezuniyet_Koşulları]
+  anahtar: ["72 AKTS İngilizce"]
+
+- soru: Kimya bölümünde İngilizce hazırlık zorunlu mu?
+  program: kimya
+  kaynak: [kimya_program_bilgileri#bolum-Program_Profili, kimya_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması]
+  anahtar: ["Hazırlık zorunludur", "Zorunlu İngilizce Hazırlık"]
+
+- soru: Biyoloji bölümünde hazırlık okumak zorunlu mu?
+  program: biyoloji
+  kaynak: [biyoloji_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması]
+  anahtar: ["isteğe bağlıdır"]
+
+- soru: Fizik bölümünden mezun olmak için proje şartı var mı?
+  program: fizik
+  kaynak: [fizik_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["Proje Hazırlama ve Poster Sunumu"]
+
+- soru: Matematik bölüm başkanı kim?
+  program: matematik
+  kaynak: [matematik_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.]
+  anahtar: ["MURAT LİMONCU"]
+
+- soru: Fizik mezunları nerede çalışabilir?
+  program: fizik
+  kaynak: [fizik_program_bilgileri#bolum-İstihdam_Olanakları, fizik_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["AR-GE"]
+
+- soru: Biyoloji bölümünden mezun olmak için genel not ortalaması kaç olmalı?
+  program: biyoloji
+  kaynak: [yonetmelik#madde-25, biyoloji_program_bilgileri#bolum-Mezuniyet_Koşulları, biyoloji_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  anahtar: ["2,00"]
+
+- soru: Matematik bölümünde kaç AKTS ile mezun olunur?
+  program: matematik
+  kaynak: [yonetmelik#madde-25, matematik_program_bilgileri#bolum-Mezuniyet_Koşulları, matematik_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları, danismanlik#madde-10]
+  anahtar: ["240"]
+
+- soru: Kimya bölümünün laboratuvar önlüğü nereden alınır?
+  program: kimya
+  cevapsiz: true
+
+- soru: Fizik bölümünün kulüp etkinlikleri ne zaman?
+  program: fizik
+  cevapsiz: true

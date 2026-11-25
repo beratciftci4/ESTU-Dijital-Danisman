@@ -12,22 +12,28 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 
 | Set | Cevaplı doğru | Cevapsız doğru | Cevapsızda doğrudan "bulamadım" | Kısa cevap doğru maddeye dayanıyor | İlk cümle doğru maddeden |
 |---|---|---|---|---|---|
-| Ana set (eşik ayarında kullanıldı) | 26/27 | 3/3 | 1/3 | 24/27 | 22/27 |
-| Kalibrasyon, cevapsız (eşik ayarında kullanıldı) | - | 15/15 | 8/15 | - | - |
-| Ayrık set | 10/10 | 2/2 | 1/2 | 10/10 | 9/10 |
-| Doğrulama seti (eşikten sonra yazıldı) | 7/8 | 6/8 | 2/8 | 7/8 | 7/8 |
+| Ana set (eşik ayarında kullanıldı) | 26/27 | 3/3 | 1/3 | 24/27 | 23/27 |
+| Kalibrasyon, cevapsız (eşik ayarında kullanıldı) | - | 14/15 | 8/15 | - | - |
+| Ayrık set | 10/10 | 2/2 | 1/2 | 10/10 | 10/10 |
+| Doğrulama seti (eşikten sonra yazıldı) | 8/8 | 6/8 | 2/8 | 8/8 | 7/8 |
+| Fen Fakültesi diğer bölümler | 13/16 | 1/2 | 0/2 | 14/16 | 14/16 |
 
 ## Hatalı sonuçlar
 
 - [Ana set (eşik ayarında kullanıldı)] Kaydımı en fazla kaç dönem dondurabilirim? -> bulundu (benzerlik 0.864)
-- [Doğrulama seti (eşikten sonra yazıldı)] Stajımı yaptığım kurumu değiştirebilir miyim? -> bulundu (benzerlik 0.862)
+- [Kalibrasyon, cevapsız (eşik ayarında kullanıldı)] Erasmus için kaç dil puanı gerekiyor? -> bulundu (benzerlik 0.869)
 - [Doğrulama seti (eşikten sonra yazıldı)] Mezunlar derneğine nasıl üye olurum? -> bulundu (benzerlik 0.851)
 - [Doğrulama seti (eşikten sonra yazıldı)] Akademik takvime göre güz dönemi ne zaman bitiyor? -> bulundu (benzerlik 0.867)
+- [Fen Fakültesi diğer bölümler] Biyoloji bölümünde hazırlık okumak zorunlu mu? -> bulundu (benzerlik 0.876)
+- [Fen Fakültesi diğer bölümler] Fizik bölümünden mezun olmak için proje şartı var mı? -> bulundu (benzerlik 0.878)
+- [Fen Fakültesi diğer bölümler] Matematik bölümünde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.865)
+- [Fen Fakültesi diğer bölümler] Kimya bölümünün laboratuvar önlüğü nereden alınır? -> bulundu (benzerlik 0.857)
 
 ## Notlar
 
 - Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra yazıldı. Doğrulama sonucuna göre eşik değiştirilmedi, yoksa o set de bağımsız olmazdı.
 - Cevapsız bir soruya "bulundu" denmesi en riskli hata. Bu durumda bile asistan metin uydurmuyor, sadece alakasız bir maddeyi gösteriyor; kaynak ve sayfa her zaman yazılı.
+- Özet sıralaması eklenince kalibrasyonda bir soru ("Erasmus için kaç dil puanı gerekiyor?") "bulundu"ya geçti (15/15 -> 14/15): yönetmelik 6. madde özetinde "Erasmus" kelimesi geçiyor ve dil sınavı eşdeğerlikleri maddesi de soruya yakın. Diğer setlerdeki kazanç daha büyük olduğu için tutuldu.
 - Benzerlik eşiği tek başına sınırlı: "Mezunlar derneği" gibi yönetmelikteki kelimelere yakın sorular eşiği geçebiliyor. Kelime kapsamı gibi ek sinyaller denendi, net ayırmadı.
 
 ## Kısa cevap

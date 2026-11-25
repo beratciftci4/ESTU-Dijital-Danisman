@@ -1,6 +1,6 @@
 # ESTÜ Dijital Danışman
 
-ESTÜ **Fen Fakültesi İstatistik Bölümü** öğrencilerinin "Kaç AKTS üst sınırım var?",
+ESTÜ lisans öğrencilerinin "Kaç AKTS üst sınırım var?",
 "Tek ders sınavına kimler girebilir?", "Kaç iş günü staj yapmam lazım?" gibi sorularına
 **resmi belgelerden**, belge adı, madde numarası ve sayfasıyla cevap veren bir arama asistanı.
 
@@ -9,14 +9,15 @@ Kısa cevap, her madde için önceden elle yazılmış özet cümlelerinden seç
 zekâ ile metin üretilmiyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da
 servis kullanmıyor.
 
-Hangi bölüm için: Eğitim-öğretim yönetmeliği ve usul-esaslar bütün ESTÜ lisans öğrencileri için
-geçerli. Staj yönergesi Fen Fakültesi'nin, ders planı ve mezuniyet koşulları İstatistik Bölümü'nün.
-Başka bir bölüm için o bölümün staj yönergesi ve Bologna sayfaları eklenip `ozetler.yaml`'a
-özetleri yazılmalı.
+**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an Fen Fakültesi'nin beş bölümü var
+(Biyoloji, Fizik, İstatistik, Kimya, Matematik), diğer fakülteler sırayla ekleniyor. Yönetmelik ve
+usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders planı ve program
+bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
+(`programlar.yaml`, belgelerdeki `kapsam` alanı).
 
 "Mezun olmak için neyim eksik?" sorusu için ayrı bir **mezuniyet kontrolü** sekmesi var:
 tamamlanan AKTS, GNO, kalan FF/YZ/DZ/EK/ÇK notları ve staj gününü girince yönetmeliğin
-25. maddesine ve staj yönergesinin 7. maddesine göre neyin eksik olduğunu, maddesiyle birlikte gösteriyor.
+25. maddesine ve bölümün staj kuralına göre neyin eksik olduğunu, maddesiyle birlikte gösteriyor.
 
 **Canlı:** https://estu-dijital-danisman.streamlit.app
 
@@ -24,7 +25,7 @@ tamamlanan AKTS, GNO, kalan FF/YZ/DZ/EK/ÇK notları ve staj gününü girince y
 
 ## Kaynak belgeler
 
-Hepsi 19.11.2026'da resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar `belgeler.yaml`).
+Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihleri `belgeler.yaml`).
 
 | Belge | Yürürlük | Son değişiklik |
 |---|---|---|
@@ -37,7 +38,7 @@ Hepsi 19.11.2026'da resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar `belg
 | Yaz Okulu Uygulama Esasları | 11.09.2025 | 10.03.2026 |
 | Not Karşılıkları ve Yabancı Dil Eşdeğerlikleri Uygulama Esasları | 10.07.2018 | 29.07.2025 |
 | Proje Temelli Staj Yönergesi | 04.01.2024 | 26.06.2025 |
-| İstatistik Bölümü ders planı ve program bilgileri (Bologna sayfaları) | web sayfası | |
+| Biyoloji, Fizik, İstatistik, Kimya, Matematik ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
 
 Not: Yönetmelik 2025'te tamamen yenilendi. İnternette hâlâ 2018 tarihli eski metin (RG 30540)
 dolaşıyor; buradaki metin mevzuat.gov.tr'deki güncel, değişiklikleri işlenmiş hali.
@@ -48,11 +49,11 @@ dolaşıyor; buradaki metin mevzuat.gov.tr'deki güncel, değişiklikleri işlen
 kaynaklar/*.pdf, *.html
    │  ayristir.py   madde madde parçalama (MADDE 10-, 1), 1- ...), sayfa ve başlık bilgisi
    ▼
-cikti/parcalar.jsonl  (190 parça)
+cikti/parcalar.jsonl  (267 parça, her birinde kapsam: genel / fakülte / bölüm)
    │  indeks.py     e5-small (ONNX, int8) ile vektörler + FAISS, BM25 için Türkçe kök
    ▼
 indeks/
-   │  arama.py      BM25 ve e5 sıralamaları Reciprocal Rank Fusion ile birleşiyor
+   │  arama.py      seçilen bölümün belgelerinde BM25 + e5 + özet benzerliği, Reciprocal Rank Fusion
    │  cevap.py      kısa cevap (ozetler.yaml'dan cümle seçimi) + ilgili fıkralar + atıf
    │                + "bulamadım" eşiği
    ▼
@@ -74,10 +75,21 @@ Birkaç ayrıntı:
   Uygulamanın toplam belleği ~290 MB, bir soru ~0,01 sn.
 - **"Bulamadım".** En iyi parçanın benzerliği 0.850'nin üstündeyse cevap gösteriliyor, 0.825'in
   altındaysa "bulamadım" deniyor, arada kalırsa "kesin cevap bulamadım, ilgili olabilecek maddeler" deniyor.
-- **Kısa cevap.** `ozetler.yaml`'da her parça için sade özet cümleleri var (181 parça, 396 cümle,
-  elle yazıldı). Soruya göre en iyi 5 parçanın cümleleri puanlanıyor (e5 benzerliği + kelime örtüşmesi
-  + maddenin benzerliği) ve en uygun 1-3 cümle gösteriliyor. Cümlelerin vektörleri
-  `indeks/ozet_vektorleri.npz`'de; `ozetler.yaml` değişirse ilk soruda kendiliğinden yeniden hesaplanıyor (~4 sn).
+- **Kısa cevap.** `ozetler.yaml`'da her parça için sade özet cümleleri var (207 parça, 450 cümle,
+  elle yazıldı). Ders planları tablo olduğu için onların cümleleri tablodan otomatik üretiliyor
+  ("Fizik bölümünde 1. yarıyılın zorunlu dersleri şunlardır: ..."). Soruya göre en iyi 5 parçanın
+  cümleleri puanlanıyor (e5 benzerliği + kelime örtüşmesi + maddenin benzerliği) ve en uygun 1-3 cümle
+  gösteriliyor. Vektörler `indeks/ozet_vektorleri.npz`'de; özetler değişirse ilk soruda kendiliğinden
+  yeniden hesaplanıyor (~5 sn).
+- **Bölüm seçimi.** Arama sadece genel belgeler + bölümün fakültesinin staj yönergesi + bölümün Bologna
+  sayfalarında yapılıyor, BM25 her bölüm için ayrı kuruluyor. Bölümün kendi sayfalarının arama metninde
+  bölüm adı yazmıyor, yoksa "Kimya bölümünde staj zorunlu mu?" gibi her soruda ders planı öne çıkıyor.
+- **Özet sıralaması.** Özetler öğrencinin kullandığı kelimelerle yazıldığı için, soruya en yakın özet
+  cümlesinin benzerliği aramaya üçüncü bir sıralama olarak ekleniyor. "Bulamadım" kararı yine madde
+  metnine bakıyor.
+- **Bölüme özel staj kuralı.** Staj yönergesindeki madde genel ("en az 20 iş günü"), hangi bölümde
+  zorunlu olduğu ekteki bir notta (Fen'de Kimya ve Matematik isteğe bağlı). Her bölüme kendi staj cümlesi
+  ekleniyor, sadece o bölüm seçiliyken kullanılıyor; mezuniyet kontrolü de aynı bilgiyi kullanıyor.
 
 ## Sonuçlar
 
@@ -87,10 +99,12 @@ Test setleri `tests/` altında, her sorunun cevabı belgelerden kontrol edildi.
 
 | Set | hit@1 | hit@3 | hit@5 | MRR |
 |---|---|---|---|---|
-| Ana set (27 cevaplı soru) | 0.63 | 0.96 | 0.96 | 0.79 |
-| Ayrık set (10 cevaplı, ayarlamada kullanılmadı) | 0.80 | 1.00 | 1.00 | 0.90 |
+| Ana set (İstatistik, 27 cevaplı soru) | 0.74 | 0.96 | 0.96 | 0.85 |
+| Ayrık set (İstatistik, 10 cevaplı, ayarlamada kullanılmadı) | 0.90 | 1.00 | 1.00 | 0.95 |
+| Doğrulama seti (İstatistik, 8 cevaplı) | 0.88 | 1.00 | 1.00 | 0.92 |
+| Fen Fakültesi diğer bölümler (16 cevaplı) | 0.69 | 0.81 | 0.88 | 0.78 |
 
-Hibrit arama iki sette de sadece BM25'ten ve sadece e5'ten daha iyi.
+Hibrit arama dört sette de sadece BM25'ten ve sadece e5'ten daha iyi ya da eşit.
 
 **Cevap** (cevaplı soruda beklenen ifade gösterilen alıntıda geçiyor mu, cevapsız soruda
 asistan cevap bulduğunu iddia etmiyor mu):
@@ -98,12 +112,16 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Set | Cevaplı | Cevapsız |
 |---|---|---|
 | Ana set | 26/27 | 3/3 |
-| Kalibrasyon (sadece cevapsız) | | 15/15 |
+| Kalibrasyon (sadece cevapsız) | | 14/15 |
 | Ayrık set | 10/10 | 2/2 |
-| Doğrulama (eşikten sonra yazıldı) | 7/8 | 6/8 |
+| Doğrulama (eşikten sonra yazıldı) | 8/8 | 6/8 |
+| Fen Fakültesi diğer bölümler | 13/16 | 1/2 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 7/8. Ayarlamada kullanılmayan 11 yeni soruda doğru cümle 8'inde ilk sırada.
+doğrulama 8/8, Fen diğer bölümler 14/16.
+
+Fen setinde cevabı olmayan iki sorudan birine ("Kimya bölümünün laboratuvar önlüğü nereden alınır?")
+hâlâ "bulundu" deniyor; yeni bölümler eklendikçe bu eşiğin tekrar ayarlanması gerekecek.
 
 Ayrıntılar ve hatalı sorular: [raporlar/4_arama.md](raporlar/4_arama.md),
 [raporlar/5_cevap.md](raporlar/5_cevap.md). Parçalama kontrolleri:
@@ -150,6 +168,10 @@ API anahtarı ya da gizli bilgi gerekmiyor.
   bir soru (örneğin "mezunlar derneği") bazen eşiği geçebiliyor. Bu durumda bile gösterilen
   metin resmi metnin aynısı, kaynak ve sayfası yazılı.
 - Bologna sayfalarının yürürlük tarihi yok, erişim tarihi esas alınıyor.
+- Bologna sayfaları bölümler tarafından dolduruluyor ve bazen kendi içinde tutarsız (Fizik ve
+  Matematik sayfalarında kredi transferi başvurusu hem "ilk hafta" hem "ilk iki hafta" yazıyor).
+  Özette bu durum belirtiliyor, bölüme sormak gerekiyor.
+- Bölüm adı Bologna sayfasından geliyor; Pilotaj ve diğer fakülteler henüz eklenmedi.
 - Kısa cevap madde metninin sade anlatımı; bağlayıcı olan altındaki resmi metin. Bazen soruya
   tam uymayan bir cümle seçilebiliyor, bu yüzden kaynak maddeler her zaman altında gösteriliyor.
 - Özetler elle yazıldığı için bir belge güncellenince `ozetler.yaml`'daki cümleleri de
@@ -165,6 +187,7 @@ API anahtarı ya da gizli bilgi gerekmiyor.
 | `indeks.py` | Embedding modeli, BM25 kelime ayırma, FAISS indeksi |
 | `tokenizer_donustur.py` | tokenizer.json'ı küçük SentencePiece modeline çevirir |
 | `arama.py` | Hibrit arama |
+| `programlar.yaml` | Bölümler, fakülteleri, Bologna numaraları ve staj süreleri |
 | `cevap.py` | Kısa cevap, atıflı alıntılar ve "bulamadım" kararı |
 | `ozetler.yaml` | Her madde için elle yazılmış sade özet cümleleri |
 | `mezuniyet.py` | Mezuniyet koşulları kontrolü |

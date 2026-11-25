@@ -1,0 +1,44 @@
+# Uygulamada seçilebilen lisans programları.
+#   fakulte   : fakulteler altındaki anahtar (staj yönergesi buradan bulunuyor)
+#   bologna   : akts.eskisehir.edu.tr'deki program numarası
+#   staj_gunu : zorunlu staj süresi (iş günü), zorunlu staj yoksa null
+#   staj_notu : staj süresinin nereden geldiği
+
+fakulteler:
+  fen:
+    ad: Fen Fakültesi
+    staj_belgesi: fen_staj
+    staj_maddesi: fen_staj#madde-7      # staj süresinin yazdığı madde
+    staj_listesi: fen_staj#ek-4         # hangi bölümde zorunlu, hangisinde isteğe bağlı (EK-3 notu)
+
+programlar:
+  - id: biyoloji
+    ad: Biyoloji
+    fakulte: fen
+    bologna: 188
+    staj_gunu: 20
+    staj_notu: Fen Fakültesi Staj Yönergesi EK-3 (Fizik, İstatistik ve Biyoloji 20 iş günü zorunlu)
+  - id: fizik
+    ad: Fizik
+    fakulte: fen
+    bologna: 186
+    staj_gunu: 20
+    staj_notu: Fen Fakültesi Staj Yönergesi EK-3 (Fizik, İstatistik ve Biyoloji 20 iş günü zorunlu)
+  - id: istatistik
+    ad: İstatistik
+    fakulte: fen
+    bologna: 189
+    staj_gunu: 20
+    staj_notu: Fen Fakültesi Staj Yönergesi EK-3 (Fizik, İstatistik ve Biyoloji 20 iş günü zorunlu)
+  - id: kimya
+    ad: Kimya
+    fakulte: fen
+    bologna: 187
+    staj_gunu: null
+    staj_notu: Fen Fakültesi Staj Yönergesi EK-3 (Kimya ve Matematik için staj isteğe bağlı)
+  - id: matematik
+    ad: Matematik
+    fakulte: fen
+    bologna: 185
+    staj_gunu: null
+    staj_notu: Fen Fakültesi Staj Yönergesi EK-3 (Kimya ve Matematik için staj isteğe bağlı)

@@ -9,12 +9,15 @@ KLASOR = Path(__file__).parent.parent
 sys.path.insert(0, str(KLASOR))
 
 
-def uygulama():
-    return AppTest.from_file(str(KLASOR / "app.py"), default_timeout=120).run()
+def uygulama(bolum="istatistik"):
+    at = AppTest.from_file(str(KLASOR / "app.py"), default_timeout=120)
+    if bolum:
+        at.query_params["bolum"] = bolum
+    return at.run()
 
 
-def sor(soru):
-    at = uygulama()
+def sor(soru, bolum="istatistik"):
+    at = uygulama(bolum)
     at.text_input(key="soru").set_value(soru)
     at.button[0].click()  # ilk sekmedeki "Sor" düğmesi
     at.run()
@@ -29,11 +32,24 @@ def test_acilis_hatasiz():
     assert "Dijital Danışman" in metin
 
 
-def test_kenar_cubugunda_tum_belgeler():
-    at = uygulama()
-    kenar = " ".join(m.value for m in at.sidebar.markdown)
+def test_kenar_cubugunda_bolumun_belgeleri():
+    """Bölüm seçilince ortak belgeler + fakültenin staj yönergesi + bölümün Bologna sayfaları."""
+    kenar = " ".join(m.value for m in uygulama("istatistik").sidebar.markdown)
     assert kenar.count('class="belge-satir"') == 11
     assert "Yürürlük 22.09.2025, son değişiklik 08.02.2026" in kenar
+    assert "İstatistik Bölümü Dersler" in kenar and "Fizik Bölümü" not in kenar
+
+    kenar = " ".join(m.value for m in uygulama("fizik").sidebar.markdown)
+    assert "Fizik Bölümü Dersler" in kenar and "Fen Fakültesi Staj" in kenar and "İstatistik Bölümü" not in kenar
+
+    kenar = " ".join(m.value for m in uygulama(None).sidebar.markdown)
+    assert kenar.count('class="belge-satir"') == 8 and "Staj Yönergesi" not in kenar.replace("Proje Temelli Staj Yönergesi", "")
+
+
+def test_bolum_secimi_aramayi_degistiriyor():
+    md = sor("Birinci yarıyılda hangi zorunlu dersler var?", bolum="fizik")
+    kisa = next(m for m in md if 'class="cevap' in m)
+    assert "Fizik" in kisa and "İstatistik" not in kisa
 
 
 def test_soru_kaynakli_cevap():
@@ -67,7 +83,7 @@ def test_ornek_sorular_net_cevapli():
     from cevap import cevapla
     a = Arayici()
     for s in ORNEK_SORULAR:
-        assert cevapla(s, a)["durum"] == "bulundu", s
+        assert cevapla(s, a, program="istatistik")["durum"] == "bulundu", s
 
 
 def test_mezuniyet_sekmesi():
@@ -84,3 +100,19 @@ def test_mezuniyet_sekmesi():
     assert "12 AKTS eksik" in md and "1 ders FF" in md
     assert "Madde 25 (Diplomalar ve belgeler), s. 9" in md
     assert any("tek ders sınavına" in i.value for i in at.info)
+
+
+def test_mezuniyet_bolum_secmeden():
+    at = uygulama(None)
+    assert any("önce yukarıdan bölümünü seç" in i.value for i in at.info)
+
+
+def test_mezuniyet_stajsiz_bolum_ve_ek_kosul():
+    at = uygulama("kimya")
+    at.number_input(key="akts").set_value(240.0)
+    at.number_input(key="gno").set_value(2.4)
+    at.button[1].click()
+    at.run()
+    md = " ".join(m.value for m in at.markdown)
+    assert "Zorunlu staj yok" in md and "koşullarının hepsi sağlanıyor" in md
+    assert any("72 AKTS İngilizce" in i.value for i in at.info)

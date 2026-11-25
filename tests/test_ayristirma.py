@@ -155,13 +155,13 @@ def test_ocr_belgesi():
 
 
 def test_bologna_sayfalari():
-    assert "240 ECTS" in bul("program_bilgileri#bolum-Mezuniyet_Koşulları")["metin"]
-    yariyillar = [p["no"] for p in parcalari("ders_plani")]
+    assert "240 ECTS" in bul("istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları")["metin"]
+    yariyillar = [p["no"] for p in parcalari("istatistik_ders_plani")]
     assert yariyillar[:8] == ["I.YARIYIL", "II.YARIYIL", "III.YARIYIL", "IV.YARIYIL",
                               "V.YARIYIL", "VI.YARIYIL", "VII.YARIYIL", "VIII.YARIYIL"]
     assert "Mesleki Seçmeli Dersler" in yariyillar and "Seçmeli Dersler" in yariyillar
-    assert "İST239 | Probability I (Olasılık I) | İngilizce | 4+0 | 6.0" in bul("ders_plani#bolum-III.YARIYIL")["metin"]
-    assert "YİST303 | Data Visualization" in bul("ders_plani#bolum-Mesleki_Seçmeli_Dersler")["metin"]
+    assert "İST239 | Probability I (Olasılık I) | İngilizce | 4+0 | 6.0" in bul("istatistik_ders_plani#bolum-III.YARIYIL")["metin"]
+    assert "YİST303 | Data Visualization" in bul("istatistik_ders_plani#bolum-Mesleki_Seçmeli_Dersler")["metin"]
 
 
 # ---------- Türkçe karakterler ----------

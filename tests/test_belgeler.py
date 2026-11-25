@@ -16,7 +16,7 @@ def test_liste_hatasiz():
 
 def test_zorunlu_belgeler_var():
     idler = {b["id"] for b in belgeler}
-    for i in ["yonetmelik", "fen_staj", "ders_plani", "program_bilgileri"]:
+    for i in ["yonetmelik", "fen_staj", "istatistik_ders_plani", "istatistik_program_bilgileri"]:
         assert i in idler
 
 

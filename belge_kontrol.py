@@ -16,7 +16,7 @@ KLASOR = Path(__file__).parent
 KAYNAK_KLASORU = KLASOR / "kaynaklar"
 
 ALANLAR = ["id", "ad", "dosya", "url", "yayim", "yururluk", "son_degisiklik",
-           "dayanak", "indirme_tarihi", "sha256", "durum", "not"]
+           "dayanak", "indirme_tarihi", "sha256", "kapsam", "durum", "not"]
 TARIHLER = ["yayim", "yururluk", "son_degisiklik", "indirme_tarihi"]
 
 
@@ -25,9 +25,23 @@ def belgeleri_oku(yol=KLASOR / "belgeler.yaml"):
         return yaml.safe_load(f)
 
 
+def programlari_oku(yol=KLASOR / "programlar.yaml"):
+    """(fakulteler sözlüğü, programlar listesi)"""
+    with open(yol, encoding="utf-8") as f:
+        veri = yaml.safe_load(f)
+    return veri["fakulteler"], veri["programlar"]
+
+
+def gecerli_kapsamlar():
+    fakulteler, programlar = programlari_oku()
+    return ({"genel"} | {f"fakulte:{f}" for f in fakulteler}
+            | {f"program:{p['id']}" for p in programlar})
+
+
 def hatalari_bul(belgeler):
     hatalar = []
     idler = set()
+    kapsamlar = gecerli_kapsamlar()
     for b in belgeler:
         bid = b.get("id", "?")
 
@@ -51,6 +65,9 @@ def hatalari_bul(belgeler):
             deger = b[alan]
             if deger is not None and not isinstance(deger, date):
                 hatalar.append(f"{bid}: {alan} YYYY-AA-GG olmalı ({deger})")
+
+        if b["kapsam"] not in kapsamlar:
+            hatalar.append(f"{bid}: kapsam genel, fakulte:<ad> ya da program:<ad> olmalı ({b['kapsam']})")
 
         if b["durum"] not in ("bekleniyor", "aktif"):
             hatalar.append(f"{bid}: durum bekleniyor ya da aktif olmalı")

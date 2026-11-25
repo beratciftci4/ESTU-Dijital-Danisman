@@ -11,6 +11,8 @@ gösteriyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya 
 tamamlanan AKTS, GNO, kalan FF/YZ/DZ/EK/ÇK notları ve staj gününü girince yönetmeliğin
 25. maddesine ve staj yönergesinin 7. maddesine göre neyin eksik olduğunu, maddesiyle birlikte gösteriyor.
 
+**Canlı:** https://estu-dijital-danisman.streamlit.app
+
 ![Ekran görüntüsü](docs/ekran.png)
 
 ## Kaynak belgeler

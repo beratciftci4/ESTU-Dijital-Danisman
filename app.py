@@ -5,6 +5,7 @@
 
 Hiçbir ücretli API kullanmıyor. Cevaplar resmi metinlerin kendisi.
 """
+import hashlib
 import html
 
 import streamlit as st
@@ -86,11 +87,17 @@ section[data-testid="stSidebar"] { background: #fff; border-right: 1px solid var
 """
 
 
-@st.cache_resource(show_spinner="Arama indeksi yükleniyor (ilk açılışta model indirilebilir)...")
-def arayici_yukle():
+@st.cache_resource(max_entries=1, show_spinner="Arama indeksi yükleniyor (ilk açılışta model indirilebilir)...")
+def arayici_yukle(kod_surumu):
+    """kod_surumu: arama.py ve indeks.py değişince önbellek yenilensin diye (yoksa Streamlit Cloud
+    yeni kodla eski Arayici nesnesini kullanmaya devam ediyor)."""
     a = Arayici()
     _ = a.gomucu  # modeli şimdi yükle, ilk soruda beklemesin (tek başına yazınca streamlit ekrana basıyor)
     return a
+
+
+def kod_surumu():
+    return hashlib.sha256(b"".join((KLASOR / f).read_bytes() for f in ("arama.py", "indeks.py"))).hexdigest()
 
 
 @st.cache_data
@@ -165,7 +172,7 @@ def soru_sekmesi():
     if not (sor or secilen) or not soru.strip():
         return
 
-    arayici = arayici_yukle()
+    arayici = arayici_yukle(kod_surumu())
     with st.spinner("Belgelerde aranıyor..."):
         c = cevapla(soru, arayici)
 

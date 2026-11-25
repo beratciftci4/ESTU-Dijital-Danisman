@@ -16,7 +16,7 @@ import json
 from arama import Arayici
 from belge_kontrol import KLASOR, programlari_oku
 from cevap import atif, cevapla, gecerlilik, tarih
-from mezuniyet import ENGEL_NOTLAR, kontrol
+from mezuniyet import ENGEL_NOTLAR, kontrol, staj_birimi
 
 st.set_page_config(page_title="ESTÜ Dijital Danışman", page_icon="📘", layout="centered")
 
@@ -244,7 +244,7 @@ def mezuniyet_sekmesi(program):
         sol, sag = st.columns(2)
         akts = sol.number_input("Başarıyla tamamlanan AKTS", 0.0, 400.0, 0.0, 0.5, key="akts")
         gno = sag.number_input("GNO", 0.0, 4.0, 0.0, 0.01, format="%.2f", key="gno")
-        staj = sol.number_input("Tamamlanan staj (iş günü)", 0, 120, 0, 1, key="staj")
+        staj = sol.number_input(f"Tamamlanan staj ({staj_birimi(program)})", 0, 120, 0, 1, key="staj")
         st.markdown("**Kalan notlar** (o notla duran ders sayısı)")
         kolonlar = st.columns(len(ENGEL_NOTLAR))
         notlar = {n: k.number_input(n, 0, 30, 0, 1, key=f"not_{n}") for n, k in zip(ENGEL_NOTLAR, kolonlar)}

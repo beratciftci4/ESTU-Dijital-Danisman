@@ -22,6 +22,7 @@ from indeks import Gomucu, arama_metni, indeksi_yukle, kelimeler, soru_kelimeler
 
 RRF_K = 60
 OZET_SIRALAMASI = True   # elle yazılmış özetlerle benzerlik de üçüncü sıralama olarak ekleniyor
+OZET_AGIRLIGI = 1.0
 
 
 class Arayici:
@@ -131,7 +132,7 @@ class Arayici:
                 oz = self.ozet_skorlari(soru, program)
                 oz_sira = np.empty(len(oz), int)
                 oz_sira[np.argsort(-oz)] = np.arange(1, len(oz) + 1)
-                rrf += 1 / (RRF_K + oz_sira)
+                rrf += OZET_AGIRLIGI / (RRF_K + oz_sira)
             sira = np.argsort(-rrf)
 
         sonuc = []

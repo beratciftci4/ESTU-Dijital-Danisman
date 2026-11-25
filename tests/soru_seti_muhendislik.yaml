@@ -1,0 +1,100 @@
+# Mühendislik Fakültesi bölümleri için soru seti (2026-11-25).
+# Sonuçlara bakmadan, belgeler okunarak yazıldı. Alanlar soru_seti_fen.yaml'daki gibi.
+
+- soru: Mühendislikte toplam kaç gün staj yapmam gerekiyor?
+  program: makine_muh
+  kaynak: [muh_staj#madde-8]
+  anahtar: ["40 (kırk) günden az olamaz"]
+
+- soru: Endüstri mühendisliğinde ikinci staj kaç iş günü?
+  program: endustri_muh
+  kaynak: [endustri_muh_program_bilgileri#bolum-Mezuniyet_Koşulları]
+  anahtar: ["25 iş günü"]
+
+- soru: Elektrik elektronik mühendisliğinde kaç tane staj var?
+  program: elektrik_elektronik_muh
+  kaynak: [elektrik_elektronik_muh_program_bilgileri#bolum-Mezuniyet_Koşulları]
+  anahtar: ["2 stajın"]
+
+- soru: Staja ne zaman başvurabilirim?
+  program: insaat_muh
+  kaynak: [muh_staj#madde-10]
+  anahtar: ["IV. yarıyılın sonu"]
+
+- soru: Staj başvurusunu kaç gün önceden yapmalıyım?
+  program: cevre_muh
+  kaynak: [muh_staj#madde-10, muh_staj#ek-2]
+  anahtar: ["en az 15 gün"]
+
+- soru: Dönem içinde staj yapabilir miyim?
+  program: bilgisayar_muh
+  kaynak: [muh_staj#madde-10]
+  anahtar: ["en az 3 (üç) tam iş günü"]
+
+- soru: Çalıştığım işyeri stajdan sayılır mı, muafiyet alabilir miyim?
+  program: kimya_muh
+  kaynak: [muh_staj#madde-15]
+  anahtar: ["stajdan muaf tutulabilir"]
+
+- soru: Staj notuna itiraz süresi ne kadar?
+  program: malzeme_muh
+  kaynak: [muh_staj#madde-14]
+  anahtar: ["5 (beş) iş günü"]
+
+- soru: Bilgisayar mühendisliğinde kaç AKTS mesleki seçmeli almalıyım?
+  program: bilgisayar_muh
+  kaynak: [bilgisayar_muh_program_bilgileri#bolum-Mezuniyet_Koşulları]
+  anahtar: ["45 AKTS"]
+
+- soru: Çevre mühendisliğinde sosyal seçmeli kaç kredi?
+  program: cevre_muh
+  kaynak: [cevre_muh_program_bilgileri#bolum-Mezuniyet_Koşulları, cevre_muh_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  anahtar: ["11 kredi sosyal seçmeli"]
+
+- soru: Makine mühendisliği birinci yarıyıl dersleri neler?
+  program: makine_muh
+  kaynak: [makine_muh_ders_plani#bolum-I.YARIYIL]
+  anahtar: ["Teknik Resim"]
+
+- soru: Betonarme dersi hangi dönemde?
+  program: insaat_muh
+  kaynak: [insaat_muh_ders_plani#bolum-VI.YARIYIL]
+  anahtar: ["Betonarme I"]
+
+- soru: Veri yapıları ve algoritmalar dersi kaçıncı yarıyılda?
+  program: bilgisayar_muh
+  kaynak: [bilgisayar_muh_ders_plani#bolum-III.YARIYIL]
+  anahtar: ["Data Structures and Algorithms"]
+
+- soru: Elektrik elektronik bölümünde hazırlık var mı?
+  program: elektrik_elektronik_muh
+  kaynak: [elektrik_elektronik_muh_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["İngilizce hazırlık sınıfına"]
+
+- soru: Çevre mühendisliği akredite mi?
+  program: cevre_muh
+  kaynak: [cevre_muh_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["MÜDEK"]
+
+- soru: Endüstri mühendisliği bölüm başkanı kim?
+  program: endustri_muh
+  kaynak: [endustri_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.]
+  anahtar: ["NİHAL ERGİNEL"]
+
+- soru: İnşaat mühendisleri nerede çalışabilir?
+  program: insaat_muh
+  kaynak: [insaat_muh_program_bilgileri#bolum-İstihdam_Olanakları]
+  anahtar: ["Karayolları"]
+
+- soru: Uçak mühendisliğinde kaç AKTS ile mezun olunur?
+  program: ucak_muh
+  kaynak: [yonetmelik#madde-25, ucak_muh_program_bilgileri#bolum-Mezuniyet_Koşulları, ucak_muh_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları, danismanlik#madde-10]
+  anahtar: ["240"]
+
+- soru: Makine mühendisliği bölümünün kantini nerede?
+  program: makine_muh
+  cevapsiz: true
+
+- soru: Bilgisayar mühendisliği yazılım kampı ne zaman?
+  program: bilgisayar_muh
+  cevapsiz: true

@@ -17,6 +17,7 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 | Ayrık set | 10/10 | 2/2 | 1/2 | 10/10 | 10/10 |
 | Doğrulama seti (eşikten sonra yazıldı) | 8/8 | 6/8 | 2/8 | 8/8 | 7/8 |
 | Fen Fakültesi diğer bölümler | 13/16 | 1/2 | 0/2 | 14/16 | 14/16 |
+| Mühendislik Fakültesi | 14/18 | 1/2 | 0/2 | 17/18 | 16/18 |
 
 ## Hatalı sonuçlar
 
@@ -28,6 +29,11 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 - [Fen Fakültesi diğer bölümler] Fizik bölümünden mezun olmak için proje şartı var mı? -> bulundu (benzerlik 0.878)
 - [Fen Fakültesi diğer bölümler] Matematik bölümünde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.865)
 - [Fen Fakültesi diğer bölümler] Kimya bölümünün laboratuvar önlüğü nereden alınır? -> bulundu (benzerlik 0.857)
+- [Mühendislik Fakültesi] Dönem içinde staj yapabilir miyim? -> bulundu (benzerlik 0.885)
+- [Mühendislik Fakültesi] Elektrik elektronik bölümünde hazırlık var mı? -> belirsiz (benzerlik 0.849)
+- [Mühendislik Fakültesi] İnşaat mühendisleri nerede çalışabilir? -> bulundu (benzerlik 0.874)
+- [Mühendislik Fakültesi] Uçak mühendisliğinde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.872)
+- [Mühendislik Fakültesi] Makine mühendisliği bölümünün kantini nerede? -> bulundu (benzerlik 0.852)
 
 ## Notlar
 

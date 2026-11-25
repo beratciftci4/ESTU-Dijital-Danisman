@@ -1,8 +1,10 @@
 # Uygulamada seçilebilen lisans programları.
 #   fakulte   : fakulteler altındaki anahtar (staj yönergesi buradan bulunuyor)
 #   bologna   : akts.eskisehir.edu.tr'deki program numarası
-#   staj_gunu : zorunlu staj süresi (iş günü), zorunlu staj yoksa null
+#   staj_gunu : zorunlu staj süresi, zorunlu staj yoksa null
+#   staj_birimi: yönergedeki birim ("iş günü" ya da "gün"), yönerge nasıl yazıyorsa
 #   staj_notu : staj süresinin nereden geldiği
+#   staj_ek   : kısa cevaba eklenecek not (isteğe bağlı)
 
 fakulteler:
   fen:
@@ -10,6 +12,13 @@ fakulteler:
     staj_belgesi: fen_staj
     staj_maddesi: fen_staj#madde-7      # staj süresinin yazdığı madde
     staj_listesi: fen_staj#ek-4         # hangi bölümde zorunlu, hangisinde isteğe bağlı (EK-3 notu)
+    staj_birimi: iş günü
+  muhendislik:
+    ad: Mühendislik Fakültesi
+    staj_belgesi: muh_staj
+    staj_maddesi: muh_staj#madde-8      # toplam staj en az 40 gün, bütün bölümler
+    staj_listesi: muh_staj#madde-8
+    staj_birimi: gün
 
 programlar:
   - id: biyoloji
@@ -42,3 +51,74 @@ programlar:
     bologna: 185
     staj_gunu: null
     staj_notu: Fen Fakültesi Staj Yönergesi EK-3 (Kimya ve Matematik için staj isteğe bağlı)
+  # Mühendislik: yönerge md. 8 "toplam staj en az 40 gün". Bölümün Bologna sayfası daha ayrıntılı
+  # yazıyorsa o kullanıldı (staj_kaynagi), yazmıyorsa yönerge.
+  - id: bilgisayar_muh
+    ad: Bilgisayar Mühendisliği
+    fakulte: muhendislik
+    bologna: 243
+    staj_gunu: 40
+    staj_birimi: iş günü
+    staj_kaynagi: bilgisayar_muh_program_bilgileri#bolum-Mezuniyet_Koşulları
+    staj_notu: Bologna mezuniyet koşulları "40 iş günlük staj"
+  - id: cevre_muh
+    ad: Çevre Mühendisliği
+    fakulte: muhendislik
+    bologna: 245
+    staj_gunu: 40
+    staj_kaynagi: cevre_muh_program_bilgileri#bolum-Mezuniyet_Koşulları
+    staj_notu: Bologna mezuniyet koşulları "40 günlük mecburi staj"
+  - id: elektrik_elektronik_muh
+    ad: Elektrik-Elektronik Mühendisliği
+    fakulte: muhendislik
+    bologna: 251
+    staj_gunu: 40
+    staj_birimi: iş günü
+    staj_kaynagi: elektrik_elektronik_muh_program_bilgileri#bolum-Mezuniyet_Koşulları
+    staj_notu: Bologna mezuniyet koşulları "her biri 20 iş günü olan 2 staj"
+    staj_ek: Stajlar her biri 20 iş günü olan iki ayrı staj olarak yapılıyor.
+  - id: endustri_muh
+    ad: Endüstri Mühendisliği
+    fakulte: muhendislik
+    bologna: 244
+    staj_gunu: 45
+    staj_birimi: iş günü
+    staj_kaynagi: endustri_muh_program_bilgileri#bolum-Mezuniyet_Koşulları
+    staj_notu: Bologna mezuniyet koşulları "Staj-I en az 20 iş günü, Staj-II en az 25 iş günü"
+    staj_ek: Staj I en az 20 iş günü, Staj II en az 25 iş günü.
+  - id: insaat_muh
+    ad: İnşaat Mühendisliği
+    fakulte: muhendislik
+    bologna: 248
+    staj_gunu: 40
+    staj_notu: Bologna sayfasında süre yok, yönerge md. 8 (toplam en az 40 gün)
+  - id: kimya_muh
+    ad: Kimya Mühendisliği
+    fakulte: muhendislik
+    bologna: 247
+    staj_gunu: 40
+    staj_birimi: iş günü
+    staj_kaynagi: kimya_muh_program_bilgileri#bolum-Mezuniyet_Koşulları
+    staj_notu: Bologna mezuniyet koşulları "40 iş günlük staj"
+    staj_ek: Ders planında bir laboratuvar stajı ve bir işletme stajı var.
+  - id: makine_muh
+    ad: Makine Mühendisliği
+    fakulte: muhendislik
+    bologna: 256
+    staj_gunu: 40
+    staj_notu: Bologna sayfasında süre yok, yönerge md. 8 (toplam en az 40 gün)
+  - id: malzeme_muh
+    ad: Malzeme Bilimi ve Mühendisliği
+    fakulte: muhendislik
+    bologna: 250
+    staj_gunu: 40
+    staj_birimi: iş günü
+    staj_kaynagi: malzeme_muh_program_bilgileri#bolum-Mezuniyet_Koşulları
+    staj_notu: Bologna mezuniyet koşulları "40 iş günlük staj"
+  - id: ucak_muh
+    ad: Uçak Mühendisliği
+    fakulte: muhendislik
+    bologna: 2062
+    staj_gunu: 40
+    staj_notu: Bologna sayfasında süre yok, yönerge md. 8 (toplam en az 40 gün)
+    staj_ek: Uçak Mühendisliği yönergenin bölüm listesinde (md. 3) adıyla geçmiyor ama yönerge bütün Mühendislik Fakültesi öğrencileri için; kesin süreyi bölüme de sor.

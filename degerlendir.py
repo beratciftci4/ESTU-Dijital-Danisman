@@ -19,6 +19,7 @@ AYRIK_SET = KLASOR / "tests" / "soru_seti_ayrik.yaml"
 DOGRULAMA_SET = KLASOR / "tests" / "soru_seti_dogrulama.yaml"
 KALIBRASYON = KLASOR / "tests" / "kalibrasyon_cevapsiz.yaml"
 FEN_SET = KLASOR / "tests" / "soru_seti_fen.yaml"
+MUH_SET = KLASOR / "tests" / "soru_seti_muhendislik.yaml"
 
 
 def sorulari_oku(yol=SORU_SETI):
@@ -137,6 +138,7 @@ def main():
     satirlar += tablo(arayici, sorulari_oku(DOGRULAMA_SET), "Doğrulama seti (tests/soru_seti_dogrulama.yaml)")
     satirlar += tablo(arayici, sorulari_oku(FEN_SET),
                       "Fen Fakültesi diğer bölümler (tests/soru_seti_fen.yaml, Biyoloji/Fizik/Kimya/Matematik)")
+    satirlar += tablo(arayici, sorulari_oku(MUH_SET), "Mühendislik Fakültesi (tests/soru_seti_muhendislik.yaml, 9 bölüm)")
     satirlar += ["## Notlar", "",
                  "- Eş anlamlı listesi (\"üst sınır\" -> \"en çok\" gibi) ve soru kalıbı listesi ana test "
                  "setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.",
@@ -161,6 +163,19 @@ def main():
                  "maddesi genel (\"en az 20 iş günü\"). Kimya seçiliyken \"Staj zorunlu mu?\" sorusuna \"20 gün "
                  "zorundasın\" deniyordu. Her bölüme kendi staj cümlesi eklendi (programlar.yaml'dan, yönergenin "
                  "EK-3 notuna bağlı), sadece o bölüm seçiliyken kullanılıyor.",
+                 "- Mühendislik (2026-11-25): yönerge md. 8 \"toplam staj en az 40 gün\". Bölümün Bologna sayfası "
+                 "daha ayrıntılıysa o kullanıldı (Endüstri: Staj I 20 + Staj II 25 iş günü; Elektrik-Elektronik: "
+                 "2 x 20 iş günü). Uçak Mühendisliği yönergenin bölüm listesinde geçmiyor, kısa cevapta belirtiliyor.",
+                 "- Bologna \"program hakkında\" sayfalarında İstatistik'tekiyle kelimesi kelimesine aynı olan "
+                 "bölümlerin (kabul, üst derece, ölçme ...) özetleri şablondan üretiliyor, farklı olanlar elle yazıldı.",
+                 "- Bilinen hata: \"Elektrik elektronik mühendisliğinde kaç tane staj var?\" sorusunda doğru madde "
+                 "özet sıralamasında 1., ama BM25 \"staj\" ile \"stajın\" kelimelerini farklı köke ayırıyor (ilk 5 harf). "
+                 "Özet sıralamasına 1,5 ve 2 ağırlık denendi, toplam MRR değişmedi (.827/.832/.825), eşit ağırlıkta kalındı.",
+                 "- Bölümün staj cümlesi, bağlı olduğu madde aramada ilk 5'e girmese de kısa cevaba aday "
+                 "(Endüstri'nin süresi Bologna sayfasında). Benzerlikle seçince \"kaç gün staj\" sorusunda "
+                 "\"haftada 3 tam gün dersin yoksa\" ya da proje temelli staj (45-90 gün) cümleleri öne çıkıyordu. "
+                 "Soru stajın süresini/zorunluluğunu soruyorsa (staj_suresi_soruluyor, kurala dayalı) bölümün "
+                 "staj cümlesi doğrudan ilk sıraya konuyor; itiraz, başvuru, PTS gibi staj soruları bu kurala girmiyor.",
                  "- Ders planı sorularında \"birinci dönem\" ile \"I.YARIYIL\" eşleşmesi için yarıyıl numarası "
                  "arama metnine ve eş anlamlılara eklendi.",
                  "- \"Bütünleme\" sorusu bilerek cevapsız: yeni yönetmelikte bütünleme sınavı yok. "
@@ -172,7 +187,8 @@ def main():
               ("Kalibrasyon, cevapsız (eşik ayarında kullanıldı)", kalibrasyon),
               ("Ayrık set", sorulari_oku(AYRIK_SET)),
               ("Doğrulama seti (eşikten sonra yazıldı)", sorulari_oku(DOGRULAMA_SET)),
-              ("Fen Fakültesi diğer bölümler", sorulari_oku(FEN_SET))]
+              ("Fen Fakültesi diğer bölümler", sorulari_oku(FEN_SET)),
+              ("Mühendislik Fakültesi", sorulari_oku(MUH_SET))]
     satirlar = cevap_tablosu(arayici, setler)
     satirlar += ["", "## Notlar", "",
                  "- Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra "

@@ -9,8 +9,9 @@ Kısa cevap, her madde için önceden elle yazılmış özet cümlelerinden seç
 zekâ ile metin üretilmiyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da
 servis kullanmıyor.
 
-**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an Fen Fakültesi'nin beş bölümü var
-(Biyoloji, Fizik, İstatistik, Kimya, Matematik), diğer fakülteler sırayla ekleniyor. Yönetmelik ve
+**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 14 bölüm var: Fen Fakültesi (Biyoloji,
+Fizik, İstatistik, Kimya, Matematik) ve Mühendislik Fakültesi (Bilgisayar, Çevre, Elektrik-Elektronik,
+Endüstri, İnşaat, Kimya, Makine, Malzeme Bilimi, Uçak). Diğer fakülteler sırayla ekleniyor. Yönetmelik ve
 usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders planı ve program
 bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
 (`programlar.yaml`, belgelerdeki `kapsam` alanı).
@@ -31,6 +32,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 |---|---|---|
 | Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği (RG 33012) | 22.09.2025 | 08.02.2026 (RG 33162) |
 | Fen Fakültesi Staj Yönergesi | 05.10.2018 | 08.11.2022 |
+| Mühendislik Fakültesi Staj Yönergesi | 04.12.2018 | 16.07.2024 |
 | Akademik Danışmanlık Yönergesi | 11.09.2025 | |
 | Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar | 11.09.2025 | |
 | Tek Ders Sınavı Uygulama Esasları | 18.12.2025 | |
@@ -38,7 +40,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Yaz Okulu Uygulama Esasları | 11.09.2025 | 10.03.2026 |
 | Not Karşılıkları ve Yabancı Dil Eşdeğerlikleri Uygulama Esasları | 10.07.2018 | 29.07.2025 |
 | Proje Temelli Staj Yönergesi | 04.01.2024 | 26.06.2025 |
-| Biyoloji, Fizik, İstatistik, Kimya, Matematik ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
+| 14 bölümün ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
 
 Not: Yönetmelik 2025'te tamamen yenilendi. İnternette hâlâ 2018 tarihli eski metin (RG 30540)
 dolaşıyor; buradaki metin mevzuat.gov.tr'deki güncel, değişiklikleri işlenmiş hali.
@@ -87,9 +89,13 @@ Birkaç ayrıntı:
 - **Özet sıralaması.** Özetler öğrencinin kullandığı kelimelerle yazıldığı için, soruya en yakın özet
   cümlesinin benzerliği aramaya üçüncü bir sıralama olarak ekleniyor. "Bulamadım" kararı yine madde
   metnine bakıyor.
-- **Bölüme özel staj kuralı.** Staj yönergesindeki madde genel ("en az 20 iş günü"), hangi bölümde
-  zorunlu olduğu ekteki bir notta (Fen'de Kimya ve Matematik isteğe bağlı). Her bölüme kendi staj cümlesi
-  ekleniyor, sadece o bölüm seçiliyken kullanılıyor; mezuniyet kontrolü de aynı bilgiyi kullanıyor.
+- **Bölüme özel staj kuralı.** Staj yönergesindeki madde genel ("en az 20 iş günü", "toplam en az 40
+  gün"); hangi bölümde zorunlu olduğu ya da bölümün ayrıntısı başka yerde (Fen'de ekteki not, Endüstri ve
+  Elektrik-Elektronik'te Bologna sayfası). Her bölüme `programlar.yaml`'dan kendi staj cümlesi ekleniyor,
+  sadece o bölüm seçiliyken kullanılıyor. Soru stajın süresini ya da zorunluluğunu soruyorsa bu cümle
+  doğrudan ilk sırada; mezuniyet kontrolü de aynı bilgiyi kullanıyor.
+- **Standart Bologna metinleri.** Bölüm sayfalarındaki "kabul koşulları", "ölçme ve değerlendirme" gibi
+  çoğu bölümde aynı olan metinlerin özetleri şablondan üretiliyor, farklı olanlar elle yazıldı.
 
 ## Sonuçlar
 
@@ -103,8 +109,9 @@ Test setleri `tests/` altında, her sorunun cevabı belgelerden kontrol edildi.
 | Ayrık set (İstatistik, 10 cevaplı, ayarlamada kullanılmadı) | 0.90 | 1.00 | 1.00 | 0.95 |
 | Doğrulama seti (İstatistik, 8 cevaplı) | 0.88 | 1.00 | 1.00 | 0.92 |
 | Fen Fakültesi diğer bölümler (16 cevaplı) | 0.69 | 0.81 | 0.88 | 0.78 |
+| Mühendislik Fakültesi (18 cevaplı) | 0.61 | 0.78 | 0.89 | 0.73 |
 
-Hibrit arama dört sette de sadece BM25'ten ve sadece e5'ten daha iyi ya da eşit.
+Hibrit arama bütün setlerde sadece BM25'ten ve sadece e5'ten daha iyi ya da eşit.
 
 **Cevap** (cevaplı soruda beklenen ifade gösterilen alıntıda geçiyor mu, cevapsız soruda
 asistan cevap bulduğunu iddia etmiyor mu):
@@ -116,12 +123,14 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Ayrık set | 10/10 | 2/2 |
 | Doğrulama (eşikten sonra yazıldı) | 8/8 | 6/8 |
 | Fen Fakültesi diğer bölümler | 13/16 | 1/2 |
+| Mühendislik Fakültesi | 14/18 | 1/2 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18.
 
-Fen setinde cevabı olmayan iki sorudan birine ("Kimya bölümünün laboratuvar önlüğü nereden alınır?")
-hâlâ "bulundu" deniyor; yeni bölümler eklendikçe bu eşiğin tekrar ayarlanması gerekecek.
+Fen ve Mühendislik setlerinde cevabı olmayan ikişer sorudan birine ("laboratuvar önlüğü nereden
+alınır?", "kantin nerede?") hâlâ "bulundu" deniyor. Belge sayısı arttıkça "bulamadım" eşiği zayıflıyor,
+tekrar ayarlanması gerekecek.
 
 Ayrıntılar ve hatalı sorular: [raporlar/4_arama.md](raporlar/4_arama.md),
 [raporlar/5_cevap.md](raporlar/5_cevap.md). Parçalama kontrolleri:
@@ -172,6 +181,9 @@ API anahtarı ya da gizli bilgi gerekmiyor.
   Matematik sayfalarında kredi transferi başvurusu hem "ilk hafta" hem "ilk iki hafta" yazıyor).
   Özette bu durum belirtiliyor, bölüme sormak gerekiyor.
 - Bölüm adı Bologna sayfasından geliyor; Pilotaj ve diğer fakülteler henüz eklenmedi.
+- Mühendislik'te stajın bölüme göre nasıl bölündüğü (Staj I / Staj II) bölümlerin staj kılavuzlarında;
+  kılavuzlar eklenmediği için sadece toplam süre ve Bologna sayfasında yazan ayrıntı veriliyor.
+  Uçak Mühendisliği yönergenin bölüm listesinde adıyla geçmiyor.
 - Kısa cevap madde metninin sade anlatımı; bağlayıcı olan altındaki resmi metin. Bazen soruya
   tam uymayan bir cümle seçilebiliyor, bu yüzden kaynak maddeler her zaman altında gösteriliyor.
 - Özetler elle yazıldığı için bir belge güncellenince `ozetler.yaml`'daki cümleleri de

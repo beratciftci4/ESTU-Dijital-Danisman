@@ -27,7 +27,7 @@ from belge_kontrol import KAYNAK_KLASORU, KLASOR, belgeleri_oku
 
 CIKTI = KLASOR / "cikti" / "parcalar.jsonl"
 ONBELLEK = KLASOR / "cikti" / "onbellek"
-ONBELLEK_SURUMU = "2"   # satır okuma mantığı değişince artır, eski önbellek kullanılmasın
+ONBELLEK_SURUMU = "3"   # satır okuma mantığı değişince artır, eski önbellek kullanılmasın
 
 # madde numarasından sonra gelebilen ayraçlar: - – ‒ — ya da hiçbiri ("MADDE 14 Öğrencinin")
 MADDE_DESENI = re.compile(r"^MADDE\s+(\d+(?:/[A-ZÇĞİÖŞÜ])?)\s*[-–‒—]?\s*(.*)$")
@@ -45,6 +45,7 @@ SAYFA_DESENI = re.compile(r"Sayfa\s*:?\s*\d+\s*/\s*\d+")
 BICIM = {
     "yonetmelik": "madde",
     "fen_staj": "madde",
+    "muh_staj": "madde",
     "danismanlik": "madde",
     "proje_temelli_staj": "madde",
     "hakli_nedenler": "numara",
@@ -168,6 +169,14 @@ def _pdf_satirlari_oku(yol):
             kenarlar.update(set(sayfadakiler[:6] + sayfadakiler[-3:]))
         tekrar = {s for s, n in kenarlar.items() if n >= 3 and len(s) < 120}
         satirlar = [(p, s) for p, s in satirlar if s not in tekrar]
+        # sayfa numarası: sayfanın ilk ya da son satırı sadece o sayfanın numarasıysa
+        kenar_satir = set()
+        for sayfa_no in {p for p, _ in satirlar}:
+            sira = [i for i, (p, _) in enumerate(satirlar) if p == sayfa_no]
+            for i in (sira[0], sira[-1]):
+                if satirlar[i][1].strip() == str(sayfa_no):
+                    kenar_satir.add(i)
+        satirlar = [x for i, x in enumerate(satirlar) if i not in kenar_satir]
     return satirlar, resimli_sayfalar
 
 

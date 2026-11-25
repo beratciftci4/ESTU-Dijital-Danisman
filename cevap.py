@@ -24,7 +24,7 @@ import numpy as np
 import yaml
 
 from belge_kontrol import programlari_oku
-from indeks import INDEKS_KLASORU, KLASOR, kelimeler, soru_kelimeleri
+from indeks import INDEKS_KLASORU, KLASOR, kelimeler, soru_kelimeleri, turkce_kucuk
 
 ESIK_YUKSEK = 0.850
 ESIK_DUSUK = 0.825
@@ -52,6 +52,7 @@ def ozetleri_oku():
 BELGE_KISA_ADI = {
     "yonetmelik": "Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği",
     "fen_staj": "Fen Fakültesi Staj Yönergesi",
+    "muh_staj": "Mühendislik Fakültesi Staj Yönergesi",
     "danismanlik": "Akademik Danışmanlık Yönergesi",
     "proje_temelli_staj": "Proje Temelli Staj Yönergesi",
     "hakli_nedenler": "Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar",
@@ -61,6 +62,7 @@ BELGE_KISA_ADI = {
     "not_karsiliklari": "Not Karşılıkları ve Eşdeğerlikler Uygulama Esasları",
 }
 PROGRAM_ADI = {p["id"]: p["ad"] for p in programlari_oku()[1]}
+STAJ_MADDESI = {p["id"]: programlari_oku()[0][p["fakulte"]]["staj_maddesi"] for p in programlari_oku()[1]}
 
 
 def program_id(p):
@@ -219,12 +221,58 @@ def parcalar_oku():
     return _parca_listesi
 
 
+# Bologna "program hakkında" sayfalarındaki bazı bölümler çoğu programda kelimesi kelimesine aynı.
+# Metin İstatistik'teki standart metinle aynıysa özet bu şablondan üretiliyor ({ad} = bölüm adı);
+# farklıysa ozetler.yaml'da elle yazılmış olmalı (test kontrol ediyor).
+STANDART_BOLUMLER = {
+    "Kabul_ve_Kayıt_Koşulları": [
+        "{ad} programına kabul için Türk ve yabancı öğrencilere yönelik genel kabul şartları geçerlidir."],
+    "Yeterlilik_Koşulları_ve_Kuralları": [
+        "{ad} programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, "
+        "en az 240 AKTS ve en az 2,00 GNO gerekir."],
+    "Üst_Derece_Programlarına_Geçiş": [
+        "{ad} mezunları her alanda yüksek lisans ve doktora programlarına başvurabilir."],
+    "Mezuniyet_Koşulları": [
+        "{ad} bölümünden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, "
+        "en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir."],
+    "Ölçme_ve_Değerlendirme": [
+        "Bologna sayfasına göre dönem içi değerlendirmelerin başarı notuna katkısı %30 ile %70 arasındadır; "
+        "ancak güncel yönetmelikte üst sınır %60'tır.",
+        "Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; "
+        "AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.",
+        "DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür."],
+    "Önceki_Öğrenmenin_Tanınması": [
+        "Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan "
+        "kredi ve not transferin bir defaya mahsus değerlendirilir.",
+        "{ad} programında zorunlu İngilizce hazırlık vardır; yeterlik sınavından 100 üzerinden 70 alanlar "
+        "ya da YDS, TOEFL gibi sınavlardan yeterli puanı olanlar muaf olur."],
+}
+STANDART_KAYNAK = "istatistik_program_bilgileri"
+
+
+def standart_ozet(p, parcalar):
+    """Standart metinli Bologna bölümü için şablon özet, değilse None."""
+    bolum = p["id"].split("#bolum-")[-1]
+    ref = parcalar.get(f"{STANDART_KAYNAK}#bolum-{bolum}")
+    if bolum not in STANDART_BOLUMLER or not ref or ref["metin"] != p["metin"]:
+        return None
+    ad = PROGRAM_ADI[program_id(p)]
+    return [c.format(ad=ad) for c in STANDART_BOLUMLER[bolum]]
+
+
 def tum_ozetler():
-    """ozetler.yaml + ders planlarından otomatik üretilen özetler {parça id: [cümleler]}"""
+    """ozetler.yaml + ders planlarından ve standart Bologna metinlerinden üretilen özetler."""
     ozetler = dict(ozetleri_oku())
-    for p in parcalar_oku():
-        if p["belge_id"].endswith("_ders_plani") and p["id"] not in ozetler:
+    parcalar = {p["id"]: p for p in parcalar_oku()}
+    for p in parcalar.values():
+        if p["id"] in ozetler:
+            continue
+        if p["belge_id"].endswith("_ders_plani"):
             ozetler[p["id"]] = ders_plani_ozeti(p)
+        elif p["belge_id"].endswith("_program_bilgileri"):
+            sablon = standart_ozet(p, parcalar)
+            if sablon:
+                ozetler[p["id"]] = sablon
     return ozetler
 
 
@@ -236,14 +284,29 @@ def bolum_staj_cumleleri():
     fakulteler, programlar = programlari_oku()
     sonuc = []
     for p in programlar:
-        parca_id = fakulteler[p["fakulte"]]["staj_listesi"]
+        fak = fakulteler[p["fakulte"]]
+        parca_id = p.get("staj_kaynagi") or fak["staj_listesi"]
+        birim = p.get("staj_birimi") or fak["staj_birimi"]
         if p["staj_gunu"]:
-            c = (f"{p['ad']} bölümünde staj zorunludur; mezun olmak için en az {p['staj_gunu']} iş günü "
-                 "staj yapman gerekir.")
+            c = (f"{p['ad']} bölümünde staj zorunludur; mezun olmak için toplam en az {p['staj_gunu']} {birim} "
+                 "staj yapman gerekir." + (f" {p['staj_ek']}" if p.get("staj_ek") else ""))
         else:
             c = f"{p['ad']} bölümünde staj zorunlu değildir, isteğe bağlıdır; mezuniyet için staj şartı yok."
         sonuc.append((parca_id, c, p["id"]))
     return sonuc
+
+
+def staj_suresi_soruluyor(soru):
+    """Soru stajın süresini ya da zorunlu olup olmadığını mı soruyor? (diğer staj konuları değil)"""
+    s = turkce_kucuk(soru)
+    return ("staj" in s and bool(re.search(r"kaç|ne kadar|süre|zorunlu|gerek|lazım|şart", s))
+            and not re.search(r"proje temelli|pts|itiraz|başvur|ne zaman|nerede|değiş|muaf|sigorta|rapor|"
+                              r"devamsız|not|puan|başarı|değerlendir", s))
+
+
+BOLUM_STAJ_CUMLESI = {}
+for _pid, _c, _b in bolum_staj_cumleleri():
+    BOLUM_STAJ_CUMLESI.setdefault(_b, set()).add(_c)
 
 
 def ozet_cumleleri():
@@ -312,6 +375,18 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
     sorudakiler = set(soru_kelimeleri(soru))
     toplam_idf = sum(idf.get(k, 0) for k in sorudakiler) or 1
 
+    e5 = {}
+    if program not in (None, "genel"):
+        alt = arayici.alt_kume(program)[0]
+        e5 = dict(zip((arayici.parcalar[x]["id"] for x in alt), arayici.e5_skorlari(soru, program)))
+
+    def madde_benzerligi(pid, j, varsayilan):
+        # bölüme özel staj cümlesi, fakültenin staj maddesinin bölüme özel hali: o maddenin
+        # benzerliğinden aşağı sayılmasın (cümle bazen bir form ekine ya da Bologna sayfasına bağlı)
+        if bolumler[j] == program and program in STAJ_MADDESI:
+            return max(varsayilan, e5.get(STAJ_MADDESI[program], varsayilan))
+        return varsayilan
+
     adaylar = []
     for sira, (p, b) in enumerate(sonuclar[:ADAY_PARCA]):
         for j, (pid, i, c) in enumerate(cumleler):
@@ -319,10 +394,27 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
                 continue
             ortak = sum(idf.get(k, 0) for k in sorudakiler & set(kelimeler(c))) / toplam_idf
             puan = (float(vektorler[j] @ q) + kelime_agirligi * ortak - sira_payi * sira
-                    + (ilk_payi if i == 0 else 0) + madde_agirligi * b["e5"])
+                    + (ilk_payi if i == 0 else 0) + madde_agirligi * madde_benzerligi(pid, j, b["e5"]))
             adaylar.append((puan, sira, i, c, p))
+
+    # Seçili bölümün kendi staj cümlesi, bağlı olduğu madde ilk 5'te olmasa da aday
+    # (Endüstri'de süre Bologna sayfasında yazıyor, o sayfa "kaç gün staj" sorusunda üste çıkmıyor).
+    secilenler = {p["id"] for p, _ in sonuclar[:ADAY_PARCA]}
+    if program not in (None, "genel"):
+        for j, (pid, i, c) in enumerate(cumleler):
+            if bolumler[j] != program or pid in secilenler:
+                continue
+            p = next(x for x in arayici.parcalar if x["id"] == pid)
+            ortak = sum(idf.get(k, 0) for k in sorudakiler & set(kelimeler(c))) / toplam_idf
+            puan = (float(vektorler[j] @ q) + kelime_agirligi * ortak - sira_payi * ADAY_PARCA
+                    + ilk_payi + madde_agirligi * madde_benzerligi(pid, j, e5[pid]))
+            adaylar.append((puan, ADAY_PARCA, i, c, p))
     if not adaylar:
         return None
+
+    # "kaç gün staj", "staj zorunlu mu" gibi sorularda bölümün staj cümlesi doğrudan cevap
+    if staj_suresi_soruluyor(soru) and program not in (None, "genel"):
+        adaylar = [(a[0] + 1.0, *a[1:]) if a[3] in BOLUM_STAJ_CUMLESI.get(program, ()) else a for a in adaylar]
 
     adaylar.sort(key=lambda x: -x[0])
     en_iyi = adaylar[0][0]
@@ -371,6 +463,11 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI, program=None):
     if durum != "bulunamadi":
         # kısa cevabın dayandığı parça ilk k'nın dışındaysa o da kaynaklara eklenir
         ekler = [(p, b) for p, b in tum[k:] if p["id"] in ozet["parcalar"]]
+        gosterilen = {p["id"] for p, _ in sonuclar + ekler}
+        for pid in ozet["parcalar"]:      # bölüme özel staj cümlesinin maddesi aramada çıkmamış olabilir
+            if pid not in gosterilen:
+                p = next(x for x in arayici.parcalar if x["id"] == pid)
+                ekler.append((p, {"e5": float("nan")}))
         for p, b in sonuclar + ekler:
             kaynaklar.append({
                 "id": p["id"],

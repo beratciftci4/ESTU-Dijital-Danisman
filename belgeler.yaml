@@ -272,3 +272,269 @@
   kapsam: program:matematik
   durum: aktif
   not: null
+
+- id: muh_staj
+  ad: Eskişehir Teknik Üniversitesi Mühendislik Fakültesi Staj Yönergesi
+  dosya: muhendislik_staj_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/Uploads/www/files/yonergeler/Eski%C5%9Fehir%20Teknik%20%C3%9Cniversitesi%20M%C3%BChendislik%20Fak%C3%BCltesi%20Staj%20Y%C3%B6nergesi%2016_07_2024.pdf
+  yayim: 2018-12-04          # Senato kararı 9/1
+  yururluk: 2018-12-04       # Senato'nun kabul ettiği tarihten itibaren (md. 17)
+  son_degisiklik: 2024-07-16 # Senato kararı 8/5 (öncesinde 04/10/2022)
+  dayanak: Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği md. 8, Uygulamalı Eğitimler Çerçeve Yönetmeliği
+  indirme_tarihi: 2026-11-25
+  sha256: 72533e460583f9e4fb49a57f513f9aee0f4905ebd28ae36fbdbae6f1bd8c13a1
+  kapsam: fakulte:muhendislik
+  durum: aktif
+  not: Toplam staj en az 40 gün. Bölüm tanımında (md. 3) Uçak Mühendisliği geçmiyor.
+
+- id: bilgisayar_muh_ders_plani
+  ad: Bilgisayar Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: bilgisayar_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/243/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 4fa73010fef00148d1b8c5e52635cc285b8a8a849bced00164626df480a767f8
+  kapsam: program:bilgisayar_muh
+  durum: aktif
+  not: null
+
+- id: bilgisayar_muh_program_bilgileri
+  ad: Bilgisayar Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: bilgisayar_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/243/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: aad31d616f83ceddf43cd8b6f76df95c5f465a2e1e92e2b8d1355b1f163f551c
+  kapsam: program:bilgisayar_muh
+  durum: aktif
+  not: null
+
+- id: cevre_muh_ders_plani
+  ad: Çevre Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: cevre_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/245/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: ead32082cff89d45ac6f43767bf2293833a04cb91458ec3980a76c35cecdafd1
+  kapsam: program:cevre_muh
+  durum: aktif
+  not: null
+
+- id: cevre_muh_program_bilgileri
+  ad: Çevre Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: cevre_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/245/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 4a4bae50321dc34744a132e3dad9f941f7900d0eb83d85a7193b538add7514c4
+  kapsam: program:cevre_muh
+  durum: aktif
+  not: null
+
+- id: elektrik_elektronik_muh_ders_plani
+  ad: Elektrik-Elektronik Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: elektrik_elektronik_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/251/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: c6e4738a749cd439f519bfe205fd5b3a59a91510176ab165ab5d1c637ebccc93
+  kapsam: program:elektrik_elektronik_muh
+  durum: aktif
+  not: null
+
+- id: elektrik_elektronik_muh_program_bilgileri
+  ad: Elektrik-Elektronik Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: elektrik_elektronik_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/251/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 08d4368a8c048572810fc0386093a7b11239f5f26f613a3613760babf1bbff93
+  kapsam: program:elektrik_elektronik_muh
+  durum: aktif
+  not: null
+
+- id: endustri_muh_ders_plani
+  ad: Endüstri Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: endustri_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/244/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 61a9b4dbbe429e5d52e5db986337b90e3e73546bcda2a12f8a207553cbcdf251
+  kapsam: program:endustri_muh
+  durum: aktif
+  not: null
+
+- id: endustri_muh_program_bilgileri
+  ad: Endüstri Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: endustri_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/244/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 693ff96a8572939bab13e924c6371ee796484ec043ca9247eaebe1906a0c9e1e
+  kapsam: program:endustri_muh
+  durum: aktif
+  not: null
+
+- id: insaat_muh_ders_plani
+  ad: İnşaat Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: insaat_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/248/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: f4a398e3779e4a4992cfa2f55636fe649331de065e225257bf9a58452a457d65
+  kapsam: program:insaat_muh
+  durum: aktif
+  not: null
+
+- id: insaat_muh_program_bilgileri
+  ad: İnşaat Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: insaat_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/248/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 569e11e5cfadac9592fb22871a272e07642c193bf05486e06797a4d786f25f6a
+  kapsam: program:insaat_muh
+  durum: aktif
+  not: null
+
+- id: kimya_muh_ders_plani
+  ad: Kimya Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: kimya_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/247/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 5b620b339c3dea33f51b74971d07358940cf4bfef9f29e83d1a6db10359e7539
+  kapsam: program:kimya_muh
+  durum: aktif
+  not: null
+
+- id: kimya_muh_program_bilgileri
+  ad: Kimya Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: kimya_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/247/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 89ccd25836606561e22a9e1d5a3b13d2c442f77ebd3ab1ac1502fb500e8359f6
+  kapsam: program:kimya_muh
+  durum: aktif
+  not: null
+
+- id: makine_muh_ders_plani
+  ad: Makine Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: makine_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/256/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: bf0ed0d7913e1de2d768cf5fc999ebad8b182e438266503bbc76f1a001063170
+  kapsam: program:makine_muh
+  durum: aktif
+  not: null
+
+- id: makine_muh_program_bilgileri
+  ad: Makine Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: makine_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/256/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 2736228b37caf744e8b5d7f90b9622f18eadc5f35d0d84d52d311b3a529b7956
+  kapsam: program:makine_muh
+  durum: aktif
+  not: null
+
+- id: malzeme_muh_ders_plani
+  ad: Malzeme Bilimi ve Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: malzeme_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/250/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 144d59f8e2bb8015868f98df51cb753cbef3d125bd61fcfaa67c66bde03ae46f
+  kapsam: program:malzeme_muh
+  durum: aktif
+  not: null
+
+- id: malzeme_muh_program_bilgileri
+  ad: Malzeme Bilimi ve Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: malzeme_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/250/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: dd136021e002f6c628c04aa0a14db6db12b5d7a096b5ef57eead454b46cec5bc
+  kapsam: program:malzeme_muh
+  durum: aktif
+  not: null
+
+- id: ucak_muh_ders_plani
+  ad: Uçak Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: ucak_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2062/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 456f56bf74b2e1e5c451f399dba6d3aa6905a79b38484e5eea816be9c1c58c6c
+  kapsam: program:ucak_muh
+  durum: aktif
+  not: null
+
+- id: ucak_muh_program_bilgileri
+  ad: Uçak Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: ucak_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2062/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-25
+  sha256: 94b946dc8da93dfe7217121e4e63c912460ef5dc702970f38559ce51b1f0031d
+  kapsam: program:ucak_muh
+  durum: aktif
+  not: null

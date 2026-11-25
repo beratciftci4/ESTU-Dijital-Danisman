@@ -60,6 +60,23 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 - Biyoloji bölümünde hazırlık okumak zorunlu mu? (sıra: 8; ilk 3: biyoloji_program_bilgileri#bolum-İstihdam_Olanakları, biyoloji_program_bilgileri#bolum-Program_Profili, biyoloji_ders_plani#bolum-I.YARIYIL)
 - Matematik bölümünde kaç AKTS ile mezun olunur? (sıra: 9; ilk 3: matematik_ders_plani#bolum-II.YARIYIL, matematik_ders_plani#bolum-I.YARIYIL, matematik_ders_plani#bolum-VI.YARIYIL)
 
+## Mühendislik Fakültesi (tests/soru_seti_muhendislik.yaml, 9 bölüm)
+
+20 soru (18 cevaplı, 2 cevapsız). Ölçüler cevaplı sorular üzerinden.
+
+| Yöntem | hit@1 | hit@3 | hit@5 | MRR |
+|---|---|---|---|---|
+| bm25 | 0.33 | 0.72 | 0.89 | 0.54 |
+| e5 | 0.50 | 0.67 | 0.72 | 0.62 |
+| hibrit | 0.61 | 0.78 | 0.89 | 0.73 |
+
+Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
+
+- Elektrik elektronik mühendisliğinde kaç tane staj var? (sıra: 20+; ilk 3: muh_staj#madde-10, muh_staj#madde-3, elektrik_elektronik_muh_program_bilgileri#bolum-Program_Profili)
+- Bilgisayar mühendisliğinde kaç AKTS mesleki seçmeli almalıyım? (sıra: 5; ilk 3: bilgisayar_muh_ders_plani#bolum-VI.YARIYIL, bilgisayar_muh_ders_plani#bolum-VIII.YARIYIL, bilgisayar_muh_ders_plani#bolum-VII.YARIYIL)
+- Çevre mühendisliğinde sosyal seçmeli kaç kredi? (sıra: 4; ilk 3: cevre_muh_ders_plani#bolum-VII.YARIYIL, cevre_muh_ders_plani#bolum-VIII.YARIYIL, cevre_muh_ders_plani#bolum-Mesleki_Seçmeli_Dersler)
+- Uçak mühendisliğinde kaç AKTS ile mezun olunur? (sıra: 9; ilk 3: ucak_muh_ders_plani#bolum-VII.YARIYIL, ucak_muh_ders_plani#bolum-VIII.YARIYIL, ucak_muh_program_bilgileri#bolum-İstihdam_Olanakları)
+
 ## Notlar
 
 - Eş anlamlı listesi ("üst sınır" -> "en çok" gibi) ve soru kalıbı listesi ana test setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.
@@ -69,5 +86,9 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 - Bölümün kendi Bologna sayfalarının arama metninden bölüm adı çıkarıldı. Yoksa "Kimya bölümünde staj zorunlu mu?" gibi sorularda o bölümün ders planı öne çıkıyordu. Adı sorudan çıkarmak da denendi, daha kötü oldu (Fen seti hit@3 .62): staj yönergesindeki "Kimya ve Matematik için staj isteğe bağlı" notu tam da bölüm adıyla bulunuyor.
 - RRF'ye üçüncü sıralama olarak elle yazılmış özet cümleleriyle e5 benzerliği eklendi (özetler öğrencinin kullandığı kelimelerle yazıldı). MRR: ana .79 -> .85, doğrulama .83 -> .92, Fen seti .66 -> .78. "Bulundu/bulamadım" eşiği değişmedi, hâlâ madde metninin benzerliğine bakıyor.
 - Staj kuralı bölüme göre değişiyor (Fen'de Kimya ve Matematik isteğe bağlı) ama yönergenin maddesi genel ("en az 20 iş günü"). Kimya seçiliyken "Staj zorunlu mu?" sorusuna "20 gün zorundasın" deniyordu. Her bölüme kendi staj cümlesi eklendi (programlar.yaml'dan, yönergenin EK-3 notuna bağlı), sadece o bölüm seçiliyken kullanılıyor.
+- Mühendislik (2026-11-25): yönerge md. 8 "toplam staj en az 40 gün". Bölümün Bologna sayfası daha ayrıntılıysa o kullanıldı (Endüstri: Staj I 20 + Staj II 25 iş günü; Elektrik-Elektronik: 2 x 20 iş günü). Uçak Mühendisliği yönergenin bölüm listesinde geçmiyor, kısa cevapta belirtiliyor.
+- Bologna "program hakkında" sayfalarında İstatistik'tekiyle kelimesi kelimesine aynı olan bölümlerin (kabul, üst derece, ölçme ...) özetleri şablondan üretiliyor, farklı olanlar elle yazıldı.
+- Bilinen hata: "Elektrik elektronik mühendisliğinde kaç tane staj var?" sorusunda doğru madde özet sıralamasında 1., ama BM25 "staj" ile "stajın" kelimelerini farklı köke ayırıyor (ilk 5 harf). Özet sıralamasına 1,5 ve 2 ağırlık denendi, toplam MRR değişmedi (.827/.832/.825), eşit ağırlıkta kalındı.
+- Bölümün staj cümlesi, bağlı olduğu madde aramada ilk 5'e girmese de kısa cevaba aday (Endüstri'nin süresi Bologna sayfasında). Benzerlikle seçince "kaç gün staj" sorusunda "haftada 3 tam gün dersin yoksa" ya da proje temelli staj (45-90 gün) cümleleri öne çıkıyordu. Soru stajın süresini/zorunluluğunu soruyorsa (staj_suresi_soruluyor, kurala dayalı) bölümün staj cümlesi doğrudan ilk sıraya konuyor; itiraz, başvuru, PTS gibi staj soruları bu kurala girmiyor.
 - Ders planı sorularında "birinci dönem" ile "I.YARIYIL" eşleşmesi için yarıyıl numarası arama metnine ve eş anlamlılara eklendi.
 - "Bütünleme" sorusu bilerek cevapsız: yeni yönetmelikte bütünleme sınavı yok. "bütünleme" kelimesi "ek sınav"a eşlenmedi, çünkü ikisi aynı şey değil.

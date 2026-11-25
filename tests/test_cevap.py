@@ -101,6 +101,12 @@ def test_fen_bolumleri(arayici):
     assert fen["cevapli_dogru"] >= 12 and fen["ozet_dogru"] >= 13
 
 
+def test_muhendislik_bolumleri(arayici):
+    from degerlendir import MUH_SET
+    muh = cevap_olc(arayici, sorulari_oku(MUH_SET))
+    assert muh["cevapli_dogru"] >= 12 and muh["ozet_dogru"] >= 15
+
+
 # --- kısa cevap (ozetler.yaml) ---
 
 def test_her_parcanin_ozeti_var(arayici):
@@ -154,8 +160,21 @@ def test_bulunamayinca_kisa_cevap_yok(arayici):
     ("kimya", "isteğe bağlı", "staj yapman gerekir"),
     ("matematik", "isteğe bağlı", "staj yapman gerekir"),
     ("biyoloji", "20 iş günü", "staj zorunlu değildir"),
+    ("endustri_muh", "45 iş günü", "staj zorunlu değildir"),
+    ("makine_muh", "40 gün", "staj zorunlu değildir"),
+    ("ucak_muh", "bölüme de sor", "staj zorunlu değildir"),
 ])
 def test_staj_cevabi_bolume_gore(arayici, program, olmali, olmamali):
     """Stajı isteğe bağlı bölüme "zorunlu" dememeli (genel kural 20 gün, istisna yönergenin ekinde)."""
-    metin = cevapla("Staj zorunlu mu, kaç gün?", arayici, program=program)["ozet"]["metin"]
+    metin = cevapla("Kaç gün staj yapmalıyım?", arayici, program=program)["ozet"]["metin"]
     assert olmali in metin and olmamali not in metin, metin
+
+
+def test_staj_suresi_niyeti():
+    from cevap import staj_suresi_soruluyor
+    for s in ["Kaç gün staj yapmalıyım?", "Staj zorunlu mu?", "Staj süresi ne kadar?", "Mezun olmak için staj şart mı?"]:
+        assert staj_suresi_soruluyor(s), s
+    for s in ["Staj notuna itiraz süresi ne kadar?", "Stajı ne zaman yapabilirim?",
+              "Proje temelli staj kaç gün?", "Staj başvurusunu kaç gün önceden yapmalıyım?", "Kaç AKTS alabilirim?",
+              "Stajın başarılı sayılması için değerlendirme notu en az kaç olmalı?"]:
+        assert not staj_suresi_soruluyor(s), s

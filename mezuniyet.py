@@ -20,13 +20,20 @@ KAYNAK_TEK_DERS = "tek_ders#bent-1"
 
 
 def staj_kurali(program):
-    """(gereken iş günü ya da None, kaynak parça id)"""
+    """(gereken gün ya da None, kaynak parça id). Birim için staj_birimi()."""
     from belge_kontrol import programlari_oku
     fakulteler, programlar = programlari_oku()
     p = next(x for x in programlar if x["id"] == program)
     if p["staj_gunu"] is None:
         return None, fakulteler[p["fakulte"]]["staj_listesi"]
-    return p["staj_gunu"], fakulteler[p["fakulte"]]["staj_maddesi"]
+    return p["staj_gunu"], p.get("staj_kaynagi") or fakulteler[p["fakulte"]]["staj_maddesi"]
+
+
+def staj_birimi(program):
+    from belge_kontrol import programlari_oku
+    fakulteler, programlar = programlari_oku()
+    p = next(x for x in programlar if x["id"] == program)
+    return p.get("staj_birimi") or fakulteler[p["fakulte"]]["staj_birimi"]
 
 
 def kontrol(akts, gno, notlar, staj_gunu, program="istatistik"):
@@ -68,11 +75,12 @@ def kontrol(akts, gno, notlar, staj_gunu, program="istatistik"):
         })
         gereken_staj = 0
     else:
+        birim = staj_birimi(program)
         satirlar.append({
-            "ad": f"En az {gereken_staj} iş günü staj",
+            "ad": f"En az {gereken_staj} {birim} staj",
             "tamam": staj_gunu >= gereken_staj,
-            "aciklama": f"{staj_gunu} iş günü staj." +
-                        (f" {gereken_staj - staj_gunu} iş günü eksik." if staj_gunu < gereken_staj else ""),
+            "aciklama": f"{staj_gunu} {birim} staj." +
+                        (f" {gereken_staj - staj_gunu} {birim} eksik." if staj_gunu < gereken_staj else ""),
             "kaynak": staj_kaynagi,
         })
 

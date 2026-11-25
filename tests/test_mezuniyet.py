@@ -73,3 +73,28 @@ def test_stajsiz_bolum():
     assert s["mezun_olabilir"]
     assert any(x["ad"] == "Zorunlu staj yok" for x in s["satirlar"])
     assert not kontrol(240, 2.5, HIC, 0, program="fizik")["mezun_olabilir"]
+
+
+def test_programlar_tutarli():
+    """programlar.yaml'daki her kaynak gerçekten var olan bir parça, her bölümün Bologna sayfaları listede."""
+    from belge_kontrol import belgeleri_oku
+    fakulteler, programlar = programlari_oku()
+    belge_idleri = {b["id"] for b in belgeleri_oku()}
+    for f in fakulteler.values():
+        assert f["staj_maddesi"] in PARCALAR and f["staj_listesi"] in PARCALAR
+        assert f["staj_belgesi"] in belge_idleri and f["staj_birimi"] in ("gün", "iş günü")
+    for p in programlar:
+        assert p["fakulte"] in fakulteler, p["id"]
+        assert {f"{p['id']}_ders_plani", f"{p['id']}_program_bilgileri"} <= belge_idleri, p["id"]
+        if p.get("staj_kaynagi"):
+            assert p["staj_kaynagi"] in PARCALAR, p["id"]
+            # Bologna sayfasındaki süre programlar.yaml'dakiyle tutarlı olmalı
+            assert str(p["staj_gunu"]) in PARCALAR[p["staj_kaynagi"]] or p["id"] in ("elektrik_elektronik_muh", "endustri_muh"), p["id"]
+
+
+def test_muhendislik_staji():
+    assert "40 (kırk) günden az olamaz" in PARCALAR["muh_staj#madde-8"]
+    s = kontrol(240, 2.5, HIC, 40, program="makine_muh")
+    assert s["mezun_olabilir"] and any(x["ad"] == "En az 40 gün staj" for x in s["satirlar"])
+    s = kontrol(240, 2.5, HIC, 40, program="endustri_muh")
+    assert not s["mezun_olabilir"] and any("5 iş günü eksik" in x["aciklama"] for x in s["satirlar"])

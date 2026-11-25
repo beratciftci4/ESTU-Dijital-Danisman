@@ -396,6 +396,217 @@ matematik_program_bilgileri#bolum-Ölçme_ve_Değerlendirme:
   - Harf notun, dersi alan öğrencilerin genel başarısı da dikkate alınarak belirlenir; AA 4,0'dan FF 0,0'a kadar katsayılar kullanılır.
   - DZ devamsızlık notudur ve FF ya da YZ ile aynı sayılır; EK notu eksikler tamamlanmazsa FF veya YZ'ye dönüşür.
 
+# ---------------- Mühendislik Fakültesi Staj Yönergesi ----------------
+muh_staj#madde-1:
+  - Bu yönerge Mühendislik Fakültesi öğrencilerinin yapmakla yükümlü olduğu stajların planlanma, uygulanma ve değerlendirilme kurallarını düzenler.
+muh_staj#madde-2:
+  - Yönerge, eğitim-öğretim yönetmeliğinin 8. maddesine ve Yükseköğretimde Uygulamalı Eğitimler Çerçeve Yönetmeliği'ne dayanır.
+muh_staj#madde-3:
+  - Bu madde yönergede geçen kavramları tanımlar.
+  - Yönergedeki bölümler Bilgisayar, Çevre, Elektrik-Elektronik, Endüstri, İnşaat, Kimya, Malzeme Bilimi ve Makine Mühendisliği bölümleridir.
+  - Yaz dönemi, bahar finallerinin bittiği tarihten güz derslerinin başladığı tarihe kadar olan dönemdir.
+muh_staj#madde-4:
+  - Mühendislik stajının amacı, bölümünle ilgili iş alanlarını tanıman ve okulda öğrendiklerini uygulayarak mesleki deneyim kazanmandır.
+muh_staj#madde-5:
+  - Mühendislik Fakültesi Staj Komisyonu, dekan yardımcısı başkanlığında bölüm staj komisyonu başkanlarından oluşur.
+  - Fakülte Staj Komisyonu staj esaslarını belirler, SGK bildirgelerinin izlenmesini sağlar ve staj itirazları ile muafiyet taleplerini yönetim kuruluna sunar.
+muh_staj#madde-6:
+  - Bölüm Staj Komisyonu, bölüm başkanının oluşturduğu en az üç öğretim elemanından oluşur.
+  - Bölüm Staj Komisyonu bölüm staj kılavuzunu hazırlar, staj yeri bulmana yardımcı olur, belgeleri inceler ve stajını başarılı ya da başarısız olarak değerlendirir.
+muh_staj#madde-7:
+  - Staj yapan her grup için bir sorumlu öğretim elemanı görevlendirilir; staj raporunu değerlendirir ve notunu sisteme girer.
+muh_staj#madde-8:
+  - Mühendislik Fakültesi'nde toplam staj süresi 40 günden az olamaz.
+  - Staja devam zorunludur; geçerli mazeretle gidemediğin günleri telafi etmen gerekir ve bu günler toplam zorunlu staj süresinin %10'unu geçemez.
+  - Kurallara uymadığın için kurum stajını sonlandırırsa o stajı yenilemen gerekir.
+  - Ön lisans diploması almak istersen, bölümün lisans için belirlediği zorunlu staj süresinin yarısı kadar staj yapman gerekir.
+  - İsteğe bağlı proje temelli staj 45 ile 90 gün arasındadır ve bölüm staj komisyonu uygun görürse zorunlu stajlardan birinin yerine sayılabilir.
+  - Derssiz günlerinde isteğe bağlı staj da yapabilirsin, ama zorunlu stajla isteğe bağlı staja aynı anda devam edemezsin.
+  - Zorunlu stajlarda sigortan fakülte tarafından yapılır.
+muh_staj#madde-9:
+  - Staj için hazırlaman gereken belgeler staj başvuru ve kabul formu (3 nüsha), SGK işe giriş bildirgesi, devam çizelgesi, kurum değerlendirme formu ve staj raporudur.
+  - Stajı yarıda bırakırsan kurum, staj ayrılış formunu doldurup dekanlığa gönderir.
+muh_staj#madde-10:
+  - Mühendislik stajı esas olarak yaz döneminde ya da güz ile bahar arasındaki tatilde yapılır; ders dönemi boyunca, ekle-sil haftası ve sınav günleri dahil staj yapamazsın.
+  - Hafta içi en az 3 tam gün dersin yoksa, ders ve sınavının olmadığı günlerde dönem içinde staj yapabilirsin.
+  - Staja 4. yarıyılın sonundan itibaren başvurabilirsin.
+  - Staj başlangıcından en az 15 gün önce staj başvuru ve kabul formunu doldurup Bölüm Staj Komisyonu'na teslim etmelisin.
+  - Normalde bir hafta 5 iş günü sayılır; hafta sonu da çalışan işyerlerinde, belgelersen oranın haftalık iş günü esas alınır.
+  - Staj işlemlerini kendin yapamıyorsan yazılı dilekçeyle vekalet verebilirsin.
+muh_staj#madde-11:
+  - Bölüm staj kılavuzuna uygun staj yeri bulmak senin sorumluluğundadır; bulduğun yerin uygunluğuna Bölüm Staj Komisyonu karar verir.
+  - Yurt dışında da, değişim programıyla ya da kendi bulduğun bir kurumda komisyon önerisi ve yönetim kurulu kararıyla staj yapabilirsin; yurt dışı stajda sigorta primi ödenmez.
+muh_staj#madde-12:
+  - Staja başladıktan sonra Bölüm Staj Komisyonu'nun onayı olmadan staj yerini değiştiremezsin; onaylanan değişiklik en geç 3 gün içinde dekanlığa bildirilir.
+  - Kurumda grev, yangın, iflas, iş kazası ya da doğal afet olursa veya staj amacı dışında çalıştırılırsan, komisyon onayıyla stajını başka bir yerde tamamlayabilirsin.
+muh_staj#madde-13:
+  - Staja giderken SGK işe giriş bildirgesini, devam çizelgesini ve kurum değerlendirme formunu kurumdaki staj yetkilisine teslim edersin; formlar staj bitince kaşeli ve kapalı zarfta geri gelir.
+  - Kurumun gizli bilgilerini paylaşamazsın ve kurumun çalışma, disiplin ve iş güvenliği kurallarına uymak zorundasın; kurallara uymazsan stajı tekrarlarsın.
+  - Stajının değerlendirilmesini istediğin yarıyılda staj gruplarından birine kaydolup staj raporunu belirlenen tarihe kadar sorumlu öğretim elemanına teslim etmelisin.
+  - Bir dönemde birden fazla staj dersine kayıt olabilirsin.
+  - Mezuniyete sadece stajı kalan öğrenci, staj değerlendirmesi bitince dilekçe verirse dönem sonunu beklemeden mezun olabilir.
+muh_staj#madde-14:
+  - Stajın başarılı sayılması için kurumun doldurduğu değerlendirme formundaki notun 5 üzerinden en az 3 olması ön koşuldur.
+  - Bölüm Staj Komisyonu stajını başarılı ya da başarısız olarak değerlendirir; gerekirse sözlü sunum isteyebilir.
+  - Staj değerlendirmesine, kararın ilanından sonraki 5 iş günü içinde dekanlığa yazılı olarak itiraz edebilirsin.
+  - Staj notu sisteme başarılıysa YT, başarısızsa YZ olarak işlenir.
+  - Derslerini bitirip stajını yapmayan ya da stajdan kalan öğrenciye mezuniyet belgeleri verilmez; kaydını yenileyip staj dersine kaydolarak stajı tekrarlaman gerekir.
+muh_staj#madde-15:
+  - Yatay ya da dikey geçişle geldiysen önceki okulunda yaptığın stajın kısmen ya da tamamen kabulüne, bölüm staj komisyonunun önerisiyle yönetim kurulu karar verir.
+  - İlgili sektörde SGK'lı olarak zorunlu staj süresi kadar çalıştığını belgeler ve staj raporunu teslim edersen stajdan muaf tutulabilirsin; aynı işyeri için birden fazla stajdan muaf olamazsın.
+  - Staj muafiyeti için kayıt yenileme haftasında Bölüm Staj Komisyonu'na başvurmalısın; muafiyet uygun görülürse staj dersi YT notuyla geçilmiş sayılır.
+  - Yandal öğrencilerinin yandal için zorunlu stajı yoktur.
+  - Muafiyet ve staj kararlarına, ilandan sonraki 5 iş günü içinde dekanlığa yazılı itiraz edebilirsin.
+muh_staj#madde-16:
+  - Yönergede hüküm olmayan durumlarda eğitim-öğretim yönetmeliği, Uygulamalı Eğitimler Çerçeve Yönetmeliği ve 2547 sayılı Kanun uygulanır.
+muh_staj#madde-17:
+  - Yönerge, Senato'nun kabul ettiği tarihte yürürlüğe girmiştir.
+muh_staj#madde-18:
+  - Yönergeyi ESTÜ Rektörü yürütür.
+muh_staj#ek-2:
+  - Mühendislik staj akış şemasına göre staj yeri bulur, başvuru formunu 3 nüsha doldurup kuruma onaylatır ve staj başlangıcından en az 15 gün önce Bölüm Staj Komisyonu'na başvurursun.
+  - Onaylı formun bir kopyasını staj başlangıcından en fazla 7 gün önce Öğrenci İşleri'ne iletip SGK girişini yaptırırsın; staj bitince raporu ve formları komisyona teslim edersin.
+muh_staj#ek-3:
+  - Bu, Mühendislik Fakültesi staj başvuru ve kabul formunun örneğidir; öğrenci, staj yeri ve onay bilgileri bu forma yazılır.
+muh_staj#ek-4:
+  - Bu, stajda her gün imzaladığın devam çizelgesinin örneğidir; kaç iş günü staj yapacağın bölümünün staj kılavuzuna göre belirlenir.
+  - Raporlu olduğun staj günlerini telafi etmen ve raporunu Bölüm Staj Komisyonu'na bildirmen gerekir.
+muh_staj#ek-5:
+  - Bu, kurumun seni ölçütlere göre 1-5 arasında puanladığı staj değerlendirme formudur; ortalama en az 3 olmalıdır.
+muh_staj#ek-6:
+  - Bu, staj raporu sayfasının örneğidir; her sayfaya çalıştığın bölüm ve tarih yazılır ve birim sorumlusuna imzalatılır.
+muh_staj#ek-7:
+  - Bu, Mühendislik staj raporunun kapak sayfası örneğidir.
+muh_staj#ek-8:
+  - Bu, staj raporunun iç kapak sayfası örneğidir; öğrenci ve kurum bilgileri ile kurum yetkilisinin imzası yer alır.
+muh_staj#ek-9:
+  - Bu, stajı yarıda bırakan öğrenci için kurumun dekanlığa gönderdiği staj ayrılış formudur.
+muh_staj#ek-10:
+  - Bu, Bölüm Staj Komisyonu'nun seni değerlendirdiği formdur; stajın başarılı sayılması için kurumun puanının ve komisyonun rapor puanının her birinin 5 üzerinden en az 3 olması gerekir.
+
+# ---------------- Mühendislik Fakültesi program bilgileri (Bologna) ----------------
+# Standart metinli bölümler (kabul, üst derece, ölçme vb.) cevap.py'deki şablondan geliyor.
+bilgisayar_muh_program_bilgileri#bolum-Program_Profili:
+  - Bilgisayar Mühendisliği programı yazılım ve donanım sistemlerinin tasarımı, geliştirilmesi ve bakımı konularında kariyer yapabilecek, güçlü matematik altyapısına sahip mühendisler yetiştirmeyi amaçlar.
+bilgisayar_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Bilgisayar Mühendisliği Bölüm Başkanı Doç. Dr. Mehmet Koç, AKTS bölüm koordinatörü Dr. Öğr. Üyesi Zeynep Batmaz'dır.
+bilgisayar_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Bilgisayar Mühendisliği'nde zorunlu İngilizce hazırlık vardır; yeterlik sınavından 100 üzerinden 70 alanlar ya da YDS gibi sınavlardan yeterli puanı olanlar muaf olur.
+bilgisayar_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Bilgisayar Mühendisliği'nden mezun olmak için en az 240 AKTS'yi DD, YT ya da üstü notla tamamlaman, GNO'nun en az 2,00 olması ve 40 iş günlük stajı başarman gerekir.
+  - Bilgisayar Mühendisliği'nde 240 AKTS'nin 180'i zorunlu, 45'i mesleki seçmeli ve 15'i seçmeli derslerden olmalı; seçmelilerden en az biri YÖK seçmeli dersi olmalı.
+bilgisayar_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Bilgisayar Mühendisliği mezunları yazılım, bilişim, savunma, finans, oyun, sağlık ve telekomünikasyon gibi sektörlerde yazılım mühendisi, sistem ve ağ yöneticisi, veritabanı yöneticisi ya da AR-GE mühendisi olarak çalışabilir.
+
+cevre_muh_program_bilgileri#bolum-Program_Profili:
+  - Çevre Mühendisliği hava, su ve toprak kalitesinin korunması ve arıtılması, iklim değişikliği ve sürdürülebilirlik konularında çözüm üreten mühendisler yetiştirir.
+  - Çevre Mühendisliği Bölümü MÜDEK tarafından 2022-2025 dönemi için akredite edilmiştir ve EUR-ACE etiketine sahiptir.
+cevre_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Çevre Mühendisliği Bölüm Başkanı Prof. Dr. Aysun Özkan, bölüm başkan yardımcıları Doç. Dr. Alp Özdemir ve Dr. Öğr. Üyesi İlker Balcılar'dır.
+cevre_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Çevre Mühendisliği'nde zorunlu yabancı dil hazırlık vardır; yeterlik sınavından 70 ya da YDS/YÖKDİL'den 70, TOEFL IBT'den 84 gibi puanları olanlar muaf olur.
+cevre_muh_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - Çevre Mühendisliği programını tamamlamak için bütün dersleri geçmen, en az 240 AKTS, en az 2,00 GNO ve 40 günlük zorunlu stajı tamamlaman gerekir.
+cevre_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Çevre Mühendisliği'nden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS, en az 2,00 GNO ve 40 günlük zorunlu stajı tamamlaman gerekir.
+  - "Çevre Mühendisliği'nde 240 AKTS'nin 40'ı seçmeli olmalı: 29 AKTS mesleki seçmeli ve 11 AKTS sosyal seçmeli."
+cevre_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Çevre Mühendisliği mezunları DSİ, İller Bankası, bakanlıklar ve üniversiteler gibi kamu kurumlarında; geri dönüşüm tesisleri, fabrikalar, enerji santralleri, çevre laboratuvarları ve danışmanlık firmalarında çalışabilir.
+
+elektrik_elektronik_muh_program_bilgileri#bolum-Program_Profili:
+  - Elektrik-Elektronik Mühendisliği programının eğitim dili İngilizcedir ve süresi 4 yıldır; İngilizce seviye sınavını geçemeyenler önce 1 yıl hazırlık okur.
+  - Elektrik-Elektronik Mühendisliği'nde şartları sağlayan öğrenciler çift anadal veya yandal yapabilir.
+elektrik_elektronik_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Elektrik-Elektronik Mühendisliği Bölüm Başkanı Prof. Dr. Feridun Ay, bölüm başkan yardımcıları Dr. Öğr. Üyesi Burak Batmaz ve Dr. Öğr. Üyesi Oğuzkağan Alıç'tır.
+elektrik_elektronik_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+elektrik_elektronik_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Elektrik-Elektronik Mühendisliği'nden mezun olmak için bütün derslerini geçmen, en az 240 AKTS, en az 2,00 GNO ve her biri 20 iş günü olan 2 stajı başarman gerekir.
+  - Elektrik-Elektronik Mühendisliği'nde en az 7 mesleki seçmeli ders almalısın; bunların en az 5'i bölümün uzmanlaşma gruplarından biri olmalı, ayrıca en az 21 AKTS seçmeli ders gerekir.
+elektrik_elektronik_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Elektrik-Elektronik Mühendisliği mezunları elektronik sektörünün AR-GE bölümlerinde, telekom ve GSM şirketlerinde, araştırma enstitülerinde, enerji santralleri ve dağıtım şirketlerinde ve akademide çalışabilir.
+
+endustri_muh_program_bilgileri#bolum-Program_Profili:
+  - Endüstri Mühendisliği üretim, hizmet ve tedarik zinciri gibi sistemleri bilimsel yöntemlerle analiz edip iyileştirebilen mühendisler yetiştirmeyi amaçlar.
+endustri_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Endüstri Mühendisliği Bölüm Başkanı Prof. Dr. Nihal Erginel, bölüm başkan yardımcıları Doç. Dr. Mehmet Alegöz ve Doç. Dr. Gülçin Dinç Yalçın'dır.
+endustri_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Endüstri Mühendisliği'nde zorunlu İngilizce hazırlık vardır; yeterlik sınavından 100 üzerinden 70 alanlar ya da YDS gibi sınavlardan yeterli puanı olanlar muaf olur.
+endustri_muh_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - Endüstri Mühendisliği programını tamamlamak için en az 240 AKTS ve en az 2,00 GNO gerekir; 240 AKTS'nin %30'unu İngilizce derslerden tamamlamalısın.
+endustri_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Endüstri Mühendisliği'nden mezun olmak için en az 240 AKTS, en az 2,00 GNO ve FF, DZ, YZ notunun olmaması gerekir.
+  - Endüstri Mühendisliği'nde en az 8 mesleki seçmeli ders (32,5 AKTS), en az 2 seçmeli ders (7,5 AKTS) ve en az 1 YÖK seçmeli ders (2 AKTS) almalısın.
+  - Endüstri Mühendisliği'nde Staj I için en az 20 iş günü, Staj II için en az 25 iş günü staj yapmalısın.
+endustri_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Endüstri Mühendisliği mezunları üretim, sağlık, bankacılık, lojistik ve sigortacılık gibi sektörlerde planlama, kalite, AR-GE, satın alma, finans ve danışmanlık alanlarında çalışabilir.
+
+insaat_muh_program_bilgileri#bolum-Program_Profili:
+  - İnşaat Mühendisliği Bölümü 1998'de kurulmuştur ve İki Eylül Kampüsü'ndedir; eğitim yapı mekaniği, yapı malzemeleri, ulaştırma, zemin mekaniği ve hidrolik laboratuvarlarıyla desteklenir.
+  - İnşaat Mühendisliği'nin Erasmus kapsamında çeşitli üniversitelerle ikili anlaşmaları vardır.
+insaat_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - İnşaat Mühendisliği Bölüm Başkanı Prof. Dr. Recep Bakış'tır.
+insaat_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+insaat_muh_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - İnşaat Mühendisliği programını tamamlamak için bütün dersleri geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
+insaat_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - İnşaat Mühendisliği'nden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS tamamlaman ve GNO'nun 4,00 üzerinden en az 2,00 olması gerekir.
+insaat_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - İnşaat Mühendisliği mezunları DSİ, Karayolları, TCDD, bakanlık ve belediyeler gibi kamu kurumlarında, müteahhitlik ve proje firmalarında ya da kendi işlerini kurarak çalışabilir.
+
+kimya_muh_program_bilgileri#bolum-Program_Profili:
+  - Kimya Mühendisliği ham maddeleri daha değerli ürünlere dönüştürme, büyük ölçekli üretim tasarımı ve endüstriyel-çevresel problemleri çözme becerileri kazandırır.
+  - Kimya Mühendisliği'nin yıllık kontenjanı 72'dir ve eğitim dili %30 İngilizcedir.
+kimya_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Kimya Mühendisliği Bölüm Başkanı Prof. Dr. Elif Akbay, bölüm başkan yardımcıları Dr. Öğr. Üyesi Çağla Gül Güldiken ve Dr. Öğr. Üyesi Murat Tamer'dir.
+kimya_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Kimya Mühendisliği'nde zorunlu İngilizce hazırlık vardır; yeterlik sınavından 100 üzerinden 70 alanlar ya da YDS gibi sınavlardan yeterli puanı olanlar muaf olur.
+kimya_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Kimya Mühendisliği'nden mezun olmak için 240 AKTS'yi başarıyla tamamlaman, GNO'nun en az 2,00 olması ve 40 iş günlük stajı başarman gerekir.
+  - Kimya Mühendisliği'nde 240 AKTS'nin 180'i zorunlu, 40'ı mesleki seçmeli ve 20'si seçmeli derslerden olmalı; seçmelilerden en az biri YÖK seçmeli dersi olmalı.
+kimya_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Kimya Mühendisliği mezunları petrol rafinasyonu, petrokimya, gıda, ilaç, kağıt, plastik, su arıtımı, enerji, tekstil, boya ve çimento gibi sektörlerde ve üniversitelerde çalışabilir.
+
+makine_muh_program_bilgileri#bolum-Program_Profili:
+  - Makine Mühendisliği makinelerin tasarımı, yapımı ve işletimi için mekanik, termodinamik, akışkanlar mekaniği, ısı transferi, malzeme ve tasarım alanlarında yetkin mühendisler yetiştirir.
+makine_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Makine Mühendisliği Bölüm Başkanı Doç. Dr. İrfan Kaya, bölüm başkan yardımcıları Arş. Gör. Dr. Eren Kaya ve Dr. Öğr. Üyesi Mutlu Karaşoğlu'dur.
+makine_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+makine_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Makine Mühendisliği'nden mezun olmak için bütün derslerini geçmen, FF, DZ veya YZ notunun olmaması, en az 240 AKTS ve en az 2,00 GNO gerekir.
+  - Makine Mühendisliği'nde 180 AKTS zorunlu, 40 AKTS mesleki seçmeli ve 20 AKTS seçmeli ders almalısın.
+makine_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Makine Mühendisliği mezunları otomotiv, uçak, tren, metal, inşaat, enerji ve imalat sektörlerinde, üniversitelerde ve AR-GE kuruluşlarında çalışabilir.
+
+malzeme_muh_program_bilgileri#bolum-Program_Profili:
+  - Malzeme Bilimi ve Mühendisliği malzemelerin iç yapısı, üretim süreçleri, özellikleri ve performansı konularında yetkin mühendisler yetiştirmeyi amaçlar.
+malzeme_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Malzeme Bilimi ve Mühendisliği Bölüm Başkanı Prof. Dr. Aydın Doğan, bölüm başkan yardımcıları Dr. Öğr. Üyesi Hüseyin Boğaç Poyraz ve Dr. Öğr. Üyesi Mert Gül'dür.
+  - Malzeme Bilimi ve Mühendisliği'nin AKTS koordinatörü Prof. Dr. Servet Turan, yardımcısı Arş. Gör. Dr. Enes İbrahim Düden'dir.
+malzeme_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Malzeme Bilimi ve Mühendisliği'nde zorunlu İngilizce hazırlık vardır; yeterlik sınavından 100 üzerinden 70 alanlar ya da YDS gibi sınavlardan yeterli puanı olanlar muaf olur.
+malzeme_muh_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Malzeme Bilimi ve Mühendisliği'nden mezun olmak için 240 AKTS'yi başarıyla tamamlaman, GNO'nun en az 2,00 olması ve 40 iş günlük stajı başarman gerekir.
+  - Malzeme Bilimi ve Mühendisliği'nde 240 AKTS'nin 180'i zorunlu, 45'i mesleki seçmeli ve 15'i seçmeli derslerden olmalı; seçmelilerden en az biri YÖK seçmeli dersi olmalı.
+malzeme_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Malzeme Bilimi ve Mühendisliği mezunları otomotiv, elektronik, uçak, seramik, cam, metal, madencilik, nükleer, plastik, çimento ve boya sanayisinde, üniversitelerde ve AR-GE kuruluşlarında çalışabilir.
+
+ucak_muh_program_bilgileri#bolum-Program_Profili:
+  - Uçak Mühendisliği programı uçak sistemlerinin tasarımı, geliştirilmesi, işletimi ve bakımı konularında kariyer yapabilecek mühendisler yetiştirmeyi amaçlar.
+ucak_muh_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Uçak Mühendisliği Bölüm Başkanı Dr. Öğr. Üyesi Özgün Sunar, bölüm başkan yardımcıları Dr. Öğr. Üyesi Ozan Can Zehni ve Arş. Gör. Dr. Süleyman Mert Özer'dir.
+ucak_muh_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Daha önce başka bir üniversitede okuduysan, kesin kayıttan sonra ilk hafta içinde başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+ucak_muh_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Uçak Mühendisliği mezunları hava araçları konusunda kapsamlı eğitim aldıkları için havacılık alanında geniş iş olanaklarına sahiptir.
+
 # ---------------- Akademik Danışmanlık Yönergesi ----------------
 danismanlik#madde-1:
   - Bu yönerge ESTÜ öğrencilerine verilen akademik danışmanlık hizmetinin kurallarını düzenler.

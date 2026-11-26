@@ -1,4 +1,5 @@
 """5. aşama testleri: API'siz cevap, atıf biçimi ve "bulamadım" davranışı."""
+import re
 import sys
 from pathlib import Path
 
@@ -241,3 +242,22 @@ def test_myo_yonergesi_lisansa_karismiyor(arayici):
     from cevap import cevapla
     c = cevapla("Kaç gün staj yapmam gerekiyor?", arayici, program="lojistik")
     assert "Lojistik programında" in c["ozet"]["metin"] and "20 iş günü" in c["ozet"]["metin"]
+
+
+def test_sorulan_yariyil():
+    from cevap import sorulan_yariyil
+    assert [sorulan_yariyil(s) for s in ["Birinci yarıyılın dersleri", "3. dönem dersleri", "5.yarıyıl",
+                                         "1. sınıf", "ilk dönem", "yaz dönemi"]] == [1, 3, 5, None, 1, None]
+
+
+def test_butun_bolumlerde_staj_ve_ilk_yariyil(arayici):
+    # 53 bölüm/programın hepsinde staj cevabı programdaki gün sayısını söylemeli (ya da belirsizliği),
+    # "birinci yarıyıl" sorusu da o bölümün 1. yarıyılını getirmeli
+    from belge_kontrol import programlari_oku
+    from cevap import cevapla
+    for p in programlari_oku()[1]:
+        m = cevapla("Kaç gün staj yapmalıyım?", arayici, program=p["id"])["ozet"]["metin"]
+        assert (str(p["staj_gunu"]) in m) if p["staj_gunu"] else \
+            re.search(r"sor\.|şartı yok|net anlaşılmıyor", m), (p["id"], m)
+        c = cevapla("Birinci yarıyılın zorunlu dersleri neler?", arayici, program=p["id"])
+        assert c["ozet"]["ilk_parca"] == f"{p['id']}_ders_plani#bolum-I.YARIYIL", p["id"]

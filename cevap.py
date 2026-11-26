@@ -590,6 +590,11 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
     if not re.search(r"proje|pts", turkce_kucuk(soru)):
         adaylar = [(a[0] - PTS_PAYI, *a[1:]) if a[4]["belge_id"] == "proje_temelli_staj" else a for a in adaylar]
 
+    yariyil = sorulan_yariyil(soru)
+    if yariyil:
+        hedef = f"#bolum-{ROMA_RAKAM[yariyil - 1]}.YARIYIL"
+        adaylar = [(a[0] + 0.05, *a[1:]) if a[4]["id"].endswith(hedef) else a for a in adaylar]
+
     adaylar.sort(key=lambda x: -x[0])
     en_iyi = adaylar[0][0]
     secilen = []
@@ -610,6 +615,22 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
         "ilk_parca": secilen[0][4]["id"],
         "dayanak": [f"{kisa_ad(p)}, {konum(p)}" for p in kullanilan],
     }
+
+
+SIRA_SOZCUGU = {"birinci": 1, "ilk": 1, "ikinci": 2, "üçüncü": 3, "dördüncü": 4, "beşinci": 5,
+                "altıncı": 6, "yedinci": 7, "sekizinci": 8}
+ROMA_RAKAM = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]
+
+
+def sorulan_yariyil(soru):
+    """"Birinci yarıyılın dersleri", "3. dönem", "5.yarıyıl" -> yarıyıl numarası; yoksa None.
+    "1. sınıf" yarıyıl değil (iki yarıyıl), ona karışmıyoruz."""
+    s = turkce_kucuk(soru)
+    m = re.search(r"\b([1-8])\s*\.?\s*(?:yarıyıl|dönem)", s)
+    if m:
+        return int(m.group(1))
+    m = re.search(r"\b(" + "|".join(SIRA_SOZCUGU) + r")\s+(?:yarıyıl|dönem)", s)
+    return SIRA_SOZCUGU[m.group(1)] if m else None
 
 
 def guven_skoru(soru, sonuclar, arayici, program=None):
@@ -634,6 +655,19 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI, program=None):
     if en_yakin["id"] not in {p["id"] for p, _ in tum[:ADAY_PARCA]}:
         e5 = float(arayici.e5_skorlari(soru, program)[int(np.argmax(oz))])
         tum = tum[:ADAY_PARCA - 1] + [(en_yakin, {"e5": e5, "bm25": 0.0})] + tum[ADAY_PARCA - 1:]
+    # soru belli bir yarıyılı soruyorsa ("birinci yarıyılın dersleri") o yarıyılın ders planı
+    # parçası en başa: anlam benzerliği yarıyıl numarasını iyi ayırt etmiyor (1. ile 3. yarıyıl
+    # listeleri birbirine çok benziyor)
+    yariyil = sorulan_yariyil(soru)
+    if yariyil and program not in (None, "genel"):
+        bolum, yil = bolum_ve_yil(program)
+        hedef = f"{bolum}_ders_plani{f'_{yil}' if yil else ''}#bolum-{ROMA_RAKAM[yariyil - 1]}.YARIYIL"
+        sira = {p["id"]: i for i, p in enumerate(arayici.parcalar)}
+        if hedef in sira:
+            e5 = arayici.e5_skorlari(soru, program)
+            alt = list(arayici.alt_kume(program)[0])
+            bilgi = {"e5": float(e5[alt.index(sira[hedef])]), "bm25": 0.0}
+            tum = [(arayici.parcalar[sira[hedef]], bilgi)] + [x for x in tum if x[0]["id"] != hedef]
     sonuclar = tum[:k]
     en_iyi = guven_skoru(soru, sonuclar, arayici, program)
     if en_iyi >= ESIK_YUKSEK:

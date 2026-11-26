@@ -24,7 +24,7 @@ Eşikler: skor >= 0.868 ise "bulundu", < 0.85 ise "bulamadım", arası "belirsiz
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 | 1/2 | 16/18 | 15/18 |
 | Spor Bilimleri Fakültesi | 13/16 | 2/2 | 1/2 | 14/15 | 14/15 |
 | Önlisans programları (meslek yüksekokulları) | 15/17 | 2/2 | 2/2 | 15/16 | 15/16 |
-| Yıllık ders planları ve tek ders soruları | 11/15 | - | - | 13/15 | 12/15 |
+| Yıllık ders planları ve tek ders soruları | 11/15 | - | - | 13/15 | 13/15 |
 | Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı) | - | 36/40 | 25/40 | - | - |
 
 ## Hatalı sonuçlar

@@ -193,7 +193,7 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Cevapsız doğrulama (40 soru, eşik seçilirken bakılmadı) | | 36/40 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 17/17, Mimarlık 16/18, Spor 14/15, önlisans 15/16, yıllık planlar ve tek ders soruları 13/15.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 17/17, Mimarlık 16/18, Spor 14/15, önlisans 15/16, yıllık planlar ve tek ders soruları 13/15 (ilk cümle 13/15).
 
 "Bulamadım" kararı eskiden sadece en iyi parçanın benzerliğine bakıyordu. Belge sayısı arttıkça her soruya
 benzeyen bir parça çıkmaya başladı ve cevapsız soruların çoğuna "bulundu" denir oldu. 186 soruda (146 cevaplı,

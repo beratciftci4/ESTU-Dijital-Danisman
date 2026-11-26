@@ -65,6 +65,7 @@ BELGE_KISA_ADI = {
     "mtf_staj": "Mimarlık ve Tasarım Fakültesi Staj Yönergesi",
     "mtf_proje": "Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi",
     "spor_staj": "Spor Bilimleri Fakültesi Staj Yönergesi",
+    "myo_staj": "Meslek Yüksekokulları Staj ve İşletmede Mesleki Eğitim Yönergesi",
     "danismanlik": "Akademik Danışmanlık Yönergesi",
     "proje_temelli_staj": "Proje Temelli Staj Yönergesi",
     "hakli_nedenler": "Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar",
@@ -74,6 +75,18 @@ BELGE_KISA_ADI = {
     "not_karsiliklari": "Not Karşılıkları ve Eşdeğerlikler Uygulama Esasları",
 }
 PROGRAM_ADI = {p["id"]: p["ad"] for p in programlari_oku()[1]}
+# önlisansta "bölüm" yerine "program" deniyor: "Lojistik programında", "Fizik bölümünde"
+ONLISANS = {p["id"] for p in programlari_oku()[1]
+            if (p.get("duzey") or programlari_oku()[0][p["fakulte"]].get("duzey")) == "onlisans"}
+
+
+def bolum_eki(pid, ek):
+    """bolum_eki("lojistik", "nda") -> "programında", bolum_eki("fizik", "nda") -> "bölümünde"."""
+    kok = "program" if pid in ONLISANS else "bölüm"
+    return kok + {"nda": "ında" if kok == "program" else "ünde",
+                  "nun": "ının" if kok == "program" else "ünün",
+                  "ndan": "ından" if kok == "program" else "ünden",
+                  "": "ı" if kok == "program" else "ü"}[ek]
 STAJ_MADDESI = {p["id"]: programlari_oku()[0][p["fakulte"]]["staj_maddesi"] for p in programlari_oku()[1]}
 
 
@@ -94,7 +107,8 @@ def kisa_ad(p):
         plan = ders_plani_mi(p["belge_id"])
         if plan and plan[1]:
             return f"{PROGRAM_ADI[pid]} Bölümü {plan[1]}-{plan[1] + 1} Öğretim Yılı Ders Planı (bölüm sitesi)"
-        return f"{PROGRAM_ADI[pid]} Bölümü {'Ders Planı' if plan else 'Program Bilgileri'} (Bologna)"
+        tur = "Programı" if pid in ONLISANS else "Bölümü"
+        return f"{PROGRAM_ADI[pid]} {tur} {'Ders Planı' if plan else 'Program Bilgileri'} (Bologna)"
     return BELGE_KISA_ADI.get(p["belge_id"], p["belge_adi"])
 
 
@@ -196,7 +210,8 @@ def ders_plani_ozeti(p):
     bolum = PROGRAM_ADI[program_id(p)]
     yil = ders_plani_mi(p["belge_id"])[1]
     # yıllık planlarda cevap hangi plan olduğunu söylesin
-    kim = f"{bolum} bölümünün {yil}-{yil + 1} ders planında" if yil else f"{bolum} bölümünde"
+    kim = (f"{bolum} {bolum_eki(program_id(p), 'nun')} {yil}-{yil + 1} ders planında" if yil
+           else f"{bolum} {bolum_eki(program_id(p), 'nda')}")
     dersler, ekler, toplam = [], [], None
     for satir in p["metin"].split("\n"):
         h = [x.strip() for x in satir.split("|")]
@@ -390,10 +405,28 @@ def tum_ozetler():
         if ders_plani_mi(p["belge_id"]):
             ozetler[p["id"]] = ders_plani_ozeti(p) + plan_farki_cumleleri(p, parcalar)
         elif p["belge_id"].endswith("_program_bilgileri"):
-            sablon = standart_ozet(p, parcalar)
+            sablon = standart_ozet(p, parcalar) or alinti_ozeti(p)
             if sablon:
                 ozetler[p["id"]] = sablon
     return ozetler
+
+
+def alinti_ozeti(p, sinir=320):
+    """Elle özeti olmayan Bologna bölümü için metnin ilk cümleleri (önlisans programlarının 184 bölümü
+    için elle yazmak yerine). Kaynak metinden aynen alındığı için yanlış bilgi eklemiyor; başa program
+    adı ekleniyor ki "Mezuniyet için kaç AKTS?" gibi sorularda hangi programın cümlesi olduğu belli olsun."""
+    metin = re.sub(r"\s+", " ", p["metin"]).strip()
+    if not metin:
+        return []
+    cumleler = [c.strip() for c in re.split(r"(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ0-9])", metin) if len(c.strip()) > 15]
+    secilen, uzunluk = [], 0
+    for c in cumleler:
+        if secilen and uzunluk + len(c) > sinir:
+            break
+        secilen.append(c)
+        uzunluk += len(c)
+    ad = PROGRAM_ADI[program_id(p)]
+    return [f"{ad} ({p['no']}): {secilen[0]}"] + secilen[1:3] if secilen else []
 
 
 def bolum_staj_cumleleri():
@@ -410,14 +443,14 @@ def bolum_staj_cumleleri():
         if p.get("staj_cumlesi"):               # bölüme özel elle yazılmış cümle
             c = p["staj_cumlesi"]
         elif p.get("staj_durumu_belirsiz"):
-            c = f"{p['ad']} bölümünde staj zorunlu mu, belgelerden net anlaşılmıyor. {p['staj_ek']}"
+            c = f"{p['ad']} {bolum_eki(p['id'], 'nda')} staj zorunlu mu, belgelerden net anlaşılmıyor. {p['staj_ek']}"
         elif p.get("staj_suresi_belirsiz"):
-            c = f"{p['ad']} bölümünde staj zorunludur. {p['staj_ek']}"
+            c = f"{p['ad']} {bolum_eki(p['id'], 'nda')} staj zorunludur. {p['staj_ek']}"
         elif p["staj_gunu"]:
-            c = (f"{p['ad']} bölümünde staj zorunludur; mezun olmak için toplam en az {p['staj_gunu']} {birim} "
+            c = (f"{p['ad']} {bolum_eki(p['id'], 'nda')} staj zorunludur; mezun olmak için toplam en az {p['staj_gunu']} {birim} "
                  "staj yapman gerekir." + (f" {p['staj_ek']}" if p.get("staj_ek") else ""))
         else:
-            c = (f"{p['ad']} bölümünde staj zorunlu değildir, isteğe bağlıdır; mezuniyet için staj şartı yok."
+            c = (f"{p['ad']} {bolum_eki(p['id'], 'nda')} staj zorunlu değildir, isteğe bağlıdır; mezuniyet için staj şartı yok."
                  + (f" {p['staj_ek']}" if p.get("staj_ek") else ""))
         sonuc.append((parca_id, c, p["id"]))
     return sonuc

@@ -1,0 +1,95 @@
+# Önlisans (meslek yüksekokulları) soru seti (2026-11-27).
+# Sonuçlara bakmadan, belgeler okunarak yazıldı. MYO staj yönergesi taranmış PDF, metin OCR'dan.
+
+- soru: Kaç gün staj yapmam gerekiyor?
+  program: bilgisayar_programciligi
+  kaynak: [myo_staj#madde-9]
+  anahtar: ["en az 20 iş günü"]
+
+- soru: Staj zorunlu mu?
+  program: lojistik
+  kaynak: [myo_staj#madde-9, myo_staj#madde-15]
+  anahtar: ["20 iş günü", "zorunlu derstir"]
+
+- soru: Staj dersi hangi yarıyılda?
+  program: grafik_tasarimi
+  kaynak: [myo_staj#madde-15, grafik_tasarimi_ders_plani#bolum-IV.YARIYIL]
+  anahtar: ["IV. Yarıyılda", "Staj"]
+
+- soru: Staja ne zaman başlayabilirim?
+  program: mekatronik
+  kaynak: [myo_staj#madde-9, myo_staj#madde-16]
+  anahtar: ["ikinci yarıyılın sonundan"]
+
+- soru: Mezun olmak için kaç AKTS gerekiyor?
+  program: yapi_denetimi
+  kaynak: [yonetmelik#madde-25, yapi_denetimi_program_bilgileri#bolum-Mezuniyet_Koşulları, yapi_denetimi_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  anahtar: ["120"]
+
+- soru: İşletmede mesleki eğitim nedir?
+  program: radyo_televizyon
+  kaynak: [myo_staj#madde-25, myo_staj#madde-26, myo_staj#madde-3]
+  anahtar: ["İşletmede mesleki eğitim"]
+
+- soru: İME'ye başvurmak için not ortalaması şartı var mı?
+  program: makine_resim
+  kaynak: [myo_staj#madde-29]
+  anahtar: ["2.00"]
+
+- soru: İşletmede mesleki eğitimde devamsızlık hakkım ne kadar?
+  program: elektrik_enerjisi
+  kaynak: [myo_staj#madde-27]
+  anahtar: ["%80"]
+
+- soru: İME'de işletme bana ücret öder mi?
+  program: basim_yayim
+  kaynak: [myo_staj#madde-35, myo_staj#madde-21]
+  anahtar: ["ücret"]
+
+- soru: Staj raporunu ne zaman teslim etmeliyim?
+  program: rayli_makinist
+  kaynak: [myo_staj#madde-14]
+  anahtar: ["ilk 15 günü"]
+
+- soru: Staj notuna itiraz süresi kaç gün?
+  program: kabin_hizmetleri
+  kaynak: [myo_staj#madde-17]
+  anahtar: ["5\n(beş) iş günü", "5 (beş) iş günü", "beş"]
+
+- soru: Ortalamam 2'nin altındaysa isteğe bağlı staj yapabilir miyim?
+  program: oyun_gelistirme
+  kaynak: [myo_staj#madde-16]
+  anahtar: ["2,00"]
+
+- soru: Staj başvurusunu kaç gün önce yapmalıyım?
+  program: siber_guvenlik_analistligi
+  kaynak: [myo_staj#madde-12]
+  anahtar: ["en az 15 gün"]
+
+- soru: Birinci yarıyılın zorunlu dersleri neler?
+  program: bilgisayar_programciligi
+  kaynak: [bilgisayar_programciligi_ders_plani#bolum-I.YARIYIL]
+  anahtar: ["BTP"]
+
+- soru: Mezun olunca nerede çalışabilirim?
+  program: yapi_denetimi
+  kaynak: [yapi_denetimi_program_bilgileri#bolum-İstihdam_Olanakları]
+  anahtar: ["Yapı Denetim"]
+
+- soru: Dikey geçiş yapabilir miyim?
+  program: lojistik
+  kaynak: [lojistik_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş, yonetmelik#madde-25]
+  anahtar: ["Dikey", "dikey", "DGS"]
+
+- soru: Önlisans mezunu ne zaman sayılırım, stajım kalırsa diploma alabilir miyim?
+  program: rayli_yol
+  kaynak: [myo_staj#madde-17]
+  anahtar: ["önlisans mezuniyetiyle"]
+
+- soru: Okulun servis saatleri nedir?
+  program: lojistik
+  cevapsiz: true
+
+- soru: Kabin memurluğu için boy şartı nedir?
+  program: kabin_hizmetleri
+  cevapsiz: true

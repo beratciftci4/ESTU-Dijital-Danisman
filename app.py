@@ -55,7 +55,7 @@ def yuklenme_zamanini_kaydet():
 eski_modulleri_yenile()
 
 from arama import Arayici
-from belge_kontrol import KLASOR, ders_plani_mi, programlari_oku
+from belge_kontrol import KLASOR, ders_plani_mi, program_kapsamlari, programlari_oku
 from cevap import atif, cevapla, gecerlilik, tarih
 from mezuniyet import ENGEL_NOTLAR, kontrol, staj_birimi
 
@@ -68,7 +68,7 @@ ORNEK_SORULAR = [
     "Mezuniyet şartları neler?",
     "Tek ders sınavına kimler girebilir?",
     "Mazeret sınavına nasıl başvurulur?",
-    "Kaç iş günü staj yapmalıyım?",
+    "Kaç gün staj yapmalıyım?",
     "Derslere devam zorunluluğu yüzde kaç?",
 ]
 
@@ -173,8 +173,8 @@ def gecerli_mi(belge, program):
         return True
     if program is None:
         return False
-    fakulte = programlar(surum("programlar.yaml"))[1][program]["fakulte"]
-    return belge["kapsam"] in (f"program:{program}", f"fakulte:{fakulte}")
+    fakulteler, liste = programlar(surum("programlar.yaml"))
+    return belge["kapsam"] in program_kapsamlari(program, fakulteler, list(liste.values()))
 
 
 def bolum_sec():
@@ -183,9 +183,9 @@ def bolum_sec():
     varsayilan = st.query_params.get("bolum")
     secenekler = list(liste)
     secim = st.selectbox(
-        "Bölümün", secenekler, index=secenekler.index(varsayilan) if varsayilan in liste else None,
+        "Bölümün ya da programın", secenekler, index=secenekler.index(varsayilan) if varsayilan in liste else None,
         format_func=lambda p: f"{liste[p]['ad']} ({fakulteler[liste[p]['fakulte']]['ad']})",
-        placeholder="Bölümünü seç", key="bolum")
+        placeholder="Bölümünü ya da programını seç (yazarak arayabilirsin)", key="bolum")
     if secim:
         st.query_params["bolum"] = secim
     else:
@@ -245,9 +245,9 @@ def kenar_cubugu(program, plan_yili=None):
             "Sorunuz hem kelime eşleşmesiyle (BM25) hem anlam benzerliğiyle (e5) aranır. "
             "Kısa cevap, her madde için önceden elle yazılmış sade özet cümlelerinden seçilir; "
             "yapay zekâ ile anlık metin üretilmez. Altındaki alıntılar resmi metnin aynısıdır.")
-        st.caption("Şu an Fen Fakültesi bölümleri var, diğer fakülteler sırayla ekleniyor. Yönetmelik ve "
-                   "usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders "
-                   "planı ve mezuniyet koşulları bölüme özel.")
+        st.caption("Pilotaj dışındaki bütün lisans bölümleri ve üç meslek yüksekokulunun önlisans "
+                   "programları var. Yönetmelik ve usul-esaslar herkes için ortak; staj yönergesi "
+                   "fakülteye ya da meslek yüksekokullarına, ders planı ve mezuniyet koşulları bölüme özel.")
         st.caption("Bu araç resmi görüş değildir. Kesin bilgi için Öğrenci İşleri'ne "
                    "ya da akademik danışmanınıza başvurun.")
 
@@ -365,7 +365,7 @@ def mezuniyet_sekmesi(program):
 def main():
     st.markdown(CSS, unsafe_allow_html=True)
     st.markdown('<div class="baslik">ESTÜ <span>Dijital Danışman</span></div>'
-                '<div class="altbaslik">ESTÜ lisans öğrencileri için. Yönetmelik, staj ve ders planı '
+                '<div class="altbaslik">ESTÜ önlisans ve lisans öğrencileri için. Yönetmelik, staj ve ders planı '
                 'sorularına kısa bir cevap verir; dayandığı resmi maddeyi sayfa numarasıyla altında '
                 'gösterir.</div>',
                 unsafe_allow_html=True)

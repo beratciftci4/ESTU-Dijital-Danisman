@@ -1101,3 +1101,661 @@
   kapsam: program:istatistik
   durum: aktif
   not: Bölüm sitesindeki "Ders Planı ve İçerikleri" sayfasından. Planın giriş yılına mı o öğretim yılına mı uygulandığı belgede yazmıyor.
+
+- id: myo_staj
+  ad: Eskişehir Teknik Üniversitesi Meslek Yüksekokulları Staj ve İşletmede Mesleki Eğitim Yönergesi
+  dosya: myo_staj_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/Uploads/www/files/yonergeler/Eski%C5%9Fehir%20Teknik%20%C3%9Cniversitesi%20Meslek%20Y%C3%BCksekokullar%C4%B1%20Staj%20ve%20%C4%B0%C5%9Fletmede%20Mesleki%20E%C4%9Fitim%20Y%C3%B6nergesi%2029_08_2023.pdf
+  yayim: 2023-08-29          # Senato 16/3
+  yururluk: 2023-09-01       # md. 39: 2023-2024 akademik yılı başından itibaren
+  son_degisiklik: null
+  dayanak: 2547 sayılı Kanun Ek-23 ve 24, 2018 tarihli (eski) Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği md. 8, Uygulamalı Eğitimler Çerçeve Yönetmeliği
+  indirme_tarihi: 2026-11-27
+  sha256: 227b98accf46ad9695061055dc28b7d2bba3963bdb5b7cfcb54c8cd0af01297c
+  kapsam: duzey:onlisans
+  durum: aktif
+  not: Taranmış PDF; metin OCR ile okundu ve elle düzeltildi (myo_staj_yonergesi.ocr.txt). Üç meslek yüksekokulunun (BTMYO, Porsuk MYO, Ulaştırma MYO) ortak yönergesi. Yürürlük tarihi "2023-2024 akademik yılı başı" olarak yazıyor, gün yok.
+
+- id: bilgisayar_programciligi_ders_plani
+  ad: Bilgisayar Programcılığı Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: bilgisayar_programciligi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/529/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 0637343a3505ce85de316a576dc2e3ba0217d6520a3b4211631c0da2c0b00407
+  kapsam: program:bilgisayar_programciligi
+  durum: aktif
+  not: null
+
+- id: bilgisayar_programciligi_program_bilgileri
+  ad: Bilgisayar Programcılığı Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: bilgisayar_programciligi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/529/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 78567377c6b1ccb5605ba573edb4ab701a06396ae3342e315d1ef8c56df317f8
+  kapsam: program:bilgisayar_programciligi
+  durum: aktif
+  not: null
+
+- id: mekatronik_ders_plani
+  ad: Mekatronik Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: mekatronik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/539/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 4df4bbbaa4a8714f2f8e36546224b270c301dda84153041039eab40d768e18ce
+  kapsam: program:mekatronik
+  durum: aktif
+  not: null
+
+- id: mekatronik_program_bilgileri
+  ad: Mekatronik Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: mekatronik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/539/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: f1aa7ec80747d0befaf1583f6080a3016b0270e1f8cc27f5eec132bb37c7a20e
+  kapsam: program:mekatronik
+  durum: aktif
+  not: null
+
+- id: iha_operatorlugu_ders_plani
+  ad: İnsansız Hava Aracı Teknolojisi ve Operatörlüğü Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: iha_operatorlugu_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2041/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 229382a4f3de307c44a6fde1dbee0f5143a74b430a3913488eae9f66a40a7df7
+  kapsam: program:iha_operatorlugu
+  durum: aktif
+  not: null
+
+- id: iha_operatorlugu_program_bilgileri
+  ad: İnsansız Hava Aracı Teknolojisi ve Operatörlüğü Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: iha_operatorlugu_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2041/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 4b6ba6e976fd8cc5cb248e27cf7fd8d05501381a5731dc24f59a93959e9d1b37
+  kapsam: program:iha_operatorlugu
+  durum: aktif
+  not: null
+
+- id: robotik_yapay_zeka_ders_plani
+  ad: Robotik ve Yapay Zeka Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: robotik_yapay_zeka_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2068/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 3c25d2a72bd8a27d58d01725f19d07d534921d9890cc2b6a3d10a2b5e47fbeb5
+  kapsam: program:robotik_yapay_zeka
+  durum: aktif
+  not: null
+
+- id: robotik_yapay_zeka_program_bilgileri
+  ad: Robotik ve Yapay Zeka Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: robotik_yapay_zeka_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2068/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: cdc4a724383112b0c1c8ec0e6d11aec18ab5806c54bed5c8543cb17b019566bd
+  kapsam: program:robotik_yapay_zeka
+  durum: aktif
+  not: null
+
+- id: uzaktan_algilama_cbs_ders_plani
+  ad: Uzaktan Algılama ve Coğrafi Bilgi Sistemleri Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: uzaktan_algilama_cbs_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2086/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 6d57eb29da58b65dce3be0111b891708f19765e395950aef80dba676675f4942
+  kapsam: program:uzaktan_algilama_cbs
+  durum: aktif
+  not: null
+
+- id: uzaktan_algilama_cbs_program_bilgileri
+  ad: Uzaktan Algılama ve Coğrafi Bilgi Sistemleri Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: uzaktan_algilama_cbs_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2086/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 7e132448f1d7aac80507a352a7b0bde95b7c49301a4ecf4353570f026f77a0ee
+  kapsam: program:uzaktan_algilama_cbs
+  durum: aktif
+  not: null
+
+- id: bulut_bilisim_ders_plani
+  ad: Bulut Bilişim Operatörlüğü Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: bulut_bilisim_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2067/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: ebec814a8022f528c7c54d48d16b719b70065dee98548da4a064bfa7c5fd8c9e
+  kapsam: program:bulut_bilisim
+  durum: aktif
+  not: null
+
+- id: bulut_bilisim_program_bilgileri
+  ad: Bulut Bilişim Operatörlüğü Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: bulut_bilisim_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2067/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: be2d86120844570f824e261631322fa4f65abd1c33528e0e98c1c7c5a1fc7ce6
+  kapsam: program:bulut_bilisim
+  durum: aktif
+  not: null
+
+- id: siber_guvenlik_analistligi_ders_plani
+  ad: Siber Güvenlik Analistliği ve Operatörlüğü Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: siber_guvenlik_analistligi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2083/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 100154a0779ce3a4412923e21ff6b23b8899a1f987506c960af4965ddd6a4463
+  kapsam: program:siber_guvenlik_analistligi
+  durum: aktif
+  not: null
+
+- id: siber_guvenlik_analistligi_program_bilgileri
+  ad: Siber Güvenlik Analistliği ve Operatörlüğü Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: siber_guvenlik_analistligi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2083/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: d417695792dae370b9e3d8bffdaaaaa76d2e59dfa1cd8bdd651bd6eaee269d50
+  kapsam: program:siber_guvenlik_analistligi
+  durum: aktif
+  not: null
+
+- id: oyun_gelistirme_ders_plani
+  ad: Oyun Geliştirme ve Programlama Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: oyun_gelistirme_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2069/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: daf36a7d63578f098a135152c0f9f001ab59efa85e0fa769b3a82d2981e0d0cd
+  kapsam: program:oyun_gelistirme
+  durum: aktif
+  not: null
+
+- id: oyun_gelistirme_program_bilgileri
+  ad: Oyun Geliştirme ve Programlama Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: oyun_gelistirme_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2069/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: c08662f295bd3ef193b9d633205145982e0ebd71d2aec3b9ebb131ebc1016fd1
+  kapsam: program:oyun_gelistirme
+  durum: aktif
+  not: null
+
+- id: elektrik_enerjisi_ders_plani
+  ad: Elektrik Enerjisi Üretim, İletim ve Dağıtımı Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: elektrik_enerjisi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/1555/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 65bc224c340e1e9eaf65ecd0a76f251351da52e5eb6c35c89d1dd2b05d982eeb
+  kapsam: program:elektrik_enerjisi
+  durum: aktif
+  not: null
+
+- id: elektrik_enerjisi_program_bilgileri
+  ad: Elektrik Enerjisi Üretim, İletim ve Dağıtımı Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: elektrik_enerjisi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/1555/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: facdde8f185d5665ec157a70f224898f0664ca6a43f9ff39a8e93a6153a209d6
+  kapsam: program:elektrik_enerjisi
+  durum: aktif
+  not: null
+
+- id: hidrojen_enerji_ders_plani
+  ad: Hidrojen ve Enerji Depolama Teknikerliği Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: hidrojen_enerji_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2088/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 667b2f89d93662cad96c904083d462ce126162c3800368edae28d182a60007e6
+  kapsam: program:hidrojen_enerji
+  durum: aktif
+  not: null
+
+- id: hidrojen_enerji_program_bilgileri
+  ad: Hidrojen ve Enerji Depolama Teknikerliği Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: hidrojen_enerji_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2088/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 38c57e4a645830264e274757f05d32c58e5f5bd25c053b577a7506d9f5eea473
+  kapsam: program:hidrojen_enerji
+  durum: aktif
+  not: null
+
+- id: radyo_televizyon_ders_plani
+  ad: Radyo ve Televizyon Teknolojisi Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: radyo_televizyon_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/537/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 8eaca0d2e87f567c0f1d73be53b71eebe3d9e0349e4b1f7edfa5a16145833977
+  kapsam: program:radyo_televizyon
+  durum: aktif
+  not: null
+
+- id: radyo_televizyon_program_bilgileri
+  ad: Radyo ve Televizyon Teknolojisi Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: radyo_televizyon_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/537/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 1c2bf9e2aa587ba57e0c61e488dff6881a6d9f2848c23e75f056291dea7b7aa9
+  kapsam: program:radyo_televizyon
+  durum: aktif
+  not: null
+
+- id: basim_yayim_ders_plani
+  ad: Basım ve Yayım Teknolojileri Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: basim_yayim_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/526/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 53b8b1ea1c6187abd5dd7f72c4410a3682f7dd52384de008131a5e68a783c082
+  kapsam: program:basim_yayim
+  durum: aktif
+  not: null
+
+- id: basim_yayim_program_bilgileri
+  ad: Basım ve Yayım Teknolojileri Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: basim_yayim_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/526/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 3ec067acf6bbb312b6290370d6cceab996a12a212d6b810afdb277fd89c23bbc
+  kapsam: program:basim_yayim
+  durum: aktif
+  not: null
+
+- id: yapi_denetimi_ders_plani
+  ad: Yapı Denetimi Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: yapi_denetimi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/1557/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: bb9b367dacc6c46547d74c42ab879027e26241b029e646007924d6da2587fdbe
+  kapsam: program:yapi_denetimi
+  durum: aktif
+  not: null
+
+- id: yapi_denetimi_program_bilgileri
+  ad: Yapı Denetimi Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: yapi_denetimi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/1557/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 3c995653ee21a955c30632dbfbc92e01cc2dcc39aa23b38bfec571fb7b1402e4
+  kapsam: program:yapi_denetimi
+  durum: aktif
+  not: null
+
+- id: makine_resim_ders_plani
+  ad: Makine Resim ve Konstrüksiyonu Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: makine_resim_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/1554/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: a1aeca31dfa51e2ccad8a3c2ec4d0c9509f80a0842bfbee551b407ffe18c4cb5
+  kapsam: program:makine_resim
+  durum: aktif
+  not: null
+
+- id: makine_resim_program_bilgileri
+  ad: Makine Resim ve Konstrüksiyonu Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: makine_resim_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/1554/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 22a51f9c784f1bd9837bb843cf5082264d57ef7cd3284f56aa163cb1dd4d2dd3
+  kapsam: program:makine_resim
+  durum: aktif
+  not: null
+
+- id: grafik_tasarimi_ders_plani
+  ad: Grafik Tasarımı Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: grafik_tasarimi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/562/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 5e938e2a7004f5d76668d4112095002ff6187728dc4ba1a48c1ff1ab39ce6ac4
+  kapsam: program:grafik_tasarimi
+  durum: aktif
+  not: null
+
+- id: grafik_tasarimi_program_bilgileri
+  ad: Grafik Tasarımı Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: grafik_tasarimi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/562/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 3d4be7f9fc7dbfb2e5bbdb86e54a67398606664b784876ccea069af2f569383b
+  kapsam: program:grafik_tasarimi
+  durum: aktif
+  not: null
+
+- id: rayli_elektrik_ders_plani
+  ad: Raylı Sistemler Elektrik ve Elektronik Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: rayli_elektrik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/551/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 420678ad019d8cba75a1942cf8b51a104fe948788454468f50fcebdc2b19f5e3
+  kapsam: program:rayli_elektrik
+  durum: aktif
+  not: null
+
+- id: rayli_elektrik_program_bilgileri
+  ad: Raylı Sistemler Elektrik ve Elektronik Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: rayli_elektrik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/551/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: ed4d36679fd40b76d99152c562e910d6b130a9355b9b3a0f2cb574b02195d40d
+  kapsam: program:rayli_elektrik
+  durum: aktif
+  not: null
+
+- id: rayli_makine_ders_plani
+  ad: Raylı Sistemler Makine Teknolojisi Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: rayli_makine_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/552/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: a2491f82c13f6e4b8c48c0c065171f07beb53dc35e01f8da9929a200507c6c90
+  kapsam: program:rayli_makine
+  durum: aktif
+  not: null
+
+- id: rayli_makine_program_bilgileri
+  ad: Raylı Sistemler Makine Teknolojisi Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: rayli_makine_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/552/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 0356482a881279ae8078d0d3f391051ef855440231bb002901bc6ed8d84f6288
+  kapsam: program:rayli_makine
+  durum: aktif
+  not: null
+
+- id: rayli_yol_ders_plani
+  ad: Raylı Sistemler Yol Teknolojisi Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: rayli_yol_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/553/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 0440389be385493dabb167f4fab274766647c16605da36a408b62e595ee89e30
+  kapsam: program:rayli_yol
+  durum: aktif
+  not: null
+
+- id: rayli_yol_program_bilgileri
+  ad: Raylı Sistemler Yol Teknolojisi Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: rayli_yol_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/553/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 8d1cdd19666181d34718662619cc10c8d47b99992e059d3d635559ce56f3ac43
+  kapsam: program:rayli_yol
+  durum: aktif
+  not: null
+
+- id: rayli_makinist_ders_plani
+  ad: Raylı Sistemler Makinistliği Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: rayli_makinist_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/554/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 99286d23c73d3fbc14294aebd2ee199962cf7a25c464fb60fa04d33bb01dde46
+  kapsam: program:rayli_makinist
+  durum: aktif
+  not: null
+
+- id: rayli_makinist_program_bilgileri
+  ad: Raylı Sistemler Makinistliği Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: rayli_makinist_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/554/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: ffa4a8e984f1200c7f1027428be63da128d8c1e9a06357e406b07e0036b264c6
+  kapsam: program:rayli_makinist
+  durum: aktif
+  not: null
+
+- id: kabin_hizmetleri_ders_plani
+  ad: Sivil Havacılık Kabin Hizmetleri Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: kabin_hizmetleri_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/475/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 54ec8295b2ca982cdae8b4f587a6b94dfeb66ca59d1d9ff3c724b400e12941bf
+  kapsam: program:kabin_hizmetleri
+  durum: aktif
+  not: null
+
+- id: kabin_hizmetleri_program_bilgileri
+  ad: Sivil Havacılık Kabin Hizmetleri Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: kabin_hizmetleri_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/475/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 365afb0ea9cbc75406a03b6c7dd3d40b1b1a325beeec57d875c33efe7189b50e
+  kapsam: program:kabin_hizmetleri
+  durum: aktif
+  not: null
+
+- id: rayli_isletmecilik_ders_plani
+  ad: Raylı Sistemler İşletmeciliği Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: rayli_isletmecilik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/557/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: aff855090da0c73b3e39da2c34f98a729f86772c1f62fe4c74903a606453796d
+  kapsam: program:rayli_isletmecilik
+  durum: aktif
+  not: null
+
+- id: rayli_isletmecilik_program_bilgileri
+  ad: Raylı Sistemler İşletmeciliği Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: rayli_isletmecilik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/557/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 9cf9db510b60489c8f8dcd8ad8363951772f2dac23623f583f8ae4744d442598
+  kapsam: program:rayli_isletmecilik
+  durum: aktif
+  not: null
+
+- id: ulastirma_trafik_ders_plani
+  ad: Ulaştırma ve Trafik Hizmetleri Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: ulastirma_trafik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/558/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 895043b5ae8cfb8f3e3cf0574e496bdef06876fca3d8159fc75465b9774cb92b
+  kapsam: program:ulastirma_trafik
+  durum: aktif
+  not: null
+
+- id: ulastirma_trafik_program_bilgileri
+  ad: Ulaştırma ve Trafik Hizmetleri Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: ulastirma_trafik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/558/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: cb8c554beb1a5c64380b74d08193ff355be70e86e2eba7847f8cd636e3e60297
+  kapsam: program:ulastirma_trafik
+  durum: aktif
+  not: null
+
+- id: lojistik_ders_plani
+  ad: Lojistik Programı Dersler - AKTS Kredileri (Bologna)
+  dosya: lojistik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/470/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: ea350dad31078c7784a7c16c533170d304668402c52e1c4bb84d4ed2df09645c
+  kapsam: program:lojistik
+  durum: aktif
+  not: null
+
+- id: lojistik_program_bilgileri
+  ad: Lojistik Programı Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: lojistik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/470/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-27
+  sha256: 94fe277990b0fbd00845a4e3fb647fb911b7dd711adb1d8eb92805a2bb4c33b2
+  kapsam: program:lojistik
+  durum: aktif
+  not: null

@@ -17,7 +17,7 @@ import sys
 import numpy as np
 from rank_bm25 import BM25Okapi
 
-from belge_kontrol import bolum_ve_yil, ders_plani_mi, programlari_oku
+from belge_kontrol import bolum_ve_yil, ders_plani_mi, program_kapsamlari, programlari_oku
 from indeks import Gomucu, arama_metni, indeksi_yukle, kelimeler, soru_kelimeleri, turkce_kucuk
 
 RRF_K = 60
@@ -28,8 +28,9 @@ OZET_AGIRLIGI = 1.0
 class Arayici:
     def __init__(self, gomucu=None):
         self.parcalar, self.faiss, self.sahip = indeksi_yukle()
-        _, programlar = programlari_oku()
+        fakulteler, programlar = programlari_oku()
         self.fakulte = {p["id"]: p["fakulte"] for p in programlar}
+        self.kapsamlar = {p["id"]: program_kapsamlari(p["id"], fakulteler, programlar) for p in programlar}
         self.program_adi = {p["id"]: p["ad"] for p in programlar}
         self._kelimeler = [kelimeler(arama_metni(p)) for p in self.parcalar]
         self._alt = {}            # program -> (parça sıraları, BM25)
@@ -47,7 +48,7 @@ class Arayici:
             return True
         if program == "genel":
             return False
-        return p["kapsam"] in (f"program:{program}", f"fakulte:{self.fakulte[program]}")
+        return p["kapsam"] in self.kapsamlar[program]
 
     def temiz_soru(self, soru, program):
         """Seçili bölümün adını sorudan çıkarır: "Kimya bölümünde staj zorunlu mu?" -> "staj zorunlu mu?".

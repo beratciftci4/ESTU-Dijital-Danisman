@@ -1,0 +1,705 @@
+# Eskişehir Teknik Üniversitesi Meslek Yüksekokulları Staj ve İşletmede Mesleki Eğitim Yönergesi
+# Kaynak: taranmış PDF, metin katmanı yok
+# tesseract 5 (tur, 300 dpi, psm 6) ile okundu; bariz OCR hataları elle düzeltildi.
+# Sayfa üst bilgisi (Senato kararı satırı) ve 'Sayfa n/N' satırları çıkarıldı. Eklerde sadece formların başlıkları tutuldu.
+=== SAYFA 1 ===
+ESKİŞEHİR TEKNİK ÜNİVERSİTESİ
+MESLEK YÜKSEKOKULLARI STAJ VE İŞLETMEDE
+MESLEKİ EĞİTİM YÖNERGESİ
+BİRİNCİ BÖLÜM
+Amaç ve Kapsam, Dayanak ve Tanımlar
+Amaç ve kapsam
+MADDE 1 – (1) Bu Yönerge, Eskişehir Teknik Üniversitesine bağlı meslek
+yüksekokullarında öğrenim gören öğrencilerin; öğrenimleri sırasında kazandıkları bilgi ve
+becerileri geliştirmeleri amacıyla almakla yükümlü oldukları staj dersi ile işletmede mesleki
+eğitim (İME) dersi ve isteğe bağlı olarak yapacakları stajın temel ilkelerinin belirlenmesine,
+uygulanmasına, denetlenmesine ve değerlendirilmesine ilişkin usul ve esasları düzenler.
+Dayanak
+MADDE 2 – (1) Bu Yönerge, 2547 sayılı Kanun'un Ek-23 ve 24'üncü maddesine,
+Eskişehir Teknik Üniversitesi Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği'nin 8
+inci maddesi ve 3510 Sayılı Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu'nun 5 inci
+maddesinin b fıkrası ile 87 nci maddesinin e fıkrasına, 17.6.2021 tarih ve 31514 sayılı Resmi
+Gazete'de yayımlanan Yükseköğretimde Uygulamalı Eğitimler Çerçeve Yönetmeliği'ne
+dayanılarak hazırlanmıştır.
+Tanımlar
+MADDE 3 – (1) Bu Yönerge'de geçen;
+a) Bölüm: Eskişehir Teknik Üniversitesine bağlı meslek yüksekokullarının bölümlerini,
+b) Bölüm Başkanı: Eskişehir Teknik Üniversitesine bağlı meslek yüksekokullarının
+bölüm başkanlarını,
+c) Eğitici Personel: Mesleki yetkinliğe sahip, öğrencilerin işletmedeki mesleki
+eğitimlerinden sorumlu, mesleki eğitim yöntem ve tekniklerini bilen ve uygulayan
+işletme personelini,
+ç) İsteğe Bağlı Staj: Öğrencinin ihtiyaçları ve isteği doğrultusunda yaz döneminde yaptığı
+ve seçmeli ders statüsünde ders planında yer alan 5 AKTS ve 0+2 ders saati olarak
+işlenen stajı,
+d) İşletme: Öğrencilerinin, eğitim gördüğü ön lisans programının gereklerine ve öğrenme
+kazanımlarına uygun olarak uygulama yaptıkları, mal ve hizmet üreten kamu/özel
+sektöre ait kurum, kuruluş ve işyerlerini,
+=== SAYFA 2 ===
+e) İşletme Değerlendirme Formu: İşletme tarafından her bir öğrenci için doldurulan,
+mesleki eğitim süreçleri ile ilgili bilgileri, gözlemleri ve öğrencilerin mesleki eğitim
+faaliyetlerine ilişkin değerlendirmeleri içeren formu,
+f) İşletmede Mesleki Eğitim: Mesleki eğitim programı öğrencilerinin teorik eğitimlerini
+yükseköğretim kurumlarında, işletmede veya işletmelerce tesis edilen eğitim
+birimlerinde; beceri eğitimlerini ise, işletmelerde yaptıkları eğitim uygulamalarını,
+g) İşletmede Mesleki Eğitim Birim Komisyonu: Eskişehir Teknik Üniversitesine bağlı
+Meslek Yüksekokullarındaki “İşletmede Mesleki Eğitim” faaliyetleri ile ilgili planlama,
+uygulama ve koordinasyondan sorumlu komisyonu,
+ğ) İşletmede Mesleki Eğitim Denetleme Formu: İşletmede mesleki eğitim gören her
+öğrenci için ilgili İME Sorumlu Öğretim Elemanı tarafından her denetim sonunda
+doldurulan belgeyi,
+h) İşletmede Mesleki Eğitim Dersi: Programlarının, üçüncü ve dördüncü yarıyılına
+eklenen ve öğrenciler tarafından mesleki seçmeli ders olarak alınabilen; öğrencilerin
+işletmelerde uygulamalı olarak bilgi, beceri ve yetkinliklerinin gelişimini sağlayan
+dersi,
+ı) İşletmede Mesleki Eğitim Dosyası: Öğrencilerin işletmede mesleki eğitim dersi
+süresince yaptığı iş ve işlemlerin kayıt altına alındığı defter, gelişim dosyası, rapor vb.
+dokümanı,
+i) İşletmede Mesleki Eğitim Kabul Belgesi ve Sözleşmesi: İlgili tarafların
+sorumluluklarını belirten; Meslek Yüksekokulu Müdürü, işyeri yetkilisi ve öğrenci
+tarafından imzalanan belgeyi,
+j) İşletme Mesleki Eğitim Sorumlusu: Öğrencilerin işletmede mesleki eğitiminden
+işletme adına sorumlu olan ve gerekli yetkinliğe sahip kişiyi,
+k) İME Sorumlu Öğretim Elemanı: Bölüm veya programlarda İşletmede Mesleki Eğitim
+kapsamında (görevlendirilen, işletmede mesleki eğitimin koordinasyonunu,
+uygulanmasını, izlenmesini, gerçekleştirilen İME sürecinde öğrencilere rehberlik yapan
+ve ölçme değerlendirme işlemlerinde görevlendirilen öğretim elemanını,
+l) İşletme Yetkilisi: İşletmede mesleki eğitim yapılacak, mal veya hizmet üreten
+kamu/özel sektöre ait kurum, kuruluş ve işletme üst düzey yetkilisini,
+m) Meslek Yüksekokulu: Eskişehir Teknik Üniversitesine bağlı meslek yüksekokulların,
+n) Müdür: Eskişehir Teknik Üniversitesine bağlı meslek yüksekokul müdürünü,
+o) Program: Eskişehir Teknik Üniversitesi meslek yüksekokullarının bölümlerine bağlı
+olarak ortaöğretim yeterliliklerine dayalı iki yıllık eğitim öğretim veren diploma
+programlarını,
+ö) Program Staj Koordinatörü: Programlarda stajla ilgili faaliyetlerin organizasyonu ve
+koordinasyonuyla görevli öğretim elemanını, 4
+=== SAYFA 3 ===
+p) Protokol: İşletmede mesleki eğitim hususunda ortaklaşa mutabakata bağlanan ve
+Eskişehir Teknik Üniversitesi Rektörü veya yetkilendirdiği kişi ile kamu/özel sektöre
+ait kurum, kuruluş ve işletme adına işletmenin üst düzey yöneticisi tarafından imzalanan
+belgeyi,
+r) Rektör: Eskişehir Teknik Üniversitesi Rektörünü,
+s) Senato: Eskişehir Teknik Üniversitesi Senatosunu,
+ş) SGK: Sosyal Güvenlik Kurumunu,
+t) Sorumlu Öğretim Elemanı: Bölümlerde; staj faaliyetlerini izlemek, kurum/kuruluşlar
+ile Yüksekokul arasında koordinasyonu sağlamak, öğrencilere staj süreçlerinde
+rehberlik etmek ve ölçme ve değerlendirme işlemlerinde yer almak üzere staj yapacak
+her bir grup için staj süresince görevlendirilen öğretim elemanını,
+u) Staj: Yükseköğretim kurumlarında verilen ve programa özgü olarak belirlenmiş teorik
+ve uygulamalı dersler dışında, öğrencilerin öğretim programlarıyla kazandırılması
+öngörülen mesleki bilgi, beceri, tutum ve davranışları geliştirmeleri, sektörü tanımaları,
+iş hayatına uyum sağlamaları, tecrübe edinmeleri ve gerçek üretim ve hizmet ortamında
+yetişmeleri amacıyla işletmelerde yaptıkları mesleki çalışmayı,
+ü) Staj Dersi: öğrencilerin işletmelerde uygulamalı olarak bilgi, beceri ve yetkinliklerini
+geliştirmeleri için programlarının dördüncü yarıyılında zorunlu ders statüsünde yer alan,
+AKTS kredisi 5,0 ve ders saati 0+2 olan dersi,
+v) Staj Komisyonu: Meslek yüksekokullarında stajla ilgili faaliyetlerin organizasyonunu,
+koordinasyonunu ve değerlendirmesini yapmak üzere oluşturulan komisyonu,
+y) Staj Komisyonu Başkanı: Yüksekokul müdürü tarafından görevlendirilen müdür
+yardımcısını,
+z) Üniversite: Eskişehir Teknik Üniversitesini,
+aa) Yönetim Kurulu: Meslek yüksekokullarının yönetim kurullarını,
+bb) Yüksekokul Müdürlüğü: Eskişehir Teknik Üniversitesine bağlı meslek yüksekokulu
+müdürlüklerini,
+ifade eder.
+İKİNCİ BÖLÜM
+Staj Komisyonları, Sorumlu Öğretim Elemanı
+Görevleri ve Staj Belgeleri
+Staj komisyonu ve görevleri
+MADDE 4 – (1) Staj komisyonu, bir müdür yardımcısı ile müdür tarafından 3 yıl süreyle
+görevlendirilen meslek yüksekokulunda görevli iki öğretim elemanından oluşur. Müdür
+yardımcısı staj komisyonunun başkanı olarak görev yapar. Staj komisyonunun görevleri
+şunlardır:
+=== SAYFA 4 ===
+a) Stajla ilgili esasları belirlemek,
+b) Staja başlama dönemlerini belirlemek ve ilgili birimlere duyurmak,
+c) Kurum/kuruluşlardan gelen stajyer isteklerini değerlendirmek,
+ç) Öğrenci İşleri Biriminin öğrencinin SGK. bildirgelerini izlemesini/takip etmesini
+sağlamak,
+d) Program staj koordinatörü tarafından değerlendirilen “Staj Raporunu inceleyerek
+stajın başarılı olup olmadığı konusunda karar vermek,
+e) Stajın değerlendirilmesine ilişkin itirazları değerlendirmek ve Yüksekokul Yönetim
+Kuruluna görüş bildirmek,
+f) Stajla ilgili diğer iş ve işlemleri yapmak.
+Bölüm Staj Komisyonu ve görevleri
+MADDE 5 – (1) Bölüm Başkanının başkanlığında program staj koordinatörü ve staj dersi
+veren sorumlu öğretim elemanı/elemanlarından oluşur ve en az bir yıl süreyle görev yapar.
+Bölüm Staj Komisyonunun görevleri şunlardır:
+a) Bölüm staj kılavuzunu hazırlamak ve belli aralıklarla gözden geçirmek,
+b) Bölüm staj değerlendirme ölçütlerini belirlemek,
+c) Sorumlu Öğretim Elemanı tarafından takip edilecek staj başvuru sürecini izlemek,
+ç) Öğrencilere kurumdan/kuruluşlardan staj yerleri sağlanmasına yardımcı olmak,
+d) Staj başvuru belgelerinin bu Yönerge'ye uygunluğunu incelemek ve değerlendirmek,
+e) Stajın, amacına ve kurallara uygun yürütülmesini takip etmek, gerektiğinde staj
+yapılan kurumdan/kuruluştan öğrenci hakkında bilgi almak,
+f) Staj yapan öğrencileri; Sorumlu Öğretim Elemanından gelen bilgi ve belgelere göre
+Başarılı/Yeterli (YT) veya Başarısız/Yetersiz (YZ) olarak değerlendirmek,
+g) Staj değerlendirme süreçleri tamamlanan öğrencilerin staj değerlendirme notu, staj
+gün sayısı, staj başlangıç/bitiş tarihleri ve staj yapılan işletme bilgilerini Öğrenci
+İşleri Birimine ve Sorumlu Öğretim Elemanına yazılı olarak iletmek,
+ğ) Stajla ilgili diğer iş ve işlemleri yapmak.
+Program staj koordinatörü ve görevleri
+MADDE 6 – (1) Bölüm başkanının, bölüm başkanı atanmadığı durumlarda, staj
+komisyonu başkanının önerisiyle yüksekokul müdürü tarafından ilgili programın görevli
+öğretim elemanları arasından üç yıl süreyle atanır. Program staj koordinatörünün görevleri
+şunlardır:
+a) Staj başvurularını incelemek ve stajın yapılacağı işletmenin uygun olup olmadığı
+konusunda staj komisyonu başkanlığına görüş bildirmek,
+=== SAYFA 5 ===
+b) İsteğe bağlı staj kapsamında hazırlanan Staj Raporunun ön inceleme ve
+değerlendirmesini yapmak,
+c) Staj dersi kapsamında hazırlanan Staj Dersi Raporunun sunumunda hazır bulunmak ve
+raporun değerlendirilmesine katkı sağlamak.
+Sorumlu öğretim elemanı ve görevleri
+MADDE 7 – (1) Bölümlerde staj faaliyetlerini izlemek, kurum/kuruluşlar ile kurum
+arasında koordinasyonu sağlamak, öğrencilere staj süreçlerinde rehberlik etmek ve ölçme ve
+değerlendirme işlemlerinde yer almak üzere staj yapacak her bir grup için staj süresince,
+sorumlu bir öğretim elemanı görevlendirilir. Staj kapsamında atanan öğretim elemanına
+sorumlu olduğu grup sayısına bakılmaksızın haftalık iki saat uygulamalı ders yükü yüklenir.
+Sorumlu öğretim elemanının görevleri şunlardır:
+a) Bölüm Staj Komisyonu ile iş birliği yaparak bölümdeki staj faaliyetlerini izlemek,
+b) Staj yapılan işletmeden gerektiğinde öğrenci hakkında bilgi almak,
+c) İşletme ile Müdürlük/Bölüm Staj Komisyonu arasında koordinasyonu sağlamak,
+ç) Öğrencilere staj süreçlerinde rehber olmak,
+d) Staj derslerine ait değerlendirme bilgilerini Öğrenci Bilgi Sistemi üzerinden
+tanımlamak,
+e) Stajlarını tamamlayan öğrencilerden “Öğrenci Staj Raporu”, kapalı zarf içinde
+“İşletme Değerlendirme Formu” ile “Staj Devam Çizelgesi” belgelerini ve teslim
+edilmesi gereken diğer ek belgeler varsa toplamak,
+f) “İşletme Değerlendirme Formu”ndan yeterli puan alan öğrencilere ait; “Öğrenci Staj
+Raporu”nu, stajla ilgili ek bilgi ve belgeler açısından değerlendirmek ve başarılı ya da
+başarısız olarak notlandırılmak üzere Bölüm Staj Komisyonuna sunmak,
+g) Bölüm Staj Komisyonu tarafından Başarılı/Yeterli (YT) veya Başarısız/Yetersiz (YZ)
+olarak iletilen değerlendirme notlarını Öğrenci Bilgi Sistemine işlemek.
+Stajla ilgili belgeler
+MADDE 8 – (1) Öğrenci, staj veya isteğe bağlı staj başvurusunda ve staj sürecinde
+aşağıdaki belgeleri hazırlamak ve tamamlanmasını izlemekle yükümlüdür:
+a) Öğrenci Staj Süreci Akış Şeması (EK-1): Stajın başlangıç aşamasından bitişine
+kadar öğrencinin izleyeceği yolu gösteren şemadır,
+b) Öğrenci Staj Başvuru ve Kabul Formu (EK-2): Yüksekokul web sayfasından temin
+edilip öğrenci tarafından bilgisayar ortamında doldurulan, öğrenciye ve stajın
+yapılacağı kuruma/kuruluşa ait bilgilerin yer aldığı formdur,
+c) Genel Sağlık Sigortası Durumu Belgesi: Öğrenci tarafından SGK'den alınan ve
+öğrencinin genel sağlık sigortası durumunu gösterir belgedir,
+=== SAYFA 6 ===
+ç) SGK İşe Giriş Bildirgesi: Staj yapacak öğrencinin (sigortalının), Sosyal Güvenlik
+Kurumuna bildirilen işe başlama tarihini gösteren belgedir. Yüksekokul Öğrenci İşleri
+Birimi tarafından hazırlanır ve staj öncesinde öğrenciye verilir,
+d) Öğrenci Staj Devam Çizelgesi (EK-3): Öğrencinin devam durumunu gösteren ve
+öğrenci tarafından staj yaptığı her gün için imzalanan çizelgedir. “Kurum/Kuruluş Staj
+Sorumlusu” tarafından kapalı zarf içinde “Kurum/Kuruluş Öğrenci Değerlendirme
+Formu” ile “Yüksekokul Öğrenci İşleri Birimi”ne teslim edilmek üzere; staj bitiminde
+öğrenciye verilir ya da kurum/kuruluş tarafından posta yoluyla gönderilir,
+e) Kurum/Kuruluş Öğrenci Değerlendirme Formu (EK-4): “Kurum/Kuruluş Staj
+Sorumlusu” tarafından her stajyer öğrenci için staj süresince yaptığı çalışmaları
+formda tanımlanan ölçütlere göre değerlendiren ve sonunda öğrencinin başarı
+durumunu gösteren belgedir. “Kurum/Kuruluş Staj Sorumlusu” tarafından
+doldurulduktan sonra kapalı zarf içinde Yüksekokul Öğrenci İşleri Birimine teslim
+edilmek üzere; öğrenciye verilir ya da kurum/kuruluş tarafından posta yoluyla
+gönderilir,
+f) Staj Raporu: Staj Komisyonu tarafından hazırlanıp yüksekokulun web sayfasında
+duyurulan “Staj Kılavuzu”nda belirtilen yazım kurallarına göre düzenlenen “rapor
+sayfaları” (EK-5), “kapak sayfası” (EK-5a) ve “iç kapak sayfası” (EK-5b) ndan
+oluşan; öğrencinin isteğe bağlı staj/staj dersi çalışmasını kapsayan dosyadır,
+g) Ayrılış Formu (EK-6): Staj yapan öğrencinin herhangi bir nedenle stajını
+tamamlayamadığı durumda kurum/kuruluşun ilgili yüksekokul müdürlüğüne iletilmek
+üzere düzenleyeceği belgedir,
+ğ) Staj Komisyonu Öğrenci Değerlendirme Formu (EK-7): Staj komisyonunun “Staj
+Raporu”nu ve stajla ilgili bilgi ve belgeleri inceleyerek öğrencinin başarı durumunu
+değerlendirdiği formdur,
+ÜÇÜNCÜ BÖLÜM
+Staj Uygulama Esasları
+Staj dönemi ve süresi
+MADDE 9 – (1) Öğrenci, ikinci yarıyılın sonundan itibaren staja başlayabilir. Staj, Yaz
+Döneminde veya Güz ve Bahar Dönemi arasındaki yarıyıl tatilinde yapılır.
+(2) Mezuniyet için sadece stajı kalan öğrenci ile Yaz Okulunda veya Güz ve Bahar
+Dönemlerinde haftada en az 3 (üç) tam iş günü dersi olmayan öğrenci, Bölümün önerisi ve Staj
+Komisyonunun onayıyla stajlarını, derslerinin olmadığı günlerde yapabilir.
+(3) Öğrenci, en az 20 iş günü staj yapmak zorundadır. Öğrencinin talep etmesi, Staj
+Komisyonunun kabul etmesi durumunda staj süresi en çok 30 gün olabilir. Stajın dönemlere
+bölünerek yapılıp yapılamayacağına ve staj dönemlerine Staj Komisyonu karar verir.
+=== SAYFA 7 ===
+(4) Öğrenci aynı anda hem zorunlu staja hem de isteğe bağlı yapılan staja devam edemez.
+Staj Komisyonunun uygun görmesi hâlinde öğrencinin yapmış olduğu isteğe bağlı staj zorunlu
+staj yerine sayılabilir.
+(5) Öğrenci ARİNKOM Teknoloji Transfer Ofisi tarafından iş birliği yapılan kurum/
+kuruluşlarda isteğe bağlı “Proje Tabanlı Staj” yapabilir. Staj süresi 45 (kırk beş) günden az 90
+(doksan) günden fazla olamaz. Proje Tabanlı Stajın zorunlu staj yerine sayılabilmesi için
+öğrencinin Bölüm Başkanlığına başvurması gerekir. Bölüm Başkanlığının önerisi ve Staj
+Komisyonunun uygun görmesi hâlinde isteğe bağlı yapılan Proje Tabanlı Staj, zorunlu staj
+yerine sayılabilir.
+(6) Stajlarda öğrencilerin sigorta işlemleri 5510 sayılı Sosyal Sigortalar ve Genel Sağlık
+Sigortası Kanunu hükümlerine göre Yüksekokul tarafından gerçekleştirilir.
+Staj devam zorunluluğu
+MADDE 10 – (1) Staja devam zorunludur. Geçerli bir mazeret nedeniyle staja devam
+edilemeyen günler telafi edilir. Bu günler, toplam staj süresinin %10'unu geçemez.
+(2) Kurum/kuruluş yetkilileri, kurallara uymayan öğrencinin stajını sonlandırarak durumu
+“Staj Ayrılış Formu” (EK-6)'nu doldurarak ilgili yüksekokul müdürlüğüne bildirir. Bu
+durumdaki öğrenci kayıtlı olduğu meslek yüksekokulundan ve staj yaptığı kurum/kuruluştan
+herhangi bir hak talep edemez. Bu durumdaki öğrenci başarısız olduğu stajı yenilemek
+zorundadır.
+(3) Mücbir sebep veya haklı bir nedenle stajını tamamlayamayan öğrencinin, tamamlamış
+olduğu staj süresinin kabul edilip edilmeyeceğine ya da yeni bir staj başvurusu yapıp
+yapamayacağına ilişkin karar, Staj Komisyonunun önerisiyle Yönetim Kurulu tarafından
+verilir.
+Staj yerlerinin belirlenmesi
+MADDE 11 – (1) Staj yeri bulma sorumluluğu tamamen öğrenciye aittir. Staj komisyonu,
+öğrencilere staj yeri temin etmek konusunda yardımcı olabilir ancak bu konuda yükümlü
+değildir.
+(2) Öğrenci kendi bulduğu kurumda/kuruluşta staja başlamadan önce “Program Staj
+Koordinatörü'nün olurunu almak zorundadır. Hiçbir öğrenci kendi girişimiyle bulduğu
+kurumda/kuruluşta “Program Staj Koordinatörü”nün ve “Staj Komisyonu”nun onayı olmadan
+staj yapamaz.
+(3) Yurt dışında staj yapmak isteyen öğrenci stajını değişim programları kapsamında
+gerçekleştirebileceği gibi “Staj Komisyonu”nun yazılı önerisi ve Yönetim Kurulunun onayıyla
+kendi girişimi sonucu bulduğu kurumda/kuruluşta da yapabilir. Kendi isteğiyle yurt dışında staj
+yapacak olan öğrenci için sosyal sigorta primi veya benzeri prim ödenmez. >
+=== SAYFA 8 ===
+Staj başvurusu
+MADDE 12 – (1) Öğrenci; staja başlamadan en az 15 gün önce “Öğrenci Staj Süreci Akış
+Şeması” (EK-1 )'na uygun olarak “Öğrenci Staj Başvuru ve Kabul Formu” (EK-2)'nu doldurur
+ve staj başvuru sürecini başlatır. Başvuru sonucu, internet ortamında ilan edilir. Staja kabul
+edilen öğrenci; “Kurum/Kuruluş Öğrenci Değerlendirme Formu” (EK-4) nu, “Staj Raporu”
+(EK-5)'nu ve staj başvurusu ile ilgili tüm belgeleri meslek yüksekokulunun internet
+sayfasından temin eder.
+Staj yeri değişikliği
+MADDE 13 – (1) Öğrenci staja başladıktan sonra Bölüm Staj Komisyonunun onayı
+olmaksızın yer değişikliği yapamaz. Bölüm Staj Komisyonunca uygun görülen staj yeri
+değişikliği en geç üç gün içerisinde ilgili Yüksekokul Müdürlüğüne bildirilir.
+(2) Staj yapılan kurum/kuruluş veya işyerinde grev, lokavt uygulaması, yangın, iflas, iş
+kazası olması durumunda, deprem, sel vb. doğal afetlerde veya öğrencinin staj amacı dışında
+çalıştırılması vb. durumlarda Bölüm Staj Komisyonunun onayıyla öğrenci yeni bir staj yerinde
+staj süresini tamamlayabilir.
+(3) Staj yeri değişiklik talebinin yapılması veya yapılmaması durumunda stajın yapılan
+kısmının kabul edilip edilmeyeceğine Bölüm Staj Komisyonu karar verir.
+(4) Staj yeri değişikliğine ilişkin olarak Yönerge'de yer almayan ve stajyer öğrencinin
+bildirdiği diğer mazeretler için Bölüm Staj Komisyonu yetkilidir.
+Stajın uygulanması ve izlenmesi
+MADDE 14 – (1) Öğrenci, staj yapacağı “Kurum/Kuruluşun Staj Sorumlusu”na gerekli
+belgeleri (SGK İşe Giriş Bildirgesi, Öğrenci Staj Başvuru ve Kabul Formu, Öğrenci Staj Devam
+Çizelgesi ve Kurum/Kuruluş Öğrenci Değerlendirme Formu) teslim eder ve belirtilen tarihlerde
+stajını yapar. Öğrenci, staja dair evraklarının kuruma/kuruluşa ve staj bitiminde Üniversitenin
+ilgili birimine, zamanında ve eksiksiz olarak ulaştırılmasından bizzat kendisi sorumludur.
+(2) “Kurum/Kuruluş Öğrenci Değerlendirme Formu”, staj bitiminde “Kurum/Kuruluş
+Staj Sorumlusu” tarafından doldurulup onaylandıktan sonra kapalı ve üzerinde kurum/kuruluş
+kaşesi olan zarf içinde ilgili yüksekokul müdürlüğüne gönderilir. Kurum/kuruluş kaşesi ve
+onayı olmayan formlar dikkate alınmaz.
+(3) Staj süresince yapılan çalışmalar, öğrenci tarafından meslek yüksekokulunun internet
+sayfasından sağlanacak “Staj Raporu Sayfaları”na işlenerek kurum/kuruluş staj yetkilisine
+onaylatılır. Usulüne uygun olarak düzenlenmeyen “Staj Raporu” kabul edilmez.
+(4) Öğrenci, kurum/kuruluş faaliyetleriyle ilgili gizliliği gerektiren konularda başkalarına
+bilgi veremez ve sendikal etkinliklere katılamaz. Kurum/kuruluş ile öğrenci arasında
+doğabilecek ihtilaflarda, Üniversite taraf gösterilemez.
+=== SAYFA 9 ===
+(5) Öğrenci, staj süresince 2547 sayılı Kanun'da yer alan disiplin hükümlerine; staj
+yaptığı kurumun/kuruluşun çalışma ilkelerine, iş koşullarına, disiplin ve iş güvenliğine ilişkin
+kurallarına ve yasal düzenlemelere uymak zorundadır. Kurum/kuruluşlar, kurallara uymayan
+öğrencinin stajına son vererek durumu, ilgili yüksekokul müdürlüğüne “Ayrılış Formu” (EK-6)'nı doldurarak bildirir.
+(6) Staj yapılan işyerlerinde; grev veya lokavt uygulaması, yangın, iflas, iş kazası olması
+durumunda; deprem, sel, salgın vb. doğal afetlerde veya öğrencinin staj amacı dışında
+çalıştırılması durumunda “Staj Komisyonu”nun onayıyla öğrenci yeni bir staj yerinde staj
+süresini tamamlayabilir. Staj yeri değişikliğine ilişkin olarak stajyer öğrencinin bildirdiği diğer
+mazeretler için “Staj Komisyonu” karar vermeye yetkilidir.
+(7) Öğrenci; “Staj Raporu”nu staj bitimini izleyen ilk akademik yarıyılın ilk 15 günü
+içinde varsa ekleri ile imza karşılığı “Yüksekokul Öğrenci İşleri Birimi”ne teslim eder. Bu
+tarihten sonra teslim edilen staj evrakı kabul edilmez ve değerlendirmeye alınmaz.
+(8) Staj Komisyonu Üyeleri, Bölüm Staj Komisyonu Üyeleri, Program Staj
+Koordinatörleri veya ilgili staj komisyonu tarafından görevlendirilen yüksekokul öğretim
+elemanları stajın kurallara uygun olarak yapıldığını belirlemek için gerektiğinde denetimler
+yapabilir veya yüksekokul müdürlüğü, staj yapılan illerdeki ilgili yükseköğretim kurumu ile iş
+birliği yaparak staj yapan öğrencinin stajının denetlenmesini sağlayabilir.
+DÖRDÜNCÜ BÖLÜM
+Staj Dersinin ve İsteğe Bağlı Stajın Değerlendirilmesi
+Staj Dersi
+MADDE 15 – (1) Staj dersi, programların ders planlarında IV. Yarıyılda yer alan, AKTS
+kredisi 5,0 ve ders saati 0+2 olan zorunlu derstir.
+(2) Bölüm ve programlarda her dönem staj dersleri için Bölüm Başkanlığının uygun
+gördüğü sayıda grup açılır ve her grup için bir sorumlu öğretim elemanı görevlendirilir. Bu
+gruplardaki öğrenci sayısı beşten az olamaz. Ancak program veya bölümlerde staj yapacak
+öğrenci sayısının beşten az olması durumunda bir grup oluşturulur. Aynı gruptaki öğrenciler
+farklı işletmelerde staj yapabilir.
+(3) Öğrenci; stajını yapmak istediği akademik yarıyılda program kapsamında açılan staj
+ders gruplarından birine kaydolmakla yükümlüdür. Öğrenci, “Öğrenci Staj Raporu”nu, varsa
+ekleriyle birlikte, ilgili akademik yarıyılda Bölüm Staj Komisyonu tarafından belirlenen tarihe
+kadar sorumlu öğretim elemanına teslim eder.
+=== SAYFA 10 ===
+İsteğe bağlı staj
+MADDE 16 – (1) İsteğe bağlı staj, Yüksekokul programları ders planlarında yer alan
+AKTS kredisi 5,0 ve ders saati 0+2 olan seçmeli derstir.
+(2) İsteğe bağlı staja; Staj Komisyonunun belirlediği tarihler arasında olmak kaydıyla en
+erken, aktif öğrencinin meslek yüksekokuluna kayıt yaptırdığı II. yarıyılın sonunda başlanır ve
+eğitim-öğretim faaliyetlerinin olmadığı Yaz Döneminde yapılır. Yaz okuluna kayıt yaptıran
+veya genel not ortalaması 2,00'ın altında olan öğrenci, isteğe bağlı staj başvurusunda
+bulunamaz.
+Stajın değerlendirilmesi
+MADDE 17 – (1) Staj dersi kapsamında yapılan stajın değerlendirilmesi aşağıdaki
+hususlara göre yapılır:
+a) Öğrencinin stajının başarılı kabul edilebilmesi için staj yapılan kurum/kuruluş
+tarafından doldurulan “Kurum/Kuruluş Öğrenci Staj Değerlendirme Formu”ndaki
+“Değerlendirme Notu”nun 5 (beş) üzerinden en az 3 (üç) olması ön koşuldur. Verilen
+not 3'ün altında ise öğrenci “Bölüm Staj Komisyonu” tarafından stajda başarısız sayılır,
+b) “Kurum/Kuruluş Öğrenci Staj Değerlendirme Formu”, “Öğrenci Staj Raporu” ve stajla
+ilgili ek bilgi ve belgelerin ön değerlendirmesi sorumlu öğretim elemanları tarafından
+yapılır ve Bölüm Staj Komisyonuna bilgi verilir. Bölüm Staj Komisyonu yapılan stajları
+başarılı veya başarısız olarak değerlendirir,
+c) Gerekli durumlarda Bölüm Staj Komisyonu ve sorumlu öğretim elemanı, öğrencinin
+stajı ile ilgili sözlü sunum yapmasını isteyebilir. Stajında başarısız bulunan öğrenci için
+karar gerekçeli olarak yazılır,
+ç) Öğrenci, stajın değerlendirilmesine ilişkin karara karşı, kararın ilan tarihini izleyen 5
+(beş) iş günü içinde Yüksekokul Müdürlüğüne yazılı olarak itirazda bulunabilir. İtiraz,
+Staj Komisyonu tarafından değerlendirilir ve Yönetim Kurulu tarafından karara
+bağlanır,
+d) Stajı değerlendirilen öğrencinin ders notu sorumlu öğretim elemanı tarafından Öğrenci
+Bilgi Sistemine Başarılı (YT notu ile) veya Başarısız (YZ notu ile) olarak işlenir.
+Ayrıca, stajı başarılı bulunan öğrencilerin stajla ilgili bilgi ve belgeleri; “Not Durum
+Belgesi”ne işlenmek ve öğrencinin dosyasına konulmak üzere imza karşılığı sorumlu
+öğretim elemanı tarafından Öğrenci İşleri Birimine teslim edilir,
+e) Derslerini başarılı olarak tamamlayan ancak staj dersi kapsamında stajını yapmayan
+veya stajında başarısız bulunan öğrenciye, önlisans mezuniyetiyle ilgili belgeler
+verilmez. Bu statüdeki öğrenci, başarılı sayılana kadar stajını tekrarlamak zorundadır.
+Bu durumda olan öğrenci, katkı payı ödemeksizin ilgili döneme ait kayıt yenileme
+tarihlerinde kaydını yeniler. Kaydını yenilemeyen öğrenci staj yapamaz,
+=== SAYFA 11 ===
+(2) İsteğe bağlı staj dersi kapsamında yapılan stajın değerlendirilmesi aşağıdaki hususlara
+göre yapılır:
+a) Staj yapılan kurum/kuruluş tarafından doldurulan “Kurum/Kuruluş Öğrenci Staj
+Değerlendirme Formu”ndaki “Değerlendirme Notu”, “Program Staj Koordinatörü”
+tarafından değerlendirilir,
+b) İlgili belgelerin Staj Komisyonu tarafından incelenmesinden sonra öğrencinin
+başarılı/başarısız olduğuna karar verilir,
+c) Öğrencinin stajının başarılı kabul edilebilmesi için “Kurum/Kuruluş Öğrenci
+Değerlendirme Formu”ndaki Genel Değerlendirme Notunun 5 (beş) üzerinden en az
+3(üç) olması gerekir. Verilen not 3(üç)'ün altındaysa staj başarısız sayılır,
+ç) İsteğe bağlı staj öğrencinin transkriptine seçmeli ders olarak başarılıysa YT harf
+notuyla işlenir. Öğrencinin alacağı YT notu mezuniyet kredi hesabına dahil edilmez.
+(3) Öğrenci, Staj Komisyonunun stajın değerlendirilmesiyle ilgili kararına karşı, ilan
+tarihini izleyen 5 (beş) işgünü içinde kayıtlı olduğu yüksekokul müdürlüğüne yazılı olarak
+itirazda bulunabilir. İtiraz, yüksekokul müdürlüğü tarafından değerlendirilerek yüksekokul
+yönetim kurulu tarafından karara bağlanır.
+(4) Değerlendirme sonucunda stajla ilgili tüm belgeler öğrencinin dosyasına konulmak
+üzere imza karşılığı “Öğrenci İşleri Birimi”ne teslim edilir.
+BEŞİNCİ BÖLÜM
+İşletmede Mesleki Eğitim Kurul, Komisyonları ve Görevleri
+Yüksekokul Müdürü
+MADDE 18 – (1) İşletmede mesleki eğitim faaliyetlerinin planlanması ve uygulanması
+ve koordinasyonundan sorumlu Yüksekokuldaki yetkili kişidir. Yüksekokul Müdürünün
+görevleri şunlardır:
+a) İşletmede mesleki eğitim birim komisyonunu kurmak ve başkanlık etmek,
+b) Mesleki eğitim kapsamında sigortalanacak öğrencilerin sigortalanmalarına ilişkin iş
+ve işlemlerin yürütülmesini sağlamak,
+c) İşletmede mesleki eğitimin eksiksiz bir şekilde yürütülmesi için gerekli önlemleri
+almak, karşılaşılan olumsuzlukları çözüme kavuşturmak.
+İşletmede Mesleki Eğitim Birim Komisyonu ve Görevleri
+MADDE 19 – (1) İşletmede mesleki eğitim birim komisyonu, işletmede mesleki eğitimin
+planlanması ve sürdürülmesi amacıyla Yüksekokul Müdürü başkanlığında oluşturulur.
+Komisyon üyeleri, Yüksekokul Sekreteri, bölüm başkanları ve program Staj
+koordinatörlerinden oluşur. Komisyon yılda en az iki kere (güz ve bahar dönemi başlangıcında)
+=== SAYFA 12 ===
+toplanır. Gerekli hâllerde müdür, bir müdür yardımcısını komisyon başkanı olarak
+görevlendirir. Komisyonunun görevleri şunlardır:
+a) İşletmede mesleki eğitim faaliyetlerinin planlanmasını, uygulanmasını koordine
+etmek, etkin ve verimli yürütülmesi için gerekli çalışmaları gerçekleştirmek,
+b) Birime bağlı bölüm veya programlardan gelecek uygulama esaslarına ilişkin raporlar
+çerçevesinde bu Yönerge ile belirlenen hükümlere aykırı olmamak üzere, “İşletmede
+Mesleki Eğitim Uygulama Usul ve Esasları”nı belirlemek,
+c) İşletmede mesleki eğitim rapor dosyası ve ilgili formların standartlarını belirlemek,
+gerekli düzenlemeleri yapmak ve öğrencilere duyurmak,
+ç) İME sonunda elde edilen kazanımların ölçme ve değerlendirme işlemlerini yapmak
+veya bu işlemi yaptırmak üzere İME Sorumlu Öğretim Elemanının da yer aldığı bölüm
+veya program alt komisyonlarını oluşturmak,
+d) İşletmenin mesleki eğitime uygunluğuna karar vermek,
+e) Protokol yapılan işletmeleri ve kontenjanlarını öğrencilere duyurmak.
+İME Sorumlu Öğretim Elemanı ve Görevleri
+MADDE 20 – (1) Bölüm ve programlarda işletme ile kurum arasında koordinasyonun
+sağlanması, işletmelerdeki çalışma alanlarının tespiti, eğitimin planlanması, koordinasyonu,
+uygulanması ve izlenmesi, ölçme ve değerlendirme işlemlerinde yer almakla görevli olan İME
+Sorumlu Öğretim Elemanının görevleri şunlardır:
+a) Sorumlu olduğu öğrencilerin işletmede mesleki eğitim süresince danışmanlığını
+yürütmek,
+b) İşletmede mesleki eğitim hakkında öğrencilere açıklayıcı bilgiler vermek,
+c) İşletmede mesleki eğitim süresince işletmeleri ziyaret ederek eğitim planının uygun
+olarak yürütülüp yürütülmediğini denetlemek, işletme ve öğrenci ile ilgili
+değerlendirme formlarını doldurmak ve denetim formlarını işletmede mesleki eğitim
+birim komisyonuna sunmak,
+ç) İşletmede mesleki eğitim yapan öğrenciler için eğitici personel tarafından doldurulan
+işletme değerlendirme formunu teslim almak,
+d) İşletmede mesleki eğitim birim komisyonunun belirlediği görevleri yerine getirmek,
+İşletme Yetkilisi ve Görevleri
+MADDE 21 – (1) İşletmede mesleki eğitim sürecinde işletme yetkilisinin görevi
+şunlardır:
+a) İşletmede mesleki eğitim protokolünü ve diğer başvuru evraklarını işletmede mesleki
+eğitimin yapılacağı kurum/kuruluş adına imzalamak,
+=== SAYFA 13 ===
+b) Yönerge esasları ve işletme kurallarına göre işletmede mesleki eğitimin yürütülmesi
+adına öğrenci sayısını da dikkate alarak alanında mesleki yetkinliğe sahip yeterli
+sayıda eğitici personel ve mesleki eğitim sorumlusu personel görevlendirmek,
+c) İşletmede mesleki eğitim yapacak her bir öğrenci için “İşletmede Mesleki Eğitim
+Sözleşmesi”ni imzalamak, işletmede mesleki eğitimi tamamlayan öğrencinin işletme
+değerlendirme formu ile devam çizelgesini imzalayarak İME Sorumlu Öğretim
+Elemanına kapalı zarf içinde teslim etmek veya ulaştırmak,
+ç) İşletmede mesleki eğitim dersini alan öğrencilere 3308 sayılı Kanun'un ilgili
+hükümleri uyarınca ücret ödemek,
+d) İşletmede mesleki eğitim dersini alan öğrencilere koruyucu ekipman temin etmek,
+öğrencinin yemek, iş elbisesi ve servis gibi ihtiyaçlarının karşılanmasını sağlamak,
+e) İşletmede mesleki eğitim dersini alan öğrencilerin iş kazası yaşaması durumunda, 7
+(yedi) günden fazla süren sağlık raporlarında ilgili mevzuata göre davranmak ve
+durumu Yüksekokul Müdürlüğüne bildirmek.
+İşletme Mesleki Eğitim Sorumlusu
+MADDE 22 – (1) İşletme Mesleki Eğitim Sorumlusunun görevleri şunlardır:
+a) İşletmede mesleki eğitim faaliyetlerinin 6331 sayılı İş Sağlığı ve Güvenliği Kanunu
+hükümlerine uygun ortamlarda yapılmasını sağlamak,
+b) Öğrencilere işletmenin ve yapılan işin özelliğine uygun olacak şekilde iş güvenliği
+eğitimleri ve oryantasyon eğitimi verilmesini sağlamak,
+c) İşletmede mesleki eğitim dersi kazanımları kapsamında öğrencilerin işletmede
+mesleki eğitim yapmalarını ve sürdürmelerini sağlamak,
+ç) Devamsızlık, disiplin ve işletmede mesleki eğitim ile ilgili diğer hususlarda İME
+Sorumlu Öğretim Elemanı ile iş birliği yapmak,
+d) Öğrencinin eğitim gördüğü programa uymayan ve sağlık açısından problem doğuracak
+işlerde görevlendirilmesini engellemek,
+e) Yemek, iş elbisesi ve servis gibi ihtiyaçların (imkânları ölçüsünde) temin edilmesini
+sağlamak,
+f) İşletmede mesleki eğitim sırasında karşılaşılan beklenmedik durum ve sorunlarda İME
+Sorumlu Öğretim Elemanını bilgilendirmek.
+Eğitici Personelin Görev ve Sorumlulukları
+MADDE 23 – (1) İşletmede mesleki eğitim yapacak öğrencilerin işletmedeki
+eğitimlerinden ve diğer işlemlerden sorumlu olan, öğrencinin işletme yönetimi adına muhatap
+olduğu personeldir. Eğitici personel, işletmede mesleki eğitim birim komisyonunun da görüşü
+alınarak işletme tarafından görevlendirilir, Eğitici personelin görev ve sorumlulukları şunlardır:
+=== SAYFA 14 ===
+a) Öğrencilerin teorik ve uygulama esaslı bilgi ve becerilerinin iş ortamındaki uygulama
+çalışmaları ile pekişmesini sağlamak,
+b) Öğrencilere meslek yetkinliği ve disiplinini aktarmak,
+c) Hazırlanan eğitim planı dâhilinde öğrencilerin işletmede mesleki eğitim yapmalarını
+ve sürdürmelerini sağlamak,
+ç) İşletmede mesleki eğitim dosyasının öğrenci tarafından işlenişini takip etmek;
+öğrencinin günlük olarak tuttuğu dosyayı ve yaptığı faaliyetleri denetlemek,
+onaylamak ve işletme yetkilisine onaylatmak,
+d) İşletmede mesleki eğitim yapan öğrenciler için işletme değerlendirme formunu
+doldurmak,
+e) İşletmede mesleki eğitim alan öğrencilerin devamlılığını izlemek, mazeret izinlerini
+değerlendirmek ve devam çizelgesine işlemek,
+f) Öğrencinin işletmede karşılaşacağı sorunların çözümünde yardımcı olmak ve
+gerektiğinde üst yönetime ulaştırmak.
+Öğrencinin Görev ve Sorumlulukları
+MADDE 24 – (1) İşletmede mesleki eğitim süresince öğrenci, 2547 sayılı Kanun'un
+disiplin hükümlerine, Yükseköğretimde Uygulamalı Eğitimler Çerçeve Yönetmeliğine,
+Eskişehir Teknik Üniversitesi Ön Lisans ve Lisans Eğitim-Öğretim Yönetmeliğine ve
+işletmenin resmi çalışma kurallarına uymakla yükümlüdür. İşletmede mesleki eğitimde ilgili
+mevzuata ve işletmenin resmi çalışma kurallarına aykırı davranan öğrencilerin uygulamalı
+eğitimleri başarısız olarak değerlendirilir. Öğrencinin görev ve sorumlulukları şunlardır:
+a) Mesleki eğitimini, işletmede mesleki eğitim sözleşmesinin imzalandığı
+kurumda/kuruluşta/işletmede yapmak,
+b) İlgili mevzuata, kayıtlı oldukları birimin işletmede mesleki eğitim birim komisyonunca
+belirlenen usul ve esaslarına uymak,
+c) İşletmenin çalışma, disiplin, kılık/kıyafet, mesai saatleri, iş güvenliği ile ilgili
+kurallarına ve geçerli çalışma şartlarına uymak, mesleki etkinliklere bizzat katılarak
+çalışmak,
+ç) İşletmedeki sendikal faaliyetlere katılmamak,
+d) İşletmede mesleki eğitimde verilen görevleri yapmak, her türlü alet, cihaz ve makineyi
+özenle kullanmak, işletmeye ait özel bilgileri, ticari sır niteliği taşıyan bilgi, belge ve
+ürünleri üçüncü şahıslara iletmemek,
+e) İşletmede mesleki eğitimi ile ilgili belge ve formları, dosya ve raporu uygun şekilde
+doldurarak, belirlenen süre içerisinde İME Sorumlu Öğretim Elemanına teslim etmek,
+f) Eğitim sırasında karşılaşılan sorunları, istek ve/veya mazeretlerini İME Sorumlu
+Öğretim Elemanına bildirmek,
+=== SAYFA 15 ===
+g) İşletmede mesleki eğitim yerlerinden ayrılmalarını ve izin almalarını gerektirecek
+zorunlu hâllerde, işletme mesleki eğitim sorumlusundan onay almak.
+ALTINCI BÖLÜM
+İşletmede Mesleki Eğitimi Uygulama Esasları
+İşletmede Mesleki Eğitim
+MADDE 25 – (1) İşletmede mesleki eğitim ön lisans programların ders planlarında İME
+kodu ile yürütülen dersin amacı; öğrencinin alanı ile ilgili işletmeyi yakından tanımasına, bu
+işletmedeki organizasyon yapısını, sorumlulukları, ilişkileri, işletme disiplinini öğrenmesine,
+eğitim-öğretim sürecinde kazandığı bilgi ve becerileri pekiştirmesine, yeni bilgi ve beceriler
+elde etmesine, çalışma ortamındaki diğer personeller ile uyum içerisinde çalışma kabiliyetini
+geliştirmesine, alanındaki yeni imkânları öğrenerek kullanabilmesine olanak tanımaktır.
+İşletmede Mesleki Eğitimin dönemi ve süresi
+MADDE 26 – (1) İşletmede mesleki eğitim, Üniversitenin akademik takvimine uygun
+olarak 3. ve 4. yarıyıl süresince sınav haftaları hariç ders programına uygun olarak yapılır.
+Ancak programın özelliğine ve işletme koşullarının uygunluğuna göre yaz döneminde de
+işletmede mesleki eğitim yaptırılabilir.
+(2) Akademik eğitim ve öğretim döneminde yapılan işletmede mesleki eğitim haftada
+aralıksız en az 3 gün uygulanır. Öğrenciye fazla mesai yaptırılamaz ve öğrenci gece
+vardıyasında çalıştırılamaz.
+(3) Öğrencinin İşletmede mesleki eğitim kapsamında hesaplanan derslerin toplam kredisi
+en fazla 30 AKTS'dir.
+(4) İşletmede mesleki eğitim uygulanan programın ders planında 3. ve 4. yarıyıllarda
+İşletmede Mesleki Eğitim 1 (5+10, 15) ve İşletmede Mesleki Eğitim II (5+10, 15) adıyla yer
+alır. Mesleki seçmeli ders statüsünde açılan dersler mezuniyet kredisi hesabına dâhil edilir.
+(5) İşletmede mesleki eğitim kapsamında oluşturulan her grup için bir İME Sorumlu
+Öğretim Elemanı görevlendirilir ve sorumlu olduğu uygulamalı eğitim grubu sayısına
+bakılmaksızın haftalık azami 5 (beş) saat teorik ders yükü yüklenir.
+Devam Zorunluluğu
+MADDE 27 – (1) İşletmede mesleki eğitime devam zorunludur. Öğrencilerin işletmede
+mesleki eğitimden başarılı sayılabilmesi için işletmede meslek eğitimin en az %80'ine katılmış
+olması gerekir. Devamsızlık durumlarında işletme mesleki eğitim sorumlusundan izin almak
+zorundadırlar. Toplamda 3 gün izinsiz olarak devam etmeyen veya devam şartını sağlayamayan
+=== SAYFA 16 ===
+öğrenciler başarısız sayılır, öğrencilerin işletmede mesleki eğitimi notu devamsız (DZ) olarak
+girilir.
+(2) Öğrenci, işletmeden izinsiz ayrılamaz. İşletmede mesleki eğitim yerlerinden
+ayrılmalarını ve izin almalarını gerektirecek hastalık, birinci derece yakının vefatı vb. zorunlu
+hallerde İşletme Mesleki Eğitim Sorumlusundan onay almak zorundadır.
+İşletmenin Değiştirilmesi
+MADDE 28 – (1) Öğrenci, işletmede mesleki eğitim görmeye başladıktan sonra ilk iki
+hafta içinde, işletmede mesleki eğitim birim komisyonunun onayıyla işletmeyi değiştirebilir.
+(2) Mücbir sebeplerde (deprem, yangın, su baskını benzeri doğal afetler, kanuni grev,
+lokavt, genel salgın hastalık, savaş, kısmi veya genel seferberlik ilanı ve benzeri),
+belgelendirilmek koşulu ile bu süre dikkate alınmaz. Bunun için ilgili işletmede mesleki eğitim
+birim komisyonuna yazılı olarak başvurur, eğitim süresi dikkate alınarak akademik takvim
+doğrultusunda yeni bir işletmede devam etmesi sağlanır.
+Kontenjan, Başvuru ve Kabul Koşulları
+MADDE 29 – (1) İşletmede mesleki eğitim, protokol imzalanmış olan kamu/özel sektöre
+ait kurum, kuruluş ve işletmelerde yapılabilir.
+(2) İşletmede mesleki eğitim için kabul edilebilecek öğrenci kontenjanları, işletmelerin
+eğitim ve uygulama durumları dikkate alınarak işletme yetkilisi, İME Sorumlu Öğretim
+Elemanı ve İşletmede Mesleki Eğitim Birim Komisyonunun iş birliği ile tespit edilir.
+(3) Öğrencilerin mesleki eğitim yapacağı işletmeler ve kontenjanları Meslek
+Yüksekokulu tarafından ilan edilir, ilan edilen tarih aralığında öğrenci başvuruları Bölüm
+Başkanlığı tarafından alınır.
+(4) İşletmede mesleki eğitime başvurmak için öğrencinin genel not ortalamasının 2.00
+den az olmaması gerekir.
+(5) Başvurular Bölüm Başkanlığının kontrolü sonrasında Yüksekokul Müdürlüğüne
+iletilir. Sonuçlar Yüksekokulun internet sayfasında ilan edilir. Başvurusu kabul edilen
+öğrenciler işletmede mesleki eğitime başlamaya hak kazanır. Başvurusu kabul edilmeyen
+öğrencilerin ret gerekçesi ilanda belirtilir.
+(6) Öğrenciler listeler ilan edildikten sonra bir hafta içerisinde itiraz edebilir. İtirazlar,
+İşletmede Mesleki Eğitim Birim Komisyonunca itiraz tarihinden itibaren en geç bir hafta içinde
+karara bağlanır.
+(7) Öğrencilerin mesleki eğitimlerini alacağı işletmeler Meslek Yüksekokulu Yönetim
+Kurulu kararı ile kesinleşince; Müdür, İME Sorumlu Öğretim Elemanı, işletme yetkilisi ve
+öğrencinin imzaladığı “İşletmede Mesleki Eğitim Kabul Belgesi ve Sözleşmesi” 3 (üç) nüsha
+olarak düzenlenir ve taraflara verilir.
+(8) Öğrenciler işletmede mesleki eğitimlerini alacakları süreler için kayıt yaptırmak ve
+döneme ilişkin varsa katkı paylarını ödemek zorundadır. İşletmede mesleki eğitime katılan
+=== SAYFA 17 ===
+öğrencilerin kayıt yenileme haftasında; güz döneminde alınması gerekli zorunlu derslerin yanı
+sıra İşletmede Mesleki Eğitim I dersini, bahar döneminde ise alınması gerekli zorunlu derslerin
+yanı sıra İşletmede Mesleki Eğitim II dersini seçmesi zorunludur.
+(9) Güz döneminde İşletmede Mesleki Eğitim I dersini alıp başarısız olan öğrenci, bahar
+döneminde açılan İşletmede Mesleki Eğitim II dersini alamaz. Onun yerine ders planının
+dördüncü yarıyılında alınması gereken AKTS değerinde mesleki seçmeli ders ve 5 AKTS staj
+dersini almak zorundadır.
+(10) İşletmede mesleki eğitim dersini seçmeyen ve/veya ekle sil haftası içerisinde
+işletmede mesleki eğitimden vazgeçtiğini dilekçe ile bildiren öğrenci, ilgili dönemde ders
+planında belirtilen AKTS değerinde mesleki seçmeli dersi (bahar döneminde ise ayrıca staj
+dersini de) alması gerekir.
+(11) Belirtilen süreler dışında işletmede mesleki eğitimden vazgeçen öğrenci başarısız
+sayılır ve işletmede mesleki eğitimi notu devamsız (DZ) olarak işlenir.
+(12) Ders planının üçüncü yarıyılında “İşletmede Mesleki Eğitim I” dersini alarak başarılı
+olan öğrencinin dördüncü yarıyılda “İşletmede Mesleki Eğitim II” dersini almak için dönemin
+başlangıcından en az 10 gün önce Yüksekokul Müdürlüğüne dilekçe ile başvurması gerekir.
+İşletmede Mesleki Eğitimle İlgili Belgeler
+MADDE 30 – (1) Öğrenci, İşletmede mesleki eğitim başvurusunda ve İşletmede mesleki
+eğitim sürecinde Yüksekokul internet sayfasında belirtilen belgeleri hazırlamak ve
+tamamlanmasını izlemekle yükümlüdür:
+YEDİNCİ BÖLÜM
+İşletmede Mesleki Eğitimin Değerlendirilmesi
+Değerlendirme
+MADDE 31 – (1) İşletmede mesleki eğitimin değerlendirilmesi aşamaları şunlardır:
+a) İşletmede mesleki eğitim alan her öğrenci “İşletmede Mesleki Eğitim Dosyası”
+hazırlamak zorundadır. İşletmede mesleki eğitim dosyası; işletme mesleki eğitim onay
+formu, devam takip formu, öğrencinin doldurduğu günlük faaliyet raporlarından
+oluşur,
+b) İşletmede mesleki eğitim dersinin alındığı dönemde derslerin bitiminden itibaren 5
+gün içerisinde öğrencinin hazırladığı dosyayı ve belgelerini İME Sorumlu Öğretim
+Elemanına teslim etmesi gerekir,
+c) Aynı süre içerisinde eğitici personel tarafından yapılan değerlendirme raporları İME
+Sorumlu Öğretim Elemanına teslim edilir,
+=== SAYFA 18 ===
+ç) İşletmede mesleki eğitim yapan öğrenciler; değerlendirme formları, işletmede mesleki
+eğitim dosyası ve önceden belirlenen kazanımlar doğrultusunda değerlendirilir,
+d) İME Sorumlu Öğretim Elemanı gerekli görmesi durumunda öğrenci sözlü sınava
+alınabilir,
+e) Öğrencinin işletmede mesleki eğitiminin başarılı kabul edilebilmesi için İME yapılan
+kurum/kuruluş tarafından ve İME Sorumlu Öğretim Elemanı tarafından doldurulan
+Değerlendirme Formu'ndaki değerlendirme notlarının her ikisinin de 100 (yüz)
+üzerinden en az 60 (altmış) olması ön koşuldur. Notlardan herhangi biri 60'ın altında
+ise öğrenci başarısız sayılır,
+f) İşletmede mesleki eğitim değerlendirme notu, yüz puan üzerinden, eğitici personelin
+değerlendirme notunun %50'si ile İME Sorumlu Öğretim Elemanı değerlendirme
+notunun %50'sinin toplamından oluşur. Notlar, İME Sorumlu öğretim elemanı
+tarafından Eskişehir Teknik Üniversitesi Önlisans ve Lisans Eğitim-Öğretim ve Sınav
+Yönetmeliğine göre harf notuna dönüştürülür,
+g) Öğrencinin işletmede mesleki eğitim kapsamında aldığı derslerin değerlendirme notu
+İME Sorumlu Öğretim Elemanı tarafından not giriş tarihleri içerisinde öğrenci bilgi
+sistemine işlenir,
+ğ) Öğrencinin işletmede mesleki eğitim kapsamındaki değerlendirme notu sisteme ders
+notu olarak işlenir. Aynı zamanda bu değerlendirme notu, akademik başarı notu
+değerlendirmelerine dâhil edilir,
+h) Değerlendirme sonuçlarına itirazlarda “Eskişehir Teknik Üniversitesi Lisans ve Ön
+lisans Eğitim-Öğretim ve Sınav Yönetmeliği” hükümleri uygulanır.
+Yurt Dışında İşletmede Mesleki Eğitim
+MADDE 32 – (1) Öğrenciler öğretim programlarını aksatmayacak şekilde ve İşletmede
+Mesleki Eğitim Birim Komisyonunun uygun görüşü ile İşletmede Mesleki Eğitim faaliyetini
+yurt dışında yapabilirler.
+(2) İşletmede mesleki eğitimini yurt dışında tamamlayan öğrenciler, çalışmalarına ilişkin
+belgelerini, uygulamalı eğitim dosyasını ilgili Komisyona bu Yönergede belirtilen süreler
+içerisinde teslim eder. Bu kapsamdaki ölçme ve değerlendirme işlemleri bu Yönergenin ilgili
+hükümleri doğrultusunda yürütülür.
+(3) İşletmede mesleki eğitimini yurt dışında yapacak öğrencilerin sigortalanması
+amacıyla sigortacılık alanında faaliyet gösteren yerli veya yabancı kurum ve kuruluşlara
+ödenecek primler Üniversite tarafından karşılanmaz.
+=== SAYFA 19 ===
+SEKİZİNCİ BÖLÜM
+Çeşitli ve Son Hükümler
+Staj ve İşletmede Mesleki Eğitim Muafiyeti
+MADDE 33 – (1) Yatay geçiş yoluyla gelen öğrencinin geldiği yükseköğretim
+kurumunda kayıtlı olduğu sürede veya çift anadal programında yaptığı stajın kabulü Staj
+Komisyonunun, işletmede mesleki eğitimin kabulü İşletmede Mesleki Eğitim Birim
+Komisyonunun önerisi üzerine Yüksekokul Yönetim Kurulu tarafından karara bağlanır. Bu
+kapsamdaki öğrenci; muafiyet başvurusunu, ilk kayıt yaptırdığı dönemin ikinci haftası sonuna
+kadar yapmak zorundadır. Öğrenci, kararın ilan tarihini izleyen 5 (beş) iş günü içinde
+Yüksekokul Müdürlüğüne yazılı olarak itirazda bulunabilir. İtiraz, ilgili komisyon tarafından
+değerlendirilir ve Yönetim Kurulu tarafından karara bağlanır.
+(2) Staj yapma koşullarını sağlayan ve ilgili sektörde SGK'ya kayıtlı olarak çalışan
+öğrenci; zorunlu staj süresi kadar çalıştığını belgelendirmesi durumunda Staj Komisyonunun
+önerisi üzerine Yönetim Kurulu kararıyla stajdan muaf tutulabilir. Öğrenci aynı işyerindeki
+çalışması dolayısıyla birden fazla stajdan muaf tutulamaz. Öğrenci, kararın ilan tarihini izleyen
+5 (beş) işgünü içinde Yüksekokul Müdürlüğüne yazılı olarak itirazda bulunabilir. İtiraz, Staj
+Komisyonu tarafından değerlendirilir ve Yönetim Kurulu tarafından karara bağlanır.
+Hastalık ve Kaza Halleri
+MADDE 34 – (1) 3308 sayılı Kanunun 25 inci maddesi ile 5510 sayılı Kanunun 5 inci
+maddesinin birinci fıkrasının (b) bendi uyarınca staj, isteğe bağlı staj, işletmede mesleki eğitim
+gören öğrenciler hakkında iş kazası ve meslek hastalığı ile hastalık sigortası uygulanır. (NOT:
+Müstahaklığı olmayan yani ailesinden SGK güvencesi olmayanların
+(2) 5510 sayılı Kanunun 87 nci maddesinin birinci fıkrasının (e) bendi uyarınca
+öğrencilerin iş ve meslek hastalıklarına karşı sigortası Eskişehir Teknik Üniversitesi tarafından
+yapılır. Ancak işletmenin kusurundan dolayı meydana gelebilecek iş kazaları ve meslek
+hastalıklarından 3308 sayılı Kanunun 25 inci maddesine göre İşveren sorumludur.
+(3) Staj, isteğe bağlı staj, işletmede mesleki eğitim sırasında hastalanan ve resmi
+kurumlarca belgelenmek üzere hastalığı 2 (iki) günden fazla süren veya herhangi bir kazaya
+uğrayan öğrencinin sağlık raporu, işyeri tarafından aynı gün içinde Yüksekokula bildirilir. Bu
+durumlarda Sosyal Güvenlik Kurumu hüküm ve uygulamaları geçerlidir.
+Öğrencilere Ödenecek Ücretler
+MADDE 35 – (1) İşletmede Mesleki Eğitim gören öğrencilere 3308 sayılı Kanun'un 25
+inci maddesi uyarınca işletme tarafından ücret ödenir.
+(2) Staj, isteğe bağlı staj, işletmede mesleki eğitim yapan öğrencilere mesleki eğitim
+süresince üniversite tarafından herhangi bir ücret ödenmez.
+=== SAYFA 20 ===
+Gece Çalışması
+MADDE 36 – (1) Öğrenciler, Sosyal Güvenlik Kurumuna kayıtlı olarak devamlı statüde
+gündüz çalışmak zorundadır.
+(2) Staj, İsteğe bağlı staj, işletmede mesleki eğitim kapsamında işletmede mesleki eğitim
+alan öğrenciler, işletmelerin üretim planı nedeniyle düzenlenecek gece vardiyası çalışmalarına
+katılamazlar. Gece vardiyası çalışmalarına katılan öğrencilerin yasal sorumluluğu öğrenci ve
+işletmeye aittir.
+Hüküm bulunmayan hâller
+MADDE 37 – (1) Bu Yönerge'de hüküm bulunmayan hâllerde 19/9/2018 tarihli ve 30540
+sayılı Resmi Gazete'de yayımlanarak yürürlüğe giren “Eskişehir Teknik Üniversitesi Önlisans
+ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği” hükümleri ve 31514 sayılı Resmi Gazete'de
+yayımlanarak yürürlüğe giren “Yükseköğretimde Uygulamalı Eğitimler Çerçeve Yönetmeliği”
+hükümleri ile ilgili mevzuat hükümleri uygulanır.
+Yürürlükten kaldırılan Yönerge
+MADDE 38 – (1) Bu Yönerge'nin yürürlüğe girmesiyle 05/05/2020 tarihli ve 7/1 sayılı
+Eskişehir Teknik Üniversitesi Senato kararıyla kabul edilen “Eskişehir Teknik Üniversitesi
+Meslek Yüksekokulları Staj Yönergesi” yürürlükten kaldırılmıştır.
+Yürürlük
+MADDE 39 – (1) Bu Yönerge, 2023-2024 Akademik Yılı başından itibaren yürürlüğe
+girer.
+Yürütme
+MADDE 40 – (1) Bu Yönerge'yi Eskişehir Teknik Üniversitesi Rektörü yürütür.
+Kabul/Revizyon Tarih ve Numarası
+İlk Yayın 24.09.2018 tarihli ve 5/4 sayılı Senato Kararı
+Değişiklik 1 05/05/2020 tarihli ve 7/1 sayılı Senato Kararı

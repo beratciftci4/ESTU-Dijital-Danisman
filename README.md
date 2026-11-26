@@ -1,6 +1,6 @@
 # ESTÜ Dijital Danışman
 
-ESTÜ lisans öğrencilerinin "Kaç AKTS üst sınırım var?",
+ESTÜ önlisans ve lisans öğrencilerinin "Kaç AKTS üst sınırım var?",
 "Tek ders sınavına kimler girebilir?", "Kaç iş günü staj yapmam lazım?" gibi sorularına
 **resmi belgelerden**, belge adı, madde numarası ve sayfasıyla cevap veren bir arama asistanı.
 
@@ -9,16 +9,18 @@ Kısa cevap, her madde için önceden elle yazılmış özet cümlelerinden seç
 zekâ ile metin üretilmiyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da
 servis kullanmıyor.
 
-**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 30 bölüm var: Fen Fakültesi (Biyoloji,
+**Hangi bölümler:** Öğrenci önce bölümünü ya da programını seçiyor. Şu an 30 lisans bölümü ve
+23 önlisans programı var. Lisans: Fen Fakültesi (Biyoloji,
 Fizik, İstatistik, Kimya, Matematik), Mühendislik Fakültesi (Bilgisayar, Çevre, Elektrik-Elektronik,
 Endüstri, İnşaat, Kimya, Makine, Malzeme Bilimi, Uçak) ve Bilgisayar ve Bilişim Bilimleri Fakültesi
 (Bilgi Güvenliği Teknolojisi, Bilişim Sistemleri ve Teknolojileri, Yapay Zeka ve Makine Öğrenmesi),
 Havacılık ve Uzay Bilimleri Fakültesi (Hava Trafik Kontrolü, Havacılık Elektrik ve Elektroniği,
 Havacılık ve Uzay Mühendisliği, Havacılık Yönetimi, Uçak Gövde ve Motor Bakımı; Pilotaj şimdilik yok)
 Mimarlık ve Tasarım Fakültesi (Endüstriyel Tasarım, İç Mimarlık, Mimarlık, Tekstil ve Moda Tasarımı) ve
-Spor Bilimleri Fakültesi (Antrenörlük Eğitimi, Beden Eğitimi ve Spor Öğretmenliği, Rekreasyon, Spor Yöneticiliği). Yönetmelik ve
-usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders planı ve program
-bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
+Spor Bilimleri Fakültesi (Antrenörlük Eğitimi, Beden Eğitimi ve Spor Öğretmenliği, Rekreasyon, Spor Yöneticiliği).
+Önlisans: Bilişim Teknolojileri MYO (8 program), Porsuk MYO (7 program) ve Ulaştırma MYO (8 program).
+Yönetmelik ve usul-esaslar herkes için ortak; staj yönergesi fakülteye ya da (önlisansta) bütün meslek
+yüksekokullarına ortak (`kapsam: duzey:onlisans`), ders planı ve program bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
 (`programlar.yaml`, belgelerdeki `kapsam` alanı).
 
 "Mezun olmak için neyim eksik?" sorusu için ayrı bir **mezuniyet kontrolü** sekmesi var:
@@ -43,6 +45,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Mimarlık ve Tasarım Fakültesi Staj Yönergesi (taranmış, OCR) | 11.08.2017 | 28.02.2023 |
 | Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi (taranmış, OCR) | 05.10.2021 | |
 | Spor Bilimleri Fakültesi Öğrenci Staj Yönergesi (taranmış, OCR) | 12.06.2020 | 25.10.2022 |
+| Meslek Yüksekokulları Staj ve İşletmede Mesleki Eğitim Yönergesi (taranmış, OCR) | 29.08.2023 | |
 | Akademik Danışmanlık Yönergesi | 11.09.2025 | |
 | Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar | 11.09.2025 | |
 | Tek Ders Sınavı Uygulama Esasları | 18.12.2025 | |
@@ -76,7 +79,13 @@ dili (İstatistik I-II 2024-25'te İngilizce, sonra Türkçe) ve seçmeli havuzu
 öğretim yılına mı uygulandığı belgelerde yazmadığı için uygulama bunu varsaymıyor, seçimi öğrenciye
 bırakıyor. Diğer bölümlerin sitelerinde yıllık plan bulunursa aynı şekilde eklenebilir.
 
-Mimarlık ve Tasarım Fakültesi'nin iki yönergesi ve Spor Bilimleri'nin staj yönergesi taranmış PDF. Metin tesseract (Türkçe) ile okundu,
+**Önlisans.** Üç meslek yüksekokulunun 23 programı Bologna sayfalarıyla eklendi; staj kuralları ortak
+"Meslek Yüksekokulları Staj ve İşletmede Mesleki Eğitim Yönergesi"nden (en az 20 iş günü, staj dersi 4.
+yarıyılda zorunlu, 3.-4. yarıyılda isteğe bağlı İşletmede Mesleki Eğitim). Mezuniyet kontrolü önlisansta
+120 AKTS istiyor (yönetmelik md. 25/1). Önlisans Bologna sayfalarının bölümleri için elle özet yazılmadı,
+kısa cevap o bölüm metninin ilk cümlelerinden oluşuyor (metin aynen alındığı için yanlış bilgi eklenmiyor).
+
+Mimarlık ve Tasarım Fakültesi'nin iki yönergesi, Spor Bilimleri'nin ve meslek yüksekokullarının staj yönergeleri taranmış PDF. Metin tesseract (Türkçe) ile okundu,
 OCR hataları sayfa görüntülerine bakılarak elle düzeltildi ve `kaynaklar/*.ocr.txt` olarak duruyor.
 Eklerdeki formlardan sadece başlıklar alındı. Arayüz bu belgelerden gelen alıntılarda "OCR ile okundu"
 uyarısı gösteriyor.
@@ -87,7 +96,7 @@ uyarısı gösteriyor.
 kaynaklar/*.pdf, *.html
    │  ayristir.py   madde madde parçalama (MADDE 10-, 1), 1- ...), sayfa ve başlık bilgisi
    ▼
-cikti/parcalar.jsonl  (963 parça, her birinde kapsam: genel / fakülte / bölüm)
+cikti/parcalar.jsonl  (1335 parça, her birinde kapsam: genel / fakülte / bölüm)
    │  indeks.py     e5-small (ONNX, int8) ile vektörler + FAISS, BM25 için Türkçe kök
    ▼
 indeks/
@@ -154,6 +163,7 @@ Test setleri `tests/` altında, her sorunun cevabı belgelerden kontrol edildi.
 | Havacılık ve Uzay Bilimleri Fakültesi (18 cevaplı) | 0.83 | 0.94 | 0.94 | 0.89 |
 | Mimarlık ve Tasarım Fakültesi (18 cevaplı) | 0.89 | 0.94 | 0.94 | 0.92 |
 | Spor Bilimleri Fakültesi (16 cevaplı) | 0.69 | 0.94 | 0.94 | 0.81 |
+| Önlisans programları (17 cevaplı) | 0.65 | 0.88 | 1.00 | 0.79 |
 
 Hibrit arama bütün setlerde sadece BM25'ten ve sadece e5'ten daha iyi ya da eşit.
 
@@ -172,11 +182,12 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Havacılık ve Uzay Bilimleri Fakültesi | 14/18 | 1/2 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 |
 | Spor Bilimleri Fakültesi | 13/16 | 2/2 |
+| Önlisans programları | 15/17 | 2/2 |
 | Yıllık ders planları ve tek ders soruları | 11/15 | |
 | Cevapsız doğrulama (40 soru, eşik seçilirken bakılmadı) | | 36/40 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 17/17, Mimarlık 16/18, Spor 14/15, yıllık planlar ve tek ders soruları 13/15.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 17/17, Mimarlık 16/18, Spor 14/15, önlisans 15/16, yıllık planlar ve tek ders soruları 13/15.
 
 "Bulamadım" kararı eskiden sadece en iyi parçanın benzerliğine bakıyordu. Belge sayısı arttıkça her soruya
 benzeyen bir parça çıkmaya başladı ve cevapsız soruların çoğuna "bulundu" denir oldu. 186 soruda (146 cevaplı,

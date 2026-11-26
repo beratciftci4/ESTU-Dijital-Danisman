@@ -178,8 +178,10 @@ def test_turkce_karakter_bozulmasi_yok():
 @pytest.mark.parametrize("belge_id", BELGELER)
 def test_her_belgede_turkce_harfler_var(belge_id):
     metin = " ".join(p["metin"] for p in parcalari(belge_id))
-    for harf in "ğüşıöçİ":
-        assert harf in metin, (belge_id, harf)
+    # kodlama bozulursa Türkçe harfler kaybolur; kısa Bologna sayfalarında her harf geçmeyebiliyor
+    # (ör. bir ders planında hiç "ö" yok), o yüzden en az 5'inin geçmesi yeterli
+    eksik = [h for h in "ğüşıöçİ" if h not in metin]
+    assert len(eksik) <= 2, (belge_id, eksik)
 
 
 def test_bilinen_kelimeler_dogru_yazilmis():

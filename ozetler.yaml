@@ -139,7 +139,7 @@ yonetmelik#madde-24:
   - Kaydının dondurulduğu süre azami öğrenim süresinden sayılmaz.
   - Tedavisi süren hastalık ya da hükümlülük durumunda dört yarıyıldan fazla dondurma da verilebilir.
 yonetmelik#madde-25:
-  - Lisanstan mezun olmak için en az 240 AKTS'lik dersi başarıyla tamamlaman, GNO'nun en az 2,00 olması ve ÇK, DZ, EK, FF ya da YZ notunun bulunmaması gerekir.
+  - Mezun olmak için önlisansta en az 120, lisansta en az 240 AKTS'lik dersi başarıyla tamamlaman, GNO'nun en az 2,00 olması ve ÇK, DZ, EK, FF ya da YZ notunun bulunmaması gerekir.
   - Mezuniyet için derslerin yanında staj gibi diğer yükümlülüklerini de yerine getirmiş olmalısın.
   - Mezuniyet derecen diplomaya yazılmaz.
   - İlk dört yarıyılı başarıyla bitirip GNO'su en az 2,00 olan lisans öğrencisi isterse kaydını sildirip ön lisans diploması alabilir.
@@ -1468,3 +1468,106 @@ spor_yoneticiligi_program_bilgileri#bolum-Mezuniyet_Koşulları:
   - Spor Yöneticiliği'nden mezun olmak için bütün derslerini geçmen, en az 240 AKTS ve en az 2,00 genel not ortalaman olması gerekir.
 spor_yoneticiligi_program_bilgileri#bolum-İstihdam_Olanakları:
   - Mezunlar spor kulüplerinde, Gençlik ve Spor Genel Müdürlüğü'nde, spor organizasyonlarında ve şirketlerin halkla ilişkiler, pazarlama ve insan kaynakları bölümlerinde çalışabilir.
+
+# Meslek Yüksekokulları Staj ve İşletmede Mesleki Eğitim Yönergesi (Senato 29/08/2023, 16/3; OCR)
+myo_staj#madde-1:
+  - Bu yönerge, meslek yüksekokullarındaki önlisans öğrencilerinin zorunlu staj dersini, işletmede mesleki eğitim (İME) dersini ve isteğe bağlı stajını düzenler.
+myo_staj#madde-2:
+  - Yönerge, 2547 sayılı Kanun, ESTÜ Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği ve Uygulamalı Eğitimler Çerçeve Yönetmeliği'ne dayanır.
+myo_staj#madde-3:
+  - Staj dersi, önlisans programlarının 4. yarıyılında zorunlu olan, 5 AKTS ve 0+2 saatlik derstir.
+  - İşletmede mesleki eğitim (İME) dersi, 3. ve 4. yarıyılda mesleki seçmeli olarak alınabilen ve işletmede uygulamalı yapılan derstir.
+  - İsteğe bağlı staj, yaz döneminde yapılan, ders planında seçmeli olan 5 AKTS'lik stajdır.
+myo_staj#madde-4:
+  - Staj komisyonu bir müdür yardımcısı ve iki öğretim elemanından oluşur; staj dönemlerini belirler, staj raporlarını inceleyip stajın başarılı olup olmadığına karar verir ve itirazlara görüş bildirir.
+myo_staj#madde-5:
+  - Bölüm staj komisyonu bölüm başkanı başkanlığında kurulur; staj kılavuzunu hazırlar ve stajını başarılı (YT) ya da başarısız (YZ) olarak değerlendirir.
+myo_staj#madde-6:
+  - Program staj koordinatörü staj başvurularını ve staj yapılacak işletmenin uygunluğunu inceler.
+myo_staj#madde-7:
+  - Her staj grubu için bir sorumlu öğretim elemanı görevlendirilir; staj raporunu ve işletme değerlendirme formunu toplayıp komisyona sunar ve notunu sisteme girer.
+myo_staj#madde-8:
+  - Staj için gereken belgeler staj başvuru ve kabul formu, genel sağlık sigortası durumu belgesi, SGK işe giriş bildirgesi, staj devam çizelgesi, kurum değerlendirme formu ve staj raporudur.
+myo_staj#madde-9:
+  - Meslek yüksekokullarında en az 20 iş günü staj yapmak zorundasın; isteğine ve komisyonun onayına göre staj en çok 30 gün olabilir.
+  - Staja 2. yarıyılın sonundan itibaren başlayabilirsin; staj yaz döneminde ya da güz ile bahar arasındaki tatilde yapılır.
+  - Sadece stajın kaldıysa ya da haftada en az 3 tam gün dersin yoksa, komisyon onayıyla dersinin olmadığı günlerde staj yapabilirsin.
+  - Aynı anda hem zorunlu hem isteğe bağlı staja devam edemezsin; komisyon uygun görürse isteğe bağlı stajın zorunlu stajın yerine sayılabilir.
+  - İsteğe bağlı Proje Tabanlı Staj 45 ile 90 gün arasıdır ve komisyon uygun görürse zorunlu stajın yerine sayılabilir.
+myo_staj#madde-10:
+  - Staja devam zorunludur; geçerli mazeretle gidemediğin günleri telafi edersin ve bu günler staj süresinin %10'unu geçemez.
+  - Kurallara uymazsan işletme stajına son verir ve stajını yenilemek zorunda kalırsın.
+myo_staj#madde-11:
+  - Staj yerini bulmak senin sorumluluğundadır; bulduğun yerde staja başlamadan önce program staj koordinatörünün ve staj komisyonunun onayı gerekir.
+  - Değişim programıyla ya da kendi bulduğun bir kurumda yurt dışında staj yapabilirsin; kendi isteğinle yurt dışında yaptığın stajda sigorta primi ödenmez.
+myo_staj#madde-12:
+  - Staja başlamadan en az 15 gün önce staj başvuru ve kabul formunu doldurup başvurursun.
+myo_staj#madde-13:
+  - Staja başladıktan sonra bölüm staj komisyonunun onayı olmadan staj yerini değiştiremezsin.
+  - İşletmede grev, yangın, iflas, afet gibi bir durum olursa komisyon onayıyla stajını başka bir yerde tamamlayabilirsin.
+myo_staj#madde-14:
+  - Staj belgelerini işletmeye teslim edip stajını yaparsın; kurum kaşesi ve onayı olmayan değerlendirme formları dikkate alınmaz.
+  - Staj raporunu, stajın bittiği dönemden sonraki ilk yarıyılın ilk 15 günü içinde Öğrenci İşleri'ne teslim edersin; geç teslim edilen evrak değerlendirilmez.
+myo_staj#madde-15:
+  - Önlisans programlarında staj dersi 4. yarıyılda zorunlu, 5 AKTS'lik bir derstir.
+  - Stajını yapacağın yarıyılda staj ders gruplarından birine kaydolup staj raporunu belirlenen tarihe kadar sorumlu öğretim elemanına teslim edersin.
+myo_staj#madde-16:
+  - İsteğe bağlı staj 5 AKTS'lik seçmeli bir derstir; en erken 2. yarıyılın sonunda, yaz döneminde yapılır.
+  - Yaz okuluna kayıtlıysan ya da genel not ortalaman 2,00'ın altındaysa isteğe bağlı staja başvuramazsın.
+myo_staj#madde-17:
+  - Stajının başarılı sayılması için işletmenin değerlendirme formunda 5 üzerinden en az 3 alman gerekir.
+  - Staj değerlendirme kararına, ilanından sonraki 5 iş günü içinde yüksekokul müdürlüğüne yazılı itiraz edebilirsin.
+  - Bütün derslerini geçsen de stajını yapmadıysan ya da stajın başarısızsa önlisans diploman verilmez; stajı başarana kadar tekrarlarsın.
+  - İsteğe bağlı staj transkripte YT notuyla işlenir ama mezuniyet kredisine sayılmaz.
+myo_staj#madde-18:
+  - Yüksekokul müdürü işletmede mesleki eğitimin (İME) planlanmasından ve öğrencilerin sigortalanmasından sorumludur.
+myo_staj#madde-19:
+  - İşletmede mesleki eğitim birim komisyonu, İME'nin uygulama esaslarını belirler, işletmelerin uygunluğuna karar verir ve kontenjanları duyurur.
+myo_staj#madde-20:
+  - Her İME grubu için bir İME sorumlu öğretim elemanı görevlendirilir; işletmeleri ziyaret edip denetler ve değerlendirme formlarını toplar.
+myo_staj#madde-21:
+  - İşletme, İME öğrencisine 3308 sayılı Kanun'a göre ücret öder ve koruyucu ekipman, yemek, iş elbisesi ve servis gibi ihtiyaçlarını karşılar.
+myo_staj#madde-22:
+  - İşletme mesleki eğitim sorumlusu, İME'nin iş sağlığı ve güvenliği kurallarına uygun ortamda yapılmasını sağlar.
+myo_staj#madde-23:
+  - Eğitici personel, işletmede senin eğitiminden sorumlu kişidir; İME dosyanı ve devamını takip eder ve değerlendirme formunu doldurur.
+myo_staj#madde-24:
+  - İME süresince işletmenin çalışma kurallarına ve mevzuata uymak zorundasın; aykırı davranırsan İME'n başarısız sayılır.
+myo_staj#madde-25:
+  - İşletmede mesleki eğitimin amacı, alanınla ilgili bir işletmeyi yakından tanıman ve okulda öğrendiklerini işletmede pekiştirmendir.
+myo_staj#madde-26:
+  - İşletmede mesleki eğitim (İME) 3. ve 4. yarıyılda, haftada aralıksız en az 3 gün yapılır; fazla mesai ve gece vardiyası yaptırılamaz.
+  - Ders planında İşletmede Mesleki Eğitim I ve II dersleri 15'er AKTS'dir ve mezuniyet kredisine sayılır; İME kapsamındaki derslerin toplamı en fazla 30 AKTS'dir.
+myo_staj#madde-27:
+  - İşletmede mesleki eğitimde (İME) devamsızlık hakkın sürenin %20'si kadardır; en az %80'ine katılman gerekir ve toplam 3 gün izinsiz gitmezsen DZ notu alırsın.
+myo_staj#madde-28:
+  - İME'ye başladıktan sonraki ilk iki hafta içinde komisyon onayıyla işletmeni değiştirebilirsin.
+myo_staj#madde-29:
+  - İME'ye başvurmak için genel not ortalamanın en az 2,00 olması gerekir; işletmeler ve kontenjanlar yüksekokulca ilan edilir.
+  - İME I'i alıp başarısız olursan İME II'yi alamazsın; bunun yerine 4. yarıyılın mesleki seçmeli derslerini ve 5 AKTS staj dersini alırsın.
+  - İME'yi seçmezsen ya da ekle-sil haftasında vazgeçersen, o dönemin mesleki seçmeli derslerini (baharda ayrıca staj dersini) alırsın.
+  - İME I'i başardıysan İME II için dönem başlamadan en az 10 gün önce dilekçeyle başvurursun.
+myo_staj#madde-30:
+  - İME başvurusu ve süreci için gereken belgeler yüksekokulun internet sayfasında yayımlanır.
+myo_staj#madde-31:
+  - İME dosyanı derslerin bitiminden sonraki 5 gün içinde İME sorumlu öğretim elemanına teslim edersin.
+  - İME'den başarılı olmak için işletmenin ve öğretim elemanının notlarının ikisinin de 100 üzerinden en az 60 olması gerekir; İME notu bu iki notun ortalamasıdır.
+myo_staj#madde-32:
+  - Komisyon uygun görürse İME'yi yurt dışında yapabilirsin; yurt dışı sigorta primleri üniversite tarafından ödenmez.
+myo_staj#madde-33:
+  - Yatay geçişle geldiysen ya da çift anadal yapıyorsan önceki stajının sayılması için ilk kayıt döneminin ikinci haftası sonuna kadar başvurursun.
+  - İlgili sektörde SGK'lı olarak zorunlu staj süresi kadar çalıştıysan, belgeleyip yönetim kurulu kararıyla stajdan muaf olabilirsin.
+myo_staj#madde-34:
+  - Staj, isteğe bağlı staj ve İME süresince iş kazası ve meslek hastalığı sigortan üniversite tarafından yapılır.
+myo_staj#madde-35:
+  - İME öğrencisine işletme ücret öder; staj ve isteğe bağlı stajda üniversite ücret ödemez.
+myo_staj#madde-36:
+  - Staj ve İME sırasında gece vardiyasında çalıştırılamazsın.
+myo_staj#madde-37:
+  - Yönergede hüküm bulunmayan durumlarda ESTÜ Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği ile Uygulamalı Eğitimler Çerçeve Yönetmeliği uygulanır.
+myo_staj#madde-38:
+  - Bu yönergeyle 2020 tarihli Meslek Yüksekokulları Staj Yönergesi yürürlükten kalkmıştır.
+myo_staj#madde-39:
+  - Yönerge 2023-2024 akademik yılı başından itibaren yürürlüktedir.
+myo_staj#madde-40:
+  - Yönergeyi ESTÜ Rektörü yürütür.

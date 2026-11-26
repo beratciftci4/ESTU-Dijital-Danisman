@@ -58,7 +58,7 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
 - Kimya bölümünde staj zorunlu mu? (sıra: 4; ilk 3: kimya_ders_plani#bolum-V.YARIYIL, fen_staj#madde-11, fen_staj#madde-7)
 - Biyoloji bölümünde hazırlık okumak zorunlu mu? (sıra: 8; ilk 3: biyoloji_ders_plani#bolum-III.YARIYIL, biyoloji_program_bilgileri#bolum-İstihdam_Olanakları, biyoloji_program_bilgileri#bolum-Program_Profili)
-- Matematik bölümünde kaç AKTS ile mezun olunur? (sıra: 9; ilk 3: matematik_ders_plani#bolum-II.YARIYIL, matematik_ders_plani#bolum-I.YARIYIL, matematik_ders_plani#bolum-VI.YARIYIL)
+- Matematik bölümünde kaç AKTS ile mezun olunur? (sıra: 13; ilk 3: matematik_ders_plani#bolum-II.YARIYIL, matematik_ders_plani#bolum-I.YARIYIL, matematik_ders_plani#bolum-VI.YARIYIL)
 
 ## Mühendislik Fakültesi (tests/soru_seti_muhendislik.yaml, 9 bölüm)
 
@@ -68,14 +68,14 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 |---|---|---|---|---|
 | bm25 | 0.33 | 0.72 | 0.89 | 0.54 |
 | e5 | 0.50 | 0.67 | 0.72 | 0.62 |
-| hibrit | 0.61 | 0.78 | 0.89 | 0.73 |
+| hibrit | 0.61 | 0.78 | 0.89 | 0.72 |
 
 Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
 - Elektrik elektronik mühendisliğinde kaç tane staj var? (sıra: 20+; ilk 3: muh_staj#madde-10, muh_staj#madde-3, elektrik_elektronik_muh_program_bilgileri#bolum-Program_Profili)
 - Bilgisayar mühendisliğinde kaç AKTS mesleki seçmeli almalıyım? (sıra: 5; ilk 3: bilgisayar_muh_ders_plani#bolum-VI.YARIYIL, bilgisayar_muh_ders_plani#bolum-VIII.YARIYIL, bilgisayar_muh_ders_plani#bolum-VII.YARIYIL)
 - Çevre mühendisliğinde sosyal seçmeli kaç kredi? (sıra: 4; ilk 3: cevre_muh_ders_plani#bolum-VII.YARIYIL, cevre_muh_ders_plani#bolum-VIII.YARIYIL, cevre_muh_ders_plani#bolum-Mesleki_Seçmeli_Dersler)
-- Uçak mühendisliğinde kaç AKTS ile mezun olunur? (sıra: 9; ilk 3: ucak_muh_ders_plani#bolum-VII.YARIYIL, ucak_muh_ders_plani#bolum-VIII.YARIYIL, ucak_muh_program_bilgileri#bolum-İstihdam_Olanakları)
+- Uçak mühendisliğinde kaç AKTS ile mezun olunur? (sıra: 10; ilk 3: ucak_muh_ders_plani#bolum-VII.YARIYIL, ucak_muh_ders_plani#bolum-VIII.YARIYIL, ucak_muh_program_bilgileri#bolum-İstihdam_Olanakları)
 
 ## Bilgisayar ve Bilişim Bilimleri Fakültesi (tests/soru_seti_bbbf.yaml, 3 bölüm)
 
@@ -132,6 +132,21 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
 - Staj yapmak zorunda mıyım? (sıra: 14; ilk 3: spor_staj#madde-8, spor_staj#madde-15, spor_staj#madde-11)
+
+## Önlisans programları (tests/soru_seti_onlisans.yaml, 23 program)
+
+19 soru (17 cevaplı, 2 cevapsız). Ölçüler cevaplı sorular üzerinden.
+
+| Yöntem | hit@1 | hit@3 | hit@5 | MRR |
+|---|---|---|---|---|
+| bm25 | 0.41 | 0.71 | 0.76 | 0.56 |
+| e5 | 0.53 | 0.82 | 0.82 | 0.69 |
+| hibrit | 0.65 | 0.88 | 1.00 | 0.79 |
+
+Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
+
+- İME'ye başvurmak için not ortalaması şartı var mı? (sıra: 4; ilk 3: not_karsiliklari#bent-4, myo_staj#madde-31, yonetmelik#madde-19)
+- Birinci yarıyılın zorunlu dersleri neler? (sıra: 4; ilk 3: danismanlik#madde-10, yonetmelik#madde-8, yonetmelik#madde-19)
 
 ## Notlar
 

@@ -14,7 +14,8 @@ HIC = {"FF": 0, "YZ": 0, "DZ": 0, "EK": 0, "ÇK": 0}
 def test_kurallar_kaynakla_ayni():
     """Koddaki sayılar belgedeki sayılarla aynı olmalı, belge değişirse test patlasın."""
     md25 = PARCALAR[KAYNAK_MEZUNIYET]
-    assert f"lisans programında en az {GEREKEN_AKTS} AKTS" in md25
+    assert f"lisans programında en az {GEREKEN_AKTS['lisans']} AKTS" in md25
+    assert f"ön lisans programında en az {GEREKEN_AKTS['onlisans']} AKTS" in md25
     assert "ÇK, DZ, EK, FF ve YZ harf notu olmayan" in md25
     assert f"GNO’su en az {GEREKEN_GNO:.2f}".replace(".", ",") in md25
     gun, kaynak = staj_kurali("istatistik")
@@ -127,3 +128,14 @@ def test_spor_staji():
     # diğer üç bölümde belgeler net değil: engellemiyor ama "bölüme sor" diyor
     s = kontrol(240, 2.5, HIC, 0, program="rekreasyon")
     assert s["mezun_olabilir"] and any(x.get("belirsiz") for x in s["satirlar"])
+
+
+def test_onlisans():
+    from mezuniyet import duzey
+    assert duzey("lojistik") == "onlisans" and duzey("istatistik") == "lisans"
+    m9 = PARCALAR["myo_staj#madde-9"]
+    assert "en az 20 iş günü staj yapmak zorundadır" in m9
+    s = kontrol(120, 2.5, HIC, 20, program="bilgisayar_programciligi")
+    assert s["mezun_olabilir"] and any(x["ad"] == "En az 120 AKTS" for x in s["satirlar"])
+    assert not kontrol(110, 2.5, HIC, 20, program="lojistik")["mezun_olabilir"]
+    assert not kontrol(120, 2.5, HIC, 10, program="lojistik")["mezun_olabilir"]

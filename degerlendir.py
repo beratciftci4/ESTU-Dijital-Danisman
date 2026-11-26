@@ -20,6 +20,7 @@ DOGRULAMA_SET = KLASOR / "tests" / "soru_seti_dogrulama.yaml"
 KALIBRASYON = KLASOR / "tests" / "kalibrasyon_cevapsiz.yaml"
 CEVAPSIZ_DOGRULAMA = KLASOR / "tests" / "cevapsiz_dogrulama.yaml"
 MUFREDAT_SET = KLASOR / "tests" / "soru_seti_mufredat.yaml"
+ONLISANS_SET = KLASOR / "tests" / "soru_seti_onlisans.yaml"
 FEN_SET = KLASOR / "tests" / "soru_seti_fen.yaml"
 MUH_SET = KLASOR / "tests" / "soru_seti_muhendislik.yaml"
 BBBF_SET = KLASOR / "tests" / "soru_seti_bbbf.yaml"
@@ -151,6 +152,7 @@ def main():
     satirlar += tablo(arayici, sorulari_oku(HUBF_SET), "Havacılık ve Uzay Bilimleri Fakültesi (tests/soru_seti_hubf.yaml, 5 bölüm)")
     satirlar += tablo(arayici, sorulari_oku(MTF_SET), "Mimarlık ve Tasarım Fakültesi (tests/soru_seti_mtf.yaml, 4 bölüm)")
     satirlar += tablo(arayici, sorulari_oku(SPOR_SET), "Spor Bilimleri Fakültesi (tests/soru_seti_spor.yaml, 4 bölüm)")
+    satirlar += tablo(arayici, sorulari_oku(ONLISANS_SET), "Önlisans programları (tests/soru_seti_onlisans.yaml, 23 program)")
     satirlar += ["## Notlar", "",
                  "- Eş anlamlı listesi (\"üst sınır\" -> \"en çok\" gibi) ve soru kalıbı listesi ana test "
                  "setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.",
@@ -208,6 +210,7 @@ def main():
               ("Havacılık ve Uzay Bilimleri Fakültesi", sorulari_oku(HUBF_SET)),
               ("Mimarlık ve Tasarım Fakültesi", sorulari_oku(MTF_SET)),
               ("Spor Bilimleri Fakültesi", sorulari_oku(SPOR_SET)),
+              ("Önlisans programları (meslek yüksekokulları)", sorulari_oku(ONLISANS_SET)),
               ("Yıllık ders planları ve tek ders soruları", sorulari_oku(MUFREDAT_SET)),
               ("Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)",
                [dict(s, cevapsiz=True) for s in sorulari_oku(CEVAPSIZ_DOGRULAMA)])]

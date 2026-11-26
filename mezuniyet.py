@@ -5,13 +5,13 @@
 kaynak belgelerdeki mezuniyet kurallarıyla karşılaştırır. Her satırda kuralın geçtiği madde var.
 
 Kurallar:
-  - Yönetmelik md. 25/1: lisansta en az 240 AKTS, ÇK/DZ/EK/FF/YZ notu yok, GNO en az 2,00
+  - Yönetmelik md. 25/1: önlisansta en az 120, lisansta en az 240 AKTS, ÇK/DZ/EK/FF/YZ notu yok, GNO en az 2,00
   - Fakültenin staj yönergesi: zorunlu staj süresi (programlar.yaml'da bölüm bölüm yazılı;
     Fen Fakültesi'nde Biyoloji, Fizik, İstatistik 20 iş günü, Kimya ve Matematik isteğe bağlı)
   - Tek Ders Sınavı Esasları 1. madde: tek dersten FF/YZ kalan, mezun olabilecek durumdaki öğrenci
 """
 
-GEREKEN_AKTS = 240
+GEREKEN_AKTS = {"lisans": 240, "onlisans": 120}
 GEREKEN_GNO = 2.00
 ENGEL_NOTLAR = ["FF", "YZ", "DZ", "EK", "ÇK"]   # md. 25'te sayılan, mezuniyete engel notlar
 
@@ -42,14 +42,23 @@ def staj_birimi(program):
     return p.get("staj_birimi") or fakulteler[p["fakulte"]]["staj_birimi"]
 
 
+def duzey(program):
+    """"lisans" ya da "onlisans" (meslek yüksekokulları). Fakülteden geliyor, programda da yazılabilir."""
+    from belge_kontrol import programlari_oku
+    fakulteler, programlar = programlari_oku()
+    p = next(x for x in programlar if x["id"] == program)
+    return p.get("duzey") or fakulteler[p["fakulte"]].get("duzey", "lisans")
+
+
 def kontrol(akts, gno, notlar, staj_gunu, program="istatistik"):
     """notlar: {"FF": 1, "YZ": 0, ...} -> kalan ders sayıları.
     Dönen liste: [{"ad", "tamam", "aciklama", "kaynak"}, ...] ve varsa "oneriler"."""
     satirlar = []
 
-    eksik_akts = max(0, GEREKEN_AKTS - akts)
+    gereken_akts = GEREKEN_AKTS[duzey(program)]
+    eksik_akts = max(0, gereken_akts - akts)
     satirlar.append({
-        "ad": "En az 240 AKTS",
+        "ad": f"En az {gereken_akts} AKTS",
         "tamam": eksik_akts == 0,
         "aciklama": f"{akts:g} AKTS tamamlanmış." + (f" {eksik_akts:g} AKTS eksik." if eksik_akts else ""),
         "kaynak": KAYNAK_MEZUNIYET,

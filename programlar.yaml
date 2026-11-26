@@ -6,6 +6,7 @@
 #   staj_notu : staj süresinin nereden geldiği
 #   staj_ek   : kısa cevaba eklenecek not (isteğe bağlı)
 #   staj_suresi_belirsiz: true ise staj zorunlu ama süresi belgelerde yazmıyor (staj_gunu null)
+#   duzey     : fakültede "onlisans" (meslek yüksekokulları) ya da yazılmazsa "lisans"
 #   staj_cumlesi: kısa cevapta kullanılacak, elle yazılmış staj cümlesi (isteğe bağlı)
 #   staj_durumu_belirsiz: true ise belgeler stajın zorunlu olup olmadığını netleştirmiyor (staj_gunu null)
 
@@ -40,6 +41,27 @@ fakulteler:
     staj_maddesi: spor_staj#madde-8     # toplam staj en az 40 gün
     staj_listesi: spor_staj#madde-8
     staj_birimi: gün
+  btmyo:
+    ad: Bilişim Teknolojileri Meslek Yüksekokulu
+    duzey: onlisans
+    staj_belgesi: myo_staj
+    staj_maddesi: myo_staj#madde-9      # en az 20 iş günü, bütün önlisans programları
+    staj_listesi: myo_staj#madde-9
+    staj_birimi: iş günü
+  pmyo:
+    ad: Porsuk Meslek Yüksekokulu
+    duzey: onlisans
+    staj_belgesi: myo_staj
+    staj_maddesi: myo_staj#madde-9      # en az 20 iş günü, bütün önlisans programları
+    staj_listesi: myo_staj#madde-9
+    staj_birimi: iş günü
+  umyo:
+    ad: Ulaştırma Meslek Yüksekokulu
+    duzey: onlisans
+    staj_belgesi: myo_staj
+    staj_maddesi: myo_staj#madde-9      # en az 20 iş günü, bütün önlisans programları
+    staj_listesi: myo_staj#madde-9
+    staj_birimi: iş günü
   muhendislik:
     ad: Mühendislik Fakültesi
     staj_belgesi: muh_staj
@@ -276,3 +298,166 @@ programlar:
     staj_kaynagi: spor_staj#madde-8
     staj_notu: Yönerge md. 3 bölümü sayıyor ve md. 8 en az 40 gün diyor; güncel ders planında staj dersi yok
     staj_ek: Fakülte staj yönergesi bu bölüm için en az 40 gün staj öngörüyor, ama güncel ders planında staj dersi yok; staj yapman gerekip gerekmediğini bölümüne sor.
+  # Önlisans (meslek yüksekokulları): ortak MYO staj yönergesi md. 9 en az 20 iş günü; staj dersi
+  # IV. yarıyılda zorunlu (md. 15). Bazı programlarda 3.-4. yarıyılda İşletmede Mesleki Eğitim seçilebiliyor.
+  - id: bilgisayar_programciligi
+    ad: Bilgisayar Programcılığı
+    fakulte: btmyo
+    bologna: 529
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin. İstersen 3. ve 4. yarıyılda İşletmede Mesleki Eğitim (İME) de seçebilirsin.
+  - id: mekatronik
+    ad: Mekatronik
+    fakulte: btmyo
+    bologna: 539
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin. İstersen 3. ve 4. yarıyılda İşletmede Mesleki Eğitim (İME) de seçebilirsin.
+  - id: iha_operatorlugu
+    ad: İnsansız Hava Aracı Teknolojisi ve Operatörlüğü
+    fakulte: btmyo
+    bologna: 2041
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin. İstersen 3. ve 4. yarıyılda İşletmede Mesleki Eğitim (İME) de seçebilirsin.
+  - id: robotik_yapay_zeka
+    ad: Robotik ve Yapay Zeka
+    fakulte: btmyo
+    bologna: 2068
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: uzaktan_algilama_cbs
+    ad: Uzaktan Algılama ve Coğrafi Bilgi Sistemleri
+    fakulte: btmyo
+    bologna: 2086
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: bulut_bilisim
+    ad: Bulut Bilişim Operatörlüğü
+    fakulte: btmyo
+    bologna: 2067
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: siber_guvenlik_analistligi
+    ad: Siber Güvenlik Analistliği ve Operatörlüğü
+    fakulte: btmyo
+    bologna: 2083
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: oyun_gelistirme
+    ad: Oyun Geliştirme ve Programlama
+    fakulte: btmyo
+    bologna: 2069
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: elektrik_enerjisi
+    ad: Elektrik Enerjisi Üretim, İletim ve Dağıtımı
+    fakulte: pmyo
+    bologna: 1555
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin. İstersen 3. ve 4. yarıyılda İşletmede Mesleki Eğitim (İME) de seçebilirsin.
+  - id: hidrojen_enerji
+    ad: Hidrojen ve Enerji Depolama Teknikerliği
+    fakulte: pmyo
+    bologna: 2088
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: radyo_televizyon
+    ad: Radyo ve Televizyon Teknolojisi
+    fakulte: pmyo
+    bologna: 537
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin. İstersen 3. ve 4. yarıyılda İşletmede Mesleki Eğitim (İME) de seçebilirsin.
+  - id: basim_yayim
+    ad: Basım ve Yayım Teknolojileri
+    fakulte: pmyo
+    bologna: 526
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin. İstersen 3. ve 4. yarıyılda İşletmede Mesleki Eğitim (İME) de seçebilirsin.
+  - id: yapi_denetimi
+    ad: Yapı Denetimi
+    fakulte: pmyo
+    bologna: 1557
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: makine_resim
+    ad: Makine Resim ve Konstrüksiyonu
+    fakulte: pmyo
+    bologna: 1554
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin. İstersen 3. ve 4. yarıyılda İşletmede Mesleki Eğitim (İME) de seçebilirsin.
+  - id: grafik_tasarimi
+    ad: Grafik Tasarımı
+    fakulte: pmyo
+    bologna: 562
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: rayli_elektrik
+    ad: Raylı Sistemler Elektrik ve Elektronik
+    fakulte: umyo
+    bologna: 551
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: rayli_makine
+    ad: Raylı Sistemler Makine Teknolojisi
+    fakulte: umyo
+    bologna: 552
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: rayli_yol
+    ad: Raylı Sistemler Yol Teknolojisi
+    fakulte: umyo
+    bologna: 553
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: rayli_makinist
+    ad: Raylı Sistemler Makinistliği
+    fakulte: umyo
+    bologna: 554
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: kabin_hizmetleri
+    ad: Sivil Havacılık Kabin Hizmetleri
+    fakulte: umyo
+    bologna: 475
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: rayli_isletmecilik
+    ad: Raylı Sistemler İşletmeciliği
+    fakulte: umyo
+    bologna: 557
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: ulastirma_trafik
+    ad: Ulaştırma ve Trafik Hizmetleri
+    fakulte: umyo
+    bologna: 558
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.
+  - id: lojistik
+    ad: Lojistik
+    fakulte: umyo
+    bologna: 470
+    staj_gunu: 20
+    staj_notu: MYO staj yönergesi md. 9 ve md. 15 (staj dersi IV. yarıyılda zorunlu, 5 AKTS)
+    staj_ek: Staj dersi 4. yarıyılda zorunlu (5 AKTS); stajına 2. yarıyılın sonundan itibaren başlayabilirsin.

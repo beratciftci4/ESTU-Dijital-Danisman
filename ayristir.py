@@ -51,6 +51,7 @@ BICIM = {
     "mtf_staj": "madde",
     "mtf_proje": "madde",
     "spor_staj": "madde",
+    "myo_staj": "madde",
     "danismanlik": "madde",
     "proje_temelli_staj": "madde",
     "hakli_nedenler": "numara",
@@ -406,7 +407,8 @@ def html_ayristir(belge):
                         satirlar.append((None, temizle(s)))
             # bazı bölüm sayfalarında aynı paragraf html'de iki kere geçiyor
             satirlar = list(dict.fromkeys(satirlar))
-            parcalar.append(parca(belge, "bolum", ad, ad, "Program Hakkında", satirlar))
+            if satirlar:      # yeni açılan bazı programlarda bölüm başlığı var ama içi boş
+                parcalar.append(parca(belge, "bolum", ad, ad, "Program Hakkında", satirlar))
     return parcalar
 
 

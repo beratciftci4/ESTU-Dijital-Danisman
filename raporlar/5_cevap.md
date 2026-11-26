@@ -23,6 +23,7 @@ Eşikler: skor >= 0.868 ise "bulundu", < 0.85 ise "bulamadım", arası "belirsiz
 | Havacılık ve Uzay Bilimleri Fakültesi | 14/18 | 1/2 | 0/2 | 17/17 | 17/17 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 | 1/2 | 16/18 | 15/18 |
 | Spor Bilimleri Fakültesi | 13/16 | 2/2 | 1/2 | 14/15 | 14/15 |
+| Önlisans programları (meslek yüksekokulları) | 15/17 | 2/2 | 2/2 | 15/16 | 15/16 |
 | Yıllık ders planları ve tek ders soruları | 11/15 | - | - | 13/15 | 12/15 |
 | Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı) | - | 36/40 | 25/40 | - | - |
 
@@ -49,6 +50,8 @@ Eşikler: skor >= 0.868 ise "bulundu", < 0.85 ise "bulamadım", arası "belirsiz
 - [Spor Bilimleri Fakültesi] Staj zorunlu mu? -> bulundu (benzerlik 0.892)
 - [Spor Bilimleri Fakültesi] Kaç gün staj yapmam gerekiyor? -> bulundu (benzerlik 0.9)
 - [Spor Bilimleri Fakültesi] Öğretmenlik uygulaması hangi dönemde? -> bulunamadi (benzerlik 0.846)
+- [Önlisans programları (meslek yüksekokulları)] İşletmede mesleki eğitimde devamsızlık hakkım ne kadar? -> bulundu (benzerlik 0.911)
+- [Önlisans programları (meslek yüksekokulları)] Dikey geçiş yapabilir miyim? -> bulunamadi (benzerlik 0.85)
 - [Yıllık ders planları ve tek ders soruları] Birinci yarıyılın zorunlu dersleri neler? -> bulundu (benzerlik 0.879)
 - [Yıllık ders planları ve tek ders soruları] Mobil programlama dersi kaldırıldı mı? -> bulundu (benzerlik 0.873)
 - [Yıllık ders planları ve tek ders soruları] Hangi seçmeli dersler yeni eklendi? -> bulundu (benzerlik 0.869)

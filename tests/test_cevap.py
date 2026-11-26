@@ -225,3 +225,19 @@ def test_cevapsiz_dogrulama_seti(arayici):
     durumlar = [cevapla(s["soru"], arayici, program=s["program"])["durum"]
                 for s in sorulari_oku(CEVAPSIZ_DOGRULAMA)]
     assert durumlar.count("bulunamadi") >= 22 and durumlar.count("bulundu") <= 8
+
+
+def test_onlisans_programlari(arayici):
+    from degerlendir import ONLISANS_SET
+    s = cevap_olc(arayici, sorulari_oku(ONLISANS_SET))
+    assert s["cevapli_dogru"] >= 14 and s["ozet_dogru"] >= 14 and s["cevapsiz_dogru"] == 2
+
+
+def test_myo_yonergesi_lisansa_karismiyor(arayici):
+    # MYO staj yönergesi "duzey:onlisans" kapsamında; lisans bölümünde aramaya girmemeli
+    idler = {arayici.parcalar[i]["belge_id"] for i in arayici.alt_kume("istatistik")[0]}
+    assert "myo_staj" not in idler
+    assert "myo_staj" in {arayici.parcalar[i]["belge_id"] for i in arayici.alt_kume("lojistik")[0]}
+    from cevap import cevapla
+    c = cevapla("Kaç gün staj yapmam gerekiyor?", arayici, program="lojistik")
+    assert "Lojistik programında" in c["ozet"]["metin"] and "20 iş günü" in c["ozet"]["metin"]

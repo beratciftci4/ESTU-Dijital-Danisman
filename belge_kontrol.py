@@ -53,8 +53,16 @@ def bolum_ve_yil(program):
 
 def gecerli_kapsamlar():
     fakulteler, programlar = programlari_oku()
-    return ({"genel"} | {f"fakulte:{f}" for f in fakulteler}
+    return ({"genel", "duzey:lisans", "duzey:onlisans"} | {f"fakulte:{f}" for f in fakulteler}
             | {f"program:{p['id']}" for p in programlar})
+
+
+def program_kapsamlari(program, fakulteler, programlar):
+    """Bir bölüm için geçerli kapsamlar: kendi programı, fakültesi ve düzeyi (lisans/önlisans).
+    "duzey:onlisans" bütün meslek yüksekokullarının ortak belgeleri için (MYO staj yönergesi)."""
+    p = next(x for x in programlar if x["id"] == program)
+    duzey = p.get("duzey") or fakulteler[p["fakulte"]].get("duzey", "lisans")
+    return {f"program:{program}", f"fakulte:{p['fakulte']}", f"duzey:{duzey}"}
 
 
 def hatalari_bul(belgeler):
@@ -86,7 +94,7 @@ def hatalari_bul(belgeler):
                 hatalar.append(f"{bid}: {alan} YYYY-AA-GG olmalı ({deger})")
 
         if b["kapsam"] not in kapsamlar:
-            hatalar.append(f"{bid}: kapsam genel, fakulte:<ad> ya da program:<ad> olmalı ({b['kapsam']})")
+            hatalar.append(f"{bid}: kapsam genel, duzey:<lisans|onlisans>, fakulte:<ad> ya da program:<ad> olmalı ({b['kapsam']})")
 
         if b["durum"] not in ("bekleniyor", "aktif"):
             hatalar.append(f"{bid}: durum bekleniyor ya da aktif olmalı")

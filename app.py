@@ -282,8 +282,11 @@ def ornek_sorular(program):
     sorular = list(ORNEK_SORULAR)
     if program:
         sorular.insert(1, "Birinci yarıyılın zorunlu dersleri neler?")
+        sorular.insert(2, "Eğitim dili nedir?")
         if program in ONLISANS:
-            sorular.append("İşletmede mesleki eğitim nedir?")
+            sorular += ["Dikey geçiş yapabilir miyim?", "İşletmede mesleki eğitim nedir?"]
+        else:
+            sorular.append("Mezun olunca nerelerde çalışabilirim?")
     return sorular
 
 

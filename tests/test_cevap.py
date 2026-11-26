@@ -7,7 +7,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from arama import Arayici
-from cevap import atif, birimlere_bol, cevapla, gecerlilik
+from cevap import ONLISANS, atif, birimlere_bol, cevapla, gecerlilik
 from degerlendir import AYRIK_SET, DOGRULAMA_SET, KALIBRASYON, cevap_olc, sorulari_oku
 
 
@@ -294,3 +294,13 @@ def test_program_bolumu_niyetleri(arayici):
     assert sorulan_program_bolumu("Mezunlar ortalama kaç maaş alıyor?", "istatistik") is None
     c = cevapla("Mezun olunca nerelerde çalışabilirim?", arayici, program="istatistik")
     assert c["durum"] == "bulundu" and "banka" in c["ozet"]["metin"]
+
+
+def test_bolume_ozel_ornek_sorular_butun_programlarda(arayici):
+    # arayüzdeki bölüme özel örnek soruların hepsi her programda net cevaplı olmalı
+    from belge_kontrol import programlari_oku
+    for p in programlari_oku()[1]:
+        sorular = ["Eğitim dili nedir?"]
+        sorular.append("Dikey geçiş yapabilir miyim?" if p["id"] in ONLISANS else "Mezun olunca nerelerde çalışabilirim?")
+        for s in sorular:
+            assert cevapla(s, arayici, program=p["id"])["durum"] == "bulundu", (p["id"], s)

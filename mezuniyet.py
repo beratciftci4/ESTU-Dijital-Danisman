@@ -132,3 +132,39 @@ def kontrol(akts, gno, notlar, staj_gunu, program="istatistik"):
         })
 
     return {"mezun_olabilir": all(s["tamam"] for s in satirlar), "satirlar": satirlar, "oneriler": oneriler}
+
+
+# Yönetmelik md. 18/4: harf notları ve katsayıları. md. 8: ders kredileri AKTS kredisidir.
+HARF_KATSAYI = {"AA": 4.00, "AB": 3.70, "BA": 3.30, "BB": 3.00, "BC": 2.70, "CB": 2.30,
+                "CC": 2.00, "CD": 1.70, "DC": 1.30, "DD": 1.00, "FF": 0.00,
+                "DZ": 0.00}   # md. 18/5-c: DZ, FF ile eş değer
+KAYNAK_KATSAYI = "yonetmelik#madde-18"
+KAYNAK_ORTALAMA = "yonetmelik#madde-19"
+
+
+def not_ortalamasi(dersler, onceki_gno=None, onceki_akts=0.0):
+    """md. 19/1: ortalama = sum(AKTS x katsayı) / sum(AKTS).
+    dersler: [{"akts", "not", "eski_not"(isteğe bağlı)}]. Katsayısı olmayan notlar (YT, YZ, EK...)
+    ortalamaya girmez. eski_not: tekrar edilen dersin önceki notu; md. 19/3'e göre GNO'da
+    son not esas alındığı için eskisi çıkarılır.
+    Dönen: {"dno", "donem_akts", "gno", "toplam_akts"}; hesaplanamayan değer None."""
+    pay, payda = 0.0, 0.0
+    for d in dersler:
+        if d.get("not") in HARF_KATSAYI and d.get("akts"):
+            pay += d["akts"] * HARF_KATSAYI[d["not"]]
+            payda += d["akts"]
+    dno = round(pay / payda, 2) if payda else None
+
+    gno = None
+    if onceki_gno is not None and onceki_akts:
+        g_pay = onceki_gno * onceki_akts + pay
+        g_payda = onceki_akts + payda
+        for d in dersler:
+            if d.get("eski_not") in HARF_KATSAYI and d.get("akts") and d.get("not") in HARF_KATSAYI:
+                g_pay -= d["akts"] * HARF_KATSAYI[d["eski_not"]]
+                g_payda -= d["akts"]
+        gno = round(g_pay / g_payda, 2) if g_payda > 0 else None
+        toplam = g_payda
+    else:
+        gno, toplam = dno, payda
+    return {"dno": dno, "donem_akts": payda, "gno": gno, "toplam_akts": toplam}

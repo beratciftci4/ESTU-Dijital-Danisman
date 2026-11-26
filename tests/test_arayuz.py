@@ -124,7 +124,7 @@ def test_ders_plani_sekmesi():
     at.query_params["plan"] = "2024"
     at.run()
     assert not at.exception
-    assert [t.label for t in at.tabs] == ["Soru sor", "Ders planı", "Mezuniyet kontrolü"]
+    assert [t.label for t in at.tabs] == ["Soru sor", "Ders planı", "Not ortalaması", "Mezuniyet kontrolü"]
     ilk = at.dataframe[0].value
     assert ilk.iloc[0]["Kod"] == "EMAT113" and ilk["AKTS"].sum() + 0 > 20
 
@@ -147,3 +147,13 @@ def test_ders_planinda_arama():
     assert not at.exception
     tablo = at.dataframe[0].value
     assert "İST333" in set(tablo["Kod"]) and "5. yarıyıl (zorunlu)" in set(tablo["Yer"])
+
+
+def test_not_ortalamasi_sekmesi():
+    at = AppTest.from_file(str(KLASOR / "app.py"), default_timeout=120)
+    at.query_params["bolum"] = "lojistik"
+    at.run()
+    sb = at.selectbox(key="ortalama_doldur")
+    assert sb.options[0] == "Boş tablo" and "4. yarıyıl zorunluları" in sb.options
+    sb.select("1. yarıyıl zorunluları").run()
+    assert not at.exception

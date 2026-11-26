@@ -58,7 +58,7 @@ from arama import Arayici
 from belge_kontrol import KLASOR, ders_plani_mi, program_kapsamlari, programlari_oku
 from indeks import turkce_kucuk
 from cevap import ONLISANS, atif, cevapla, gecerlilik, tarih
-from mezuniyet import ENGEL_NOTLAR, kontrol, staj_birimi
+from mezuniyet import ENGEL_NOTLAR, HARF_KATSAYI, KAYNAK_KATSAYI, KAYNAK_ORTALAMA, kontrol, not_ortalamasi, staj_birimi
 
 yuklenme_zamanini_kaydet()
 
@@ -339,6 +339,20 @@ def soru_sekmesi(program, plan_yili=None):
 ROMA_SIRA = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]
 
 
+def plan_tablosu(p):
+    """Ders planı parçasındaki tabloyu satır listesine çevirir; ikinci değer toplam satırları."""
+    satirlar = []
+    ekler = []
+    for s in p["metin"].split("\n"):
+        h = [x.strip() for x in s.split("|")]
+        if len(h) == 5 and h[0] != "Ders Kodu":
+            # telefonda dar ekranda önemli sütunlar solda görünsün
+            satirlar.append({"Ders": h[1], "AKTS": float(h[4]), "Kod": h[0], "Dil": h[2], "T+U": h[3]})
+        elif len(h) == 2:
+            ekler.append(f"{h[0]}: {float(h[1]):g} AKTS".replace(".", ","))
+    return satirlar, ekler
+
+
 def ders_plani_sekmesi(program, plan_yili=None):
     """Seçili bölümün ders planı yarıyıl yarıyıl tablo olarak (arama yapmadan, doğrudan belgeden)."""
     if not program:
@@ -354,18 +368,6 @@ def ders_plani_sekmesi(program, plan_yili=None):
     st.caption(f"Kaynak: [{belge['ad']}]({belge['url']}) ({kaynak}, erişim "
                f"{tarih(str(belge['indirme_tarihi']))}). Soru sormadan planın tamamına buradan bakabilirsin.")
 
-    def tablo(p):
-        satirlar = []
-        ekler = []
-        for s in p["metin"].split("\n"):
-            h = [x.strip() for x in s.split("|")]
-            if len(h) == 5 and h[0] != "Ders Kodu":
-                # telefonda dar ekranda önemli sütunlar solda görünsün
-                satirlar.append({"Ders": h[1], "AKTS": float(h[4]), "Kod": h[0], "Dil": h[2], "T+U": h[3]})
-            elif len(h) == 2:
-                ekler.append(f"{h[0]}: {float(h[1]):g} AKTS".replace(".", ","))
-        return satirlar, ekler
-
     yariyillar = sorted((p for p in parcalar if p["no"].endswith(".YARIYIL")),
                         key=lambda p: ROMA_SIRA.index(p["no"].split(".")[0]))
 
@@ -374,7 +376,7 @@ def ders_plani_sekmesi(program, plan_yili=None):
         a = turkce_kucuk(aranan.strip())
         bulunan = []
         for p in parcalar:
-            satirlar, _ = tablo(p)
+            satirlar, _ = plan_tablosu(p)
             if p["no"].endswith(".YARIYIL"):
                 no = ROMA_SIRA.index(p["no"].split(".")[0]) + 1
                 yer = f"{no}. yarıyıl (zorunlu)"
@@ -388,7 +390,7 @@ def ders_plani_sekmesi(program, plan_yili=None):
             st.caption("Bu planda böyle bir ders yok.")
         return
     for p in yariyillar:
-        satirlar, ekler = tablo(p)
+        satirlar, ekler = plan_tablosu(p)
         no = ROMA_SIRA.index(p["no"].split(".")[0]) + 1
         st.markdown(f"**{no}. yarıyıl** ({(no + 1) // 2}. sınıf {'güz' if no % 2 else 'bahar'})")
         st.dataframe(satirlar, hide_index=True, width="stretch")
@@ -397,7 +399,7 @@ def ders_plani_sekmesi(program, plan_yili=None):
     for p in parcalar:
         if p["no"].endswith(".YARIYIL"):
             continue
-        satirlar, _ = tablo(p)
+        satirlar, _ = plan_tablosu(p)
         with st.expander(f"{p['no']} ({len(satirlar)} ders)"):
             st.dataframe(satirlar, hide_index=True, width="stretch")
 
@@ -460,6 +462,64 @@ def mezuniyet_sekmesi(program):
                "bunun için akademik danışmanınızla transkriptinizi birlikte inceleyin.")
 
 
+def ortalama_sekmesi(program, plan_yili=None):
+    """Dönem notlarından DNO ve yeni GNO (yönetmelik md. 18 katsayıları, md. 19 formülü)."""
+    st.caption("Bu dönemki derslerini ve beklediğin harf notlarını gir; dönem ortalamasını ve "
+               "GNO'nun ne olacağını yönetmelikteki formülle hesaplar. Bilgiler kaydedilmez.")
+    parcalar = parca_sozlugu(surum("indeks/parcalar.json"))
+    yariyillar = []
+    if program:
+        belge_id = f"{program}_ders_plani" + (f"_{plan_yili}" if plan_yili else "")
+        yariyillar = sorted((p for p in parcalar.values()
+                             if p["belge_id"] == belge_id and p["no"].endswith(".YARIYIL")),
+                            key=lambda p: ROMA_SIRA.index(p["no"].split(".")[0]))
+    secenekler = ["Boş tablo"] + [f"{ROMA_SIRA.index(p['no'].split('.')[0]) + 1}. yarıyıl zorunluları"
+                                  for p in yariyillar]
+    secim = st.selectbox("Tabloyu doldur", secenekler, key="ortalama_doldur",
+                         help="Bölüm seçiliyse ders planındaki bir yarıyılın zorunlu dersleri hazır gelir.")
+    if secim == "Boş tablo":
+        satirlar = [{"Ders": "", "AKTS": None, "Not": None, "Eski not": None} for _ in range(6)]
+    else:
+        p = yariyillar[secenekler.index(secim) - 1]
+        satirlar = [{"Ders": s["Ders"], "AKTS": s["AKTS"], "Not": None, "Eski not": None}
+                    for s in plan_tablosu(p)[0]]
+    notlar = list(HARF_KATSAYI) + ["YT", "YZ", "EK"]
+    tablo = st.data_editor(
+        satirlar, num_rows="dynamic", hide_index=True, width="stretch", key=f"ortalama_{secim}",
+        column_config={
+            "Ders": st.column_config.TextColumn("Ders"),
+            "AKTS": st.column_config.NumberColumn("AKTS", min_value=0.0, max_value=30.0, step=0.5),
+            "Not": st.column_config.SelectboxColumn("Not", options=notlar),
+            "Eski not": st.column_config.SelectboxColumn(
+                "Eski not", options=list(HARF_KATSAYI),
+                help="Dersi tekrar alıyorsan önceki notu. GNO'da son not esas alınır (md. 19/3)."),
+        })
+    sol, sag = st.columns(2)
+    onceki_gno = sol.number_input("Şu anki GNO (yoksa boş bırak)", 0.0, 4.0, None, 0.01,
+                                  format="%.2f", key="onceki_gno")
+    onceki_akts = sag.number_input("GNO'ya giren toplam AKTS", 0.0, 400.0, None, 0.5, key="onceki_akts",
+                                   help="Transkriptte not ortalamasına katılan derslerin AKTS toplamı.")
+
+    dersler = [{"akts": r.get("AKTS"), "not": r.get("Not"), "eski_not": r.get("Eski not")}
+               for r in tablo]
+    sonuc = not_ortalamasi(dersler, onceki_gno, onceki_akts or 0.0)
+    if sonuc["dno"] is None:
+        st.info("Ortalama için en az bir derse AKTS ve harf notu gir.")
+        return
+    virgul = lambda x: f"{x:.2f}".replace(".", ",")
+    k1, k2 = st.columns(2)
+    k1.metric("Dönem ortalaması (DNO)", virgul(sonuc["dno"]), help=f"{sonuc['donem_akts']:g} AKTS")
+    if onceki_gno is not None and onceki_akts:
+        fark = sonuc["gno"] - onceki_gno
+        k2.metric("Yeni GNO", virgul(sonuc["gno"]), delta=virgul(fark).replace("-", "−"))
+    if sonuc["gno"] is not None and sonuc["gno"] < 2.00:
+        st.markdown('<div class="durum belirsiz">GNO 2,00\'ın altında kalıyor; dönem sonunda akademik '
+                    'yetersizlik uyarısı yapılır (md. 19/6).</div>', unsafe_allow_html=True)
+    st.caption(f"Kaynak: {atif(parcalar[KAYNAK_KATSAYI])} (harf notu katsayıları) ve "
+               f"{atif(parcalar[KAYNAK_ORTALAMA])} (ortalama formülü). YT, YZ ve EK ortalamaya girmez; "
+               "DZ, FF ile eş değer sayıldı. Resmi ortalama öğrenci bilgi sisteminde hesaplanır.")
+
+
 def main():
     st.markdown(CSS, unsafe_allow_html=True)
     st.markdown('<div class="baslik">ESTÜ <span>Dijital Danışman</span></div>'
@@ -470,11 +530,14 @@ def main():
     program = bolum_sec()
     plan_yili = plan_yili_sec(program)
     kenar_cubugu(program, plan_yili)
-    soru_tab, plan_tab, mezuniyet_tab = st.tabs(["Soru sor", "Ders planı", "Mezuniyet kontrolü"])
+    soru_tab, plan_tab, ortalama_tab, mezuniyet_tab = st.tabs(
+        ["Soru sor", "Ders planı", "Not ortalaması", "Mezuniyet kontrolü"])
     with soru_tab:
         soru_sekmesi(program, plan_yili)
     with plan_tab:
         ders_plani_sekmesi(program, plan_yili)
+    with ortalama_tab:
+        ortalama_sekmesi(program, plan_yili)
     with mezuniyet_tab:
         mezuniyet_sekmesi(program)
 

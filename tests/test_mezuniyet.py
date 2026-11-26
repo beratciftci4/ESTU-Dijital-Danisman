@@ -139,3 +139,16 @@ def test_onlisans():
     assert s["mezun_olabilir"] and any(x["ad"] == "En az 120 AKTS" for x in s["satirlar"])
     assert not kontrol(110, 2.5, HIC, 20, program="lojistik")["mezun_olabilir"]
     assert not kontrol(120, 2.5, HIC, 10, program="lojistik")["mezun_olabilir"]
+
+
+def test_not_ortalamasi():
+    from mezuniyet import not_ortalamasi
+    r = not_ortalamasi([{"akts": 5, "not": "AA"}, {"akts": 5, "not": "CC"}, {"akts": 3, "not": "YT"}])
+    assert r["dno"] == 3.00 and r["donem_akts"] == 10
+    # 60 AKTS ile 2,50; bu dönem 10 AKTS AA -> (150 + 40) / 70
+    r = not_ortalamasi([{"akts": 10, "not": "AA"}], onceki_gno=2.5, onceki_akts=60)
+    assert r["gno"] == round(190 / 70, 2)
+    # tekrar: eskiden FF olan 5 AKTS'lik ders BB oldu -> eski ders paydadan da çıkar
+    r = not_ortalamasi([{"akts": 5, "not": "BB", "eski_not": "FF"}], onceki_gno=2.0, onceki_akts=60)
+    assert r["gno"] == round((120 + 15) / 60, 2)
+    assert not_ortalamasi([])["dno"] is None

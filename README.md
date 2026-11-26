@@ -27,6 +27,12 @@ yüksekokullarına ortak (`kapsam: duzey:onlisans`), ders planı ve program bilg
 görülebiliyor (yıllık plan seçiliyse o yılın planı), seçmeli havuzları açılır listelerde. Üstteki
 "Ders ara" kutusuyla bir dersin hangi yarıyılda ya da hangi seçmeli listede olduğu bulunuyor.
 
+**Not ortalaması sekmesi.** Dönemin derslerini ve beklenen harf notlarını girince dönem ortalaması (DNO)
+ve şu anki GNO ile AKTS'si verilirse yeni GNO hesaplanıyor. Katsayılar yönetmeliğin 18/4. fıkrasından,
+formül 19/1'den (ders kredisi AKTS, md. 8); tekrar edilen derste eski not çıkarılıyor (md. 19/3), YT/YZ/EK
+ortalamaya girmiyor. Bölüm seçiliyse bir yarıyılın zorunlu dersleri tabloya hazır geliyor
+(`mezuniyet.not_ortalamasi`).
+
 **Paylaşılabilir cevap.** Soru sorulunca adres çubuğuna `?bolum=...&soru=...` yazılıyor; bağlantıyı
 açan kişide aynı soru kendiliğinden cevaplanıyor.
 

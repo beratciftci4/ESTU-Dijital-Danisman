@@ -32,6 +32,11 @@ görülebiliyor (yıllık plan seçiliyse o yılın planı), seçmeli havuzları
 cevap o ifade; yanında ders planının Dil sütunundan sayılan "36 zorunlu dersin 7'si İngilizce" bilgisi var.
 Tanıtımda yazmıyorsa oran ders planından hesaplanıyor (`dil_cumlesi`).
 
+**Ders adıyla sorular.** "Regresyon analizi hangi dönemde?", "İST333 kaç AKTS?" gibi seçili bölümün
+planındaki bir dersi adıyla ya da koduyla soran sorularda dersin kendi cümlesi doğrudan cevap oluyor
+(`sorulan_ders_cumleleri`: ders adının ilk iki kelime kökü soruda geçmeli ve soru dönem, AKTS ya da
+zorunluluk sormalı; staj dersi hariç, onun kendi kuralı var).
+
 **Not ortalaması sekmesi.** Dönemin derslerini ve beklenen harf notlarını girince dönem ortalaması (DNO)
 ve şu anki GNO ile AKTS'si verilirse yeni GNO hesaplanıyor. Katsayılar yönetmeliğin 18/4. fıkrasından,
 formül 19/1'den (ders kredisi AKTS, md. 8); tekrar edilen derste eski not çıkarılıyor (md. 19/3), YT/YZ/EK
@@ -199,7 +204,7 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 2/2 |
 | Havacılık ve Uzay Bilimleri Fakültesi | 15/18 | 1/2 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 |
-| Spor Bilimleri Fakültesi | 13/16 | 2/2 |
+| Spor Bilimleri Fakültesi | 14/16 | 2/2 |
 | Önlisans programları | 15/17 | 2/2 |
 | Yıllık ders planları ve tek ders soruları | 11/15 | |
 | Cevapsız doğrulama (40 soru, eşik seçilirken bakılmadı) | | 36/40 |

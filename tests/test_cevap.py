@@ -274,3 +274,14 @@ def test_egitim_dili(arayici):
     assert "İngilizce" in c["ozet"]["cumleler"][0]
     c = cevapla("Öğretim dili ne?", arayici, program="lojistik")
     assert "Türkçe" in c["ozet"]["cumleler"][0]
+
+
+def test_ders_adiyla_soru(arayici):
+    from cevap import sorulan_ders_cumleleri
+    assert sorulan_ders_cumleleri("İST333 kaç AKTS?", "istatistik")
+    assert not sorulan_ders_cumleleri("Staj hangi dönemde yapılır?", "istatistik")
+    assert not sorulan_ders_cumleleri("Matematik dersinden kalırsam ne olur?", "istatistik")
+    c = cevapla("Regresyon analizi hangi dönemde?", arayici, program="istatistik")
+    assert c["durum"] == "bulundu" and "5. yarıyıl" in c["ozet"]["metin"]
+    c = cevapla("Öğretmenlik uygulaması hangi dönemde?", arayici, program="beden_egitimi")
+    assert c["durum"] == "bulundu" and "Öğretmenlik Uygulaması" in c["ozet"]["metin"]

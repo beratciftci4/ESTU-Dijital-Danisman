@@ -533,6 +533,41 @@ def dil_parcasi(program):
     return f"{bolum}_ders_plani{f'_{yil}' if yil else ''}#bolum-I.YARIYIL"
 
 
+DERS_SORUSU = re.compile(r"hangi (dönem|yarıyıl|sınıf|yıl)|kaçıncı|kaç akts|akts(si)? kaç|zorunlu m|seçmeli m|"
+                         r"dersi var m|hangi dilde|kodu ne")
+ROMA_KELIME = {"ii", "iii", "iv", "vi", "vii", "viii"}
+
+
+def sorulan_ders_cumleleri(soru, program):
+    """Soru seçili bölümün ders planındaki bir dersi adıyla (ya da koduyla) soruyorsa o dersin
+    tek ders cümleleri ("... 5. yarıyılın zorunlu dersidir; 6 AKTS, Türkçe."). Ders adının ilk iki
+    kelimesi (5 harflik kökleriyle) soruda geçmeli; soru da dönem/AKTS/zorunluluk sormalı.
+    Anlam benzerliği bu cümleleri doğru buluyor ama güven skoru eşiğin hemen altında kalıyordu."""
+    if program in (None, "genel"):
+        return []
+    s = turkce_kucuk(soru)
+    kodlar = {k.replace(" ", "") for k in re.findall(r"[a-zçğıöşü]{2,4} ?\d{3}", s)}
+    if not (DERS_SORUSU.search(s) or kodlar):
+        return []
+    bolum, yil = bolum_ve_yil(program)
+    plan = f"{bolum}_ders_plani{f'_{yil}' if yil else ''}#"
+    sorudaki = set(kelimeler(soru))
+    bulunan = []
+    for pid, i, c in ozet_cumleleri():
+        if not pid.startswith(plan):
+            continue
+        m = re.search(r"(?:nda|nde) ([^;]+?) \(([A-ZÇĞİÖŞÜ]{2,6}(?:SJ)?\d{3,4})\) ", c)
+        if not m:
+            continue
+        ad = re.sub(r"\([^()]*\)", " ", m.group(1))
+        if "SJ" in m.group(2) or turkce_kucuk(ad).startswith("staj"):
+            continue      # staj sorularının kendi kuralı var (yönerge maddesi + bölüm cümlesi)
+        kokler = [k for k in kelimeler(ad) if k not in ROMA_KELIME and not k.isdigit()]
+        if turkce_kucuk(m.group(2)) in kodlar or (kokler and set(kokler[:2]) <= sorudaki):
+            bulunan.append((pid, c))
+    return bulunan
+
+
 def staj_suresi_soruluyor(soru):
     """Soru stajın süresini ya da zorunlu olup olmadığını mı soruyor? (diğer staj konuları değil)"""
     s = turkce_kucuk(soru)
@@ -669,6 +704,10 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
         adaylar = [(10.0 if "eğitim dili" in a[3] else 9.99, *a[1:]) if a[4]["id"] == dil_parcasi(program)
                    and ("eğitim dili" in a[3] or "okutulur" in a[3]) else a for a in adaylar]
 
+    ders_cumleleri = {c for _, c in sorulan_ders_cumleleri(soru, program)}
+    if ders_cumleleri:
+        adaylar = [(a[0] + 1.0, *a[1:]) if a[3] in ders_cumleleri else a for a in adaylar]
+
     yariyil = sorulan_yariyil(soru)
     if yariyil:
         hedef = f"#bolum-{ROMA_RAKAM[yariyil - 1]}.YARIYIL"
@@ -764,9 +803,19 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI, program=None):
                 tum = tum[:1] + [(arayici.parcalar[sira[profil]], bilgi)] + [x for x in tum[1:] if x[0]["id"] != profil]
         else:
             dil_sorusu = False
+    # soru plandaki bir dersi adıyla soruyorsa dersin parçaları aday olsun (en çok 3)
+    ders_parcalari = list(dict.fromkeys(pid for pid, _ in sorulan_ders_cumleleri(soru, program)))[:3]
+    if ders_parcalari:
+        sira = {p["id"]: i for i, p in enumerate(arayici.parcalar)}
+        e5 = arayici.e5_skorlari(soru, program)
+        alt = list(arayici.alt_kume(program)[0])
+        onde = [(arayici.parcalar[sira[pid]], {"e5": float(e5[alt.index(sira[pid])]), "bm25": 0.0})
+                for pid in ders_parcalari if pid in sira and sira[pid] in alt]
+        ids = {p["id"] for p, _ in onde}
+        tum = onde + [x for x in tum if x[0]["id"] not in ids]
     sonuclar = tum[:k]
     en_iyi = guven_skoru(soru, sonuclar, arayici, program)
-    if dil_sorusu:
+    if dil_sorusu or ders_parcalari:
         en_iyi = max(en_iyi, ESIK_YUKSEK)
     if en_iyi >= ESIK_YUKSEK:
         durum = "bulundu"

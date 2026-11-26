@@ -192,3 +192,15 @@ def test_havacilik_bolumleri(arayici):
     from degerlendir import HUBF_SET
     hubf = cevap_olc(arayici, sorulari_oku(HUBF_SET))
     assert hubf["cevapli_dogru"] >= 12 and hubf["ozet_dogru"] >= 14
+
+
+def test_mimarlik_bolumleri(arayici):
+    from degerlendir import MTF_SET
+    mtf = cevap_olc(arayici, sorulari_oku(MTF_SET))
+    assert mtf["cevapli_dogru"] >= 15 and mtf["ozet_dogru"] >= 14
+
+
+def test_pts_cumlesi_normal_staji_ezmiyor(arayici):
+    from cevap import cevapla
+    c = cevapla("Stajda devamsızlık hakkım var mı?", arayici, program="mimarlik")
+    assert "PTS" not in c["ozet"]["metin"].split(".")[0]

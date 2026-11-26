@@ -105,6 +105,20 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
 - Staj yapmak zorunlu mu? (sıra: 20+; ilk 3: hubf_staj#madde-9, proje_temelli_staj#madde-18, proje_temelli_staj#madde-10)
 
+## Mimarlık ve Tasarım Fakültesi (tests/soru_seti_mtf.yaml, 4 bölüm)
+
+20 soru (18 cevaplı, 2 cevapsız). Ölçüler cevaplı sorular üzerinden.
+
+| Yöntem | hit@1 | hit@3 | hit@5 | MRR |
+|---|---|---|---|---|
+| bm25 | 0.39 | 0.78 | 0.83 | 0.62 |
+| e5 | 0.72 | 0.89 | 0.94 | 0.81 |
+| hibrit | 0.89 | 0.94 | 0.94 | 0.92 |
+
+Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
+
+- Fabrika stajı kaç gün? (sıra: 9; ilk 3: mtf_staj#madde-18, mtf_staj#madde-14, mtf_staj#madde-3)
+
 ## Notlar
 
 - Eş anlamlı listesi ("üst sınır" -> "en çok" gibi) ve soru kalıbı listesi ana test setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.

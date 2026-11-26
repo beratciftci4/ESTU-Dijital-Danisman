@@ -790,3 +790,143 @@
   kapsam: program:ucak_govde_motor
   durum: aktif
   not: null
+
+- id: mtf_staj
+  ad: Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım Fakültesi Staj Yönergesi
+  dosya: mtf_staj_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/Uploads/www/files/yonergeler/Eski%C5%9Fehir%20Teknik%20%C3%9Cniversitesi%20Mimarl%C4%B1k%20ve%20Tasar%C4%B1m%20Fak%C3%BCltesi%20Staj%20Y%C3%B6nergesi%2028_02_2023.pdf
+  yayim: 2017-08-11          # Senato 8/5 (ilk yayın)
+  yururluk: 2017-08-11
+  son_degisiklik: 2023-02-28 # Senato 5/2
+  dayanak: 2018 tarihli (eski) Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği md. 8
+  indirme_tarihi: 2026-11-26
+  sha256: 4dbff7988a282c824f6d9f4ee32b900b15fab61fcb82b1ec5c58a7d5cd6f338f
+  kapsam: fakulte:mtf
+  durum: aktif
+  not: Taranmış PDF; metin OCR ile okundu ve elle düzeltildi (mtf_staj_yonergesi.ocr.txt). Eklerde sadece form başlıkları var. Madde 24 belgede yok (23'ten 25'e atlıyor).
+
+- id: mtf_proje
+  ad: Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi
+  dosya: mtf_proje_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/Uploads/www/files/yonergeler/Eski%C5%9Fehir%20Teknik%20%C3%9Cniversitesi%20Mimarl%C4%B1k%20ve%20Tasar%C4%B1m%20Fak%C3%BCltesi%20Proje%20Dersleri%20Uygulama%20Y%C3%B6nergesi%2005_10_2021.pdf
+  yayim: 2021-10-05          # Senato 29/1
+  yururluk: 2021-10-05
+  son_degisiklik: null
+  dayanak: 2547 sayılı Yükseköğretim Kanunu, 2018 tarihli (eski) Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği
+  indirme_tarihi: 2026-11-26
+  sha256: 8245ad21d7903d12e3e44158ebf62c9a101d852725c3d1986666d5872d311737
+  kapsam: fakulte:mtf
+  durum: aktif
+  not: Taranmış PDF; metin OCR ile okundu ve elle düzeltildi (mtf_proje_yonergesi.ocr.txt). Eklerde sadece form başlıkları var.
+
+- id: endustriyel_tasarim_ders_plani
+  ad: Endüstriyel Tasarım Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: endustriyel_tasarim_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/263/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 449c275b1062c444c9494aac6a5f9577e724783c328371aa419bc7737a8a880b
+  kapsam: program:endustriyel_tasarim
+  durum: aktif
+  not: null
+
+- id: endustriyel_tasarim_program_bilgileri
+  ad: Endüstriyel Tasarım Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: endustriyel_tasarim_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/263/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 7d22066d5260b7fa57a2d9d29228f8cd4e4009207df23c7b7b4819b300aec042
+  kapsam: program:endustriyel_tasarim
+  durum: aktif
+  not: null
+
+- id: ic_mimarlik_ders_plani
+  ad: İç Mimarlık Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: ic_mimarlik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/197/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: cda5677d9b521bfd744138ec7b464de3de2f36faf3b7b45e832b026765a48c3a
+  kapsam: program:ic_mimarlik
+  durum: aktif
+  not: null
+
+- id: ic_mimarlik_program_bilgileri
+  ad: İç Mimarlık Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: ic_mimarlik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/197/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: d2e7db2d71e0d818531f393c7e186f0880734b1af564aa92ec0767eeec3bd11a
+  kapsam: program:ic_mimarlik
+  durum: aktif
+  not: null
+
+- id: mimarlik_ders_plani
+  ad: Mimarlık Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: mimarlik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/246/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: a16b38ddb7144ae8ce89bb6256b619ee74d4a4538fbf3568e970338ef2c37e10
+  kapsam: program:mimarlik
+  durum: aktif
+  not: null
+
+- id: mimarlik_program_bilgileri
+  ad: Mimarlık Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: mimarlik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/246/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 359f470199283bb37ddb19c8c80079dd2e59c5d4aa8bb48fbabed4025ebdaf58
+  kapsam: program:mimarlik
+  durum: aktif
+  not: null
+
+- id: tekstil_moda_ders_plani
+  ad: Tekstil ve Moda Tasarımı Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: tekstil_moda_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2029/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 63baab6e26407b6b67577666df090a5c032c4254d10beaea759094d3e5c51593
+  kapsam: program:tekstil_moda
+  durum: aktif
+  not: null
+
+- id: tekstil_moda_program_bilgileri
+  ad: Tekstil ve Moda Tasarımı Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: tekstil_moda_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2029/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 081875e45e20a7136b3a188036d039a00e659e3a45a454672a0d870e642e0bb2
+  kapsam: program:tekstil_moda
+  durum: aktif
+  not: null

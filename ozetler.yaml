@@ -1138,3 +1138,222 @@ ucak_govde_motor_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
   - Başka bir üniversitede okuduysan kesin kayıttan sonraki ilk hafta başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
 ucak_govde_motor_program_bilgileri#bolum-İstihdam_Olanakları:
   - Mezunlar Türk Hava Yolları, özel havayolları ve diğer havacılık işletmelerinin teknik bölümlerinde çalışır.
+
+# Mimarlık ve Tasarım Fakültesi Staj Yönergesi (ilk yayın 11/08/2017, değişiklik 28/02/2023; OCR)
+mtf_staj#madde-1:
+  - Bu yönerge, Mimarlık ve Tasarım Fakültesi öğrencilerinin yapmak zorunda olduğu stajların nasıl planlanıp yapılacağını, denetleneceğini ve değerlendirileceğini düzenler.
+mtf_staj#madde-2:
+  - Yönerge, 2018 tarihli Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği'nin 8. maddesine dayanır.
+mtf_staj#madde-3:
+  - Yönergedeki bölümler Mimarlık, İçmimarlık, Endüstriyel Tasarım ve Tekstil ve Moda Tasarımı bölümleridir.
+  - Staj dersleri Endüstriyel Tasarım'da Fabrika Stajı ve Ofis Stajı, İçmimarlık'ta Staj I ve Staj II, Mimarlık'ta Şantiye Stajı ve Büro Stajı, Tekstil ve Moda Tasarımı'nda Staj I ve Staj II derslerdir.
+  - Proje Tabanlı Staj, ARİNKOM Teknoloji Transfer Ofisi'nin iş birliği yaptığı kurumların belirlediği projelerde yapılan stajdır.
+mtf_staj#madde-4:
+  - Stajın amacı, okuduğun bölümle ilgili iş alanlarını tanıman ve derste öğrendiklerini kurumlarda uygulayarak mesleki deneyim kazanmandır.
+mtf_staj#madde-5:
+  - Fakülte Staj Komisyonu, eğitimden sorumlu dekan yardımcısı başkanlığında bölüm staj komisyonu başkanlarından oluşur.
+mtf_staj#madde-6:
+  - Fakülte Staj Komisyonu staj esaslarını belirler, staj işlerini koordine eder ve staj değerlendirmesine yapılan itirazları Yönetim Kurulu'na sunar.
+mtf_staj#madde-7:
+  - Bölüm Staj Komisyonu en az üç öğretim elemanından oluşur ve üyeler en az üç yıl görev yapar.
+mtf_staj#madde-8:
+  - Bölüm Staj Komisyonu staj kılavuzunu ve bölüm staj takvimini hazırlar, staj başvurularını onaylar ve stajını başarılı ya da başarısız olarak değerlendirir.
+mtf_staj#madde-9:
+  - Her staj grubu için bir sorumlu öğretim elemanı görevlendirilir; staj raporunu değerlendirip komisyona sunar ve notunu sisteme girer.
+mtf_staj#madde-10:
+  - Staj dersini yürüten öğretim elemanı staj raporlarını kılavuza göre değerlendirir, gerekirse düzeltme ister ve staj notlarını Öğrenci Bilgi Sistemi'ne girer.
+mtf_staj#madde-11:
+  - Staj esas olarak yaz döneminde yapılır.
+  - Güz veya bahar döneminde haftada en az üç tam gün dersin yoksa, komisyon kararıyla dersin olmayan günlerde staj yapabilirsin.
+  - Bütün derslerini bitirip yalnızca stajın kaldıysa stajını istediğin zaman yapabilirsin.
+  - Stajda iş kazası ve meslek hastalığı sigortan fakülte tarafından ödenir; yurt dışı stajında SGK primi ödenmez.
+mtf_staj#madde-12:
+  - Staja dördüncü yarıyılın sonundan itibaren başvurabilirsin.
+  - Staj başlangıcından en az 15 gün önce staj başvuru ve kabul formunu doldurup bölüm başkanlığına teslim edersin.
+mtf_staj#madde-13:
+  - Staj için gereken belgeler staj başvuru ve kabul formu, SGK işe giriş bildirgesi, staj devam çizelgesi, kurum staj değerlendirme formu ve staj raporudur.
+mtf_staj#madde-14:
+  - Mimarlık ve Tasarım Fakültesi'nde zorunlu staj süresi en az 60 iş günüdür.
+  - Staja devam zorunludur; geçerli mazeretle gidemediğin günleri telafi edersin ve bu günler staj süresinin %10'unu geçemez.
+  - İsteğe bağlı Proje Tabanlı Staj en az 45, en fazla 90 iş günü olabilir.
+mtf_staj#madde-15:
+  - Staj yerini bulmak senin sorumluluğundadır; bulduğun yerin uygun olup olmadığına Bölüm Staj Komisyonu karar verir.
+  - ARİNKOM'un iş birliği yaptığı kurumlarda Proje Tabanlı Staj yapabilirsin; zorunlu stajının yerine sayılıp sayılmayacağına komisyon karar verir.
+  - Değişim programıyla ya da kendi bulduğun bir kurumda yurt dışında staj yapabilirsin.
+mtf_staj#madde-16:
+  - Staja başladıktan sonra staj yerini ancak Bölüm Staj Komisyonu'nun onayıyla değiştirebilirsin.
+  - Kurumda grev, yangın, iflas, afet gibi bir durum olursa komisyon onayıyla stajını başka bir yerde tamamlayabilirsin.
+mtf_staj#madde-17:
+  - Staj belgelerini kuruma teslim edip stajını yaparsın; kurumun kaşesi ve onayı olmayan formlar ile imzasız staj raporu kabul edilmez.
+  - Kurum kurallarına uymazsan kurum stajına son verir ve stajını tekrar yapmak zorunda kalırsın.
+mtf_staj#madde-18:
+  - Dönem içinde staj yapacaksan staj başvuru formunun ekle-sil haftasında onaylanmış olması ve stajın dönem sonu sınavlarından en az iki hafta önce bitmesi gerekir.
+  - Yaptığın staja uygun staj dersine kaydolursun; örneğin fabrika stajı yaptıysan Fabrika Stajı dersine yazılırsın.
+  - İlgili sektörde SGK'lı olarak zorunlu staj süresi kadar çalıştıysan, belgeleyip komisyon onayıyla staj dersine kaydolabilirsin.
+mtf_staj#madde-19:
+  - Stajının başarılı sayılması için kurumun değerlendirme formunda 5 üzerinden en az 3 alman gerekir.
+  - Stajı başarısız bulunan öğrenci stajını yeniden yapar ve staj dersini yeniden alır.
+mtf_staj#madde-20:
+  - Yatay veya dikey geçişle geldiysen ya da çift anadal yapıyorsan önceki stajının denkliği için ilk kayıt döneminin ikinci haftası sonuna kadar bölüme yazılı başvurursun.
+  - Yandal öğrencisinin staj zorunluluğu yoktur.
+mtf_staj#madde-21:
+  - Staj değerlendirme kararına, ilanından sonraki 3 iş günü içinde dekanlığa yazılı itiraz edebilirsin.
+mtf_staj#madde-22:
+  - Komisyonun uygun görmesiyle isteğe bağlı staj ya da zorunlu süreden daha uzun staj yapabilirsin; ama zorunlu ve isteğe bağlı staja aynı anda devam edemezsin.
+  - İsteğe bağlı staj başka bir dersin yerine sayılmaz ve mezuniyet kredisine eklenmez.
+mtf_staj#madde-23:
+  - Yönergede hüküm bulunmayan durumlarda ESTÜ Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği ile Uygulamalı Eğitimler Çerçeve Yönetmeliği uygulanır.
+mtf_staj#madde-25:
+  - Yönerge, Senato'nun kabul ettiği tarihte yürürlüğe girer; son değişiklik 28/02/2023 tarihlidir.
+mtf_staj#madde-26:
+  - Yönergeyi ESTÜ Rektörü yürütür.
+mtf_staj#ek-2:
+  - Bu, Mimarlık ve Tasarım Fakültesi staj süreci akış şemasıdır.
+mtf_staj#ek-3:
+  - Bu, staj başvuru ve kabul formunun örneğidir.
+mtf_staj#ek-4:
+  - Bu, stajda her gün imzaladığın staj devam çizelgesinin örneğidir.
+mtf_staj#ek-5:
+  - Bu, kurumun seni puanladığı staj değerlendirme formudur.
+mtf_staj#ek-6:
+  - Bu, staj raporu sayfasının örneğidir.
+mtf_staj#ek-7:
+  - Bu, staj raporunun kapak sayfası örneğidir.
+mtf_staj#ek-8:
+  - Bu, staj raporunun iç kapak sayfası örneğidir.
+mtf_staj#ek-9:
+  - Bu, işveren staj ücreti ödeyecekse doldurulan işsizlik fonu katkısı bilgi formudur.
+mtf_staj#ek-10:
+  - Bu, stajı yarıda kalan öğrenci için kurumun dekanlığa gönderdiği staj ayrılış formudur.
+mtf_staj#ek-11:
+  - Bu, Bölüm Staj Komisyonu'nun stajını değerlendirdiği formdur.
+
+# Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi (05/10/2021; OCR)
+mtf_proje#madde-1:
+  - Bu yönerge, Mimarlık ve Tasarım Fakültesi'ndeki zorunlu proje derslerinin nasıl planlanıp yürütüleceğini düzenler.
+mtf_proje#madde-2:
+  - Yönerge, fakültedeki zorunlu tasarım proje derslerini ve bunlarla intibakı yapılan dersleri kapsar.
+mtf_proje#madde-3:
+  - Yönerge, Yükseköğretim Kanunu ve 2018 tarihli Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği'ne dayanır.
+mtf_proje#madde-4:
+  - Proje dersleri Endüstriyel Tasarım'da Ürün Tasarımı, İç Mimarlık'ta İç Mimari Proje, Mimarlık'ta Temel Tasarım, Mimari Tasarıma Giriş ve Mimari Proje, Tekstil ve Moda Tasarımı'nda Moda ve Tekstil Tasarım Stüdyosu ve Bitirme Projesi dersleridir.
+  - Mezuniyet projesi 8. yarıyılda alman zorunlu proje dersidir; proje föyü ise projenin konusunu, takvimini ve değerlendirme yöntemini anlatan belgedir.
+mtf_proje#madde-5:
+  - Proje dersleri teori ve uygulama içeren zorunlu derslerdir ve ilk yarıyıldan son yarıyıla kadar tasarım becerilerini adım adım geliştirmeyi amaçlar.
+mtf_proje#madde-6:
+  - Tek yarıyılların (1, 3, 5, 7) proje dersleri yalnızca güzde, çift yarıyılların (2, 4, 6, 8) proje dersleri yalnızca baharda açılır; mezuniyet projesi her iki dönemde de açılabilir.
+  - Proje derslerinin yürütücüleri öncelikle bölümün kadrolu öğretim elemanlarıdır ve her bölümde bir proje koordinatörü görevlendirilir.
+mtf_proje#madde-7:
+  - Proje grup sayıları ve kontenjanlar ders kayıtlarından en geç bir hafta önce ilan edilir; gruplara öğrenciler eşit ya da birbirine yakın sayıda dağıtılır.
+mtf_proje#madde-8:
+  - Proje koordinatörü dönem başında grup yürütücüleriyle koordinasyon toplantısı yapar; sınav yüzdeleri ve harf notu aralıkları bütün gruplarda aynı olacak şekilde birlikte belirlenir.
+mtf_proje#madde-9:
+  - Proje konuları ders kayıt haftasından en geç bir hafta önce bölüm tarafından öğrencilere duyurulur; aynı dersin gruplarında farklı konular işlenebilir.
+mtf_proje#madde-10:
+  - Proje konusu sana proje föyüyle yazılı olarak verilir; föyde takvim, teslim ve değerlendirme kriterleri yer alır.
+  - Proje derslerinde düzenli yoklama alınır ve yoklamalar her hafta sisteme işlenir.
+mtf_proje#madde-11:
+  - Proje dersine katılmak için o haftanın bütün çalışmalarını en geç ders başında grup yürütücüsüne sunman gerekir.
+  - Ders kapsamındaki arazi çalışması, gezi ve etkinliklere katılman beklenir.
+mtf_proje#madde-12:
+  - Proje föyünde belirtilen yer, tarih ve saatte teslim edilmeyen projeler değerlendirmeye alınmaz.
+  - Projeni şahsen teslim edemezsen vekalet dilekçesiyle başkası teslim edebilir; projeyi yalnızca o grupta görevli öğretim elemanlarına teslim edebilirsin.
+  - Teslimde A3 boyutunda basılı bir proje dosyası verirsin, dijital kopyasını da sisteme yüklersin.
+mtf_proje#madde-13:
+  - Proje dersinin dönem sonu sınavı proje sunumu şeklinde yapılır; tasarım süreci, sonuç tasarımın kalitesi ve sunum performansı mutlaka değerlendirilir.
+  - Sınav notu teslim ve sözlü sunum aşamalarından oluşur; mazeretsiz olarak birini yapmazsan sınava girmemiş sayılırsın.
+  - Proje sınav sonuçları sınavdan sonra en geç iki hafta içinde duyurulur.
+mtf_proje#madde-14:
+  - Aynı proje dersinin bütün gruplarında aynı sınav yüzdeleri ve aynı harf notu aralıkları kullanılır.
+mtf_proje#madde-15:
+  - Proje sunumlarını en az üç kişilik bir jüri değerlendirir; grup yürütücüleri asil jüri üyesidir ve dışarıdan uzmanlar davet edilebilir.
+mtf_proje#madde-16:
+  - Proje derslerinde mazeret sınavı vardır ama bütünleme sınavı yoktur.
+  - Teslimde mazeretin varsa, mazeret belgesindeki son günden sonraki üç iş günü içinde proje materyallerini teslim etmen gerekir.
+  - Mazeret sınavı uygulamalı yapılır; notun %60'ı geç teslim ettiğin proje materyallerinden, %40'ı mazeret sınavındaki performansından oluşur.
+mtf_proje#madde-17:
+  - Proje notuna itiraz etmek istersen yönetmeliğe göre maddi hata başvurusu yaparsın; dilekçeyi kendin yazıp dekanlığa verirsin.
+mtf_proje#madde-18:
+  - Erasmus, Farabi veya Mevlana'da aldığın hiçbir ders mezuniyet projesine denk sayılmaz.
+  - Akredite bir bölümdeysen yaz okulunda başka üniversiteden proje dersini ancak akredite bölümlerin eşdeğer dersinden alabilirsin.
+mtf_proje#madde-19:
+  - Salgın gibi nedenlerle dersler yüz yüze yapılamazsa proje dersleri canlı ve uzaktan yürütülür; sunumlar kameralı, gözetimli ve kayıtlı yapılır.
+mtf_proje#madde-20:
+  - Derste ürettiğin eserler fakülte tanıtımı için sergi ve fuarlarda kullanılabilir; sergi için bir poster teslim edersin.
+mtf_proje#madde-21:
+  - Proje dosyan ve materyallerin sınav evrakı sayılır ve iki yıl arşivde saklanır; süre dolunca imza karşılığında geri alabilirsin, almazsan kullanım hakkı fakülteye geçer.
+mtf_proje#madde-22:
+  - Proje derslerinde üniversite dışı kurumlarla iş birlikleri Fakülte Yönetim Kurulu'nun kabul ettiği protokollerle yürütülür.
+mtf_proje#madde-23:
+  - Yönergede hüküm bulunmayan konularda Fakülte Yönetim Kurulu kararı ve Senato onayıyla karar verilir.
+mtf_proje#madde-24:
+  - Yönerge, Senato'nun kabul ettiği tarihte (05/10/2021) yürürlüğe girmiştir.
+mtf_proje#madde-25:
+  - Yönergeyi Mimarlık ve Tasarım Fakültesi Dekanı yürütür.
+mtf_proje#ek-2:
+  - Bu, proje koordinasyon toplantı tutanağı ve proje föyü taslağı örneğidir.
+mtf_proje#ek-3:
+  - Bu, örnek proje föyü şablonudur.
+mtf_proje#ek-4:
+  - Bu, proje materyallerini teslim ettiğinde imzalanan teslim tutanağıdır.
+mtf_proje#ek-5:
+  - Bu, projeni başkasına teslim ettirmek için kullanılan vekalet dilekçesidir.
+mtf_proje#ek-6:
+  - Bu, jüri notlarının toplandığı proje dersi değerlendirme cetveli örneğidir.
+mtf_proje#ek-7:
+  - Bu, performansa ve portfolyoya dayalı ölçme araçlarının örnekleridir.
+mtf_proje#ek-8:
+  - Bu, arşivdeki proje materyallerini geri alırken imzaladığın teslim belgesidir.
+
+# Mimarlık ve Tasarım Bologna sayfalarındaki standart dışı bölümler
+endustriyel_tasarim_program_bilgileri#bolum-Program_Profili:
+  - Endüstriyel Tasarım programı ürün, sistem, hizmet ve deneyimlerin işlevsel, estetik ve sürdürülebilir tasarlanmasına odaklanır ve 2000 yılından beri yürütülür.
+  - Eğitim tasarım stüdyoları, laboratuvarlar ve sanayi iş birlikleriyle yürütülür; oyuncak, mobilya, ambalaj ve dijital oyun gibi alanlarda mesleki seçmeliler vardır.
+endustriyel_tasarim_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Endüstriyel Tasarım Bölüm Başkanı Doç. Dr. Engin Kapkın, AKTS bölüm koordinatörü Arş. Gör. Halime Şule Göçer'dir.
+endustriyel_tasarim_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları:
+  - Endüstriyel Tasarım'a ÖSYM merkezi sınavıyla, DGS ile ya da yatay geçiş koşullarını sağlayarak kayıt olunur.
+endustriyel_tasarim_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Başka bir üniversitede okuduysan kesin kayıttan sonraki ilk hafta başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+endustriyel_tasarim_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları:
+  - Endüstriyel Tasarım'dan mezun olmak için bütün derslerini geçmen, en az 240 AKTS ve en az 2,00 genel not ortalaman olması gerekir.
+  - Ayrıca 30 iş günü fabrika ve 30 iş günü tasarım ofisi stajını tamamlaman gerekir.
+endustriyel_tasarim_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+  - Mezun olunca yüksek lisans, doktora veya sanatta yeterlik programlarına başvurabilirsin; okurken çift anadal ve yandal da yapabilirsin.
+endustriyel_tasarim_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Mezunlar endüstriyel tasarımcı unvanı alır; serbest tasarımcı olarak ya da AR-GE merkezleri, tasarım stüdyoları ve danışmanlık firmalarında çalışabilir.
+ic_mimarlik_program_bilgileri#bolum-Program_Profili:
+  - İçmimarlık Bölümü 1991'de kurulmuş, 2018'den beri ESTÜ'de eğitim veriyor; insanların kullandığı iç mekânları işlev, estetik ve kullanıcı ihtiyacına göre tasarlamayı öğretir.
+ic_mimarlik_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - İç Mimarlık Bölüm Başkanı Prof. Dr. Onur Ülker, AKTS bölüm koordinatörü Arş. Gör. Aysu Ceren Yılmaz Barış'tır.
+ic_mimarlik_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Başka bir üniversitede okuduysan kesin kayıttan sonraki ilk hafta başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+  - Üniversitenin yabancı dil sınavından 100 üzerinden 60 alırsan zorunlu yabancı dil derslerinden muaf olursun.
+ic_mimarlik_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - İç Mimarlık'tan mezun olmak için bütün derslerini geçmen, en az 240 AKTS ve en az 2,00 genel not ortalaman olması gerekir.
+ic_mimarlik_program_bilgileri#bolum-İstihdam_Olanakları:
+  - İçmimarlık mezunları tasarım ofislerinde, üniversitelerde, kamu kurumlarında ya da bireysel olarak çalışabilir.
+mimarlik_program_bilgileri#bolum-Program_Profili:
+  - Mimarlık programı, yapıları ve kentsel çevreyi sürdürülebilirlik ilkesiyle planlayıp tasarlayan, eleştirel düşünebilen mimarlar ve akademisyenler yetiştirmeyi amaçlar.
+mimarlik_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Mimarlık Bölüm Başkanı Prof. Dr. Hicran Hanım Halaç, AKTS bölüm koordinatörü Prof. Dr. Aslı Özçevik Bilen'dir.
+mimarlik_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Başka bir üniversitede okuduysan kesin kayıttan sonraki ilk hafta başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+mimarlik_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Mimarlık'tan mezun olmak için bütün derslerini geçmen, en az 240 AKTS ve en az 2,00 genel not ortalaman olması gerekir.
+  - Mimarlık'ta staj zorunludur ve toplam staj süresi 60 gündür.
+mimarlik_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Mimarlık mezunları kamu ve özel sektörde yapıların projelendirilmesi, uygulanması ve denetlenmesinde çalışabilir ya da akademisyen olabilir.
+tekstil_moda_program_bilgileri#bolum-Program_Profili:
+  - Tekstil ve Moda Tasarımı Bölümü 2018-2019'da eğitime başladı; bir yıl isteğe bağlı İngilizce hazırlık ve dört yıl lisans eğitimi vardır.
+  - Uygulamalı dersler ikinci yılda, bilgisayar destekli tasarım eğitimi üçüncü yılda başlar.
+tekstil_moda_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.:
+  - Tekstil ve Moda Tasarımı Bölüm Başkanı Prof. Dr. Nilay Ertürk'tür.
+tekstil_moda_program_bilgileri#bolum-Önceki_Öğrenmenin_Tanınması:
+  - Başka bir üniversitede okuduysan kesin kayıttan sonraki ilk hafta başvurursan kredi ve not transferin bir defaya mahsus değerlendirilir.
+tekstil_moda_program_bilgileri#bolum-Üst_Derece_Programlarına_Geçiş:
+  - Mezun olunca yüksek lisans, doktora veya sanatta yeterlik programlarına başvurabilirsin.
+tekstil_moda_program_bilgileri#bolum-Mezuniyet_Koşulları:
+  - Tekstil ve Moda Tasarımı'ndan mezun olmak için bütün derslerini geçmen, en az 240 AKTS ve en az 2,00 genel not ortalaman olması gerekir.
+tekstil_moda_program_bilgileri#bolum-İstihdam_Olanakları:
+  - Mezunlar tekstil ve moda tasarımcısı unvanı alır; moda ve hazır giyim sektöründe, tasarım stüdyolarında, sahne sanatları, sinema ve televizyonda çalışabilir.

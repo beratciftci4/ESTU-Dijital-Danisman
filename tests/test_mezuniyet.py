@@ -111,3 +111,9 @@ def test_havacilik_staji():
     assert not kontrol(240, 2.5, HIC, 25, program="hava_trafik")["mezun_olabilir"]
     s = kontrol(240, 2.5, HIC, 0, program="havacilik_uzay_muh")     # süre belgelerde yok
     assert not s["mezun_olabilir"] and any("bölümüne sor" in x["aciklama"] for x in s["satirlar"])
+
+
+def test_mimarlik_staji():
+    assert "60 iş gününden az olamaz" in PARCALAR["mtf_staj#madde-14"]
+    assert not kontrol(240, 2.5, HIC, 40, program="mimarlik")["mezun_olabilir"]
+    assert kontrol(240, 2.5, HIC, 60, program="endustriyel_tasarim")["mezun_olabilir"]

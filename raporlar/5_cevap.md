@@ -19,7 +19,8 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 | Fen Fakültesi diğer bölümler | 13/16 | 1/2 | 0/2 | 14/16 | 14/16 |
 | Mühendislik Fakültesi | 14/18 | 1/2 | 0/2 | 17/18 | 16/18 |
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 | 0/2 | 15/15 | 15/15 |
-| Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 | 0/2 | 15/16 | 15/16 |
+| Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 | 0/2 | 16/16 | 16/16 |
+| Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 | 1/2 | 16/18 | 15/18 |
 
 ## Hatalı sonuçlar
 
@@ -47,6 +48,8 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 - [Havacılık ve Uzay Bilimleri Fakültesi] Güvenlik soruşturması yapılıyor mu? -> bulunamadi (benzerlik 0.82)
 - [Havacılık ve Uzay Bilimleri Fakültesi] Hava trafik bölümünün simülatör saatleri nedir? -> bulundu (benzerlik 0.865)
 - [Havacılık ve Uzay Bilimleri Fakültesi] Havacılık yönetimi öğrencilerine uçuş eğitimi veriliyor mu? -> bulundu (benzerlik 0.859)
+- [Mimarlık ve Tasarım Fakültesi] Fabrika stajı kaç gün? -> bulundu (benzerlik 0.855)
+- [Mimarlık ve Tasarım Fakültesi] İç mimarlık bölümünde hangi çizim programları öğretiliyor? -> bulundu (benzerlik 0.869)
 
 ## Notlar
 

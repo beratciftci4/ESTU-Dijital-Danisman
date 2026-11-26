@@ -1,0 +1,100 @@
+# Mimarlık ve Tasarım Fakültesi soru seti (2026-11-26).
+# Sonuçlara bakmadan, belgeler okunarak yazıldı. Yönergeler taranmış PDF, metin OCR'dan.
+
+- soru: Kaç gün staj yapmam gerekiyor?
+  program: mimarlik
+  kaynak: [mtf_staj#madde-14, mimarlik_program_bilgileri#bolum-Mezuniyet_Koşulları]
+  anahtar: ["60"]
+
+- soru: Fabrika stajı kaç gün?
+  program: endustriyel_tasarim
+  kaynak: [endustriyel_tasarim_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları]
+  anahtar: ["30 iş günü (fabrika)"]
+
+- soru: Zorunlu staj süresi nedir?
+  program: ic_mimarlik
+  kaynak: [mtf_staj#madde-14]
+  anahtar: ["60 iş gününden az olamaz"]
+
+- soru: Staja ne zaman başvurabilirim?
+  program: tekstil_moda
+  kaynak: [mtf_staj#madde-12]
+  anahtar: ["dördüncü yarıyılın sonu"]
+
+- soru: Staj başvurusunu kaç gün önceden yapmalıyım?
+  program: mimarlik
+  kaynak: [mtf_staj#madde-12]
+  anahtar: ["15 (on beş) gün önce"]
+
+- soru: Dönem içinde staj yapabilir miyim?
+  program: ic_mimarlik
+  kaynak: [mtf_staj#madde-11, mtf_staj#madde-18]
+  anahtar: ["üç tam iş günü", "ekle-sil"]
+
+- soru: Staj değerlendirmesine kaç gün içinde itiraz edebilirim?
+  program: endustriyel_tasarim
+  kaynak: [mtf_staj#madde-21]
+  anahtar: ["üç işgünü", "3 (üç) iş günü"]
+
+- soru: Kurum değerlendirme formundan en az kaç almalıyım?
+  program: tekstil_moda
+  kaynak: [mtf_staj#madde-19]
+  anahtar: ["en az 3"]
+
+- soru: Proje tabanlı staj kaç gün sürer?
+  program: mimarlik
+  kaynak: [mtf_staj#madde-14]
+  anahtar: ["45 (kırk beş)"]
+
+- soru: Stajda devamsızlık hakkım var mı?
+  program: endustriyel_tasarim
+  kaynak: [mtf_staj#madde-14]
+  anahtar: ["%10"]
+
+- soru: Proje dersinin bütünleme sınavı var mı?
+  program: mimarlik
+  kaynak: [mtf_proje#madde-16]
+  anahtar: ["bütünleme sınavı yoktur"]
+
+- soru: Proje teslimini zamanında yapmazsam ne olur?
+  program: ic_mimarlik
+  kaynak: [mtf_proje#madde-12]
+  anahtar: ["değerlendirmeye alınmaz"]
+
+- soru: Projemi başkası teslim edebilir mi?
+  program: endustriyel_tasarim
+  kaynak: [mtf_proje#madde-12]
+  anahtar: ["Vekalet Dilekçesi"]
+
+- soru: Proje mazeret sınavı notu nasıl hesaplanır?
+  program: tekstil_moda
+  kaynak: [mtf_proje#madde-16]
+  anahtar: ["%60"]
+
+- soru: Proje jürisi kaç kişiden oluşur?
+  program: mimarlik
+  kaynak: [mtf_proje#madde-15]
+  anahtar: ["en az 3 (üç)"]
+
+- soru: Erasmus'ta aldığım ders mezuniyet projesine sayılır mı?
+  program: ic_mimarlik
+  kaynak: [mtf_proje#madde-18]
+  anahtar: ["denk tutulamaz"]
+
+- soru: Proje dosyam kaç yıl saklanır?
+  program: endustriyel_tasarim
+  kaynak: [mtf_proje#madde-21]
+  anahtar: ["iki (2) yıl"]
+
+- soru: Mezun olunca nerede çalışabilirim?
+  program: tekstil_moda
+  kaynak: [tekstil_moda_program_bilgileri#bolum-İstihdam_Olanakları, tekstil_moda_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["tasarımcı"]
+
+- soru: Maket malzemelerini nereden alabilirim?
+  program: mimarlik
+  cevapsiz: true
+
+- soru: İç mimarlık bölümünde hangi çizim programları öğretiliyor?
+  program: ic_mimarlik
+  cevapsiz: true

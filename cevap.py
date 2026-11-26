@@ -55,6 +55,8 @@ BELGE_KISA_ADI = {
     "muh_staj": "Mühendislik Fakültesi Staj Yönergesi",
     "bbbf_staj": "Bilgisayar ve Bilişim Bilimleri Fakültesi Staj Yönergesi",
     "hubf_staj": "Havacılık ve Uzay Bilimleri Fakültesi Staj Yönergesi",
+    "mtf_staj": "Mimarlık ve Tasarım Fakültesi Staj Yönergesi",
+    "mtf_proje": "Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi",
     "danismanlik": "Akademik Danışmanlık Yönergesi",
     "proje_temelli_staj": "Proje Temelli Staj Yönergesi",
     "hakli_nedenler": "Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar",
@@ -301,11 +303,14 @@ def bolum_staj_cumleleri():
     return sonuc
 
 
+PTS_PAYI = 0.05
+
+
 def staj_suresi_soruluyor(soru):
     """Soru stajın süresini ya da zorunlu olup olmadığını mı soruyor? (diğer staj konuları değil)"""
     s = turkce_kucuk(soru)
     return ("staj" in s and bool(re.search(r"kaç|ne kadar|süre|zorunlu|gerek|lazım|şart", s))
-            and not re.search(r"proje temelli|pts|itiraz|başvur|ne zaman|nerede|değiş|muaf|sigorta|rapor|"
+            and not re.search(r"proje temelli|proje tabanl|pts|itiraz|başvur|ne zaman|nerede|değiş|muaf|sigorta|rapor|"
                               r"devamsız|not|puan|başarı|değerlendir|yeri|yerin|yetkin|sorumlu", s))
 
 
@@ -420,6 +425,11 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
     # "kaç gün staj", "staj zorunlu mu" gibi sorularda bölümün staj cümlesi doğrudan cevap
     if staj_suresi_soruluyor(soru) and program not in (None, "genel"):
         adaylar = [(a[0] + 1.0, *a[1:]) if a[3] in BOLUM_STAJ_CUMLESI.get(program, ()) else a for a in adaylar]
+
+    # Proje Temelli Staj yönergesi genel kapsamlı; soru PTS'yi sormuyorsa onun cümleleri
+    # fakültenin normal staj kuralının önüne geçmesin ("stajda devamsızlık hakkım" gibi)
+    if not re.search(r"proje|pts", turkce_kucuk(soru)):
+        adaylar = [(a[0] - PTS_PAYI, *a[1:]) if a[4]["belge_id"] == "proje_temelli_staj" else a for a in adaylar]
 
     adaylar.sort(key=lambda x: -x[0])
     en_iyi = adaylar[0][0]

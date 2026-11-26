@@ -26,6 +26,12 @@ fakulteler:
     staj_maddesi: hubf_staj#madde-9     # staj süreleri bölüm bölüm bu maddede
     staj_listesi: hubf_staj#madde-9
     staj_birimi: iş günü
+  mtf:
+    ad: Mimarlık ve Tasarım Fakültesi
+    staj_belgesi: mtf_staj
+    staj_maddesi: mtf_staj#madde-14     # zorunlu staj en az 60 iş günü, bütün bölümler
+    staj_listesi: mtf_staj#madde-14
+    staj_birimi: iş günü
   muhendislik:
     ad: Mühendislik Fakültesi
     staj_belgesi: muh_staj
@@ -195,3 +201,32 @@ programlar:
     staj_gunu: 40
     staj_notu: Yönerge md. 9 ve Bologna program profili ("Zorunlu staj süresi kırk iş günüdür")
     staj_ek: Mesleki seçmeli olarak 20 iş günlük ikinci bir staj da alabilirsin; Temel Eğitim Yeterlilik Sertifikası isteyenler toplam en az 60 iş günü staj yapar.
+  # Mimarlık ve Tasarım: yönerge md. 14 bütün bölümler için en az 60 iş günü; ders planında iki staj dersi var.
+  - id: endustriyel_tasarim
+    ad: Endüstriyel Tasarım
+    fakulte: mtf
+    bologna: 263
+    staj_gunu: 60
+    staj_notu: Yönerge md. 14; Bologna yeterlilik koşulları "30 iş günü (fabrika) ve 30 iş günü (tasarım ofisi)"
+    staj_ek: Bu süre 30 iş günü fabrika stajı ve 30 iş günü tasarım ofisi stajından oluşuyor.
+  - id: ic_mimarlik
+    ad: İç Mimarlık
+    fakulte: mtf
+    bologna: 197
+    staj_gunu: 60
+    staj_notu: Yönerge md. 14 (ders planında Staj I ve Staj II)
+    staj_ek: Ders planında 5. yarıyılda Staj I, 7. yarıyılda Staj II dersi var.
+  - id: mimarlik
+    ad: Mimarlık
+    fakulte: mtf
+    bologna: 246
+    staj_gunu: 60
+    staj_notu: Yönerge md. 14 ve Bologna mezuniyet koşulları ("Staj süresi toplam 60 gündür")
+    staj_ek: Ders planında 5. yarıyılda Şantiye Stajı, 7. yarıyılda Büro Stajı dersi var.
+  - id: tekstil_moda
+    ad: Tekstil ve Moda Tasarımı
+    fakulte: mtf
+    bologna: 2029
+    staj_gunu: 60
+    staj_notu: Yönerge md. 14 (ders planında Staj I ve Staj II)
+    staj_ek: Ders planında 5. yarıyılda Staj I, 7. yarıyılda Staj II dersi var.

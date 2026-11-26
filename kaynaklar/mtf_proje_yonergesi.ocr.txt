@@ -1,0 +1,431 @@
+# Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi
+# Kaynak: taranmış PDF, metin katmanı yok
+# tesseract 5 (tur, 300 dpi, psm 6) ile okundu; bariz OCR hataları elle düzeltildi.
+# Sayfa üst bilgisi (Senato kararı satırı) ve 'Sayfa n/N' satırları çıkarıldı. Eklerde sadece formların başlıkları tutuldu.
+=== SAYFA 1 ===
+BİRİNCİ BÖLÜM
+Amaç, Kapsam, Dayanak ve Tanımlar
+Amaç
+MADDE 1 – Bu Yönergenin amacı, Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım
+Fakültesi öğrencilerinin öğrenimleri süresince tamamlamak zorunda oldukları proje derslerinin
+amacına uygun planlanması, yönetilmesi, uygulanması ve yükümlülüklerin tanımlanmasına
+ilişkin usul ve esasları düzenlemektir.
+Kapsam
+MADDE 2 – Bu Yönerge, Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım
+Fakültesinin bölümlerinde kayıtlı öğrencilerin eğitimleri süresinde zorunlu ve uygulamalı
+tasarıma yönelik olan ve tanımlar bölümünde açıklanan proje derslerini ve bu derslerle intibakı
+yapılan dersleri kapsar.
+Dayanak
+MADDE 3 – Bu Yönerge, 6/11/1981 tarihli Resmi Gazete'de yayımlanan 2547 sayılı
+“Yükseköğretim Kanunu” ve 19/09/2018 tarihli ve 30540 sayılı Resmi Gazete'de
+yayımlanarak yürürlüğe giren “Eskişehir Teknik Üniversitesi Önlisans ve Lisans Eğitim-
+Öğretim ve Sınav Yönetmeliği” hükümlerine dayanılarak hazırlanmıştır.
+Tanımlar
+MADDE 4 – (1) Bu Yönergede geçen;
+a) Akredite bölüm: Yetkilendirilmiş ilgili bağımsız akreditasyon kuruluşu tarafından
+gerçekleştirilen değerlendirme sürecinden başarıyla geçerek önceden belirlenmiş olan
+akademik ve alana özgü standartları karşıladığını belgeleyen bölümü,
+b) Bölüm başkanı: Mimarlık ve Tasarım Fakültesi bölüm başkanlarını,
+c) Bölüm: Mimarlık ve Tasarım Fakültesi bölümlerini,
+ç) Eser: Sahibinin özelliğini taşıyan bilim, edebiyat, musiki, güzel sanatlar ile sinema
+eserleri olarak sayılan her çeşit fikir ve sanat ürünlerini
+d) Fakülte: Mimarlık ve Tasarım Fakültesini,
+e) Jüri üyesi: Öğrencinin projesini değerlendiren öğretim elemanını veya konu ile ilgili
+uzman kişiyi,
+f) Mezuniyet projesi: Fakülte bölüm ders kataloglarında sekizinci yarıyılda öğrencilerin
+alması zorunlu olan proje dersini,
+=== SAYFA 2 ===
+g) Proje dersi: Fakültenin Endüstriyel Tasarım Bölümünde açılan “Ürün Tasarımı”, İç
+Mimarlık Bölümünde açılan “İç Mimari Proje”, Mimarlık Bölümünde açılan “Temel
+Tasarım”, “Mimari Tasarıma Giriş” ve “Mimari Proje”, Tekstil ve Moda Tasarımı
+Bölümünde açılan “Moda ve Tekstil Tasarım Stüdyosu” ve “Bitirme Projesi” isimli
+dersleri (Bu derslerin değişikliğe uğraması durumunda, ilgili intibak tablosunda
+gösterilen ders kodu ve isimlerini),
+ğ) Proje föyü: Proje koordinatörü ve/veya proje ekibi ve/veya proje grup yürütücüsü
+tarafından hazırlanan; projenin konusu, amacı ve kapsamı ile süreç planlaması, ölçme ve
+değerlendirme yöntemleri ve benzeri bilgileri içeren ve bu konularda öğrencileri
+bilgilendirmek üzere sunulan belgeyi,
+h) Proje grup yürütücüsü: Bölüm başkanı tarafından görevlendirilen ve proje dersinin
+ilgili grubunun tüm işleyişinden sorumlu öğretim elemanını,
+ı) Proje koordinatörü: İlgili yarıyıllarda verilen proje derslerini koordine etmek üzere
+bölüm başkanı tarafından görevlendirilen öğretim elemanını,
+i) Proje koordinasyon toplantısı: Proje koordinatörü, yardımcıları ve ilgili proje
+derslerini yürüten tüm proje grubu yürütücülerinin katıldığı ve ders ile ilgili kararların
+ortak olarak alındığı toplantıyı,
+j) Proje koordinatörü yardımcısı: İlgili yarıyıllarda verilen proje derslerini koordine
+etmek üzere bölüm başkanı tarafından görevlendirilen öğretim elemanının yardımcısını,
+k) Proje materyali: Proje dersi kapsamında değerlendirmeye alınacak dijital ve/veya basılı
+temsilleri, proje raporu, eskizler, video, maket, model, prototip, çıktı, giysi ve tekstil
+yüzeyi veya kumaş gibi materyalleri,
+l) Proje sunumu: Öğrencinin, proje grup yürütücüleri tarafından belirlenen yer ve tarihte
+jüri üyelerinin değerlendirilmesi için proje materyallerini sözel olarak sunduğu ve jüri
+üyelerinin sorularını cevapladığı süreci,
+m) Üniversite: Eskişehir Teknik Üniversitesini,
+n) Ürün: Bir biçim verilerek ifade edilmiş fikirleri, fikirlerin çizimlerini, resimlerini, maket
+ve modellerini, bilgisayar destekli görsel ve dosyalarını
+tanımlar.
+=== SAYFA 3 ===
+İKİNCİ BÖLÜM
+Proje Derslerinin Amacı, Açılma ve Oluşturulması
+Proje derslerinin genel amaçları
+MADDE 5 – (1) Proje dersleri teori, bilgi ve uygulama içeren zorunlu derslerdir. Proje
+dersleri her yarıyıl için ayrı ayrı tanımlanan öğrenme çıktıları doğrultusunda, tasarım bilgi,
+beceri ve yetkinliklerini öğrencilere kazandırmayı amaçlar. Bu derslerin içerikleri öğrenme
+çıktıları esas alınarak, ilk yarıyıldan başlayıp son yarıyıla kadar, başlangıç düzeyinden
+kapsamlıya doğru tasarım problemlerinin işlenmesi, çözümlenmesi ve uygulanması için gerekli
+kazanımları hedef alarak hazırlanır. Proje derslerinin öğrenme çıktıları, Fakültenin misyon,
+vizyon ve eğitim amaçlarına uygun olarak belirlenir.
+Proje derslerinin açılma usulleri
+MADDE 6 – (1) Fakülte ders kataloğunda birinci, üçüncü, beşinci ve yedinci yarıyıllarda
+yer alan proje dersleri sadece güz döneminde ikinci, dördüncü, altıncı ve sekizinci yarıyıllarda
+yer alan proje dersleri sadece bahar döneminde açılır. Mezuniyet projesi niteliğinde olan proje
+dersleri, bölüm kurulu kararına göre hem güz hem de bahar dönemlerinde açılabilir.
+(2) Proje derslerinin yürütücüleri belirlenirken öncelikle ilgili bölümün kadrolu
+öğretim elemanları görevlendirilir. Fakültenin diğer bölümlerinde, Üniversitenin diğer
+birimlerinde veya diğer üniversitelerde çalışan öğretim elemanları, ilgili bölüm
+başkanlıklarının, birimlerin veya üniversitelerin onayı ile proje derslerinde görevlendirilebilir.
+(3) Proje derslerine yarı zamanlı öğretim görevlisi olarak davet edilecek uzmanların
+aşağıdaki kriterlerden en az birini sağlaması gerekir:
+• Yüksek lisans mezunu olmak,
+• En az iki yıl profesyonel deneyim sahibi olmak,
+• Daha önce en az lisans seviyesinde proje dersi yürütmüş olmak.
+(4) Yukarıda belirtilen kriterlere ek olarak bölümler, bölüm kurulu kararı ile kendi
+kriterlerini belirleyebilir.
+(5) Aynı kodlu proje dersinde grup yürütücülerinden en az biri ilgili bölümün kadrolu
+öğretim elemanı olmalıdır.
+(6) Her bölümde proje derslerini koordine eden proje koordinatörleri, ilgili bölüm
+kurulu kararı ile bölüm başkanlığı tarafından görevlendirilir.
+(7) Bölüm başkanlıkları, bölüm kurulu kararı ile proje koordinatör
+yardımcısı/yardımcıları görevlendirebilir.
+(8) Proje koordinatörlerinin koordine ettikleri proje dersini yürütüyor olması gerekir.
+=== SAYFA 4 ===
+(9) Proje grubu yürütücülerini, bölüm kurulu kararı ile bölüm başkanlıkları belirler ve
+görevlendirir.
+(10) Yüz yüze verilecek proje dersleri Mergen'de veya benzeri bir çevrimiçi öğrenme
+yönetim sisteminde de açılır.
+Proje dersi grupları oluşturma esasları
+MADDE 7 – (1) Her yarıyılın başında akademik takvimde ders kayıtlarının başlangıcı
+olarak belirtilen tarihten en geç bir hafta önce, proje ders grup sayıları ve grup başına düşen
+kontenjanlar, bölüm başkanlığı tarafından belirlenir ve öğrencilere ilan edilir.
+(2) Proje dersinde grup sayısı ve grup başına düşen öğrenci sayısı bölümün
+akreditasyon koşullarını sağlayacak şekilde belirlenir.
+(3) Proje gruplarına düşen öğrenci sayısı eşit veya birbirine yakın olacak şekilde (+/-2
+kontenjan gibi) dağıtılır.
+(4) Proje grup yürütücülerine ilişkin görevlendirmelerde bir öğretim yılı içerisinde
+öğrencilere farklı öğretim elemanları ile çalışma imkânı sağlanabilecek şekilde yapılması esas
+alınır.
+Proje koordinatörleri ve yardımcılarının görevleri
+MADDE 8 – (1) Proje koordinatörleri ve yardımcıları, her yarıyılın başında ilgili
+yarıyılda işlenecek proje konusunun/konularının bu Yönergenin 9 uncu ve 10 uncu
+maddelerinde belirtilen esaslara uygun olarak belirlenmesi ve proje derslerinin verimli
+işlenmesi için süreçleri koordine eder. Bu amaçla akademik takvimde derslerin kayıt haftası
+olarak belirtilen tarihten iki hafta önce proje koordinasyon toplantısı düzenler. Proje grubu
+yürütücüleri ile yapılan bu toplantıda aşağıdaki konularla ilgili kararlar ortak olarak alınır, proje
+koordinatörü kendi başına karar almaz:
+a) Proje föylerinin hazırlanması için proje grubu yürütücülerinin önerileri paylaşılır ve
+değerlendirilir.
+b) Ders kapsamında kullanılacak kitap, makale, veri tabanı gibi kaynaklar ve diğer öğrenme
+ve öğretme materyalleri belirlenir ve paylaşılır.
+c) Ders kapsamında yapılacak teknik gezi, seminer, çalıştay ve diğer etkinliklerin koordine
+edilmesi için planlama yapılır.
+ç) Dersin sınav yüzdeleri ve harf notu aralıkları proje grupları arasında aynı olacak şekilde
+karara bağlanır.
+d) Proje derslerinde uygulanacak sınavların tarihleri akademik takvime göre belirlenir.
+=== SAYFA 5 ===
+e) Proje değerlendirme süreci bu Yönergenin 13 üncü ve 14 üncü maddelerinde belirtilen
+esaslara göre organize edilir ve kayıt altına alınması sağlanır.
+f) Proje değerlendirmesi yapacak asil, davetli ve yedek jüri üyeleri bu Yönergenin 15 inci
+maddesinde belirtilen esaslara göre belirlenir ve görevlendirilmek üzere bölüm
+başkanlıklarına sunulur.
+g) Ders için ihtiyaç duyulan özel mekânsal gereksinimler belirlenir.
+ğ) Proje dersi mazeret sınavı ile ilgili yöntem belirlenir.
+h) Her yarıyılın sonunda çok paydaşlı “proje dersleri değerlendirme toplantısı” yapılır.
+i) Proje dersleri değerlendirme toplantı sonuçları raporlanır ve öneriler ile birlikte bölüm
+başkanlığı ile paylaşılır.
+ı) Ders kapsamında organize edilecek sergi planlanır ve sunum formatı belirlenir.
+j) Bölüm başkanlıkları ile birlikte proje çıktılarının arşivlenmesi süreci planlanır.
+k) Yukarıda belirtilen kararlar toplantı sonunda “Proje Koordinasyon Toplantısı
+Tutanağı”na (EK- 1) işlenir ve oluşturulan proje föyü ile bölüm başkanlıklarına bildirilir.
+Proje konularını belirleme esasları
+MADDE 9 – (1) Proje dersi konusu/konuları ilgili proje dersinin öğrenim çıktılarına
+uygun olarak belirlenir.
+(2) Proje grubu yürütücüleri, proje konusu önerilerini proje koordinasyon toplantısı
+öncesinde proje koordinatörüne sunar.
+(3) Proje dersi konusu/konuları, proje koordinatörü tarafından organize edilen ve
+ilgili proje dersini yürüten proje dersi grup yürütücülerinin katılımıyla gerçekleşen toplantı
+sonunda belirlenir.
+(4) Aynı kodlu proje dersinin gruplarında farklı veya aynı proje konuları işlenebilir.
+Belirlenen proje konusunun/konularının proje dersinin öğrenim çıktıları ile ilişkisi “Proje
+Koordinasyon Toplantı Tutanağı”na işlenir.
+(5) Proje konuları, en geç akademik takvimde kayıt haftası olarak tanımlanan haftadan
+bir hafta önce bölüm başkanlığı tarafından öğrencilere duyurulur. Proje koordinatörü, proje
+grup yürütücülerinin ortak kararı ile dersin döneme özel eğitim amaçları doğrultusunda bu
+takvimi bölüm başkanlıklarına gerekçeli olarak açıklamak kaydı ile değiştirebilir.
+(6) Bölüm başkanlıkları proje föylerini diğer bölüm öğretim elemanları, öğrenciler ve
+Dekanlıkla paylaşabilir.
+=== SAYFA 6 ===
+ÜÇÜNCÜ BÖLÜM
+Proje Derslerinin Yürütülmesi, Katılım ve Devam Koşulları
+Proje derslerini yürütme usulleri
+MADDE 10 – (1) Proje dersi grup yürütücüsü, görevli olduğu proje grubuna özel olarak
+dersin planlanması, yürütülmesi ve değerlendirmesini bu Yönergeye uygun olarak
+gerçekleştirir.
+(2) Proje konusu/konuları öğrencilere sadece sözel olarak sunulmaz, aynı zamanda
+proje föyü formatında öğrencilere basılı olarak ve/veya çevrimiçi ortamda sunulur.
+(3) Proje dersleri kapsamında hazırlanan bir proje föyünde;
+• Proje dersi bilgileri, yıl ve dönemi,
+• Proje konusu ve kapsamı,
+• Projenin amaçları,
+• Proje takvimi,
+• Proje teslim kriterleri,
+• Proje değerlendirme kriterleri ve süreçleri,
+• Kaynak ve referanslar yer alır. (EK-2 Örnek Proje Föyü Şablonu).
+(4) Proje föyü, proje koordinasyon toplantısı sonunda seçilen proje grubu yürütücüleri
+tarafından hazırlanır.
+(5) Proje dersleri, ilgili bölüm başkanlığı tarafından belirlenen dersliklerde yapılır.
+(6) Proje derslerinde proje grup yürütücüleri düzenli olarak yoklama alır ve dönem
+boyunca yoklama listeleri kayıt altında tutulur. Yoklamalar öğrenci otomasyon sistemine
+haftalık olarak işlenir.
+Proje derslerine katılım koşulları
+MADDE 11 – (1) Öğrenci proje derslerine katılabilmesi için ilgili haftadaki tüm proje
+materyallerini ve çalışmalarını en geç ilgili proje dersinin başında proje grup yürütücüsüne
+sunar.
+(2) Öğrenci proje dersi kapsamında organize edilen arazi çalışması, gezi ve etkinliklere
+katılır.
+(3) Öğrenci proje dersi kapsamında yapılan jürili ara değerlendirme, ara sınav ve
+dönem sonu sınavına proje materyallerini proje grup yöneticisi tarafından ilan edilen içerik,
+nitelik ve yöntem ile hazırlayarak sunar.
+=== SAYFA 7 ===
+DÖRDÜNCÜ BÖLÜM
+Proje Derslerinde Teslim Koşulları, Sınav ve Değerlendirme Süreçleri
+Proje teslim koşulları
+MADDE 12 – (1) Proje sunumu olarak yapılandırılan değerlendirmede proje
+materyallerinin teslimi, bölüm başkanlığı tarafından yayımlanan sınav takviminde dersin sınav
+tarihi olarak belirtilen gün ve saat aralığında yapılır.
+(2) Proje föyünde teslim tarihi olarak belirlenen yer, tarih ve saatte teslim edilmeyen
+projeler değerlendirmeye alınmaz.
+(3) Proje materyallerinin teslim tarihi ile projenin sunum tarihi aynı olmak zorunda
+değildir.
+(4) Proje çalışması ile ilgili proje föyünde belirtilen proje materyalleri; proje föyünde
+belirlenen yer, tarih ve saatte görevli öğretim elemanları tarafından imza karşılığında EK-3'teki “Proje Materyalleri Teslim Tutanağı” ile alınır.
+(5) Proje grubunda görevli olmayan öğretim elemanları öğrencilerin proje teslimlerini
+alamaz. Proje grubunda görevli olmayan öğretim elemanlarına yapılan proje teslimleri
+değerlendirmeye alınmaz.
+(6) Öğrencinin proje materyalini şahsen teslim edemediği durumlarda teslim, EK-4'teki “Proje Teslimi Vekalet Dilekçesi” ile başkası tarafından yapılabilir.
+(7) Proje tesliminde tüm proje materyallerinin görsellerini içeren ve proje sunumunu
+özetleyen A3 ebadında proje dosyası basılı olarak teslim edilir. Bu dosyanın dijital kopyası
+sanal ortamda da (Mergen sistemi gibi bir öğrenme yönetim sistemi üzerinden) teslim alınır.
+Basılı ve sanal ortamda dijital olarak yapılan dosya teslimleri sınav evrakı olarak
+değerlendirilir.
+Proje sunumu sınavı ve değerlendirme usulleri
+MADDE 13 – (1) Proje dersi kapsamındaki değerlendirmeler proje föyünde belirlenen
+tarihlerin dışında yapılamaz. Zorunlu durumlarda, değerlendirme tarihlerinde yapılacak
+değişiklikler dönem sonu sınav tarihinden en geç iki hafta önce bölüm başkanlıklarına proje
+grup yürütücülerinin ortak kararı üzerine gerekçeleri ile yazılı olarak proje koordinatörü
+tarafından bildirilir. Bölüm başkanlığı sınav programındaki değişikliği Fakülte Dekanlığına
+yazılı olarak bildirir. Fakülte Yönetim Kurulu kararını takiben sınav tarihi değişikliği ile ilgili
+duyuru tüm öğrencilere yapılır.
+(2) Proje dersi dönem sonu sınavları, proje sunumu şeklinde yapılır. Proje dersi
+kapsamında ara sınav, uygulama ve ödevlerde, proje grubu yürütücüsü çeşitli ölçme
+=== SAYFA 8 ===
+değerlendirme yöntemleri kullanabilir. Proje dersinin ara sınavlarının, proje sunumu olarak
+planlanması durumunda süreç bu Yönergenin 13 üncü maddesi (3) ve (7) inci fıkralarında
+belirlenen usul ve esaslara uygun olarak yürütülür.
+(3) Proje sunumu kapsamında yapılacak ölçme ve değerlendirmede aşağıda belirtilen
+üç ana kriter her koşulda değerlendirmeye alınır:
+• Öğrencinin tasarım süreci: Proje geliştirme sürecinde öğrencinin performansı, derse
+aktif katılımı vb.,
+• Proje çıktısının veya sonuç tasarımın kalitesi: Yaratıcılık, özgünlük, detaylandırma,
+uygulanabilirlik vb.,
+• Proje sunumundaki performansı: Açıklık, akışkanlık, proje konusuna hâkimiyet vb.
+(4) Proje sunumu olarak yapılan ölçme ve değerlendirmede öğrencinin sınav notunun
+oluşması iki aşamalıdır:
+• Teslim aşamasında öğrenci proje materyallerini belirtilen tarih, saat ve ortamda teslim
+eder.
+• Sözel sunum aşamasında öğrenci proje materyallerini jüri üyelerine sözel olarak
+sunar.
+Mazeret durumu hariç, bu aşamaların birinin eksik olması durumunda sınav notu oluşturulamaz
+ve öğrenci sınava “GİRMEDİ” olarak işlenir.
+(5) Proje sunumu olarak gerçekleşen ölçme ve değerlendirme süreçlerinde tüm jüri
+üyelerinin notlarını ve öğrencilerin nihai notunu içeren “Proje Dersi Değerlendirme Cetveli”
+(EK-5) ve öğrenci otomasyonundan alınan not döküm belgesi her proje grubu için ayrı ayrı
+doldurulur ve bölüm başkanlıklarına teslim edilir.
+(6) Proje derslerinde ölçme ve değerlendirme sürecinde, eğitim bilimlerinde
+“Performansa ve Portfolyoya Dayalı Ölçme ve Değerlendirme Araçları” olarak bilinen ve EK-
+6'de örnekleri sunulan yöntemlerden biri veya birkaçı projeye özel olarak geliştirilerek
+kullanılır.
+(7) Aynı kodlu proje dersinin farklı gruplarında farklı ölçme ve değerlendirme yöntemi
+kullanılabilir. Ders kapsamında geliştirilecek ölçme ve değerlendirme sistemi dersin öğrenme
+çıktılarını geçerli, açık ve şeffaf olarak ölçecek şekilde düzenlenir ve proje koordinasyon
+toplantısında dersin grup yürütücüleri tarafından sunulur.
+(8) Proje dersi sınav sonuçları sınav tarihinden sonra en geç iki hafta içerisinde
+öğrencilere duyurulur.
+(9) Fakülte Yönetim Kurulu tarafından görevlendirilen davetli jüri üyelerinin
+değerlendirmeleri notlandırmaya dahil edilir. Fakültenin öğretim elemanları, öğrencileri ya da
+diğer katılımcılar/uzmanlar proje sunumlarına izleyici olarak katılabilir ancak not veremez.
+=== SAYFA 9 ===
+Proje derslerinde not ve harf aralıkları
+MADDE 14 – (1) Sınav yüzdelikleri, proje koordinatörü ile proje grup yürütücülerinin
+ortak kararı ile her eğitim öğretim dönemi başında belirlenir. Aynı kodlu proje dersinin farklı
+gruplarında aynı sınav yüzdelikleri kullanılır.
+(2) Proje dersi harf notu aralıkları proje koordinatörü ve grup yürütücülerinin ortak
+kararı ile belirlenir. Aynı kodlu proje dersinin farklı gruplarında aynı harf notu aralıkları
+kullanılır.
+(3) Dönem sonu sınav notu belirlenirken jüri üyelerinin ve proje grubu yürütücüsünün
+not ağırlığının dağılımı, dönem başında yapılan proje koordinasyon toplantısında belirlenir.
+Proje değerlendirme jürilerini oluşturma esasları
+MADDE 15 – (1) Proje dersi kapsamındaki değerlendirme sunumlarında proje dersi
+gruplarının yürütücüleri asil jüri üyesidir. Proje dersi kapsamındaki sunumları değerlendirmek
+üzere oluşturulan jüri davetli uzmanların katılımı ile en az 3 (üç) üyeden oluşur. Jüri, proje
+koordinasyon toplantısında alınan kararlara uygun olarak dersin grup yürütücüleri tarafından
+oluşturulur.
+(2) Proje koordinasyon toplantısında, öncelikli olarak bölüm içinden yedek jüri üyesi
+belirlenip bölüm başkanlığına görevlendirme talebi iletir.
+(3) Diğer üniversitelerde görevli öğretim üyeleri/elemanları, sektörde en az iki yıl
+deneyimli profesyoneller ve proje konusu ile ilgili uzmanlar jüri üyesi olarak proje sunumlarına
+davet edilebilir.
+(4) Davetli jüri üyelerinin görevlendirme talepleri proje koordinasyon toplantısı
+sonunda, akademik takvimde dönem sonu sınav tarihi olarak duyurulan tarihten en geç iki hafta
+önce bölüm başkanlıklarına bildirilir. Bölüm başkanlıkları görevlendirilen jüri üyelerini
+duyurur.
+Proje derslerinde mazeret sınavı ve değerlendirme
+MADDE 16 – (1) Proje derslerinde mazeret sınavı yapılır. Bu derslerin bütünleme sınavı
+yoktur.
+(2) Proje sunumu olarak yapılandırılan değerlendirme süreçlerinde teslim aşamasında
+mazeret beyan edilmesi durumunda “Eskişehir Teknik Üniversitesi Önlisans ve Lisans Eğitim-
+Öğretim ve Sınav Yönetmeliği”ne uygun olarak mazereti gösteren belge, bölüm sınav
+takviminde dersin sınav tarihi olarak belirtilen tarihi kapsamalıdır.
+=== SAYFA 10 ===
+(3) Proje tesliminin zamanında yapılması ancak projenin sunum tarihinde mazeret
+beyan edilmesi durumunda “Eskişehir Teknik Üniversitesi Önlisans ve Lisans Eğitim-Öğretim
+ve Sınav Yönetmeliği”ne uygun olarak mazereti gösteren belge, proje sunum tarihleri olarak
+ilan edilen hafta veya günleri kapsamalıdır.
+(4) Proje sunumu olarak yapılandırılan değerlendirme sürecinin teslim aşamasında
+mazeret beyan eden öğrenciler mazereti gösteren belgede belirtilen son tarihi takip eden ilk üç
+iş günü içinde proje föyünde belirtilen proje materyallerini teslim etmek zorundadır. Bu süre
+içinde proje materyallerini teslim etmeyen öğrenciler de mazeret sınavına katılabilir.
+(5) Proje sunumu olarak yapılandırılan değerlendirme sürecinin teslim aşamasında
+mazeret beyan eden öğrenciler proje sunum tarihleri içinde sözlü sunum yapmaz.
+(6) Mazeret sınavı proje koordinasyon toplantısında proje grup yürütücülerin ortak
+görüşü olarak karara bağlanan yöntem ile proje dersi grup yürütücüsü tarafından yapılır.
+(7) Mazeret sınavı uygulamalı yapılır. Bu kapsamda öğrencilerden dönem içindeki
+projelerine benzer ve/veya devam niteliğinde ek olarak verilen ödev, sunum, detay çalışması,
+eskiz sınavı gibi ilave çalışmalar verilir. İlave olarak verilen konu mazeret sınavı için ayrılan
+zamanda gerçekleştirebilir nitelikte olmalıdır.
+(8) Mazeret sınav notu;
+• %60'ı proje teslim tarihinde sunulması beklenen ancak mazeret nedeniyle mazeretin
+bitiminden üç iş günü içinde teslim edilen tüm proje materyallerinin
+değerlendirilmesi,
+• %40'ı mazeret sınavı kapsamında uygulanan sınavda gösterilen performansın
+değerlendirilmesi ile oluşur.
+Proje dersleri değerlendirme sonuçlarına itiraz
+MADDE 17 – (1) Öğrencinin değerlendirme sonuçlarına itiraz etmesi halinde
+“Eskişehir Teknik Üniversitesi Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği”ne
+uygun olarak “maddi hata” işlemi yapılır.
+(2) “Maddi hata” işlemi için başvuran öğrenci ilgili dilekçeyi şahsen yazmak ve
+istenen ekleri Fakülte Dekanlığına sunmak zorundadır.
+Proje derslerinin denkliği
+MADDE 18 – (1) Öğrencinin Erasmus, Farabi ve Mevlâna gibi bir program kapsamında
+aldığı herhangi bir ders, mezuniyet projesi niteliğinde olan proje dersine denk tutulamaz.
+(2) Fakültenin akredite bir bölümüne kayıtlı öğrenci; yaz okulunda diğer
+yükseköğretim kurumlarından proje dersi almak isterse, Üniversite mevzuatında öngörülen
+=== SAYFA 11 ===
+koşullara ek olarak diğer yükseköğretim kurumlarının akredite bölümlerindeki eşdeğer
+derslerine kayıt yaptırır.
+Proje derslerinin uzaktan yürütülmesi
+MADDE 19 – Küresel salgın veya bu kapsamda değerlendirilebilecek ulusal ve/veya
+uluslararası nedenlerden dolayı derslerin yüz yüze yapılamaması durumunda;
+(1) Dersler, “Eskişehir Teknik Üniversitesi Örgün Eğitimde Uzaktan Öğretim Usul ve
+Esasları”na uygun olarak uzaktan öğretim yöntemleri ile yürütülür.
+(2) Dersler senkron olarak ve canlı ders teknolojileri kullanılarak yürütülür.
+(3) En az 30 dakikalık canlı ders seansı bir ders saati olarak kabul edilir.
+(4) Proje ders içeriklerinin ve materyallerin paylaşılması, derslerin sınavları ve teslimi
+öncelikle Üniversitenin öğrenme yönetim sistemi ve canlı ders teknolojisi üzerinden yürütülür.
+Bu sistemlere ek olarak, bölüm başkanlığına yazılı olarak bildirmek koşulu ile dersin öğretim
+elemanı diğer öğrenme yönetim sistemlerini kullanabilir.
+(5) Bu süreçte bu Yönergenin 12 inci maddesinde belirtilen teslim koşulları aranmaz.
+Teslim koşulları proje föyünde detaylıca belirtilir ve teslimler çevrimiçi öğrenme yönetim
+sistemi üzerinden alınır.
+(6) Proje sunumları sırasında oluşabilecek teknik sorunları önlemek amacıyla
+öğrenciler sunumlarını video ve sesli formatta kaydederek belirtilen proje teslim tarihinde
+öğrenme yönetim sistemine veya ders için kullanılan diğer bulut depolama sistemine yükler.
+(7) Proje sunumları canlı ders sistemi kullanılarak gözetimli sınav formatında
+yürütülür, Gözetimli sınav sırasında projesini sunan öğrenci kamerasını açmak zorundadır.
+(8) Proje sunumları canlı ders sistemi kullanılarak kayıt altına alınır. Kayıtlar dersin
+ilgili yıldaki görevli öğretim elemanları tarafından iki yıl süre ile arşivlenir.
+(9) Teknolojik donanım yetersizliği nedeniyle proje sunumuna katılamayan
+öğrenciler, proje teslim tarihinden en geç iki hafta önce mazeretlerini belirten dilekçe ile
+Fakülte Dekanlığına başvurarak birim yönetim kurulu kararı ile mazeret sınavına girme
+haklarını “Eskişehir Teknik Üniversitesi Örgün Eğitimde Uzaktan Öğretim Usul ve Esasları”na
+uygun olarak kullanır.
+=== SAYFA 12 ===
+BEŞİNCİ BÖLÜM
+Proje Çıktı ve Materyallerini Sergileme ve Arşivleme
+Sergileme ve yayım hakkı
+MADDE 20 – (1) Öğrencilerin dersler kapsamında ürettikleri eser ve ürünler; Üniversite
+tarafından Fakülte ve bölümlerin tanıtımı amacıyla ilgili mevzuat kapsamında sergi, fuar ve
+çeşitli tanıtım etkinliklerinde kullanılabilir.
+(2) Proje dersleri kapsamında geliştirilen öğrenci çalışmaları, akademik araştırma
+amaçlı kullanılabilir. Bu durumda öğrenciler proje föyünde araştırma konusunda detaylı olarak
+bilgilendirilir.
+(3) Proje dersi kapsamında oluşturulacak sergiler için proje materyali ve projeyi
+özetleyen bir adet basılı tercihen renkli poster proje föyünde belirtilen format ve ölçüde teslim
+alınır.
+Proje derslerinde proje çıktılarının arşivlenmesi ve geri teslimi
+MADDE 21 – (1) Öğrencilerin A3 ebadında basılı olarak hazırladıkları proje dosyası ve
+orijinal boyutta dijital olarak teslim ettikleri proje materyalleri, sınav evrakı olarak kabul
+edilir ve bu materyaller fiziksel olarak iki (2) yıl süreyle bölüm veya Fakülte arşivinde
+arşivlenir.
+(2) Arşivlenme süresi dolan proje materyalleri, eğitim-öğretim yılının ilk ayı içinde
+proje grubu yürütücülerine ve öğrencilere duyurularak, yasal olarak saklanması zorunlu olanlar
+haricinde EK-7'deki “Proje Materyalleri Arşiv Teslim Belgesi”ne uygun şekilde imza
+karşılığında teslim edilir. Teslim alınmayan proje materyallerinin kullanım hakkı Fakülteye
+aittir.
+(3) Dönem içinde oluşturulan proje teslim tutanakları ve proje ders materyalleri,
+akademik takvimde dönem sonu harf notlarının girilmesi için belirtilen son tarihte bölüm
+başkanlıklarına yazılı olarak teslim edilir.
+=== SAYFA 13 ===
+ALTINCI BÖLÜM
+Çeşitli ve Son Hükümler
+İş birlikleri
+MADDE 22 – (1) Proje dersleri kapsamında Üniversite dışındaki kurum ve kuruluşlarla
+yapılacak işbirlikleri, Fakülte Yönetim Kurulu tarafından kabul edilen protokol ve
+belirlenen usul ve esaslar kapsamında yürütülür.
+Yetki
+MADDE 23 – (1) Bu Yönerge kapsamında olduğu halde hakkında hüküm bulunmayan
+konular, Fakülte Yönetim Kurulu kararı ve Üniversite Senatosu onayı ile karara bağlanır.
+Yürürlük
+MADDE 24 – (1) Bu Yönerge, Eskişehir Teknik Üniversitesi Senatosu tarafından
+kabul edildiği tarihten itibaren yürürlüğe girer.
+Yürütme
+MADDE 25 – (1) Bu Yönerge, Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım
+Fakültesi Dekanı tarafından yürütülür.
+Açıklama
+Kabul/Revizyon Tarih ve Numarası |
+İlk Yayın 05/10/2021 tarihli ve 29/1 sayılı Senato Kararı
+=== SAYFA 14 ===
+EK-1 Proje Koordinasyon Toplantı Tutanağı
+=== SAYFA 15 ===
+=== SAYFA 16 ===
+=== SAYFA 17 ===
+Proje Föyü Taslağı / Taslakları (Tüm Gruplar)
+=== SAYFA 18 ===
+EK-2 Örnek Proje Föyü Şablonu
+=== SAYFA 19 ===
+=== SAYFA 20 ===
+=== SAYFA 21 ===
+=== SAYFA 22 ===
+=== SAYFA 23 ===
+=== SAYFA 24 ===
+EK- 3 Proje Materyallerini Teslim Tutanağı
+=== SAYFA 25 ===
+EK- 4 Proje Teslimi Vekalet Dilekçesi
+=== SAYFA 26 ===
+EK- 5 Proje dersi değerlendirme cetveli (Örnek)
+=== SAYFA 27 ===
+EK- 6 Performansa ve portfolyoya dayalı ölçme ve değerlendirme araçları (Örnekler)
+=== SAYFA 28 ===
+=== SAYFA 29 ===
+=== SAYFA 30 ===
+=== SAYFA 31 ===
+EK-7 Proje Materyalleri Arşiv Teslim Belgesi

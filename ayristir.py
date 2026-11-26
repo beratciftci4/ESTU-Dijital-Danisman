@@ -48,6 +48,8 @@ BICIM = {
     "muh_staj": "madde",
     "bbbf_staj": "madde",
     "hubf_staj": "madde",
+    "mtf_staj": "madde",
+    "mtf_proje": "madde",
     "danismanlik": "madde",
     "proje_temelli_staj": "madde",
     "hakli_nedenler": "numara",
@@ -210,6 +212,10 @@ def sonraki_mi(onceki, yeni, bicim):
     y_sayi = int(yeni.split("/")[0])
     if bicim == "madde" and "/" in yeni:      # 20/A, 20'den sonra gelir
         return y_sayi == o_sayi
+    if bicim == "madde" and y_sayi == o_sayi + 2:
+        # Mimarlık staj yönergesinde madde 24 yok, 23'ten 25'e atlıyor. Satır "MADDE" ile
+        # başladığı için metin içindeki bir sayıyla karışma ihtimali düşük.
+        return True
     return y_sayi == o_sayi + 1
 
 
@@ -332,7 +338,8 @@ def parca(belge, tur, no, baslik, bolum, satirlar, ocr=False):
 def pdf_ayristir(belge):
     bicim = BICIM[belge["id"]]
     yol = KAYNAK_KLASORU / belge["dosya"]
-    ocr = bicim == "ocr"
+    # taranmış PDF'lerin OCR metni yanında .ocr.txt olarak duruyor (elle düzeltilmiş)
+    ocr = yol.with_suffix(".ocr.txt").exists()
     if ocr:
         satirlar, resimli = ocr_satirlari(yol.with_suffix(".ocr.txt")), []
     else:

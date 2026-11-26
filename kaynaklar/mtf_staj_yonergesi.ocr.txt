@@ -1,0 +1,388 @@
+# Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım Fakültesi Staj Yönergesi
+# Kaynak: taranmış PDF, metin katmanı yok
+# tesseract 5 (tur, 300 dpi, psm 6) ile okundu; bariz OCR hataları elle düzeltildi.
+# Sayfa üst bilgisi (Senato kararı satırı) ve 'Sayfa n/N' satırları çıkarıldı. Eklerde sadece formların başlıkları tutuldu.
+=== SAYFA 1 ===
+ESKİŞEHİR TEKNİK ÜNİVERSİTESİ
+MİMARLIK VE TASARIM FAKÜLTESİ
+STAJ YÖNERGESİ
+BİRİNCİ BÖLÜM
+Amaç ve Kapsam, Dayanak ve Tanımlar
+Amaç ve kapsam
+MADDE 1 – (1) Bu Yönerge, Eskişehir Teknik Üniversitesi Mimarlık ve Tasarım Fakültesi
+öğrencilerinin öğrenimleri süresince kazandıkları bilgi ve becerileri uygulamalı olarak
+geliştirmeleri amacıyla yapmakla yükümlü oldukları stajların temel ilkelerinin planlanması,
+uygulanması, denetlenmesi ve değerlendirilmesine ilişkin usul ve esasları düzenler.
+Dayanak
+MADDE 2 – (1) Bu Yönerge, 19/09/2018 tarihli ve 30540 sayılı Resmi Gazete'de
+yayımlanarak yürürlüğe giren “Eskişehir Teknik Üniversitesi Önlisans ve Lisans Eğitim-Öğretim
+ve Sınav Yönetmeliği”nin 8 inci maddesine dayanılarak hazırlanmıştır.
+Tanımlar
+MADDE 3 – (1) Bu Yönergede geçen;
+a) Bölüm: Mimarlık ve Tasarım Fakültesinin Mimarlık, İçmimarlık, Endüstriyel Tasarım,
+Moda Tasarımı, Moda ve Tekstil Tasarımı, Tekstil ve Moda Tasarımı Bölümlerini,
+b) Bölüm Başkanı: Mimarlık ve Tasarım Fakültesi ilgili Bölüm Başkanlarını,
+c) Bölüm Staj Kılavuzu: Bölümlerin staj türü ve süreçlerine yönelik esasları kapsayan
+dokümanı,
+ç) Bölüm Staj Komisyonu: Stajla ilgili faaliyetlerin organizasyonu ve koordinasyonu için
+her bir bölümde oluşturulan komisyonu,
+d) Bölüm Staj Komisyonu Başkanı: İlgili bölüm başkanı tarafından görevlendirilen
+öğretim elemanlarını,
+e) Dekan: Mimarlık ve Tasarım Fakültesi Dekanını,
+f) Dekanlık: Mimarlık ve Tasarım Fakültesi Dekanlığını,
+g) Fakülte: Mimarlık ve Tasarım Fakültesini,
+ğ) Fakülte Kurulu: Mimarlık ve Tasarım Fakültesi Fakülte Kurulunu,
+h) Fakülte Staj Komisyonu: Fakülte genelinde staj faaliyetlerinin organizasyonu ve
+koordinasyonu için oluşturulan komisyonu,
+=== SAYFA 2 ===
+ı) Fakülte Staj Komisyonu Başkanı: Dekan tarafından görevlendirilen, eğitim öğretim ile
+staj iş ve işlemlerinden sorumlu Dekan Yardımcısını,
+i) Kurum/Kuruluş: Staj yapılacak kamu ya da özel kurumu/kuruluşu,
+j) Öğrenci İşleri Birimi: Mimarlık ve Tasarım Fakültesi Öğrenci İşleri Birimini,
+k) Proje Tabanlı Staj: Eskişehir Teknik Üniversitesi Ar-Ge ve İnovasyon Koordinasyon
+Birimi Teknoloji Transfer Ofisi'nin (ARİNKOM-TTO) iş birliği yaptığı
+kurumun/kuruluşun belirlediği konularda gerçekleştirilen ve stajyer öğrencinin görev
+aldığı proje tabanlı stajı,
+l) Rektör: Eskişehir Teknik Üniversitesi Rektörünü,
+m) Senato: Eskişehir Teknik Üniversitesi Senatosunu,
+n) SGK: Sosyal Güvenlik Kurumunu,
+o) Staj Dersi: Endüstriyel Tasarım Bölümünde açılan Fabrika Stajı ve Ofis Stajı,
+İçmimarlık Bölümünde açılan Staj I ve Staj II, Mimarlık Bölümünde açılan Şantiye Stajı,
+Büro Stajı derslerini ve Tekstil ve Moda Tasarımı Bölümü programlarında açılan Staj I
+ve Staj II derslerini,
+ö) Sorumlu Öğretim Elemanı: Staj yapacak her bir uygulamalı eğitim grubu için eğitimler
+süresince görev yapacak ve bölümün ders planında yer alan staj derslerinin tanımlandığı
+öğretim elemanını,
+p) Yönetim Kurulu: Mimarlık ve Tasarım Fakültesi Fakülte Yönetim Kurulunu,
+r) Staj: Yükseköğretim kurumlarında verilen ve programa özgü olarak belirlenmiş teorik
+ve uygulamalı dersler dışında, öğrencilerin öğretim programlarıyla kazandırılması
+öngörülen mesleki bilgi, beceri, tutum ve davranışları geliştirmeleri, sektörü tanımaları,
+iş hayatına uyum sağlamaları, tecrübe edinmeleri ve gerçek üretim ve hizmet ortamında
+yetişmeleri amacıyla işletmelerde yaptıkları mesleki çalışmayı,
+ifade eder.
+İKİNCİ BÖLÜM
+Stajın Amacı, Staj Komisyonları ve Yürütücüleri
+Stajın Amacı
+MADDE 4 – (1) Stajın amacı, Fakülte öğrencisinin, öğrenim gördüğü programla ilgili iş
+alanlarını tanımasını ve kurum/kuruluşlardaki uygulamaları öğrenmesini, eğitim-öğretim yoluyla
+edindiği bilgi ve becerileri uygulayarak mesleki deneyim kazanmasını sağlamaktır.
+Fakülte Staj Komisyonu
+MADDE 5 – (1) Fakülte Staj Komisyonu, eğitim-öğretimden sorumlu Dekan Yardımcısı
+başkanlığında bölüm başkanları tarafından görevlendirilen ve öğretim elemanı olan bölüm staj
+komisyonu başkanlarından oluşur. Komisyon, Başkanın talebiyle toplanır.
+=== SAYFA 3 ===
+Fakülte Staj Komisyonunun Görevleri
+MADDE 6 – (1) Fakülte Staj Komisyonunun görevleri şunlardır:
+a) Stajla ilgili esasları belirlemek,
+b) Staj faaliyetlerinin organizasyonunu ve koordinasyonunu yapmak,
+c) Öğrenci İşleri Biriminin öğrencinin SGK bildirgelerini izlemesini/takip etmesini
+sağlamak,
+ç) Fakülte staj takviminin hazırlanması, duyurulması ve uygulanmasını sağlamak,
+d) Stajla ilgili diğer iş ve işlemleri yapmak,
+e) Stajın değerlendirilmesine ilişkin itirazları karara bağlamak üzere Yönetim Kuruluna
+sunmak.
+Bölüm Staj Komisyonu
+MADDE 7 – (1) Bölüm Staj Komisyonu; Bölüm Başkanı tarafından görevlendirilen, biri
+başkan diğer ikisi üye olmak üzere en az üç öğretim elemanından oluşur. Başkan ve üyeler en az
+üç yıl süreyle görev yapar. Komisyon, Başkanın talebiyle toplanır.
+Bölüm Staj Komisyonunun Görevleri
+MADDE 8 – (1) Bölüm Staj Komisyonunun görevleri şunlardır:
+a) Bölüm Staj Kılavuzunu hazırlamak ve belirli aralıklarla iyileştirmek,
+b) Fakülte staj takvimine uygun olarak bölüm staj takvimini oluşturmak,
+c) Bölüme özgü staj değerlendirme ölçütlerini belirlemek,
+ç) Öğrencilere kurumdan/kuruluşlardan staj yerleri sağlanmasına yardımcı olmak,
+d) Staj başvuru belgelerinin Yönergeye uygunluğunu incelemek, değerlendirmek ve
+onaylamak,
+e) Staj başvuru sürecini izlemek,
+f) Stajın, amacına ve kurallara uygun yürütülmesini takip etmek, gerektiğinde staj yapılan
+kurumdan/kuruluştan öğrenci hakkında bilgi almak,
+g) Staj başvurusu yapan ve başvurusu kabul edilen öğrencilerin bilgilerini Öğrenci İşleri
+Birimine ve sorumlu öğretim elemanlarına yazılı olarak iletmek,
+ğ) Stajın değerlendirilmesine ilişkin itirazları ve muafiyet taleplerini incelemek, raporlamak
+ve karara bağlamak üzere Fakülte Staj Komisyonuna iletmek üzere Bölüm Başkanlığına
+sunmak,
+h) Bölüm staj dersi yürütücülerini staj süreçleri konusunda bilgilendirmek ve yürütücüleri
+derslerin işlenmesi konusunda koordine etmek,
+i) Bölüm ile kurum/kuruluşlar arasında staj imkânları konusunda koordinasyon sağlamak,
+j) Stajlarla ilgili SGK prim ve ödemeleri hariç diğer iş ve işlemleri yapmak,
+=== SAYFA 4 ===
+k) Staj yapan öğrencileri; sorumlu öğretim elemanından gelen bilgi ve belgelere göre başarılı
+veya başarısız olarak değerlendirmek.
+Sorumlu Öğretim Elemanlarının Görev ve Yetkisi
+MADDE 9 – (1) Bölümlerde staj faaliyetlerini izlemesi, kurum/kuruluşlar ile Fakülte
+arasında koordinasyonu sağlaması, öğrencilere staj süreçlerinde rehber olması, ölçme ve
+değerlendirme işlemlerinde yer alması amacıyla staj yapacak her bir grup için staj süresince, bölüm
+başkanlarının önerisi üzerine Yönetim Kurulu tarafından sorumlu bir öğretim elemanı
+görevlendirilir. Staj kapsamında atanan sorumlu öğretim elemanına sorumlu olduğu grup sayısına
+bakılmaksızın haftalık iki saat uygulamalı ders yükü yüklenir.
+Sorumlu öğretim elemanının görevleri şunlardır:
+a) Kurum/Kuruluş Öğrenci Staj Değerlendirme Formundan yeterli puan alan öğrencilere ait;
+Öğrenci Staj Raporunu, stajla ilgili ek bilgi ve belgeler açısından değerlendirmek ve başarılı ya da
+başarısız olarak notlandırılmak üzere Bölüm Staj Komisyonuna sunmak,
+b) Öğrencilerin staj notlarını öğrenci bilgi sistemine işlemek/kaydetmek ve Bölüm Staj
+Komisyonuna sorumlu olduğu öğrencilerin değerlendirme sonuçları ile ilgili bilgi vermek.
+MADDE 10 – (1) Bölümde ilgili staj derslerini yürüten sorumlu öğretim elemanının
+görevleri şunlardır:
+a) Fakülte Staj Komisyonu ve Bölüm Staj Komisyonunun belirlediği kriterlere ve Bölüm
+Staj Kılavuzuna uygun olarak öğrencilerin staj raporlarını değerlendirmek,
+b) Öğrencilerin staj raporlarında Bölüm Staj Kılavuzuna uygun olarak gerekli
+düzenlemelerin yapılmasını sağlamak,
+c) Staj derslerine ait değerlendirme bilgilerini Öğrenci Bilgi Sistemi üzerinden tanımlamak,
+ç) Öğrencilerin staj değerlendirme notlarını öğrenci bilgi sistemine işlemek/kaydetmek,
+d) Bölüm Staj Komisyonuna ve Bölüm Başkanlığına sorumlu olduğu öğrencilerin
+değerlendirme sonuçları ile ilgili bilgi vermek,
+e) Sorumlu olduğu öğrencilerin staj belgelerini arşivlenmek üzere Bölüm Başkanlığına
+göndermek,
+f) Staj faaliyetlerinin izlenmesi ve iyileştirilmesi konusunda Bölüm Staj Komisyonuna
+destek olmak.
+=== SAYFA 5 ===
+ÜÇÜNCÜ BÖLÜM
+Genel Esaslar, Staj Yerlerinin Belirlenmesi ve Staj Başvurusu
+Genel Esaslar
+MADDE 11 – (1) Stajların yaz dönemi içinde yapılması esastır. Ancak staj tarihlerinin
+akademik takvime uygun olmaması durumunda eğitim ve öğretimi aksatmamak şartıyla staj
+yapılabilir. Bu durumda:
+a. Güz ve Bahar yarıyıllarında haftada en az üç tam iş günü dersi olmayan öğrenci, stajını
+dersinin olmadığı günlerde yapmak koşuluyla Bölüm Staj Komisyonunun kararıyla staj
+yapabilir,
+b. Öğrenci bütün derslerini tamamlamış ancak stajını henüz tamamlamamış ise Staj
+uygulamasını herhangi bir zamanda yapabilir,
+(2) Staj yapan öğrencilere ödenecek ücretler hakkında 3308 sayılı Kanun'un 25 inci
+maddesi uygulanır.
+(3) Staj yapan öğrenciler hakkında 5510 sayılı Kanun'un 5 inci maddesinin birinci
+fıkrasının (b) bendi uyarınca iş kazası ve meslek hastalığı sigortası uygulanır. Bu öğrencilerden
+bakmakla yükümlü olunan kişi durumunda olmayanlar hakkında ayrıca genel sağlık sigortası
+hükümleri uygulanır. Bu fıkra kapsamında ödenecek primler 5510 sayılı Kanun'un 87 nci
+maddesinin birinci fıkrasının (e) bendi uyarınca Fakülte tarafından karşılanır.
+(4) Proje Tabanlı Staj yapan öğrencilerin sigorta işlemleri, 5510 sayılı Sosyal Sigortalar ve
+Genel Sağlık Sigortası Kanunu gereğince Fakülte tarafından gerçekleştirilir. 3308 sayılı Mesleki
+Eğitim Kanunu'na göre “staj ücretlerine işsizlik fonu katkısı” kapsamında işveren staj yapan
+öğrenciye ücret ödeyecekse “EK -6: Öğrenci ve İşveren Bilgi Formu” doldurulur.
+(5) Değişim programları kapsamında veya öğrencinin kendi girişimiyle bulduğu yurt
+dışındaki kurumda/kuruluşlarda yapılan stajlarda öğrenci için SGK primi ödenmez.
+Staj Başvurusu
+MADDE 12 – (1) Öğrenci, dördüncü yarıyılın sonu itibarıyla staja başvurabilir. Staj
+başlangıç tarihinden en az 15 (on beş) gün önce “Staj Süreci Akış Şeması'na (EK-1)” uygun olarak
+“Staj Başvuru ve Kabul Formu'nu (EK-2)” doldurur ve Bölüm Başkanlıklarına Bölüm Staj
+Komisyonuna iletilmek üzere teslim ederek başvuru sürecini başlatır. Staja kabul edilen öğrenci;
+“Staj Devam Çizelgesi'ni (EK-3)”, “Kurum/Kuruluş Staj Değerlendirme Formu'nu (EK -4)”, “Staj
+Raporu'nu (EK-5)”, “Staj Ücretlerine İşsizlik Fonu Katkısı Öğrenci ve İşveren Bilgi Formu'nu
+(EK-6)” ve staj başvurusuyla ilgili tüm belgeleri Fakülte internet sayfasından temin eder. Öğrenci
+ayrıca Bölüm Staj Komisyonu tarafından hazırlanan ve Yönetim Kurulu tarafından onaylanan
+“Öğrenci Staj Kılavuzu” hükümlerine uymakla yükümlüdür.
+=== SAYFA 6 ===
+Staj Belgeleri
+MADDE 13 – (1) Öğrenci, staj başvurusunda ve staj sürecinde aşağıdaki belgeleri
+hazırlamak ve tamamlanmasını izlemekle yükümlüdür.
+a) Staj Süreci Akış Şeması (EK-1): Stajın başlangıcından bitimine kadar öğrencinin
+izleyeceği yolu gösteren şemadır,
+b) Staj Başvuru ve Kabul Formu (EK-2): İnternet ortamından temin edilip öğrenci
+tarafından doldurulan, öğrenciye ve stajın yapılacağı kuruma/kuruluşa ait bilgilerin yer
+aldığı formdur,
+c) SGK İşe Giriş Bildirgesi: Staj yapacak öğrencinin (sigortalının), SGK'ya bildirilen işe
+başlama tarihini gösteren belgedir. Öğrenci İşleri Birimi tarafından hazırlanır ve staj
+öncesinde öğrenciye verilir,
+ç) Staj Devam Çizelgesi (EK-3): Öğrencinin devam durumunu gösteren ve öğrenci
+tarafından staj yaptığı her gün için imzalanan çizelgedir,
+d) Kurum/Kuruluş Staj Değerlendirme Formu (EK-4): Kurum/Kuruluş Staj Yetkilisinin
+öğrencilerin staj süresince yaptıkları çalışmaları değerlendirmede kullandığı ölçütleri
+içeren belgedir. Bu belge Kurum/Kuruluş Staj Yetkilisi tarafından doldurularak kapalı
+zarf içinde Bölüm Staj Komisyonuna teslim edilmek üzere staj bitiminde öğrenciye
+verilir,
+e) Staj Raporu: Belirlenen ölçütlere uygun olarak düzenlenen “Staj Raporu Sayfası
+Örneği” (EK-5), “Staj Raporu Kapak Sayfası” (EK-5a) ve “Staj Raporu İç Kapak Sayfası”
+(EK-5b) ndan oluşan; öğrencinin staj çalışmasını kapsayan rapordur,
+f) Staj Ücretlerine İşsizlik Fonu Katkısı Öğrenci ve İşveren Bilgi Formu (EK-6): Staj
+ücretlerine işsizlik fonu katkısını belirleyen belgedir,
+g) Staj Ayrılış Formu (EK-7): Öğrencinin herhangi bir nedenle stajını tamamlayamadığı
+durumda Kurum/Kuruluş Staj Yetkilisinin Dekanlığa iletilmek üzere düzenleyeceği
+belgedir,
+ğ) Staj Değerlendirme Formu (EK-8): Öğrencinin başarılı/başarısız olarak
+değerlendirildiği, Bölüm Staj Komisyonu tarafından hazırlanan belgedir.
+Staj Süresi ve Devam Zorunluluğu
+MADDE 14 – (1) Zorunlu staj süresi 60 iş gününden az olamaz. Staja devam zorunludur.
+Geçerli mazeretler nedeniyle staja devam edilmeyen günler telafi edilir. Bu günler, toplam zorunlu
+staj süresinin %10'unu geçemez. Kurum/Kuruluş Staj Yetkilisi, kurala uymayan öğrencinin stajını
+sonlandırarak durumu Dekanlığa veya Bölüm Başkanlığına Staj Ayrılış Formunu doldurarak
+bildirir. Bu durumdaki öğrenci başarısız olduğu stajı yenilemek zorundadır. Öğrencinin akademik
+=== SAYFA 7 ===
+ve mesleki yeterliliğini/yetkinliğini arttırmaya yönelik olarak isteğe bağlı yaptığı Proje Tabanlı
+Staj süresi; 45 (kırk beş) iş gününden az, 90 (doksan) iş gününden fazla olamaz.
+(2) Mücbir sebep veya haklı bir gerekçeyle stajını tamamlayamayan öğrencinin tamamlamış
+olduğu staj süresinin, stajına sayılıp sayılamayacağına Bölüm Staj Komisyonu karar verir.
+Staj Yerlerinin Belirlenmesi ve Onaylanması
+MADDE 15 – (1) Bölüm Staj Kılavuzu'ndaki esaslara uygun yurt içinde staj yeri bulma
+sorumluluğu, tümüyle öğrenciye aittir. Bununla birlikte; Bölüm Staj Komisyonu ve Fakülte Staj
+Komisyonu, öğrencinin istenen nitelikte staj yeri bulmasını kolaylaştırmak için
+kurumlar/kuruluşlar nezdinde gerekli girişimlerde bulunabilir. Öğrencinin yurt içinde kendi
+girişimi sonucunda bulduğu staj yerinin uygunluğu Bölüm Staj Komisyonu tarafından karara
+bağlanır.
+(2) Öğrenci, ARİNKOM Teknoloji Transfer Ofisi tarafından iş birliği yapılan
+kurumlarda/kuruluşlarda Proje Tabanlı Staj yapabilir. Öğrencinin yaptığı Proje Tabanlı Stajın,
+zorunlu stajlarından birinin yerine sayılabilmesi Bölüm Staj Komisyonu kararına göre yapılır.
+(3) Yurt dışında staj yapmak isteyen öğrenci, stajını, değişim programı kapsamında
+gerçekleştirebileceği gibi kendi girişimiyle bulduğu yurt dışındaki kurumda/kuruluşta da Bölüm
+Staj Komisyonunun yazılı önerisi ve Yönetim Kurulunun kararı ile yapabilir.
+Staj Yeri Değişikliği
+MADDE 16 – (1) Öğrenci staja başladıktan sonra Bölüm Staj Komisyonunun onayı ile staj
+yeri değişikliği yapabilir.
+(2) Staj yapılan kurumda/kuruluşta; grev veya lokavt uygulaması, yangın, iflas, iş kazası;
+deprem, sel vb. doğal afetlerde veya öğrencinin stajın amacı dışında çalıştırılması vb. durumlarda
+Bölüm Staj Komisyonunun onayıyla öğrenci yeni bir staj yerinde staj süresini tamamlayabilir. Staj
+yeri değişikliğine ilişkin olarak bu Yönergede yer almayan ve staj yapan öğrencinin bildirdiği diğer
+mazeretler için karar almaya Bölüm Staj Komisyonu yetkilidir.
+DÖRDÜNCÜ BÖLÜM
+Stajın Uygulanması, İzlenmesi, Değerlendirilmesi ve Denkliği
+Stajın uygulanması ve izlenmesi
+MADDE 17 – (1) Öğrenci; “SGK İşe Giriş Bildirgesi”, “Staj Devam Çizelgesi” (EK-3) ve
+“Kurum/Kuruluş Öğrenci Staj Değerlendirme Formu” (EK-4), eğer işletme staj ücreti ödeyecekse
+“Staj Ücretlerine İşsizlik Fonu Katkısı Öğrenci ve İşveren Bilgi Formu” (EK-6) ile birlikte staj
+yapacağı kuruma/kuruluşa giderek Kurum/Kuruluş Staj Yetkilisine belgelerini teslim eder ve
+belirlenen tarihlerde stajını yapar. Bu belgeler, staj bitiminde Kurum/Kuruluş Staj Yetkilisi
+=== SAYFA 8 ===
+tarafından doldurulup kurum/kuruluş kaşesi ile onaylanarak kapalı zarf içinde öğrenciye verilir.
+Kurum/kuruluş kaşesi ve onayı olmayan formlar dikkate alınmaz. Staj süresince yapılan
+çalışmalar, öğrenci tarafından Fakülte internet sayfasından sağlanacak Staj Raporu Sayfalarına
+düzenli olarak işlenerek Kurum/Kuruluş Staj Yetkilisine onaylatılır. İmza ve kaşe bulunmayan ve
+usulüne uygun olarak düzenlenmeyen Öğrenci Staj Raporu kabul edilmez.
+(2) Öğrenci, kurum/kuruluş faaliyetleriyle ilgili gizliliği gerektiren konularda başkalarına
+bilgi veremez. Kurum/kuruluş ile öğrenci arasında doğabilecek ihtilaflarda, Eskişehir Teknik
+Üniversitesi taraf gösterilemez.
+(3) Öğrenci; staj süresince “Yükseköğretim Kurumları Öğrenci Disiplin Yönetmeliği”
+hükümlerine, staj yaptığı kurumun/kuruluşun çalışma ilkelerine, iş koşullarına, disiplin ve iş
+güvenliğine ilişkin kurallarına ve yasal düzenlemelere uymak zorundadır. Kurumlar/kuruluşlar,
+kurallara uymayan öğrencinin stajına son vererek “Staj Ayrılış Formu'nu (EK—7)” doldurup
+durumu en geç üç gün içinde Dekanlığa veya Bölüm Başkanlığına bildirir. Bu durumdaki öğrenci,
+stajını tekrar yapmak zorundadır.
+(4) Fakülte Staj Komisyonu Üyeleri, Bölüm Staj Komisyonu Üyeleri veya görevlendirilecek
+Fakülte öğretim elemanları stajın kurallara uygun yapıldığını belirlemek için gerektiğinde
+denetimler yapabilir. Dekanlık da Eskişehir Teknik Üniversitesi Rektörlüğü aracılığıyla staj
+yapılan illerdeki ilgili yükseköğretim kurumuyla iş birliği yaparak staj yapan öğrencinin stajının
+denetlenmesini sağlayabilir.
+Staj Derslerine Kayıt
+MADDE 18 – (1) Öğrenci dönem içerisinde açılan staj derslerinden uygun olan birine kayıt
+yaptırır:
+Stajını, 10 uncu maddenin 1 inci fıkrası kapsamında eğitim ve öğretimi aksatmamak şartıyla
+dönem içinde yapan öğrencinin staj derslerine kayıt yaptırabilmesi için:
+• Akademik takvimde ekle-sil haftası olarak belirtilen hafta içerisinde, “Staj Başvuru ve
+Kabul Formu'nun” (EK-2) Bölüm Staj Komisyonu tarafından onaylanmış olması,
+• Stajın, akademik takvimde dönem sonu sınavları olarak belirtilen tarihten en geç iki hafta
+önce bitmesi gerekir.
+Bu koşulları sağlayan öğrenci, eğitim ve öğretim dönemi içerisinde staj dersine kayıt yaptırır.
+(2) Öğrencilerin bu maddenin 1 inci fıkrasındaki koşulları sağlamamasına rağmen staj
+derslerine kayıt yaptırması durumunda, öğrenciler dersten dilekçe ile çekilebilir ve ÇK notu alırlar.
+Koşulları sağlamayıp dersten çekilmeyen öğrenciler derste başarısız (Yetersiz) kabul edilir.
+(3) Staj yapma koşullarını sağlayan ve ilgili sektörde SGK'ya kayıtlı olarak daha önce
+çalışan veya hâlen çalışmakta olan öğrenci; zorunlu staj süresi kadar çalıştığını belgelendirmesi
+durumunda Bölüm Staj Komisyonunun görüşü ile ilgili staj dersine kayıt yaptırabilir. Bu
+=== SAYFA 9 ===
+durumdaki öğrenciler staj raporlarını hazırlamak ve ders kapsamında raporu staj dersi
+yürütücüsüne sunmakla yükümlüdür.
+(5) Öğrenci; stajın değerlendirilmesini istediği akademik yarıyılda program kapsamında
+açılan ve yaptığı stajın içeriğine uygun (örneğin; eğer öğrenci fabrika stajı yaptı ise Fabrika Stajı
+isimli derse kayıt yaptırması) staj dersine kaydolmakla yükümlüdür.
+Stajın değerlendirilmesi
+MADDE 19 – (1) Staj, sorumlu öğretim elemanından gelen bilgi, belge ve görüşler
+doğrultusunda Bölüm Staj Komisyonu tarafından başarılı (Yeterli, YT notu ile) ve başarısız
+(Yetersiz, YZ notu ile) olarak değerlendirilir. Öğrencinin stajının başarılı kabul edilebilmesi için
+staj yapılan kurum/kuruluş tarafından doldurulan “Kurum/Kuruluş Staj Değerlendirme
+Formu'ndaki” değerlendirme notunun 5 (beş) üzerinden en az 3 (üç) olması ön koşuldur. Verilen
+not 3'ün (üç) altında ise öğrenci başarısız sayılır.
+(2) “Kurum/Kuruluş Öğrenci Staj Değerlendirme Formu”, “Öğrenci Staj Raporu” ile stajla
+ilgili ek bilgi ve belgelerin ön değerlendirmesi sorumlu öğretim elemanları tarafından yapılır ve
+Bölüm Staj Komisyonuna bilgi verilir. Bölüm Staj Komisyonu yapılan stajları başarılı veya
+başarısız olarak değerlendirir. Gerekli durumlarda Bölüm Staj Komisyonu ve sorumlu öğretim
+elemanı, öğrencinin stajı ile ilgili sözlü sunum yapmasını isteyebilir.
+(3) Stajı başarısız bulunan öğrenci için karar, gerekçeli olarak yazılır ve öğrenciye yazılı
+olarak bildirilir. Stajı başarısız olarak değerlendirilen öğrenciler, ilgili staj uygulamasını yeniden
+yapmak ve ilgili staj dersini yeniden almak zorundadır.
+(4) Staj derslerinin not girişi staj dersi yürütücüsü tarafından Öğrenci Bilgi Sistemine başarılı
+(Yeterli, YT notu ile) ve başarısız (Yetersiz, YZ notu ile) olarak işlenir/kaydedilir.
+Staj Derslerinin Denkliği
+MADDE 20 – (1) Mimarlık ve Tasarım Fakültesine yatay/dikey geçişle gelen ve geldiği
+yükseköğretim kurumunda kayıtlı olduğu sürede veya çift anadal programında staj yapan öğrenci,
+yaptığı stajının denkliğini talep edebilir. Öğrenci denklik talebini ilk kayıt yaptırdığı dönemin
+ikinci haftası sonuna kadar Bölüm Başkanlığına yazılı olarak iletmek zorundadır. Stajın kısmen ya
+da tamamen denkliğine Bölüm Staj Komisyonunun önerisi üzerine Yönetim Kurulu karar verir.
+(2) Mimarlık ve Tasarım Fakültesine yatay/dikey geçişle gelen öğrencinin geldiği
+yükseköğretim kurumunda kayıtlı olduğu sürede veya çift anadal programında yaptığı stajın
+kısmen ya da tamamen denk sayılması, Bölüm Staj Komisyonunun görüşü alınarak Eskişehir
+Teknik Üniversitesi Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği'nde belirtilen
+esaslara göre yapılır.
+(3) Fakülte bölümleri arasında yandal programına kayıtlı olan öğrencinin, yandal programı
+kapsamında zorunlu staj yükümlülüğü yoktur.
+=== SAYFA 10 ===
+(4) Bu maddenin 1 inci ve 2 inci fıkraları dışında Fakülte içinde farklı bölümlerde açılan staj
+dersleri çift anadal programları haricinde birbirine denk sayılmaz.
+İlgili sektörde SGK'ya kayıtlı olarak çalışan öğrenci aynı işyerindeki çalışma içeriğine ve
+süresine istinaden Bölüm Staj Komisyonu onayı ile birden fazla staj dersini alabilir.
+Staj Değerlendirme Sonuçlarına veya Staj Derslerinin Denkliğine İtiraz
+MADDE 21 – (1) Öğrenci, stajın değerlendirilmesine ilişkin karara karşı, kararın ilan tarihini
+izleyen üç işgünü içinde Fakülte Dekanlığına yazılı olarak itirazda bulunabilir. İtiraz, Fakülte Staj
+Komisyonu tarafından değerlendirilir ve sonuca bağlamak üzere Fakülte Yönetim Kuruluna
+sunulur.
+(2) Mimarlık ve Tasarım Fakültesine yatay/dikey geçişle gelen öğrencinin geldiği
+yükseköğretim kurumunda kayıtlı olduğu sürede veya çift anadal programında yaptığı stajın
+kısmen ya da tamamen denk sayılması konusunda açıklanan karara itiraz, kararın ilan tarihini
+izleyen 3 (üç) iş günü içinde Fakülte Dekanlığına yazılı olarak yapılır. Bölüm Staj Komisyonu
+tarafından incelenen ve raporlanan itiraz Fakülte Staj Komisyonu tarafından değerlendirilir ve
+sonuca bağlanmak üzere Fakülte Yönetim Kuruluna sunulur.
+(3) Fakülte Yönetim Kurulu tarafından uygun görülen itiraz sonucunda öğrenci ilgili staj
+dersinden başarılı kabul edilir ve ilgili staj ders notu yeterli (YT) notu ile transkripte aktarılır.
+İsteğe bağlı staj
+MADDE 22 – (1) Bölüm Staj Komisyonun uygun görüşü ve “Yükseköğretimde Uygulamalı
+Eğitimler Çerçeve Yönetmeliği” ndeki usul ve esaslara uygun olmak kaydıyla öğrenci isteğe bağlı
+olarak veya öğrenim gördüğü program kapsamında belirlenen staj süresinden daha uzun süreli staj
+yapabilir.
+(2) Öğrenci aynı anda hem zorunlu staja hem de isteğe bağlı staja devam edemez.
+(3) Bölüm Staj Komisyonunun uygun görmesi hâlinde, öğrencinin yapmış olduğu isteğe
+bağlı staj kapsamında oluşturduğu ve Yönergeye uygun olarak hazırladığı staj raporu ile öğrenci
+ilgili staj dersine kayıt yaptırabilir.
+(4) Öğrencinin isteğe bağlı olarak yaptığı staj, çalışma saati veya kredi üzerinden bir başka
+mesleki seçmeli veya seçmeli ders yerine sayılmaz, mezuniyet kredisi hesabına dâhil edilmez.
+BEŞİNCİ BÖLÜM
+Çeşitli ve Son Hükümler
+Hüküm Bulunmayan Hâller
+MADDE 23 – (1) Bu Yönergede hüküm bulunmayan hâllerde 19/09/2018 tarihli ve 30540
+sayılı Resmi Gazete'de yayımlanarak yürürlüğe giren “Eskişehir Teknik Üniversitesi Önlisans ve
+=== SAYFA 11 ===
+Lisans Eğitim-Öğretim ve Sınav Yönetmeliği” hükümleri ve 31514 sayılı Resmi Gazete'de
+yayımlanarak yürürlüğe giren “Yükseköğretimde Uygulamalı Eğitimler Çerçeve Yönetmeliği” hükümleri
+ile ilgili mevzuat hükümleri uygulanır.
+Yürürlük
+MADDE 25 – (1) Bu Yönerge, Senato tarafından kabul edildiği tarihten itibaren yürürlüğe
+girer.
+Yürütme
+MADDE 26 – (1) Bu Yönerge hükümlerini Eskişehir Teknik Üniversitesi Rektörü yürütür.
+Açıklama
+Kabul/Değişiklik Tarih ve Numarası
+İlk Yayın 11/08/2017 tarihli ve 8/5 sayılı Senato Kararı
+Değişiklik 1 28/02/2023 tarihli ve 5/2 sayılı Senato Kararı
+=== SAYFA 12 ===
+EK-1. Staj Süreci Akış Şeması
+=== SAYFA 13 ===
+EK-2. Staj Başvuru ve Kabul Formu
+=== SAYFA 14 ===
+=== SAYFA 15 ===
+EK-3. Staj Devam Çizelgesi
+=== SAYFA 16 ===
+=== SAYFA 17 ===
+EK-4. Kurum/Kuruluş Staj Değerlendirme Formu
+=== SAYFA 18 ===
+=== SAYFA 19 ===
+EK-5. Staj Raporu Sayfası Örneği
+=== SAYFA 20 ===
+=== SAYFA 21 ===
+EK-5a. Staj Raporu Kapak Sayfası
+=== SAYFA 22 ===
+=== SAYFA 23 ===
+EK-5b. Staj Raporu İç Kapak Sayfası
+=== SAYFA 24 ===
+=== SAYFA 25 ===
+EK-6. Staj Ücretlerine İşsizlik Fonu Katkısı Öğrenci ve İşveren Bilgi Formu
+=== SAYFA 26 ===
+EK-7. Staj Ayrılış Formu
+=== SAYFA 27 ===
+=== SAYFA 28 ===
+EK-8. Bölüm Staj Komisyonu Staj Değerlendirme Formu
+=== SAYFA 29 ===

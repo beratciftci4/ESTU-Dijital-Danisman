@@ -568,6 +568,42 @@ def sorulan_ders_cumleleri(soru, program):
     return bulunan
 
 
+# Bologna program sayfasının bölümleri için kurala dayalı niyetler: (soru deseni, bölüm, sadece önlisans mı).
+# Bu sorular kısa ve genel olduğu için anlam benzerliği yönetmeliğin genel maddelerine kayıyordu.
+BOLUM_NIYETLERI = [
+    (r"dikey geçiş|\bdgs\b|lisans tamamla|lisansa geç", "Üst_Derece_Programlarına_Geçiş", True),
+    (r"(yüksek lisans|doktora|lisansüstü)\w* (yapabilir|başvur|okuyabilir|devam ed)|üst derece", "Üst_Derece_Programlarına_Geçiş", False),
+    (r"iş imkan|istihdam|nerede çalış|nerelerde çalış|ne iş yap|iş bul|iş olanak|kariyer imkan", "İstihdam_Olanakları", False),
+]
+
+
+def sorulan_program_bolumu(soru, program):
+    """Soru bölümün Bologna sayfasındaki bir başlığı soruyorsa o parçanın id'si, yoksa None."""
+    if program in (None, "genel"):
+        return None
+    s = turkce_kucuk(soru)
+    if re.search(r"maaş|ücret|kazan|yatay", s):     # belgelerde yok / başka kural
+        return None
+    bolum, _ = bolum_ve_yil(program)
+    for desen, baslik, sadece_onlisans in BOLUM_NIYETLERI:
+        if re.search(desen, s) and (not sadece_onlisans or bolum in ONLISANS):
+            return f"{bolum}_program_bilgileri#bolum-{baslik}"
+    return None
+
+
+def one_al(tum, pid, arayici, soru, program, yer=0):
+    """Aday listesinde pid'li parçayı verilen sıraya koyar. Parça bu bölümün alt kümesinde yoksa
+    listeyi değiştirmeden döner; ikinci değer parçanın eklenip eklenmediği."""
+    sira = {p["id"]: i for i, p in enumerate(arayici.parcalar)}
+    alt = list(arayici.alt_kume(program)[0])
+    if pid not in sira or sira[pid] not in alt:
+        return tum, False
+    e5 = arayici.e5_skorlari(soru, program)
+    bilgi = {"e5": float(e5[alt.index(sira[pid])]), "bm25": 0.0}
+    digerleri = [x for x in tum if x[0]["id"] != pid]
+    return digerleri[:yer] + [(arayici.parcalar[sira[pid]], bilgi)] + digerleri[yer:], True
+
+
 def staj_suresi_soruluyor(soru):
     """Soru stajın süresini ya da zorunlu olup olmadığını mı soruyor? (diğer staj konuları değil)"""
     s = turkce_kucuk(soru)
@@ -704,6 +740,10 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
         adaylar = [(10.0 if "eğitim dili" in a[3] else 9.99, *a[1:]) if a[4]["id"] == dil_parcasi(program)
                    and ("eğitim dili" in a[3] or "okutulur" in a[3]) else a for a in adaylar]
 
+    bolum_parcasi = sorulan_program_bolumu(soru, program)
+    if bolum_parcasi:
+        adaylar = [(a[0] + 1.0, *a[1:]) if a[4]["id"] == bolum_parcasi else a for a in adaylar]
+
     ders_cumleleri = {c for _, c in sorulan_ders_cumleleri(soru, program)}
     if ders_cumleleri:
         adaylar = [(a[0] + 1.0, *a[1:]) if a[3] in ders_cumleleri else a for a in adaylar]
@@ -813,9 +853,13 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI, program=None):
                 for pid in ders_parcalari if pid in sira and sira[pid] in alt]
         ids = {p["id"] for p, _ in onde}
         tum = onde + [x for x in tum if x[0]["id"] not in ids]
+    bolum_parcasi = sorulan_program_bolumu(soru, program)
+    if bolum_parcasi:
+        tum, eklendi = one_al(tum, bolum_parcasi, arayici, soru, program)
+        bolum_parcasi = bolum_parcasi if eklendi else None
     sonuclar = tum[:k]
     en_iyi = guven_skoru(soru, sonuclar, arayici, program)
-    if dil_sorusu or ders_parcalari:
+    if dil_sorusu or ders_parcalari or bolum_parcasi:
         en_iyi = max(en_iyi, ESIK_YUKSEK)
     if en_iyi >= ESIK_YUKSEK:
         durum = "bulundu"

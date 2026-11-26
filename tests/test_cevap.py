@@ -285,3 +285,12 @@ def test_ders_adiyla_soru(arayici):
     assert c["durum"] == "bulundu" and "5. yarıyıl" in c["ozet"]["metin"]
     c = cevapla("Öğretmenlik uygulaması hangi dönemde?", arayici, program="beden_egitimi")
     assert c["durum"] == "bulundu" and "Öğretmenlik Uygulaması" in c["ozet"]["metin"]
+
+
+def test_program_bolumu_niyetleri(arayici):
+    from cevap import sorulan_program_bolumu
+    assert sorulan_program_bolumu("Dikey geçiş yapabilir miyim?", "lojistik").endswith("Üst_Derece_Programlarına_Geçiş")
+    assert sorulan_program_bolumu("Dikey geçiş yapabilir miyim?", "istatistik") is None   # lisansta DGS yok
+    assert sorulan_program_bolumu("Mezunlar ortalama kaç maaş alıyor?", "istatistik") is None
+    c = cevapla("Mezun olunca nerelerde çalışabilirim?", arayici, program="istatistik")
+    assert c["durum"] == "bulundu" and "banka" in c["ozet"]["metin"]

@@ -37,6 +37,10 @@ planındaki bir dersi adıyla ya da koduyla soran sorularda dersin kendi cümles
 (`sorulan_ders_cumleleri`: ders adının ilk iki kelime kökü soruda geçmeli ve soru dönem, AKTS ya da
 zorunluluk sormalı; staj dersi hariç, onun kendi kuralı var).
 
+**Bologna sayfası başlıkları.** "Dikey geçiş yapabilir miyim?" (sadece önlisansta), "Yüksek lisans
+yapabilir miyim?", "Mezun olunca nerelerde çalışabilirim?" gibi sorular bölümün Bologna sayfasındaki ilgili
+başlığa yönlendiriliyor (`BOLUM_NIYETLERI`). Maaş gibi belgelerde olmayan konular bu kurala girmiyor.
+
 **Not ortalaması sekmesi.** Dönemin derslerini ve beklenen harf notlarını girince dönem ortalaması (DNO)
 ve şu anki GNO ile AKTS'si verilirse yeni GNO hesaplanıyor. Katsayılar yönetmeliğin 18/4. fıkrasından,
 formül 19/1'den (ders kredisi AKTS, md. 8); tekrar edilen derste eski not çıkarılıyor (md. 19/3), YT/YZ/EK
@@ -205,7 +209,7 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Havacılık ve Uzay Bilimleri Fakültesi | 15/18 | 1/2 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 |
 | Spor Bilimleri Fakültesi | 14/16 | 2/2 |
-| Önlisans programları | 15/17 | 2/2 |
+| Önlisans programları | 16/17 | 2/2 |
 | Yıllık ders planları ve tek ders soruları | 11/15 | |
 | Cevapsız doğrulama (40 soru, eşik seçilirken bakılmadı) | | 36/40 |
 

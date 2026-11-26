@@ -432,14 +432,15 @@ def dil_cumlesi(p, parcalar):
     else:
         dil = None
     if dil:
-        ayrinti = (f"ders planındaki {n} zorunlu dersin {m} tanesi İngilizce okutulur (ör. {', '.join(ingilizce[:3])})."
-                   if m else f"ders planındaki zorunlu derslerin hepsi{haric} Türkçe okutulur.")
+        ayrinti = (f"Ders planındaki {n} zorunlu dersin {m} tanesi İngilizce okutulur (ör. {', '.join(ingilizce[:3])})."
+                   if m else f"Ders planındaki zorunlu derslerin hepsi{haric} Türkçe okutulur.")
         return [f"{kim} eğitim dili {dil}dir (bölümün Bologna tanıtım sayfasına göre).",
-                f"{kim} {ayrinti}"]
-    # kısa cümle soruya daha çok benziyor; ayrıntı ikinci cümlede
+                ayrinti]
+    # kısa cümle soruya daha çok benziyor; ayrıntı ikinci cümlede (bölüm adı tekrar edilmiyor,
+    # yoksa benzer_mi iki cümleyi aynı sayıp ikincisini atıyor)
     if m == 0:
         return [f"{kim} eğitim dili Türkçedir.",
-                f"{kim} ders planındaki zorunlu derslerin hepsi{haric} Türkçe okutulur."]
+                f"Ders planındaki zorunlu derslerin hepsi{haric} Türkçe okutulur."]
     if m / n > 0.7:
         agirlik = "İngilizcedir"
     elif m / n < 0.3:
@@ -447,7 +448,7 @@ def dil_cumlesi(p, parcalar):
     else:
         agirlik = "Türkçe ve İngilizcedir"
     return [f"{kim} eğitim dili ağırlıklı olarak {agirlik}.",
-            f"{kim} ders planındaki {n} zorunlu dersin {m} tanesi İngilizce okutulur "
+            f"Ders planındaki {n} zorunlu dersin {m} tanesi İngilizce okutulur "
             f"(ör. {', '.join(ingilizce[:3])})."]
 
 

@@ -56,7 +56,7 @@ eski_modulleri_yenile()
 
 from arama import Arayici
 from belge_kontrol import KLASOR, ders_plani_mi, program_kapsamlari, programlari_oku
-from cevap import atif, cevapla, gecerlilik, tarih
+from cevap import ONLISANS, atif, cevapla, gecerlilik, tarih
 from mezuniyet import ENGEL_NOTLAR, kontrol, staj_birimi
 
 yuklenme_zamanini_kaydet()
@@ -271,10 +271,27 @@ def kaynak_goster(k):
         st.text(k["tam_metin"])
 
 
+def ornek_sorular(program):
+    """Genel örnekler + seçili bölüme göre birkaç tane (ders planı, önlisansta İME)."""
+    sorular = list(ORNEK_SORULAR)
+    if program:
+        sorular.insert(1, "Birinci yarıyılın zorunlu dersleri neler?")
+        if program in ONLISANS:
+            sorular.append("İşletmede mesleki eğitim nedir?")
+    return sorular
+
+
 def soru_sekmesi(program, plan_yili=None):
     if "soru" not in st.session_state:
         st.session_state.soru = ""
-    secilen = st.pills("Örnek sorular", ORNEK_SORULAR, label_visibility="collapsed", key="ornek")
+    # ?soru=... ile açılan bağlantı: soruyu doldur ve bir kere cevapla (cevaplar paylaşılabilsin diye)
+    url_sorusu = st.query_params.get("soru")
+    otomatik = False
+    if url_sorusu and st.session_state.get("url_sorusu") != url_sorusu:
+        st.session_state.soru = url_sorusu
+        st.session_state.url_sorusu = url_sorusu
+        otomatik = True
+    secilen = st.pills("Örnek sorular", ornek_sorular(program), label_visibility="collapsed", key="ornek")
     if secilen and secilen != st.session_state.get("son_ornek"):
         st.session_state.soru = secilen
         st.session_state.son_ornek = secilen
@@ -283,8 +300,11 @@ def soru_sekmesi(program, plan_yili=None):
         soru = st.text_input("Sorunuz", key="soru", placeholder="Örn. Yaz okulunda en fazla kaç AKTS alabilirim?")
         sor = st.form_submit_button("Sor", type="primary")
 
-    if not (sor or secilen) or not soru.strip():
+    if not (sor or secilen or otomatik) or not soru.strip():
         return
+    # adres çubuğundaki bağlantı bu soruyu açsın: kopyalayıp arkadaşına gönderebilirsin
+    st.query_params["soru"] = soru.strip()
+    st.session_state.url_sorusu = soru.strip()
 
     arayici = arayici_yukle(kod_surumu())
     with st.spinner("Belgelerde aranıyor..."):
@@ -307,6 +327,53 @@ def soru_sekmesi(program, plan_yili=None):
     st.markdown('<div class="ara-baslik">Resmi metin, okumak isteyenler için</div>', unsafe_allow_html=True)
     for k in c["kaynaklar"]:
         kaynak_goster(k)
+    st.caption("Bu cevabın bağlantısı adres çubuğunda; kopyalayıp paylaşırsan aynı soru açılır.")
+
+
+ROMA_SIRA = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]
+
+
+def ders_plani_sekmesi(program, plan_yili=None):
+    """Seçili bölümün ders planı yarıyıl yarıyıl tablo olarak (arama yapmadan, doğrudan belgeden)."""
+    if not program:
+        st.info("Ders planını görmek için yukarıdan bölümünü ya da programını seç.")
+        return
+    belge_id = f"{program}_ders_plani" + (f"_{plan_yili}" if plan_yili else "")
+    parcalar = [p for p in parca_sozlugu(surum("indeks/parcalar.json")).values() if p["belge_id"] == belge_id]
+    if not parcalar:
+        st.info("Bu bölümün ders planı belgelerde yok.")
+        return
+    belge = next(b for b in belgeler(surum("belgeler.yaml")) if b["id"] == belge_id)
+    kaynak = "bölüm sitesindeki yıllık plan" if plan_yili else "Bologna sayfası"
+    st.caption(f"Kaynak: [{belge['ad']}]({belge['url']}) ({kaynak}, erişim "
+               f"{tarih(str(belge['indirme_tarihi']))}). Soru sormadan planın tamamına buradan bakabilirsin.")
+
+    def tablo(p):
+        satirlar = []
+        ekler = []
+        for s in p["metin"].split("\n"):
+            h = [x.strip() for x in s.split("|")]
+            if len(h) == 5 and h[0] != "Ders Kodu":
+                satirlar.append({"Kod": h[0], "Ders": h[1], "Dil": h[2], "T+U": h[3], "AKTS": float(h[4])})
+            elif len(h) == 2:
+                ekler.append(f"{h[0]}: {h[1]} AKTS")
+        return satirlar, ekler
+
+    yariyillar = sorted((p for p in parcalar if p["no"].endswith(".YARIYIL")),
+                        key=lambda p: ROMA_SIRA.index(p["no"].split(".")[0]))
+    for p in yariyillar:
+        satirlar, ekler = tablo(p)
+        no = ROMA_SIRA.index(p["no"].split(".")[0]) + 1
+        st.markdown(f"**{no}. yarıyıl** ({(no + 1) // 2}. sınıf {'güz' if no % 2 else 'bahar'})")
+        st.dataframe(satirlar, hide_index=True, width="stretch")
+        if ekler:
+            st.caption(" · ".join(ekler))
+    for p in parcalar:
+        if p["no"].endswith(".YARIYIL"):
+            continue
+        satirlar, _ = tablo(p)
+        with st.expander(f"{p['no']} ({len(satirlar)} ders)"):
+            st.dataframe(satirlar, hide_index=True, width="stretch")
 
 
 def mezuniyet_sekmesi(program):
@@ -372,9 +439,11 @@ def main():
     program = bolum_sec()
     plan_yili = plan_yili_sec(program)
     kenar_cubugu(program, plan_yili)
-    soru_tab, mezuniyet_tab = st.tabs(["Soru sor", "Mezuniyet kontrolü"])
+    soru_tab, plan_tab, mezuniyet_tab = st.tabs(["Soru sor", "Ders planı", "Mezuniyet kontrolü"])
     with soru_tab:
         soru_sekmesi(program, plan_yili)
+    with plan_tab:
+        ders_plani_sekmesi(program, plan_yili)
     with mezuniyet_tab:
         mezuniyet_sekmesi(program)
 

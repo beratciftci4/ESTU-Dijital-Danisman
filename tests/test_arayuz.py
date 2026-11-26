@@ -116,3 +116,24 @@ def test_mezuniyet_stajsiz_bolum_ve_ek_kosul():
     md = " ".join(m.value for m in at.markdown)
     assert "Zorunlu staj yok" in md and "koşullarının hepsi sağlanıyor" in md
     assert any("72 AKTS İngilizce" in i.value for i in at.info)
+
+
+def test_ders_plani_sekmesi():
+    at = AppTest.from_file(str(KLASOR / "app.py"), default_timeout=120)
+    at.query_params["bolum"] = "istatistik"
+    at.query_params["plan"] = "2024"
+    at.run()
+    assert not at.exception
+    assert [t.label for t in at.tabs] == ["Soru sor", "Ders planı", "Mezuniyet kontrolü"]
+    ilk = at.dataframe[0].value
+    assert ilk.iloc[0]["Kod"] == "EMAT113" and ilk["AKTS"].sum() + 0 > 20
+
+
+def test_soru_baglantisi_ile_acilis():
+    # ?soru=... ile açılan sayfa soruyu kendiliğinden cevaplamalı (paylaşılan bağlantı)
+    at = AppTest.from_file(str(KLASOR / "app.py"), default_timeout=120)
+    at.query_params["bolum"] = "lojistik"
+    at.query_params["soru"] = "Kaç gün staj yapmalıyım?"
+    at.run()
+    assert not at.exception
+    assert any("Lojistik programında staj zorunludur" in m.value for m in at.markdown)

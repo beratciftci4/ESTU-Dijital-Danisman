@@ -23,6 +23,12 @@ Yönetmelik ve usul-esaslar herkes için ortak; staj yönergesi fakülteye ya da
 yüksekokullarına ortak (`kapsam: duzey:onlisans`), ders planı ve program bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
 (`programlar.yaml`, belgelerdeki `kapsam` alanı).
 
+**Ders planı sekmesi.** Seçili bölümün ders planı soru sormadan yarıyıl yarıyıl tablo olarak
+görülebiliyor (yıllık plan seçiliyse o yılın planı), seçmeli havuzları açılır listelerde.
+
+**Paylaşılabilir cevap.** Soru sorulunca adres çubuğuna `?bolum=...&soru=...` yazılıyor; bağlantıyı
+açan kişide aynı soru kendiliğinden cevaplanıyor.
+
 "Mezun olmak için neyim eksik?" sorusu için ayrı bir **mezuniyet kontrolü** sekmesi var:
 tamamlanan AKTS, GNO, kalan FF/YZ/DZ/EK/ÇK notları ve staj gününü girince yönetmeliğin
 25. maddesine ve bölümün staj kuralına göre neyin eksik olduğunu, maddesiyle birlikte gösteriyor.

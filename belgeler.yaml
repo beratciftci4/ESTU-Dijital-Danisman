@@ -1056,3 +1056,48 @@
   kapsam: program:spor_yoneticiligi
   durum: aktif
   not: null
+
+- id: istatistik_ders_plani_2024
+  ad: İstatistik Bölümü 2024-2025 Öğretim Yılı Ders Planı
+  dosya: istatistik_ders_plani_2024.pdf
+  url: https://istatistik.eskisehir.edu.tr/Uploads/istatistik/PDF/istatistik2425dersplan.pdf
+  yayim: 2024-09-18          # sunucudaki dosya tarihi (Last-Modified)
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  ogretim_yili: 2024-2025
+  indirme_tarihi: 2026-11-26
+  sha256: a36733251bd342cc9312708170b16eab66729859ea81f0519864f6bbfa48dfce
+  kapsam: program:istatistik
+  durum: aktif
+  not: Bölüm sitesindeki "Ders Planı ve İçerikleri" sayfasından. Planın giriş yılına mı o öğretim yılına mı uygulandığı belgede yazmıyor.
+
+- id: istatistik_ders_plani_2025
+  ad: İstatistik Bölümü 2025-2026 Öğretim Yılı Ders Planı
+  dosya: istatistik_ders_plani_2025.pdf
+  url: https://istatistik.eskisehir.edu.tr/Uploads/istatistik/PDF/istatistik2526dersplan.pdf
+  yayim: 2025-09-18          # sunucudaki dosya tarihi (Last-Modified)
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  ogretim_yili: 2025-2026
+  indirme_tarihi: 2026-11-26
+  sha256: 09a0e8bb96d6ce4f75ba04e48fc0d3b4571c0b52077c8cce2a5f49903f279dcb
+  kapsam: program:istatistik
+  durum: aktif
+  not: Bölüm sitesindeki "Ders Planı ve İçerikleri" sayfasından. Planın giriş yılına mı o öğretim yılına mı uygulandığı belgede yazmıyor.
+
+- id: istatistik_ders_plani_2026
+  ad: İstatistik Bölümü 2026-2027 Öğretim Yılı Ders Planı
+  dosya: istatistik_ders_plani_2026.pdf
+  url: https://istatistik.eskisehir.edu.tr/Uploads/istatistik/PDF/istatistik2627dersplan.pdf
+  yayim: 2026-09-17          # sunucudaki dosya tarihi (Last-Modified)
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  ogretim_yili: 2026-2027
+  indirme_tarihi: 2026-11-26
+  sha256: 70b891972d7c9592085aa9cdf1533ad0796ebc580f13d022dde849153c357c9a
+  kapsam: program:istatistik
+  durum: aktif
+  not: Bölüm sitesindeki "Ders Planı ve İçerikleri" sayfasından. Planın giriş yılına mı o öğretim yılına mı uygulandığı belgede yazmıyor.

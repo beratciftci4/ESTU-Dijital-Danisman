@@ -17,7 +17,7 @@ import sys
 import numpy as np
 from rank_bm25 import BM25Okapi
 
-from belge_kontrol import programlari_oku
+from belge_kontrol import bolum_ve_yil, ders_plani_mi, programlari_oku
 from indeks import Gomucu, arama_metni, indeksi_yukle, kelimeler, soru_kelimeleri, turkce_kucuk
 
 RRF_K = 60
@@ -36,7 +36,13 @@ class Arayici:
         self._gomucu = gomucu
 
     def izinli_mi(self, p, program):
-        """program None: hepsi, "genel": sadece genel belgeler, yoksa o bölümün belgeleri."""
+        """program None: hepsi, "genel": sadece genel belgeler, yoksa o bölümün belgeleri.
+        "istatistik@2024" gibi yıllı anahtarda ders planı olarak sadece o yılın planı kullanılır,
+        yılsızda sadece Bologna'daki güncel plan (aynı yarıyıl üç kez çıkmasın diye)."""
+        plan = ders_plani_mi(p["belge_id"])
+        program, yil = bolum_ve_yil(program)
+        if plan and program not in (None, "genel") and plan[1] != yil:
+            return False
         if program is None or p.get("kapsam", "genel") == "genel":
             return True
         if program == "genel":
@@ -46,6 +52,7 @@ class Arayici:
     def temiz_soru(self, soru, program):
         """Seçili bölümün adını sorudan çıkarır: "Kimya bölümünde staj zorunlu mu?" -> "staj zorunlu mu?".
         Bölüm zaten seçili; ad kalırsa o bölümün adıyla dolu ders planı sayfaları öne çıkıyor."""
+        program = bolum_ve_yil(program)[0]
         if program in (None, "genel"):
             return soru
         ad = turkce_kucuk(self.program_adi[program])

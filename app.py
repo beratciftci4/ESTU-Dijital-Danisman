@@ -55,7 +55,7 @@ def yuklenme_zamanini_kaydet():
 eski_modulleri_yenile()
 
 from arama import Arayici
-from belge_kontrol import KLASOR, programlari_oku
+from belge_kontrol import KLASOR, ders_plani_mi, programlari_oku
 from cevap import atif, cevapla, gecerlilik, tarih
 from mezuniyet import ENGEL_NOTLAR, kontrol, staj_birimi
 
@@ -195,14 +195,44 @@ def bolum_sec():
     return secim
 
 
-def kenar_cubugu(program):
+def plan_yili_sec(program):
+    """Bölüm sitesinde yıllık ders planları varsa hangisine bakılacağı. Varsayılan Bologna'daki güncel plan.
+    Planın giriş yılına mı o öğretim yılına mı uygulandığı belgelerde yazmıyor, o yüzden seçim öğrencide."""
+    if not program:
+        return None
+    yillar = sorted({ders_plani_mi(b["id"])[1] for b in belgeler(surum("belgeler.yaml"))
+                     if b["durum"] == "aktif" and ders_plani_mi(b["id"]) and ders_plani_mi(b["id"])[0] == program
+                     and ders_plani_mi(b["id"])[1]}, reverse=True)
+    if not yillar:
+        return None
+    secenekler = [None] + yillar
+    varsayilan = st.query_params.get("plan")
+    secim = st.selectbox(
+        "Ders planı", secenekler,
+        index=secenekler.index(int(varsayilan)) if varsayilan and varsayilan.isdigit() and int(varsayilan) in yillar else 0,
+        format_func=lambda y: "Güncel plan (Bologna)" if y is None else f"{y}-{y + 1} öğretim yılı planı (bölüm sitesi)",
+        help="Bölüm her öğretim yılı için ayrı ders planı yayımlıyor. Sana hangi planın uygulandığından "
+             "emin değilsen danışmanına sor.", key="plan")
+    if secim:
+        st.query_params["plan"] = str(secim)
+    else:
+        st.query_params.pop("plan", None)
+    return secim
+
+
+def kenar_cubugu(program, plan_yili=None):
     with st.sidebar:
         st.markdown("#### Kaynak belgeler")
         st.caption("Cevaplar yalnızca bu belgelerden geliyor.")
         for b in belgeler(surum("belgeler.yaml")):
             if b["durum"] != "aktif" or not gecerli_mi(b, program):
                 continue
-            if b["yururluk"]:
+            plan = ders_plani_mi(b["id"])
+            if plan and plan[1] != plan_yili:      # sadece seçili ders planı listelensin
+                continue
+            if b.get("ogretim_yili"):
+                bilgi = f"{b['ogretim_yili']} öğretim yılı, erişim {tarih(str(b['indirme_tarihi']))}"
+            elif b["yururluk"]:
                 bilgi = f"Yürürlük {tarih(str(b['yururluk']))}"
                 if b["son_degisiklik"]:
                     bilgi += f", son değişiklik {tarih(str(b['son_degisiklik']))}"
@@ -241,7 +271,7 @@ def kaynak_goster(k):
         st.text(k["tam_metin"])
 
 
-def soru_sekmesi(program):
+def soru_sekmesi(program, plan_yili=None):
     if "soru" not in st.session_state:
         st.session_state.soru = ""
     secilen = st.pills("Örnek sorular", ORNEK_SORULAR, label_visibility="collapsed", key="ornek")
@@ -258,7 +288,8 @@ def soru_sekmesi(program):
 
     arayici = arayici_yukle(kod_surumu())
     with st.spinner("Belgelerde aranıyor..."):
-        c = cevapla(soru, arayici, program=program or "genel")
+        anahtar = f"{program}@{plan_yili}" if program and plan_yili else (program or "genel")
+        c = cevapla(soru, arayici, program=anahtar)
 
     if not c.get("ozet"):
         st.markdown(f'<div class="durum {c["durum"]}">{html.escape(c["mesaj"])}</div>', unsafe_allow_html=True)
@@ -339,10 +370,11 @@ def main():
                 'gösterir.</div>',
                 unsafe_allow_html=True)
     program = bolum_sec()
-    kenar_cubugu(program)
+    plan_yili = plan_yili_sec(program)
+    kenar_cubugu(program, plan_yili)
     soru_tab, mezuniyet_tab = st.tabs(["Soru sor", "Mezuniyet kontrolü"])
     with soru_tab:
-        soru_sekmesi(program)
+        soru_sekmesi(program, plan_yili)
     with mezuniyet_tab:
         mezuniyet_sekmesi(program)
 

@@ -104,7 +104,7 @@ def arama_metni(p):
         etiket += f" Madde {p['no']}"
     if p["baslik"]:
         etiket += f" {p['baslik']}"
-    yariyil = YARIYIL_NO.get(p["no"]) if p["belge_id"].endswith("_ders_plani") else None
+    yariyil = YARIYIL_NO.get(p["no"]) if re.search(r"_ders_plani(_\d{4})?$", p["belge_id"]) else None
     if yariyil:   # "I.YARIYIL" -> öğrenci "1. yarıyıl" ya da "birinci dönem" diye soruyor
         etiket += f" {yariyil}. yarıyıl {yariyil}. dönem"
     return f"{etiket}. {p['metin']}"

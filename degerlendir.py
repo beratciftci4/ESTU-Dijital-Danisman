@@ -19,6 +19,7 @@ AYRIK_SET = KLASOR / "tests" / "soru_seti_ayrik.yaml"
 DOGRULAMA_SET = KLASOR / "tests" / "soru_seti_dogrulama.yaml"
 KALIBRASYON = KLASOR / "tests" / "kalibrasyon_cevapsiz.yaml"
 CEVAPSIZ_DOGRULAMA = KLASOR / "tests" / "cevapsiz_dogrulama.yaml"
+MUFREDAT_SET = KLASOR / "tests" / "soru_seti_mufredat.yaml"
 FEN_SET = KLASOR / "tests" / "soru_seti_fen.yaml"
 MUH_SET = KLASOR / "tests" / "soru_seti_muhendislik.yaml"
 BBBF_SET = KLASOR / "tests" / "soru_seti_bbbf.yaml"
@@ -207,6 +208,7 @@ def main():
               ("Havacılık ve Uzay Bilimleri Fakültesi", sorulari_oku(HUBF_SET)),
               ("Mimarlık ve Tasarım Fakültesi", sorulari_oku(MTF_SET)),
               ("Spor Bilimleri Fakültesi", sorulari_oku(SPOR_SET)),
+              ("Yıllık ders planları ve tek ders soruları", sorulari_oku(MUFREDAT_SET)),
               ("Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)",
                [dict(s, cevapsiz=True) for s in sorulari_oku(CEVAPSIZ_DOGRULAMA)])]
     satirlar = cevap_tablosu(arayici, setler)

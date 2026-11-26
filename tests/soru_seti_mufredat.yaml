@@ -1,0 +1,77 @@
+# Yıllık ders planları ve tek ders soruları (2026-11-26). program "istatistik@2024" = İstatistik,
+# 2024-2025 öğretim yılı planı seçili. Yıl yoksa Bologna'daki güncel plan.
+
+- soru: Birinci yarıyılın zorunlu dersleri neler?
+  program: istatistik@2024
+  kaynak: [istatistik_ders_plani_2024#bolum-I.YARIYIL]
+  anahtar: ["EMAT113"]
+
+- soru: İstatistik I dersi hangi dilde?
+  program: istatistik@2024
+  kaynak: [istatistik_ders_plani_2024#bolum-I.YARIYIL]
+  anahtar: ["İST129"]
+
+- soru: İstatistik I dersi hangi dilde?
+  program: istatistik@2025
+  kaynak: [istatistik_ders_plani_2025#bolum-I.YARIYIL]
+  anahtar: ["İST129"]
+
+- soru: Benzetim dersi kaç AKTS?
+  program: istatistik@2024
+  kaynak: [istatistik_ders_plani_2024#bolum-Mesleki_Seçmeli_Dersler]
+  anahtar: ["İST432"]
+
+- soru: Benzetim dersi kaç AKTS?
+  program: istatistik@2025
+  kaynak: [istatistik_ders_plani_2025#bolum-Mesleki_Seçmeli_Dersler]
+  anahtar: ["İST432"]
+
+- soru: Mobil programlama dersi kaldırıldı mı?
+  program: istatistik@2025
+  kaynak: [istatistik_ders_plani_2025#bolum-Mesleki_Seçmeli_Dersler]
+  anahtar: ["İST432", "Mesleki"]
+
+- soru: Lineer cebir dersinin dili değişti mi?
+  program: istatistik@2026
+  kaynak: [istatistik_ders_plani_2026#bolum-IV.YARIYIL]
+  anahtar: ["MAT2021"]
+
+- soru: Genel Matematik I dersinin kodu değişti mi?
+  program: istatistik@2025
+  kaynak: [istatistik_ders_plani_2025#bolum-I.YARIYIL]
+  anahtar: ["MAT1013"]
+
+- soru: Hangi seçmeli dersler yeni eklendi?
+  program: istatistik@2026
+  kaynak: [istatistik_ders_plani_2026#bolum-Seçmeli_Dersler, istatistik_ders_plani_2026#bolum-Mesleki_Seçmeli_Dersler]
+  anahtar: ["İSG", "İST257"]
+
+- soru: Regresyon analizi hangi dönemde?
+  program: istatistik
+  kaynak: [istatistik_ders_plani#bolum-V.YARIYIL]
+  anahtar: ["İST333"]
+
+- soru: Makine öğrenmesi dersi zorunlu mu?
+  program: istatistik
+  kaynak: [istatistik_ders_plani#bolum-Mesleki_Seçmeli_Dersler]
+  anahtar: ["İST438"]
+
+- soru: Staj dersi kaçıncı yarıyılda?
+  program: istatistik@2025
+  kaynak: [istatistik_ders_plani_2025#bolum-V.YARIYIL, fen_staj#madde-7]
+  anahtar: ["İSTSJ402", "Staj"]
+
+- soru: Kriptoloji dersi hangi dönemde?
+  program: bilgi_guvenligi
+  kaynak: [bilgi_guvenligi_ders_plani#bolum-V.YARIYIL]
+  anahtar: ["Kriptoloji"]
+
+- soru: Mekanik titreşimler seçmeli mi?
+  program: makine_muh
+  kaynak: [makine_muh_ders_plani#bolum-Mesleki_Seçmeli_Dersler]
+  anahtar: ["Titreşim"]
+
+- soru: Bitirme projesi kaç AKTS?
+  program: istatistik@2026
+  kaynak: [istatistik_ders_plani_2026#bolum-VII.YARIYIL, istatistik_ders_plani_2026#bolum-VIII.YARIYIL]
+  anahtar: ["İST439", "İST440"]

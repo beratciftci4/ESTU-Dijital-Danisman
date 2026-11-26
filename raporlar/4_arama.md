@@ -56,8 +56,8 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
 Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
-- Kimya bölümünde staj zorunlu mu? (sıra: 5; ilk 3: fen_staj#madde-11, fen_staj#madde-7, kimya_ders_plani#bolum-V.YARIYIL)
-- Biyoloji bölümünde hazırlık okumak zorunlu mu? (sıra: 8; ilk 3: biyoloji_program_bilgileri#bolum-İstihdam_Olanakları, biyoloji_program_bilgileri#bolum-Program_Profili, biyoloji_ders_plani#bolum-I.YARIYIL)
+- Kimya bölümünde staj zorunlu mu? (sıra: 4; ilk 3: kimya_ders_plani#bolum-V.YARIYIL, fen_staj#madde-11, fen_staj#madde-7)
+- Biyoloji bölümünde hazırlık okumak zorunlu mu? (sıra: 8; ilk 3: biyoloji_ders_plani#bolum-III.YARIYIL, biyoloji_program_bilgileri#bolum-İstihdam_Olanakları, biyoloji_program_bilgileri#bolum-Program_Profili)
 - Matematik bölümünde kaç AKTS ile mezun olunur? (sıra: 9; ilk 3: matematik_ders_plani#bolum-II.YARIYIL, matematik_ders_plani#bolum-I.YARIYIL, matematik_ders_plani#bolum-VI.YARIYIL)
 
 ## Mühendislik Fakültesi (tests/soru_seti_muhendislik.yaml, 9 bölüm)
@@ -85,7 +85,7 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 |---|---|---|---|---|
 | bm25 | 0.47 | 0.73 | 0.93 | 0.62 |
 | e5 | 0.47 | 0.80 | 1.00 | 0.67 |
-| hibrit | 0.73 | 1.00 | 1.00 | 0.86 |
+| hibrit | 0.73 | 1.00 | 1.00 | 0.84 |
 
 Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
@@ -117,7 +117,7 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
 Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
-- Fabrika stajı kaç gün? (sıra: 9; ilk 3: mtf_staj#madde-18, mtf_staj#madde-14, mtf_staj#madde-3)
+- Fabrika stajı kaç gün? (sıra: 8; ilk 3: mtf_staj#madde-18, mtf_staj#madde-14, mtf_staj#madde-3)
 
 ## Spor Bilimleri Fakültesi (tests/soru_seti_spor.yaml, 4 bölüm)
 

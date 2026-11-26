@@ -32,6 +32,25 @@ def programlari_oku(yol=KLASOR / "programlar.yaml"):
     return veri["fakulteler"], veri["programlar"]
 
 
+PLAN_DESENI = re.compile(r"^(.+)_ders_plani(?:_(\d{4}))?$")
+
+
+def ders_plani_mi(belge_id):
+    """istatistik_ders_plani (Bologna, güncel) ve istatistik_ders_plani_2024 (bölüm sitesindeki
+    2024-2025 öğretim yılı planı) için (bölüm, yıl ya da None); ders planı değilse None."""
+    m = PLAN_DESENI.match(belge_id)
+    return (m[1], int(m[2]) if m[2] else None) if m else None
+
+
+def bolum_ve_yil(program):
+    """Arama anahtarı "istatistik@2024" -> ("istatistik", 2024); "istatistik" -> ("istatistik", None).
+    Yıl, hangi öğretim yılının ders planına bakılacağını seçiyor; yoksa Bologna'daki güncel plan."""
+    if program is None or "@" not in program:
+        return program, None
+    bolum, yil = program.split("@")
+    return bolum, int(yil)
+
+
 def gecerli_kapsamlar():
     fakulteler, programlar = programlari_oku()
     return ({"genel"} | {f"fakulte:{f}" for f in fakulteler}
@@ -73,13 +92,14 @@ def hatalari_bul(belgeler):
             hatalar.append(f"{bid}: durum bekleniyor ya da aktif olmalı")
 
         # aktif belgede tarih ve hash boş kalmasın
-        # bologna sayfalarının yürürlük tarihi yok, onlarda erişim tarihi yeterli
+        # bologna sayfalarının yürürlük tarihi yok, onlarda erişim tarihi yeterli; bölüm sitesindeki
+        # yıllık ders planlarında da yürürlük yazmıyor, hangi öğretim yılının planı olduğu yazıyor
         if b["durum"] == "aktif":
             gerekli = ["indirme_tarihi", "sha256"]
             if b["dosya"].endswith(".pdf"):
-                gerekli.append("yururluk")
+                gerekli.append("ogretim_yili" if ders_plani_mi(bid) else "yururluk")
             for alan in gerekli:
-                if not b[alan]:
+                if not b.get(alan):
                     hatalar.append(f"{bid}: aktif ama {alan} boş")
     return hatalar
 

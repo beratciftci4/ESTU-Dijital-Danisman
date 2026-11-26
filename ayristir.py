@@ -410,6 +410,91 @@ def html_ayristir(belge):
     return parcalar
 
 
+YILLIK_PLAN = re.compile(r"_ders_plani_\d{4}$")
+DERS_HUCRESI = re.compile(r"^(E?[A-ZÇĞİÖŞÜ]{2,5}\s?(?:SJ)?\s?\d{3,4})\s*(\((?:İng|Alm|Fra)\.?\))?\s*(.*?)\s*"
+                          r"(\d+\+\d+)\s+(\d{1,2}[,.]\d)$")
+SECMELI_HUCRESI = re.compile(r"^(Mesleki Seçmeli Ders|Seçmeli Ders)(?:ler)?\s*(\d{1,2}[,.]\d)$")
+YARIYIL_BASLIGI = re.compile(r"^(I|II|III|IV|V|VI|VII|VIII)\.\s?Yarıyıl$")
+
+
+def pdf_ders_plani(belge):
+    """Bölüm sitesindeki yıllık ders planı PDF'i (iki sütunlu tablo) -> Bologna ders planıyla aynı biçimde
+    yarıyıl yarıyıl parçalar: 'KOD | Ad | Dil | T+U | AKTS', 'Seçmeli Dersler | 5.0', 'Toplam | 30'."""
+    import pdfplumber
+    hucreler = []          # (sayfa, sütun, satır sırası, metin)
+    with pdfplumber.open(KAYNAK_KLASORU / belge["dosya"]) as pdf:
+        for s, sayfa in enumerate(pdf.pages, 1):
+            orta = sayfa.width / 2
+            satirlar = {}
+            for w in sayfa.extract_words(keep_blank_chars=True, x_tolerance=1.5):
+                k = next((k for k in satirlar if abs(k - w["top"]) < 2.5), w["top"])
+                satirlar.setdefault(k, []).append(w)
+            for k in sorted(satirlar):
+                for sutun, ws in enumerate([[w for w in satirlar[k] if w["x0"] < orta],
+                                            [w for w in satirlar[k] if w["x0"] >= orta]]):
+                    metin = temizle(" ".join(w["text"] for w in sorted(ws, key=lambda w: w["x0"])))
+                    if metin:
+                        hucreler.append((s, sutun, k, metin))
+
+    bolumler = {}          # ad -> {"sayfa": s, "satirlar": [...], "secmeli": [...]}
+    sol = sag = None
+    havuz = None
+    son_ders = {}          # sütun -> son eklenen ders satırı (adı bölünmüş dersler için)
+    bekleyen = {}          # sütun -> koddan önceki satırda kalan ad parçası
+    for s, sutun, _, metin in hucreler:
+        tam = metin
+        if YARIYIL_BASLIGI.match(tam):
+            if sutun == 0:
+                sol = YARIYIL_BASLIGI.match(tam)[1] + ".YARIYIL"
+            else:
+                sag = YARIYIL_BASLIGI.match(tam)[1] + ".YARIYIL"
+            havuz = None
+            continue
+        if re.search(r"MESLEKİ\s*SEÇMELİ\s*DERSLER", tam):
+            havuz, sol, sag = "Mesleki Seçmeli Dersler", None, None
+            continue
+        if re.fullmatch(r"\s*SEÇMELİ\s*DERSLER\s*", tam):
+            havuz, sol, sag = "Seçmeli Dersler", None, None
+            continue
+        hedef = havuz or (sol if sutun == 0 else sag)
+        if hedef is None:
+            continue
+        b = bolumler.setdefault(hedef, {"sayfa": s, "dersler": [], "secmeli": []})
+        m = DERS_HUCRESI.match(tam)
+        if m:
+            ad = m[3].strip() or bekleyen.pop(sutun, "")
+            satir = [re.sub(r"\s", "", m[1]), ad, "İngilizce" if m[2] or "(İng)" in tam else "Türkçe",
+                     m[4], m[5].replace(",", ".")]
+            b["dersler"].append(satir)
+            son_ders[sutun] = satir
+            bekleyen.pop(sutun, None)
+            continue
+        m = SECMELI_HUCRESI.match(tam)
+        if m and not havuz:
+            b["secmeli"].append((m[1] + "ler" if not m[1].endswith("ler") else m[1], m[2].replace(",", ".")))
+            continue
+        if re.fullmatch(r"\d{1,2}[,.]\d", tam) or re.match(r"^Sayfa \d", tam):
+            continue        # yarıyıl toplamı (30,0) ya da sayfa numarası
+        # ne ders ne toplam: bir önceki ya da sonraki dersin iki satıra bölünmüş adı
+        onceki = son_ders.get(sutun)
+        if onceki and onceki[1].count("(") > onceki[1].count(")"):
+            onceki[1] = f"{onceki[1]} {tam}"
+        else:
+            bekleyen[sutun] = tam
+
+    parcalar = []
+    for ad, b in bolumler.items():
+        satirlar = [(b["sayfa"], "Ders Kodu | Ders Adı | Ders Dili | Teori + Uygulama | AKTS")]
+        satirlar += [(b["sayfa"], " | ".join(d)) for d in b["dersler"]]
+        if not ad.endswith("Dersler"):
+            satirlar += [(b["sayfa"], f"{t} | {k}") for t, k in b["secmeli"]]
+            toplam = sum(float(d[4]) for d in b["dersler"]) + sum(float(k) for _, k in b["secmeli"])
+            satirlar.append((b["sayfa"], f"Toplam | {toplam:g}"))
+        p = parca(belge, "bolum", ad, ad, f"{belge['ogretim_yili']} Öğretim Yılı Ders Planı", satirlar)
+        parcalar.append(p)
+    return parcalar
+
+
 def tum_belgeler():
     parcalar = []
     for belge in belgeleri_oku():
@@ -417,6 +502,8 @@ def tum_belgeler():
             continue
         if belge["dosya"].endswith(".html"):
             parcalar += html_ayristir(belge)
+        elif YILLIK_PLAN.search(belge["id"]):
+            parcalar += pdf_ders_plani(belge)
         else:
             parcalar += pdf_ayristir(belge)
     return parcalar

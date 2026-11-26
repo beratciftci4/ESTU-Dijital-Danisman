@@ -64,6 +64,18 @@ Spor Bilimleri Fakültesi staj yönergesi Rekreasyon, Antrenörlük Eğitimi ve 
 güncel ders planında staj dersi yok. Belgeler net olmadığı için uygulama bu bölümlerde "bölüme sor" diyor,
 mezuniyet kontrolünde de staj satırını "Bölüme sor" olarak gösteriyor.
 
+**Yıllara göre ders planı.** Bologna sayfası sadece güncel planı gösteriyor. İstatistik bölümünün
+sitesinde 2024-2025, 2025-2026 ve 2026-2027 öğretim yılı ders planları ayrı PDF'ler olarak var; üçü de
+eklendi (daha eskisi sitede yok). Arayüzde bölüm seçilince "Ders planı" seçimi çıkıyor: güncel plan
+(Bologna) ya da yıllık planlardan biri. Seçilen yılın planı aramada Bologna planının yerine geçiyor.
+Her yıllık plan için bir önceki yıla göre değişiklikler otomatik cümle oluyor ("2025-2026 ders planında,
+2024-2025 planına göre mesleki seçmeli dersler listesinde çıkarılan (kaldırılan) dersler: Mobil
+Programlama."). Dersler önce koduyla, kod değiştiyse (EMAT113 -> MAT1013) Türkçe adıyla eşleştiriliyor.
+Bu üç yılda zorunlu dersler, yarıyılları ve AKTS'leri aynı; değişenler ders kodları, bazı derslerin
+dili (İstatistik I-II 2024-25'te İngilizce, sonra Türkçe) ve seçmeli havuzu. Planın giriş yılına mı o
+öğretim yılına mı uygulandığı belgelerde yazmadığı için uygulama bunu varsaymıyor, seçimi öğrenciye
+bırakıyor. Diğer bölümlerin sitelerinde yıllık plan bulunursa aynı şekilde eklenebilir.
+
 Mimarlık ve Tasarım Fakültesi'nin iki yönergesi ve Spor Bilimleri'nin staj yönergesi taranmış PDF. Metin tesseract (Türkçe) ile okundu,
 OCR hataları sayfa görüntülerine bakılarak elle düzeltildi ve `kaynaklar/*.ocr.txt` olarak duruyor.
 Eklerdeki formlardan sadece başlıklar alındı. Arayüz bu belgelerden gelen alıntılarda "OCR ile okundu"
@@ -75,7 +87,7 @@ uyarısı gösteriyor.
 kaynaklar/*.pdf, *.html
    │  ayristir.py   madde madde parçalama (MADDE 10-, 1), 1- ...), sayfa ve başlık bilgisi
    ▼
-cikti/parcalar.jsonl  (933 parça, her birinde kapsam: genel / fakülte / bölüm)
+cikti/parcalar.jsonl  (963 parça, her birinde kapsam: genel / fakülte / bölüm)
    │  indeks.py     e5-small (ONNX, int8) ile vektörler + FAISS, BM25 için Türkçe kök
    ▼
 indeks/
@@ -100,12 +112,14 @@ Birkaç ayrıntı:
   `tokenizer_donustur.py`): aynı token id'lerini veriyor ama bellekte ~300 MB yerine ~70 MB tutuyor.
   Uygulamanın toplam belleği ~290 MB, bir soru ~0,01 sn.
 - **"Bulamadım".** Güven skoru, soruya en yakın özet cümlesinin benzerliği ile en iyi parçanın
-  benzerliğinin ağırlıklı ortalaması (özet 1, parça 0.35). Skor 0.866'nın üstündeyse cevap gösteriliyor,
+  benzerliğinin ağırlıklı ortalaması (özet 1, parça 0.35). Skor 0.868'in üstündeyse cevap gösteriliyor,
   0.850'nin altındaysa "bulamadım" deniyor, arada kalırsa "kesin cevap bulamadım, ilgili olabilecek
   maddeler" deniyor.
 - **Kısa cevap.** `ozetler.yaml`'da her parça için sade özet cümleleri var (207 parça, 450 cümle,
-  elle yazıldı). Ders planları tablo olduğu için onların cümleleri tablodan otomatik üretiliyor
-  ("Fizik bölümünde 1. yarıyılın zorunlu dersleri şunlardır: ..."). Soruya göre en iyi 5 parçanın
+  elle yazıldı). Ders planları tablo olduğu için onların cümleleri tablodan otomatik üretiliyor:
+  yarıyıl listesi ("Fizik bölümünde 1. yarıyılın zorunlu dersleri şunlardır: ...") ve her ders için
+  ayrı bir cümle ("İstatistik bölümünde Benzetim (İST432) zorunlu değil, mesleki seçmeli dersler
+  listesinde seçmeli bir derstir; 4,5 AKTS, Türkçe."). Toplam ~4600 cümle. Soruya göre en iyi 5 parçanın
   cümleleri puanlanıyor (e5 benzerliği + kelime örtüşmesi + maddenin benzerliği) ve en uygun 1-3 cümle
   gösteriliyor. Vektörler `indeks/ozet_vektorleri.npz`'de; özetler değişirse ilk soruda kendiliğinden
   yeniden hesaplanıyor (~5 sn).
@@ -151,17 +165,18 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Ana set | 26/27 | 3/3 |
 | Kalibrasyon (sadece cevapsız) | | 15/15 |
 | Ayrık set | 10/10 | 2/2 |
-| Doğrulama (eşikten sonra yazıldı) | 8/8 | 6/8 |
+| Doğrulama (eşikten sonra yazıldı) | 8/8 | 7/8 |
 | Fen Fakültesi diğer bölümler | 13/16 | 2/2 |
 | Mühendislik Fakültesi | 14/18 | 2/2 |
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 2/2 |
 | Havacılık ve Uzay Bilimleri Fakültesi | 14/18 | 1/2 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 |
 | Spor Bilimleri Fakültesi | 13/16 | 2/2 |
-| Cevapsız doğrulama (40 soru, eşik seçilirken bakılmadı) | | 34/40 |
+| Yıllık ders planları ve tek ders soruları | 11/15 | |
+| Cevapsız doğrulama (40 soru, eşik seçilirken bakılmadı) | | 36/40 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 17/17, Mimarlık 16/18, Spor 14/15.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 17/17, Mimarlık 16/18, Spor 14/15, yıllık planlar ve tek ders soruları 13/15.
 
 "Bulamadım" kararı eskiden sadece en iyi parçanın benzerliğine bakıyordu. Belge sayısı arttıkça her soruya
 benzeyen bir parça çıkmaya başladı ve cevapsız soruların çoğuna "bulundu" denir oldu. 186 soruda (146 cevaplı,

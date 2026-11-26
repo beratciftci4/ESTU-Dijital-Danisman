@@ -24,7 +24,8 @@ yüksekokullarına ortak (`kapsam: duzey:onlisans`), ders planı ve program bilg
 (`programlar.yaml`, belgelerdeki `kapsam` alanı).
 
 **Ders planı sekmesi.** Seçili bölümün ders planı soru sormadan yarıyıl yarıyıl tablo olarak
-görülebiliyor (yıllık plan seçiliyse o yılın planı), seçmeli havuzları açılır listelerde.
+görülebiliyor (yıllık plan seçiliyse o yılın planı), seçmeli havuzları açılır listelerde. Üstteki
+"Ders ara" kutusuyla bir dersin hangi yarıyılda ya da hangi seçmeli listede olduğu bulunuyor.
 
 **Paylaşılabilir cevap.** Soru sorulunca adres çubuğuna `?bolum=...&soru=...` yazılıyor; bağlantıyı
 açan kişide aynı soru kendiliğinden cevaplanıyor.

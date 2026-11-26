@@ -56,6 +56,7 @@ eski_modulleri_yenile()
 
 from arama import Arayici
 from belge_kontrol import KLASOR, ders_plani_mi, program_kapsamlari, programlari_oku
+from indeks import turkce_kucuk
 from cevap import ONLISANS, atif, cevapla, gecerlilik, tarih
 from mezuniyet import ENGEL_NOTLAR, kontrol, staj_birimi
 
@@ -367,6 +368,25 @@ def ders_plani_sekmesi(program, plan_yili=None):
 
     yariyillar = sorted((p for p in parcalar if p["no"].endswith(".YARIYIL")),
                         key=lambda p: ROMA_SIRA.index(p["no"].split(".")[0]))
+
+    aranan = st.text_input("Ders ara", placeholder="Ders adı ya da kodu, ör. regresyon", key="ders_ara")
+    if aranan.strip():
+        a = turkce_kucuk(aranan.strip())
+        bulunan = []
+        for p in parcalar:
+            satirlar, _ = tablo(p)
+            if p["no"].endswith(".YARIYIL"):
+                no = ROMA_SIRA.index(p["no"].split(".")[0]) + 1
+                yer = f"{no}. yarıyıl (zorunlu)"
+            else:
+                yer = p["no"]
+            bulunan += [dict(s, Yer=yer) for s in satirlar
+                        if a in turkce_kucuk(s["Ders"]) or a in turkce_kucuk(s["Kod"])]
+        if bulunan:
+            st.dataframe(bulunan, hide_index=True, width="stretch")
+        else:
+            st.caption("Bu planda böyle bir ders yok.")
+        return
     for p in yariyillar:
         satirlar, ekler = tablo(p)
         no = ROMA_SIRA.index(p["no"].split(".")[0]) + 1

@@ -137,3 +137,13 @@ def test_soru_baglantisi_ile_acilis():
     at.run()
     assert not at.exception
     assert any("Lojistik programında staj zorunludur" in m.value for m in at.markdown)
+
+
+def test_ders_planinda_arama():
+    at = AppTest.from_file(str(KLASOR / "app.py"), default_timeout=120)
+    at.query_params["bolum"] = "istatistik"
+    at.run()
+    at.text_input(key="ders_ara").input("regresyon").run()
+    assert not at.exception
+    tablo = at.dataframe[0].value
+    assert "İST333" in set(tablo["Kod"]) and "5. yarıyıl (zorunlu)" in set(tablo["Yer"])

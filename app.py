@@ -127,6 +127,11 @@ section[data-testid="stSidebar"] { background: #fff; border-right: 1px solid var
 .belge-satir span { color: var(--soluk); display: block; font-size: .8rem; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+/* telefonda örnek sorular alt alta 8 satır yer kaplamasın: tek satır, yana kaydırılır */
+@media (max-width: 640px) {
+  div[data-testid="stButtonGroup"] > div { flex-wrap: nowrap !important; overflow-x: auto; padding-bottom: 6px; }
+  div[data-testid="stButtonGroup"] button { flex: 0 0 auto; white-space: nowrap; }
+}
 </style>
 """
 

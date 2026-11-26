@@ -6,12 +6,16 @@ Cevap iki kısımdan oluşuyor:
   - kaynaklar: soruya en uygun maddelerin kendisi (belge adı, madde, sayfa, yürürlük tarihi)
 Cümleler önceden yazıldığı için çalışırken metin üretilmiyor, uydurma riski yok.
 
-Güven seviyesi (en iyi parçanın e5 benzerliğine göre):
+Güven skoru = (en yakın özet cümlesinin e5 benzerliği + 0.35 * ilk 3 parçanın en iyi e5 benzerliği) / 1.35
   - "bulundu"     : >= ESIK_YUKSEK, cevap olarak gösterilir
   - "belirsiz"    : arada, "kesin cevap bulamadım, ilgili olabilecek maddeler" denir
   - "bulunamadi"  : < ESIK_DUSUK, "bulamadım" denir
 
-Eşikler tests/ altındaki cevaplı ve cevapsız sorulara bakılarak seçildi (raporlar/5_cevap.md).
+Önceden yalnızca parça benzerliğine bakılıyordu. Belge sayısı arttıkça her soruya benzeyen bir
+parça çıkmaya başladı ve cevapsız soruların çoğu "bulundu" oldu. Özet cümleleri tek bir kurala
+odaklandığı için cevaplı ve cevapsız soruları daha iyi ayırıyor (AUC 0.91 -> 0.95).
+Eşikler tests/ altındaki sorularla seçildi, tests/cevapsiz_dogrulama.yaml ile ayrıca kontrol
+edildi (raporlar/5_cevap.md).
 
     python cevap.py "Kaç AKTS üst sınırım var?"
 """
@@ -26,8 +30,9 @@ import yaml
 from belge_kontrol import programlari_oku
 from indeks import INDEKS_KLASORU, KLASOR, kelimeler, soru_kelimeleri, turkce_kucuk
 
-ESIK_YUKSEK = 0.850
-ESIK_DUSUK = 0.825
+ESIK_YUKSEK = 0.866
+ESIK_DUSUK = 0.850
+PARCA_AGIRLIGI = 0.35   # güven skorunda parça benzerliğinin özet benzerliğine göre ağırlığı
 KAYNAK_SAYISI = 3
 OZET_DOSYASI = KLASOR / "ozetler.yaml"
 OZET_VEKTORLERI = INDEKS_KLASORU / "ozet_vektorleri.npz"
@@ -458,14 +463,21 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
     }
 
 
+def guven_skoru(soru, sonuclar, arayici, program=None):
+    """Özet cümlesi benzerliği ile parça benzerliğinin ağırlıklı ortalaması (0-1 arası)."""
+    parca = max(b["e5"] for _, b in sonuclar)
+    ozet = float(arayici.ozet_skorlari(soru, program).max())
+    return (ozet + PARCA_AGIRLIGI * parca) / (1 + PARCA_AGIRLIGI)
+
+
 def cevapla(soru, arayici, k=KAYNAK_SAYISI, program=None):
     soru = soru.strip()
     if len(soru) < 3:
         return {"durum": "bulunamadi", "mesaj": "Lütfen bir soru yazın.", "kaynaklar": []}
 
     tum = arayici.ara(soru, k=max(k, ADAY_PARCA), program=program)
-    sonuclar = tum[:k]   # güven seviyesi ilk k parçaya göre (eşikler buna göre seçildi)
-    en_iyi = max(b["e5"] for _, b in sonuclar)
+    sonuclar = tum[:k]
+    en_iyi = guven_skoru(soru, sonuclar, arayici, program)
     if en_iyi >= ESIK_YUKSEK:
         durum = "bulundu"
         mesaj = "Kısa cevap aşağıda. Dayandığı resmi maddeler altında, aynen gösteriliyor."

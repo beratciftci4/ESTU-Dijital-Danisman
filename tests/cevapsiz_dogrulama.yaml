@@ -1,0 +1,43 @@
+# "Bulamadım" eşiğini DOĞRULAMAK için belgelerde cevabı olmayan sorular (2026-11-26).
+# Eşik seçilirken bu dosyaya bakılmadı; skorlar görülmeden yazıldı. Bölümler dağıtıldı ki
+# her bölümün kendi Bologna sayfaları da aramaya girsin.
+- {soru: "Kampüste otopark ücretli mi?", program: istatistik}
+- {soru: "Öğrenci kimlik kartımı kaybettim ne yapmalıyım?", program: fizik}
+- {soru: "Hangi hocanın dersi daha kolay?", program: bilgisayar_muh}
+- {soru: "Yemekhane kartına nasıl para yüklerim?", program: endustri_muh}
+- {soru: "Kampüse hangi otobüs gidiyor?", program: kimya}
+- {soru: "Kısmi zamanlı öğrenci olarak çalışabilir miyim, saat ücreti ne kadar?", program: matematik}
+- {soru: "Öğrenci kulüplerine nasıl üye olurum?", program: biyoloji}
+- {soru: "Laboratuvar önlüğü zorunlu mu?", program: kimya_muh}
+- {soru: "Mezunlar derneğine nasıl katılırım?", program: malzeme_muh}
+- {soru: "Okulun sağlık merkezi nerede?", program: insaat_muh}
+- {soru: "Yurt dışı yüksek lisans için referans mektubu kimden alınır?", program: makine_muh}
+- {soru: "Ders kitaplarını nereden ucuza bulabilirim?", program: cevre_muh}
+- {soru: "Kampüste bisiklet kiralama var mı?", program: elektrik_elektronik_muh}
+- {soru: "Uçak bakım lisansı sınavı ne zaman yapılıyor?", program: ucak_govde_motor}
+- {soru: "Pilot olmak için göz sağlığı şartları nelerdir?", program: hava_trafik}
+- {soru: "Siber güvenlik sertifikası almak için hangi kursa gitmeliyim?", program: bilgi_guvenligi}
+- {soru: "Yapay zeka bölümünde GPU sunucusuna nasıl erişirim?", program: yapay_zeka}
+- {soru: "Okulun GitHub Education hesabı var mı?", program: bilisim_sistemleri}
+- {soru: "Mimarlık atölyesi gece kaça kadar açık?", program: mimarlik}
+- {soru: "Tasarım yarışmalarına katılmak için izin almam gerekir mi?", program: endustriyel_tasarim}
+- {soru: "Moda haftasında defile yapılıyor mu?", program: tekstil_moda}
+- {soru: "İç mimarlık öğrencileri hangi bilgisayarı almalı?", program: ic_mimarlik}
+- {soru: "Antrenörlük belgesini federasyondan nasıl alırım?", program: antrenorluk}
+- {soru: "Öğretmen atamaları için KPSS'de kaç puan gerekir?", program: beden_egitimi}
+- {soru: "Üniversite takımlarına seçmeler ne zaman?", program: spor_yoneticiligi}
+- {soru: "Kampüste yüzme havuzu var mı?", program: rekreasyon}
+- {soru: "Havacılık yönetimi mezunları ortalama kaç maaş alıyor?", program: havacilik_yonetimi}
+- {soru: "Roket takımına nasıl katılırım?", program: havacilik_uzay_muh}
+- {soru: "Drone kullanmak için lisans gerekir mi?", program: havacilik_elektrik}
+- {soru: "Kayıt dondurursam KYK bursum kesilir mi?", program: istatistik}
+- {soru: "Askerlik tecilim ne zaman biter?", program: bilgisayar_muh}
+- {soru: "Yaz okulunda başka şehirde kalacak yer bulunuyor mu?", program: fizik}
+- {soru: "Ders seçiminde sistem çökerse ne yapmalıyım?", program: endustri_muh}
+- {soru: "Öğrenci belgesini e-Devlet'ten alabilir miyim?", program: mimarlik}
+- {soru: "Erasmus hibesi ne kadar?", program: rekreasyon}
+- {soru: "İngilizce hazırlıkta kaç kur var?", program: istatistik}
+- {soru: "Kampüs içinde sigara içmek yasak mı?", program: kimya}
+- {soru: "Danışmanımı değiştirebilir miyim?", program: biyoloji}
+- {soru: "Okulun psikolojik danışma birimi var mı?", program: tekstil_moda}
+- {soru: "Sınav sonuçlarına itiraz ederken harç ödenir mi?", program: matematik}

@@ -6,58 +6,59 @@ Cevap = kısa cevap (ozetler.yaml'daki elle yazılmış sade cümlelerden seçil
 - Cevaplı soru doğru: asistan "bulamadım" demedi ve beklenen ifade gösterilen alıntıda geçiyor.
 - Cevapsız soru doğru: asistan cevabı bulduğunu iddia etmedi ("bulamadım" ya da "kesin cevap bulamadım, ilgili olabilecek maddeler").
 
-Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası "belirsiz".
+Güven skoru = (en yakın özet cümlesinin e5 benzerliği + 0.35 x ilk 3 parçanın en iyi e5 benzerliği) / 1.35.
+Eşikler: skor >= 0.866 ise "bulundu", < 0.85 ise "bulamadım", arası "belirsiz".
 
 - Kısa cevap doğru: kısa cevabın dayandığı maddelerden biri sorunun doğru kaynağı ("ilk cümle" sütununda en üstteki cümlenin maddesi).
 
 | Set | Cevaplı doğru | Cevapsız doğru | Cevapsızda doğrudan "bulamadım" | Kısa cevap doğru maddeye dayanıyor | İlk cümle doğru maddeden |
 |---|---|---|---|---|---|
-| Ana set (eşik ayarında kullanıldı) | 26/27 | 3/3 | 1/3 | 24/27 | 23/27 |
-| Kalibrasyon, cevapsız (eşik ayarında kullanıldı) | - | 14/15 | 8/15 | - | - |
+| Ana set (eşik ayarında kullanıldı) | 26/27 | 3/3 | 3/3 | 24/27 | 23/27 |
+| Kalibrasyon, cevapsız (eşik ayarında kullanıldı) | - | 15/15 | 11/15 | - | - |
 | Ayrık set | 10/10 | 2/2 | 1/2 | 10/10 | 10/10 |
-| Doğrulama seti (eşikten sonra yazıldı) | 8/8 | 6/8 | 2/8 | 8/8 | 7/8 |
-| Fen Fakültesi diğer bölümler | 13/16 | 1/2 | 0/2 | 14/16 | 14/16 |
-| Mühendislik Fakültesi | 14/18 | 1/2 | 0/2 | 17/18 | 16/18 |
-| Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 | 0/2 | 15/15 | 15/15 |
-| Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 | 0/2 | 16/16 | 16/16 |
+| Doğrulama seti (eşikten sonra yazıldı) | 8/8 | 6/8 | 4/8 | 8/8 | 7/8 |
+| Fen Fakültesi diğer bölümler | 13/16 | 2/2 | 1/2 | 14/16 | 14/16 |
+| Mühendislik Fakültesi | 14/18 | 2/2 | 0/2 | 17/18 | 16/18 |
+| Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 2/2 | 1/2 | 15/15 | 15/15 |
+| Havacılık ve Uzay Bilimleri Fakültesi | 14/18 | 1/2 | 0/2 | 17/17 | 17/17 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 | 1/2 | 16/18 | 15/18 |
-| Spor Bilimleri Fakültesi | 13/16 | 1/2 | 1/2 | 14/15 | 14/15 |
+| Spor Bilimleri Fakültesi | 13/16 | 2/2 | 1/2 | 14/15 | 14/15 |
+| Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı) | - | 34/40 | 25/40 | - | - |
 
 ## Hatalı sonuçlar
 
-- [Ana set (eşik ayarında kullanıldı)] Kaydımı en fazla kaç dönem dondurabilirim? -> bulundu (benzerlik 0.857)
-- [Kalibrasyon, cevapsız (eşik ayarında kullanıldı)] Erasmus için kaç dil puanı gerekiyor? -> bulundu (benzerlik 0.869)
-- [Doğrulama seti (eşikten sonra yazıldı)] Mezunlar derneğine nasıl üye olurum? -> bulundu (benzerlik 0.851)
+- [Ana set (eşik ayarında kullanıldı)] Kaydımı en fazla kaç dönem dondurabilirim? -> bulundu (benzerlik 0.873)
+- [Doğrulama seti (eşikten sonra yazıldı)] Psikolojik danışmanlık randevusu nasıl alınır? -> bulundu (benzerlik 0.869)
 - [Doğrulama seti (eşikten sonra yazıldı)] Akademik takvime göre güz dönemi ne zaman bitiyor? -> bulundu (benzerlik 0.867)
-- [Fen Fakültesi diğer bölümler] Biyoloji bölümünde hazırlık okumak zorunlu mu? -> bulundu (benzerlik 0.876)
-- [Fen Fakültesi diğer bölümler] Fizik bölümünden mezun olmak için proje şartı var mı? -> bulundu (benzerlik 0.878)
-- [Fen Fakültesi diğer bölümler] Matematik bölümünde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.865)
-- [Fen Fakültesi diğer bölümler] Kimya bölümünün laboratuvar önlüğü nereden alınır? -> bulundu (benzerlik 0.857)
-- [Mühendislik Fakültesi] Dönem içinde staj yapabilir miyim? -> bulundu (benzerlik 0.885)
-- [Mühendislik Fakültesi] Elektrik elektronik bölümünde hazırlık var mı? -> belirsiz (benzerlik 0.849)
-- [Mühendislik Fakültesi] İnşaat mühendisleri nerede çalışabilir? -> bulundu (benzerlik 0.874)
-- [Mühendislik Fakültesi] Uçak mühendisliğinde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.872)
-- [Mühendislik Fakültesi] Makine mühendisliği bölümünün kantini nerede? -> bulundu (benzerlik 0.852)
-- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Birinci yarıyılda hangi dersleri alacağım? -> bulundu (benzerlik 0.86)
-- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Bilişim sistemlerinde eğitim dili nedir? -> bulundu (benzerlik 0.858)
-- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Yapay zeka bölümünün hackathon takımı var mı? -> bulundu (benzerlik 0.853)
-- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Bilişim sistemleri bölümünün laboratuvar saatleri nedir? -> bulundu (benzerlik 0.856)
-- [Havacılık ve Uzay Bilimleri Fakültesi] Kaç gün staj yapmam gerekiyor? -> bulundu (benzerlik 0.881)
-- [Havacılık ve Uzay Bilimleri Fakültesi] Staja ne zaman başlayabilirim? -> bulundu (benzerlik 0.877)
-- [Havacılık ve Uzay Bilimleri Fakültesi] Yatay geçişle geldim, eski stajım sayılır mı? -> belirsiz (benzerlik 0.849)
-- [Havacılık ve Uzay Bilimleri Fakültesi] Eğitim dili nedir? -> bulunamadi (benzerlik 0.823)
-- [Havacılık ve Uzay Bilimleri Fakültesi] Güvenlik soruşturması yapılıyor mu? -> bulunamadi (benzerlik 0.82)
-- [Havacılık ve Uzay Bilimleri Fakültesi] Hava trafik bölümünün simülatör saatleri nedir? -> bulundu (benzerlik 0.865)
-- [Havacılık ve Uzay Bilimleri Fakültesi] Havacılık yönetimi öğrencilerine uçuş eğitimi veriliyor mu? -> bulundu (benzerlik 0.859)
-- [Mimarlık ve Tasarım Fakültesi] Fabrika stajı kaç gün? -> bulundu (benzerlik 0.855)
-- [Mimarlık ve Tasarım Fakültesi] İç mimarlık bölümünde hangi çizim programları öğretiliyor? -> bulundu (benzerlik 0.869)
-- [Spor Bilimleri Fakültesi] Staj zorunlu mu? -> bulundu (benzerlik 0.891)
-- [Spor Bilimleri Fakültesi] Kaç gün staj yapmam gerekiyor? -> bulundu (benzerlik 0.882)
-- [Spor Bilimleri Fakültesi] Öğretmenlik uygulaması hangi dönemde? -> bulunamadi (benzerlik 0.82)
-- [Spor Bilimleri Fakültesi] Lisanslı sporcular derslere devam zorunluluğundan muaf mı? -> bulundu (benzerlik 0.874)
+- [Fen Fakültesi diğer bölümler] Biyoloji bölümünde hazırlık okumak zorunlu mu? -> bulundu (benzerlik 0.9)
+- [Fen Fakültesi diğer bölümler] Fizik bölümünden mezun olmak için proje şartı var mı? -> bulundu (benzerlik 0.884)
+- [Fen Fakültesi diğer bölümler] Matematik bölümünde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.897)
+- [Mühendislik Fakültesi] Dönem içinde staj yapabilir miyim? -> bulundu (benzerlik 0.889)
+- [Mühendislik Fakültesi] Elektrik elektronik bölümünde hazırlık var mı? -> bulundu (benzerlik 0.869)
+- [Mühendislik Fakültesi] İnşaat mühendisleri nerede çalışabilir? -> bulundu (benzerlik 0.902)
+- [Mühendislik Fakültesi] Uçak mühendisliğinde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.904)
+- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Birinci yarıyılda hangi dersleri alacağım? -> bulundu (benzerlik 0.88)
+- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Bilişim sistemlerinde eğitim dili nedir? -> bulundu (benzerlik 0.873)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Kaç gün staj yapmam gerekiyor? -> bulundu (benzerlik 0.893)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Staja ne zaman başlayabilirim? -> bulundu (benzerlik 0.888)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Yatay geçişle geldim, eski stajım sayılır mı? -> belirsiz (benzerlik 0.86)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Eğitim dili nedir? -> bulunamadi (benzerlik 0.845)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Havacılık yönetimi öğrencilerine uçuş eğitimi veriliyor mu? -> bulundu (benzerlik 0.88)
+- [Mimarlık ve Tasarım Fakültesi] Fabrika stajı kaç gün? -> belirsiz (benzerlik 0.86)
+- [Mimarlık ve Tasarım Fakültesi] İç mimarlık bölümünde hangi çizim programları öğretiliyor? -> bulundu (benzerlik 0.878)
+- [Spor Bilimleri Fakültesi] Staj zorunlu mu? -> bulundu (benzerlik 0.892)
+- [Spor Bilimleri Fakültesi] Kaç gün staj yapmam gerekiyor? -> bulundu (benzerlik 0.9)
+- [Spor Bilimleri Fakültesi] Öğretmenlik uygulaması hangi dönemde? -> bulunamadi (benzerlik 0.845)
+- [Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)] Havacılık yönetimi mezunları ortalama kaç maaş alıyor? -> bulundu (benzerlik 0.882)
+- [Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)] Yaz okulunda başka şehirde kalacak yer bulunuyor mu? -> bulundu (benzerlik 0.87)
+- [Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)] Ders seçiminde sistem çökerse ne yapmalıyım? -> bulundu (benzerlik 0.868)
+- [Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)] Danışmanımı değiştirebilir miyim? -> bulundu (benzerlik 0.884)
+- [Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)] Okulun psikolojik danışma birimi var mı? -> bulundu (benzerlik 0.867)
+- [Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)] Sınav sonuçlarına itiraz ederken harç ödenir mi? -> bulundu (benzerlik 0.881)
 
 ## Notlar
 
+- Güven skoru 26.11.2026'da değişti. Eskiden sadece en iyi parçanın e5 benzerliğine bakılıyordu; 30 bölümle belge sayısı artınca neredeyse her soruya benzeyen bir parça çıktı ve cevapsız soruların çoğu "bulundu" oldu. 186 soruda (146 cevaplı, 40 cevapsız) sinyaller karşılaştırıldı (ROC AUC): parça e5 0.91, özet cümlesi e5 0.95, ikisinin ağırlıklı ortalaması 0.95 (5 katlı çapraz doğrulama). Eşikler bu sorularla seçildi; ayrıca yazılan 40 cevapsız soruda doğrudan "bulamadım" 11/40'tan 25/40'a çıktı, "bulundu" 8'den 6'ya indi.
 - Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra yazıldı. Doğrulama sonucuna göre eşik değiştirilmedi, yoksa o set de bağımsız olmazdı.
 - Cevapsız bir soruya "bulundu" denmesi en riskli hata. Bu durumda bile asistan metin uydurmuyor, sadece alakasız bir maddeyi gösteriyor; kaynak ve sayfa her zaman yazılı.
 - Özet sıralaması eklenince kalibrasyonda bir soru ("Erasmus için kaç dil puanı gerekiyor?") "bulundu"ya geçti (15/15 -> 14/15): yönetmelik 6. madde özetinde "Erasmus" kelimesi geçiyor ve dil sınavı eşdeğerlikleri maddesi de soruya yakın. Diğer setlerdeki kazanç daha büyük olduğu için tutuldu.

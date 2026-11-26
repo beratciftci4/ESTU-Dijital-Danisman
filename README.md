@@ -99,8 +99,10 @@ Birkaç ayrıntı:
   Tokenizer, Hugging Face `tokenizer.json`'ın SentencePiece'e çevrilmiş hali (`indeks/tokenizer.model`,
   `tokenizer_donustur.py`): aynı token id'lerini veriyor ama bellekte ~300 MB yerine ~70 MB tutuyor.
   Uygulamanın toplam belleği ~290 MB, bir soru ~0,01 sn.
-- **"Bulamadım".** En iyi parçanın benzerliği 0.850'nin üstündeyse cevap gösteriliyor, 0.825'in
-  altındaysa "bulamadım" deniyor, arada kalırsa "kesin cevap bulamadım, ilgili olabilecek maddeler" deniyor.
+- **"Bulamadım".** Güven skoru, soruya en yakın özet cümlesinin benzerliği ile en iyi parçanın
+  benzerliğinin ağırlıklı ortalaması (özet 1, parça 0.35). Skor 0.866'nın üstündeyse cevap gösteriliyor,
+  0.850'nin altındaysa "bulamadım" deniyor, arada kalırsa "kesin cevap bulamadım, ilgili olabilecek
+  maddeler" deniyor.
 - **Kısa cevap.** `ozetler.yaml`'da her parça için sade özet cümleleri var (207 parça, 450 cümle,
   elle yazıldı). Ders planları tablo olduğu için onların cümleleri tablodan otomatik üretiliyor
   ("Fizik bölümünde 1. yarıyılın zorunlu dersleri şunlardır: ..."). Soruya göre en iyi 5 parçanın
@@ -147,22 +149,25 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Set | Cevaplı | Cevapsız |
 |---|---|---|
 | Ana set | 26/27 | 3/3 |
-| Kalibrasyon (sadece cevapsız) | | 14/15 |
+| Kalibrasyon (sadece cevapsız) | | 15/15 |
 | Ayrık set | 10/10 | 2/2 |
 | Doğrulama (eşikten sonra yazıldı) | 8/8 | 6/8 |
-| Fen Fakültesi diğer bölümler | 13/16 | 1/2 |
-| Mühendislik Fakültesi | 14/18 | 1/2 |
-| Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 |
-| Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 |
+| Fen Fakültesi diğer bölümler | 13/16 | 2/2 |
+| Mühendislik Fakültesi | 14/18 | 2/2 |
+| Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 2/2 |
+| Havacılık ve Uzay Bilimleri Fakültesi | 14/18 | 1/2 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 |
-| Spor Bilimleri Fakültesi | 13/16 | 1/2 |
+| Spor Bilimleri Fakültesi | 13/16 | 2/2 |
+| Cevapsız doğrulama (40 soru, eşik seçilirken bakılmadı) | | 34/40 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 16/16, Mimarlık 16/18, Spor 14/15.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 17/17, Mimarlık 16/18, Spor 14/15.
 
-Yeni fakülte setlerinde cevabı olmayan soruların çoğuna ("laboratuvar önlüğü nereden alınır?",
-"kantin nerede?", "hackathon takımı var mı?") hâlâ "bulundu" deniyor. Belge sayısı arttıkça "bulamadım" eşiği zayıflıyor,
-tekrar ayarlanması gerekecek.
+"Bulamadım" kararı eskiden sadece en iyi parçanın benzerliğine bakıyordu. Belge sayısı arttıkça her soruya
+benzeyen bir parça çıkmaya başladı ve cevapsız soruların çoğuna "bulundu" denir oldu. 186 soruda (146 cevaplı,
+40 cevapsız) sinyaller karşılaştırıldı: parça benzerliğinin ROC AUC'u 0.91, özet cümlesi benzerliğinin 0.95.
+Yeni skor bu ikisini birleştiriyor. Eşik seçilirken hiç bakılmayan 40 yeni cevapsız soruda doğrudan
+"bulamadım" 11'den 25'e çıktı, yanlışlıkla "bulundu" 8'den 6'ya indi; cevaplı sorularda kayıp yok.
 
 Ayrıntılar ve hatalı sorular: [raporlar/4_arama.md](raporlar/4_arama.md),
 [raporlar/5_cevap.md](raporlar/5_cevap.md). Parçalama kontrolleri:

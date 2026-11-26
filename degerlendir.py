@@ -18,6 +18,7 @@ SORU_SETI = KLASOR / "tests" / "soru_seti.yaml"
 AYRIK_SET = KLASOR / "tests" / "soru_seti_ayrik.yaml"
 DOGRULAMA_SET = KLASOR / "tests" / "soru_seti_dogrulama.yaml"
 KALIBRASYON = KLASOR / "tests" / "kalibrasyon_cevapsiz.yaml"
+CEVAPSIZ_DOGRULAMA = KLASOR / "tests" / "cevapsiz_dogrulama.yaml"
 FEN_SET = KLASOR / "tests" / "soru_seti_fen.yaml"
 MUH_SET = KLASOR / "tests" / "soru_seti_muhendislik.yaml"
 BBBF_SET = KLASOR / "tests" / "soru_seti_bbbf.yaml"
@@ -91,7 +92,9 @@ def cevap_tablosu(arayici, setler):
                 "- Cevaplı soru doğru: asistan \"bulamadım\" demedi ve beklenen ifade gösterilen alıntıda geçiyor.",
                 "- Cevapsız soru doğru: asistan cevabı bulduğunu iddia etmedi (\"bulamadım\" ya da "
                 "\"kesin cevap bulamadım, ilgili olabilecek maddeler\").", "",
-                f"Eşikler: e5 benzerliği >= {__import__('cevap').ESIK_YUKSEK} ise \"bulundu\", "
+                "Güven skoru = (en yakın özet cümlesinin e5 benzerliği + 0.35 x ilk 3 parçanın en iyi e5 "
+                "benzerliği) / 1.35.",
+                f"Eşikler: skor >= {__import__('cevap').ESIK_YUKSEK} ise \"bulundu\", "
                 f"< {__import__('cevap').ESIK_DUSUK} ise \"bulamadım\", arası \"belirsiz\".", "",
                 "- Kısa cevap doğru: kısa cevabın dayandığı maddelerden biri sorunun doğru kaynağı "
                 "(\"ilk cümle\" sütununda en üstteki cümlenin maddesi).", "",
@@ -203,9 +206,17 @@ def main():
               ("Bilgisayar ve Bilişim Bilimleri Fakültesi", sorulari_oku(BBBF_SET)),
               ("Havacılık ve Uzay Bilimleri Fakültesi", sorulari_oku(HUBF_SET)),
               ("Mimarlık ve Tasarım Fakültesi", sorulari_oku(MTF_SET)),
-              ("Spor Bilimleri Fakültesi", sorulari_oku(SPOR_SET))]
+              ("Spor Bilimleri Fakültesi", sorulari_oku(SPOR_SET)),
+              ("Cevapsız doğrulama, 40 soru (eşik seçilirken bakılmadı)",
+               [dict(s, cevapsiz=True) for s in sorulari_oku(CEVAPSIZ_DOGRULAMA)])]
     satirlar = cevap_tablosu(arayici, setler)
     satirlar += ["", "## Notlar", "",
+                 "- Güven skoru 26.11.2026'da değişti. Eskiden sadece en iyi parçanın e5 benzerliğine "
+                 "bakılıyordu; 30 bölümle belge sayısı artınca neredeyse her soruya benzeyen bir parça çıktı ve "
+                 "cevapsız soruların çoğu \"bulundu\" oldu. 186 soruda (146 cevaplı, 40 cevapsız) sinyaller "
+                 "karşılaştırıldı (ROC AUC): parça e5 0.91, özet cümlesi e5 0.95, ikisinin ağırlıklı ortalaması "
+                 "0.95 (5 katlı çapraz doğrulama). Eşikler bu sorularla seçildi; ayrıca yazılan 40 cevapsız soruda "
+                 "doğrudan \"bulamadım\" 11/40'tan 25/40'a çıktı, \"bulundu\" 8'den 6'ya indi.",
                  "- Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra "
                  "yazıldı. Doğrulama sonucuna göre eşik değiştirilmedi, yoksa o set de bağımsız olmazdı.",
                  "- Cevapsız bir soruya \"bulundu\" denmesi en riskli hata. Bu durumda bile asistan metin "

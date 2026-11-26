@@ -216,3 +216,12 @@ def test_spor_staj_uydurmuyor(arayici):
     from cevap import cevapla
     c = cevapla("Kaç gün staj yapmam gerekiyor?", arayici, program="spor_yoneticiligi")
     assert "bölümüne sor" in c["ozet"]["metin"]
+
+
+def test_cevapsiz_dogrulama_seti(arayici):
+    # eşik seçilirken bakılmayan 40 cevapsız soru: çoğuna doğrudan "bulamadım" denmeli
+    from cevap import cevapla
+    from degerlendir import CEVAPSIZ_DOGRULAMA
+    durumlar = [cevapla(s["soru"], arayici, program=s["program"])["durum"]
+                for s in sorulari_oku(CEVAPSIZ_DOGRULAMA)]
+    assert durumlar.count("bulunamadi") >= 22 and durumlar.count("bulundu") <= 8

@@ -395,6 +395,62 @@ def plan_farki_cumleleri(p, parcalar):
     return cumleler
 
 
+def dil_cumlesi(p, parcalar):
+    """"Eğitim dili nedir?" sorusu için: zorunlu derslerin kaçı Türkçe, kaçı İngilizce.
+    Program bilgileri sayfasında dil yazmıyor, ders planındaki Dil sütunundan sayılıyor.
+    Cümle her planın sadece 1. yarıyıl parçasına ekleniyor (her yarıyılda tekrar etmesin)."""
+    if p["no"] != "I.YARIYIL":
+        return []
+    dersler = []
+    for q in parcalar.values():
+        if q["belge_id"] == p["belge_id"] and q["no"].endswith(".YARIYIL"):
+            for satir in q["metin"].split("\n"):
+                h = [x.strip() for x in satir.split("|")]
+                if len(h) == 5 and h[0] != "Ders Kodu":
+                    dersler.append((h[1], h[2]))
+    adlar = {ad for ad, _ in dersler}
+    # Türkçe şubesi olan İngilizce dersler ("Biochemistry II (Biyokimya II)") ayrıca sayılmasın
+    dersler = [(ad, dil) for ad, dil in dersler
+               if not (re.search(r"\(([^()]+)\)\s*$", ad) and re.search(r"\(([^()]+)\)\s*$", ad).group(1) in adlar)]
+    if not dersler:
+        return []
+    # "İngilizce I" gibi yabancı dil dersleri eğitim dilini göstermez, ayrı söylenir
+    dil_dersi = lambda ad: ad.startswith(("İngilizce", "English", "Yabancı Dil", "İNGİLİZCE"))
+    ingilizce = [ad for ad, dil in dersler if dil == "İngilizce" and not dil_dersi(ad)]
+    haric = " (İngilizce dil dersleri hariç)" if any(dil_dersi(ad) for ad, _ in dersler) else ""
+    pid = program_id(p)
+    kim = f"{PROGRAM_ADI[pid]} {bolum_eki(pid, 'nda')}"
+    n, m = len(dersler), len(ingilizce)
+    # bölümün Bologna tanıtımında dil yazıyorsa ("eğitim dili %30 İngilizcedir") o esas
+    profil = parcalar.get(f"{pid}_program_bilgileri#bolum-Program_Profili", {}).get("metin", "")
+    resmi = re.search(r"(?:eğitim|öğretim) dili\s*%\s*\u2060?(\d+)\s*(İngilizce|Türkçe)", profil, re.I) \
+        or re.search(r"%\s*(\d+)\s*(İngilizce|Türkçe) [Ee]ğitim", profil)
+    if resmi:
+        dil = f"%{resmi.group(1)} {resmi.group(2)}"
+    elif re.search(r"(?:eğitim|öğretim) dili (İngilizce|Türkçe)", profil, re.I):
+        dil = re.search(r"(?:eğitim|öğretim) dili (İngilizce|Türkçe)", profil, re.I).group(1)
+    else:
+        dil = None
+    if dil:
+        ayrinti = (f"ders planındaki {n} zorunlu dersin {m} tanesi İngilizce okutulur (ör. {', '.join(ingilizce[:3])})."
+                   if m else f"ders planındaki zorunlu derslerin hepsi{haric} Türkçe okutulur.")
+        return [f"{kim} eğitim dili {dil}dir (bölümün Bologna tanıtım sayfasına göre).",
+                f"{kim} {ayrinti}"]
+    # kısa cümle soruya daha çok benziyor; ayrıntı ikinci cümlede
+    if m == 0:
+        return [f"{kim} eğitim dili Türkçedir.",
+                f"{kim} ders planındaki zorunlu derslerin hepsi{haric} Türkçe okutulur."]
+    if m / n > 0.7:
+        agirlik = "İngilizcedir"
+    elif m / n < 0.3:
+        agirlik = "Türkçedir"
+    else:
+        agirlik = "Türkçe ve İngilizcedir"
+    return [f"{kim} eğitim dili ağırlıklı olarak {agirlik}.",
+            f"{kim} ders planındaki {n} zorunlu dersin {m} tanesi İngilizce okutulur "
+            f"(ör. {', '.join(ingilizce[:3])})."]
+
+
 def tum_ozetler():
     """ozetler.yaml + ders planlarından ve standart Bologna metinlerinden üretilen özetler."""
     ozetler = dict(ozetleri_oku())
@@ -403,7 +459,8 @@ def tum_ozetler():
         if p["id"] in ozetler:
             continue
         if ders_plani_mi(p["belge_id"]):
-            ozetler[p["id"]] = ders_plani_ozeti(p) + plan_farki_cumleleri(p, parcalar)
+            ozetler[p["id"]] = (ders_plani_ozeti(p) + dil_cumlesi(p, parcalar)
+                                  + plan_farki_cumleleri(p, parcalar))
         elif p["belge_id"].endswith("_program_bilgileri"):
             sablon = standart_ozet(p, parcalar) or alinti_ozeti(p)
             if sablon:
@@ -457,6 +514,23 @@ def bolum_staj_cumleleri():
 
 
 PTS_PAYI = 0.05
+
+
+def egitim_dili_soruluyor(soru):
+    """"Eğitim dili nedir?", "Bölüm İngilizce mi?", "Dersler hangi dilde?" gibi sorular.
+    Cevap ders planının Dil sütunundan üretilen cümlede (dil_cumlesi); anlam benzerliği bu kısa
+    soruları yönetmeliğin genel maddelerine kaçırdığı için kurala dayalı tanınıyor."""
+    s = turkce_kucuk(soru)
+    if re.search(r"hazırlık|muaf|sınav|yabancı dil dersi|zorunlu (mu|mı)|hangi dönem|kaç akts", s):
+        return False
+    return bool(re.search(r"(eğitim|öğretim|ders) dil|hangi dilde|(bölüm|program|dersler)\w* (tamamen )?(ingilizce|türkçe) m[ıi]|"
+                          r"(yüzde|%) ?\d* ?ingilizce|ingilizce (eğitim|öğretim)|türkçe (eğitim|öğretim)", s))
+
+
+def dil_parcasi(program):
+    """Bölümün güncel ders planında dil cümlesinin bulunduğu parça (1. yarıyıl)."""
+    bolum, yil = bolum_ve_yil(program)
+    return f"{bolum}_ders_plani{f'_{yil}' if yil else ''}#bolum-I.YARIYIL"
 
 
 def staj_suresi_soruluyor(soru):
@@ -590,6 +664,11 @@ def kisa_cevap(soru, sonuclar, arayici, en_fazla=OZET_CUMLE_SAYISI, agirlik=None
     if not re.search(r"proje|pts", turkce_kucuk(soru)):
         adaylar = [(a[0] - PTS_PAYI, *a[1:]) if a[4]["belge_id"] == "proje_temelli_staj" else a for a in adaylar]
 
+    if egitim_dili_soruluyor(soru) and program not in (None, "genel"):
+        # iki cümle birlikte gelsin: önce dil, sonra ayrıntı (puanlar sabitleniyor)
+        adaylar = [(10.0 if "eğitim dili" in a[3] else 9.99, *a[1:]) if a[4]["id"] == dil_parcasi(program)
+                   and ("eğitim dili" in a[3] or "okutulur" in a[3]) else a for a in adaylar]
+
     yariyil = sorulan_yariyil(soru)
     if yariyil:
         hedef = f"#bolum-{ROMA_RAKAM[yariyil - 1]}.YARIYIL"
@@ -668,8 +747,27 @@ def cevapla(soru, arayici, k=KAYNAK_SAYISI, program=None):
             alt = list(arayici.alt_kume(program)[0])
             bilgi = {"e5": float(e5[alt.index(sira[hedef])]), "bm25": 0.0}
             tum = [(arayici.parcalar[sira[hedef]], bilgi)] + [x for x in tum if x[0]["id"] != hedef]
+    # eğitim dili: cevap her zaman bölümün ders planından üretilen cümle, parça en başa
+    dil_sorusu = egitim_dili_soruluyor(soru) and program not in (None, "genel")
+    if dil_sorusu:
+        hedef = dil_parcasi(program)
+        sira = {p["id"]: i for i, p in enumerate(arayici.parcalar)}
+        if hedef in sira:
+            e5 = arayici.e5_skorlari(soru, program)
+            alt = list(arayici.alt_kume(program)[0])
+            bilgi = {"e5": float(e5[alt.index(sira[hedef])]), "bm25": 0.0}
+            tum = [(arayici.parcalar[sira[hedef]], bilgi)] + [x for x in tum if x[0]["id"] != hedef]
+            # cümle Bologna tanıtımındaki ifadeye dayanıyorsa o sayfa da ikinci kaynak
+            profil = f"{bolum_ve_yil(program)[0]}_program_bilgileri#bolum-Program_Profili"
+            if profil in sira and sira[profil] in alt:
+                bilgi = {"e5": float(e5[alt.index(sira[profil])]), "bm25": 0.0}
+                tum = tum[:1] + [(arayici.parcalar[sira[profil]], bilgi)] + [x for x in tum[1:] if x[0]["id"] != profil]
+        else:
+            dil_sorusu = False
     sonuclar = tum[:k]
     en_iyi = guven_skoru(soru, sonuclar, arayici, program)
+    if dil_sorusu:
+        en_iyi = max(en_iyi, ESIK_YUKSEK)
     if en_iyi >= ESIK_YUKSEK:
         durum = "bulundu"
         mesaj = "Kısa cevap aşağıda. Dayandığı resmi maddeler altında, aynen gösteriliyor."

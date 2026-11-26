@@ -27,6 +27,11 @@ yüksekokullarına ortak (`kapsam: duzey:onlisans`), ders planı ve program bilg
 görülebiliyor (yıllık plan seçiliyse o yılın planı), seçmeli havuzları açılır listelerde. Üstteki
 "Ders ara" kutusuyla bir dersin hangi yarıyılda ya da hangi seçmeli listede olduğu bulunuyor.
 
+**Eğitim dili.** "Eğitim dili nedir?", "Bölüm İngilizce mi?" gibi sorular kurala dayalı tanınıyor
+(`egitim_dili_soruluyor`). Bölümün Bologna tanıtımında dil yazıyorsa (ör. İstatistik "%30 İngilizce")
+cevap o ifade; yanında ders planının Dil sütunundan sayılan "36 zorunlu dersin 7'si İngilizce" bilgisi var.
+Tanıtımda yazmıyorsa oran ders planından hesaplanıyor (`dil_cumlesi`).
+
 **Not ortalaması sekmesi.** Dönemin derslerini ve beklenen harf notlarını girince dönem ortalaması (DNO)
 ve şu anki GNO ile AKTS'si verilirse yeni GNO hesaplanıyor. Katsayılar yönetmeliğin 18/4. fıkrasından,
 formül 19/1'den (ders kredisi AKTS, md. 8); tekrar edilen derste eski not çıkarılıyor (md. 19/3), YT/YZ/EK
@@ -192,7 +197,7 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Fen Fakültesi diğer bölümler | 13/16 | 2/2 |
 | Mühendislik Fakültesi | 14/18 | 2/2 |
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 2/2 |
-| Havacılık ve Uzay Bilimleri Fakültesi | 14/18 | 1/2 |
+| Havacılık ve Uzay Bilimleri Fakültesi | 15/18 | 1/2 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 |
 | Spor Bilimleri Fakültesi | 13/16 | 2/2 |
 | Önlisans programları | 15/17 | 2/2 |

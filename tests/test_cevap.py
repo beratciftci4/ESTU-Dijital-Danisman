@@ -261,3 +261,16 @@ def test_butun_bolumlerde_staj_ve_ilk_yariyil(arayici):
             re.search(r"sor\.|şartı yok|net anlaşılmıyor", m), (p["id"], m)
         c = cevapla("Birinci yarıyılın zorunlu dersleri neler?", arayici, program=p["id"])
         assert c["ozet"]["ilk_parca"] == f"{p['id']}_ders_plani#bolum-I.YARIYIL", p["id"]
+
+
+def test_egitim_dili(arayici):
+    from cevap import egitim_dili_soruluyor
+    assert egitim_dili_soruluyor("Eğitim dili nedir?") and egitim_dili_soruluyor("Bölüm İngilizce mi?")
+    assert not egitim_dili_soruluyor("İngilizce hazırlık zorunlu mu?")
+    assert not egitim_dili_soruluyor("Türk Dili dersi kaç AKTS?")
+    c = cevapla("Eğitim dili nedir?", arayici, program="istatistik")
+    assert c["durum"] == "bulundu" and "%30 İngilizce" in c["ozet"]["metin"]
+    c = cevapla("Dersler hangi dilde?", arayici, program="bilgisayar_muh")
+    assert "İngilizce" in c["ozet"]["cumleler"][0]
+    c = cevapla("Öğretim dili ne?", arayici, program="lojistik")
+    assert "Türkçe" in c["ozet"]["cumleler"][0]

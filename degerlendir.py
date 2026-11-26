@@ -21,6 +21,7 @@ KALIBRASYON = KLASOR / "tests" / "kalibrasyon_cevapsiz.yaml"
 FEN_SET = KLASOR / "tests" / "soru_seti_fen.yaml"
 MUH_SET = KLASOR / "tests" / "soru_seti_muhendislik.yaml"
 BBBF_SET = KLASOR / "tests" / "soru_seti_bbbf.yaml"
+HUBF_SET = KLASOR / "tests" / "soru_seti_hubf.yaml"
 
 
 def sorulari_oku(yol=SORU_SETI):
@@ -141,6 +142,7 @@ def main():
                       "Fen Fakültesi diğer bölümler (tests/soru_seti_fen.yaml, Biyoloji/Fizik/Kimya/Matematik)")
     satirlar += tablo(arayici, sorulari_oku(MUH_SET), "Mühendislik Fakültesi (tests/soru_seti_muhendislik.yaml, 9 bölüm)")
     satirlar += tablo(arayici, sorulari_oku(BBBF_SET), "Bilgisayar ve Bilişim Bilimleri Fakültesi (tests/soru_seti_bbbf.yaml, 3 bölüm)")
+    satirlar += tablo(arayici, sorulari_oku(HUBF_SET), "Havacılık ve Uzay Bilimleri Fakültesi (tests/soru_seti_hubf.yaml, 5 bölüm)")
     satirlar += ["## Notlar", "",
                  "- Eş anlamlı listesi (\"üst sınır\" -> \"en çok\" gibi) ve soru kalıbı listesi ana test "
                  "setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.",
@@ -194,7 +196,8 @@ def main():
               ("Doğrulama seti (eşikten sonra yazıldı)", sorulari_oku(DOGRULAMA_SET)),
               ("Fen Fakültesi diğer bölümler", sorulari_oku(FEN_SET)),
               ("Mühendislik Fakültesi", sorulari_oku(MUH_SET)),
-              ("Bilgisayar ve Bilişim Bilimleri Fakültesi", sorulari_oku(BBBF_SET))]
+              ("Bilgisayar ve Bilişim Bilimleri Fakültesi", sorulari_oku(BBBF_SET)),
+              ("Havacılık ve Uzay Bilimleri Fakültesi", sorulari_oku(HUBF_SET))]
     satirlar = cevap_tablosu(arayici, setler)
     satirlar += ["", "## Notlar", "",
                  "- Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra "

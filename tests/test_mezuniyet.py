@@ -85,11 +85,14 @@ def test_programlar_tutarli():
         assert f["staj_belgesi"] in belge_idleri and f["staj_birimi"] in ("gün", "iş günü")
     for p in programlar:
         assert p["fakulte"] in fakulteler, p["id"]
+        assert p["staj_gunu"] is not None or "staj_notu" in p, p["id"]
+        assert not p.get("staj_suresi_belirsiz") or (p["staj_gunu"] is None and p.get("staj_ek")), p["id"]
         assert {f"{p['id']}_ders_plani", f"{p['id']}_program_bilgileri"} <= belge_idleri, p["id"]
         if p.get("staj_kaynagi"):
             assert p["staj_kaynagi"] in PARCALAR, p["id"]
             # Bologna sayfasındaki süre programlar.yaml'dakiyle tutarlı olmalı
-            assert str(p["staj_gunu"]) in PARCALAR[p["staj_kaynagi"]] or p["id"] in ("elektrik_elektronik_muh", "endustri_muh"), p["id"]
+            if p["staj_gunu"]:
+                assert str(p["staj_gunu"]) in PARCALAR[p["staj_kaynagi"]] or p["id"] in ("elektrik_elektronik_muh", "endustri_muh"), p["id"]
 
 
 def test_muhendislik_staji():
@@ -98,3 +101,13 @@ def test_muhendislik_staji():
     assert s["mezun_olabilir"] and any(x["ad"] == "En az 40 gün staj" for x in s["satirlar"])
     s = kontrol(240, 2.5, HIC, 40, program="endustri_muh")
     assert not s["mezun_olabilir"] and any("5 iş günü eksik" in x["aciklama"] for x in s["satirlar"])
+
+
+def test_havacilik_staji():
+    m9 = PARCALAR["hubf_staj#madde-9"]
+    assert "en az 40 iş günü karşılığı" in m9 and "en az 30 iş günü karşılığı" in m9
+    assert "Bölümde staj isteğe bağlıdır" in PARCALAR["havacilik_yonetimi_program_bilgileri#bolum-Program_Profili"]
+    assert kontrol(240, 2.5, HIC, 0, program="havacilik_yonetimi")["mezun_olabilir"]
+    assert not kontrol(240, 2.5, HIC, 25, program="hava_trafik")["mezun_olabilir"]
+    s = kontrol(240, 2.5, HIC, 0, program="havacilik_uzay_muh")     # süre belgelerde yok
+    assert not s["mezun_olabilir"] and any("bölümüne sor" in x["aciklama"] for x in s["satirlar"])

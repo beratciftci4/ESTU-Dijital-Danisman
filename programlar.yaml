@@ -5,6 +5,7 @@
 #   staj_birimi: yönergedeki birim ("iş günü" ya da "gün"), yönerge nasıl yazıyorsa
 #   staj_notu : staj süresinin nereden geldiği
 #   staj_ek   : kısa cevaba eklenecek not (isteğe bağlı)
+#   staj_suresi_belirsiz: true ise staj zorunlu ama süresi belgelerde yazmıyor (staj_gunu null)
 
 fakulteler:
   fen:
@@ -18,6 +19,12 @@ fakulteler:
     staj_belgesi: bbbf_staj
     staj_maddesi: bbbf_staj#madde-8     # ders planındaki her staj en az 20 iş günü
     staj_listesi: bbbf_staj#madde-8
+    staj_birimi: iş günü
+  hubf:
+    ad: Havacılık ve Uzay Bilimleri Fakültesi
+    staj_belgesi: hubf_staj
+    staj_maddesi: hubf_staj#madde-9     # staj süreleri bölüm bölüm bu maddede
+    staj_listesi: hubf_staj#madde-9
     staj_birimi: iş günü
   muhendislik:
     ad: Mühendislik Fakültesi
@@ -149,3 +156,42 @@ programlar:
     staj_gunu: 40
     staj_notu: Yönerge md. 8 (her staj en az 20 iş günü) x ders planındaki 2 staj dersi (YZMSJ3001, YZMSJ4001)
     staj_ek: Ders planında iki staj dersi var, her biri en az 20 iş günü.
+  # Havacılık: yönerge md. 9 staj sürelerini bölüm bölüm yazıyor (Pilotaj uygulamaya eklenmedi).
+  - id: hava_trafik
+    ad: Hava Trafik Kontrolü
+    fakulte: hubf
+    bologna: 326
+    staj_gunu: 30
+    staj_notu: Yönerge md. 9 (zorunlu staj dersi en az 30 iş günü, en az 200 saat)
+    staj_ek: Staj, SHGM onaylı eğitim planındaki bütün teorik ve uygulamalı dersler bitince yapılabiliyor.
+  - id: havacilik_elektrik
+    ad: Havacılık Elektrik ve Elektroniği
+    fakulte: hubf
+    bologna: 327
+    staj_gunu: 40
+    staj_notu: Yönerge md. 9 (zorunlu staj en az 40 iş günü; isteğe bağlı ikinci staj 20 iş günü)
+    staj_ek: Mesleki seçmeli olarak 20 iş günlük ikinci bir staj da alabilirsin; Temel Eğitim Yeterlilik Sertifikası isteyenler toplam en az 60 iş günü staj yapar.
+  - id: havacilik_uzay_muh
+    ad: Havacılık ve Uzay Mühendisliği
+    fakulte: hubf
+    bologna: 2063
+    staj_gunu: null
+    staj_suresi_belirsiz: true
+    staj_kaynagi: havacilik_uzay_muh_ders_plani#bolum-VII.YARIYIL
+    staj_notu: Ders planında zorunlu Internship I (7. yarıyıl) ve II (8. yarıyıl) var; yönergenin bölüm listesinde yok, süre hiçbir belgede yazmıyor
+    staj_ek: Ders planında 7. yarıyılda Staj I, 8. yarıyılda Staj II var, ama staj süresi yönergede ve Bologna sayfasında yazmıyor; süreyi bölüme sor.
+  - id: havacilik_yonetimi
+    ad: Havacılık Yönetimi
+    fakulte: hubf
+    bologna: 324
+    staj_gunu: null
+    staj_kaynagi: havacilik_yonetimi_program_bilgileri#bolum-Program_Profili
+    staj_notu: Bologna program profili "Bölümde staj isteğe bağlıdır" (Staj I-III mesleki seçmeli)
+    staj_ek: Ders planında Staj I, II ve III mesleki seçmeli ders olarak var.
+  - id: ucak_govde_motor
+    ad: Uçak Gövde ve Motor Bakımı
+    fakulte: hubf
+    bologna: 323
+    staj_gunu: 40
+    staj_notu: Yönerge md. 9 ve Bologna program profili ("Zorunlu staj süresi kırk iş günüdür")
+    staj_ek: Mesleki seçmeli olarak 20 iş günlük ikinci bir staj da alabilirsin; Temel Eğitim Yeterlilik Sertifikası isteyenler toplam en az 60 iş günü staj yapar.

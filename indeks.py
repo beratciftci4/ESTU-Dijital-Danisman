@@ -172,8 +172,10 @@ def pencerelere_bol(p):
     for satir in p["metin"].split("\n"):
         while len(satir) > PENCERE:           # tek satır çok uzunsa cümle cümle böl
             kes = satir.rfind(". ", 0, PENCERE)
+            if kes <= 0:                      # nokta yoksa kelimenin ortasından kesme, boşluktan böl
+                kes = satir.rfind(" ", 0, PENCERE)
             kes = kes + 1 if kes > 0 else PENCERE
-            pencereler.append(satir[:kes])
+            pencereler.append(satir[:kes].strip())
             satir = satir[kes:].strip()
         if mevcut and len(mevcut) + len(satir) > PENCERE:
             pencereler.append(mevcut)

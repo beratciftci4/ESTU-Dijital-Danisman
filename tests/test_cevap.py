@@ -186,3 +186,9 @@ def test_staj_suresi_niyeti():
               "Stajın başarılı sayılması için değerlendirme notu en az kaç olmalı?",
               "Staj yerindeki sorumlu kişinin bilişim alanında yetkin olması gerekir mi?"]:
         assert not staj_suresi_soruluyor(s), s
+
+
+def test_havacilik_bolumleri(arayici):
+    from degerlendir import HUBF_SET
+    hubf = cevap_olc(arayici, sorulari_oku(HUBF_SET))
+    assert hubf["cevapli_dogru"] >= 12 and hubf["ozet_dogru"] >= 14

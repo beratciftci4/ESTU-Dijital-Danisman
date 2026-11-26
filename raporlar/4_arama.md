@@ -91,6 +91,20 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 
 - Yok.
 
+## Havacılık ve Uzay Bilimleri Fakültesi (tests/soru_seti_hubf.yaml, 5 bölüm)
+
+20 soru (18 cevaplı, 2 cevapsız). Ölçüler cevaplı sorular üzerinden.
+
+| Yöntem | hit@1 | hit@3 | hit@5 | MRR |
+|---|---|---|---|---|
+| bm25 | 0.39 | 0.72 | 0.83 | 0.57 |
+| e5 | 0.61 | 0.89 | 0.89 | 0.75 |
+| hibrit | 0.83 | 0.94 | 0.94 | 0.89 |
+
+Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
+
+- Staj yapmak zorunlu mu? (sıra: 20+; ilk 3: hubf_staj#madde-9, proje_temelli_staj#madde-18, proje_temelli_staj#madde-10)
+
 ## Notlar
 
 - Eş anlamlı listesi ("üst sınır" -> "en çok" gibi) ve soru kalıbı listesi ana test setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.

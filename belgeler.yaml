@@ -636,3 +636,157 @@
   kapsam: program:yapay_zeka
   durum: aktif
   not: null
+
+- id: hubf_staj
+  ad: Eskişehir Teknik Üniversitesi Havacılık ve Uzay Bilimleri Fakültesi Staj Yönergesi
+  dosya: hubf_staj_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/Uploads/www/files/yonergeler/Eski%C5%9Fehir%20Teknik%20%C3%9Cniversitesi%20Havac%C4%B1l%C4%B1k%20ve%20Uzay%20Bilimleri%20Fak%C3%BCltesi%20Staj%20Y%C3%B6nergesi%20%2028_02_2023.pdf
+  yayim: 2023-02-28          # Senato kararı 5/1
+  yururluk: 2023-02-28       # Senato'nun kabul ettiği tarihten itibaren (md. 18)
+  son_degisiklik: null
+  dayanak: 2018 tarihli (eski) Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği md. 8, Pilotaj Bölümü Yönetmeliği, Uygulamalı Eğitimler Çerçeve Yönetmeliği
+  indirme_tarihi: 2026-11-26
+  sha256: 9618040fbcab6559267c7c48427d879ddb6515e9a631e1c2f2aa824ce37a1ce9
+  kapsam: fakulte:hubf
+  durum: aktif
+  not: Staj süreleri bölüm bölüm md. 9'da. Yönerge yürürlükten kalkmış 2018 yönetmeliğine atıf yapıyor; Havacılık ve Uzay Mühendisliği bölüm listesinde (md. 3) yok.
+
+- id: hava_trafik_ders_plani
+  ad: Hava Trafik Kontrolü Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: hava_trafik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/326/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 1a1fb944f34fd48655c8467799231ce759adc4ee3ffa4a3870340cc479db7f2b
+  kapsam: program:hava_trafik
+  durum: aktif
+  not: null
+
+- id: hava_trafik_program_bilgileri
+  ad: Hava Trafik Kontrolü Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: hava_trafik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/326/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 800e0df548c81d5041eb35ec19869f5f5c9fcc06fccf3a652297489696dcf14e
+  kapsam: program:hava_trafik
+  durum: aktif
+  not: null
+
+- id: havacilik_elektrik_ders_plani
+  ad: Havacılık Elektrik ve Elektroniği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: havacilik_elektrik_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/327/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: e331626d8f6ff4220c25b88f993c638ed524b799433d5b97e3ee5ded51b16ca7
+  kapsam: program:havacilik_elektrik
+  durum: aktif
+  not: null
+
+- id: havacilik_elektrik_program_bilgileri
+  ad: Havacılık Elektrik ve Elektroniği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: havacilik_elektrik_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/327/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: b1470d55f191f01929ebc0a7eb0dd9e0777c3165ba6d92155310c969c23c0f7a
+  kapsam: program:havacilik_elektrik
+  durum: aktif
+  not: null
+
+- id: havacilik_uzay_muh_ders_plani
+  ad: Havacılık ve Uzay Mühendisliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: havacilik_uzay_muh_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2063/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: b0e49332df25303dea73000faf24b7722f1045aa69f8a8175b618b4d4e71283f
+  kapsam: program:havacilik_uzay_muh
+  durum: aktif
+  not: null
+
+- id: havacilik_uzay_muh_program_bilgileri
+  ad: Havacılık ve Uzay Mühendisliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: havacilik_uzay_muh_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2063/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 2e6c27af7882e96ba6bea90867bf8d1034f4bdfce175fcba521c6037a2c5b75a
+  kapsam: program:havacilik_uzay_muh
+  durum: aktif
+  not: null
+
+- id: havacilik_yonetimi_ders_plani
+  ad: Havacılık Yönetimi Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: havacilik_yonetimi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/324/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: a5020d05bb58006146ba098dc6527759882b2dd7794553a1c7923574f474d9be
+  kapsam: program:havacilik_yonetimi
+  durum: aktif
+  not: null
+
+- id: havacilik_yonetimi_program_bilgileri
+  ad: Havacılık Yönetimi Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: havacilik_yonetimi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/324/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 5606085d598b7f6ac7c4e8b7734be1b1de5ce828abdf9815d68d449cac7f4f8b
+  kapsam: program:havacilik_yonetimi
+  durum: aktif
+  not: null
+
+- id: ucak_govde_motor_ders_plani
+  ad: Uçak Gövde ve Motor Bakımı Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: ucak_govde_motor_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/323/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: a265bd2a8c1f21ab3a061802aa900e6e58078ae8bed949864e1381ce5f37f050
+  kapsam: program:ucak_govde_motor
+  durum: aktif
+  not: null
+
+- id: ucak_govde_motor_program_bilgileri
+  ad: Uçak Gövde ve Motor Bakımı Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: ucak_govde_motor_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/323/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: d3e88f26df97f3e6ebfdf4fb1d4cbc48dce6eb44d01ff9ab729001fa144a4691
+  kapsam: program:ucak_govde_motor
+  durum: aktif
+  not: null

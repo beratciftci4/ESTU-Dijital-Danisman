@@ -1,0 +1,100 @@
+# Havacılık ve Uzay Bilimleri Fakültesi soru seti (2026-11-26).
+# Sonuçlara bakmadan, belgeler okunarak yazıldı. Pilotaj uygulamada yok.
+
+- soru: Kaç gün staj yapmam gerekiyor?
+  program: hava_trafik
+  kaynak: [hubf_staj#madde-9]
+  anahtar: ["30 iş günü"]
+
+- soru: Zorunlu staj kaç iş günü?
+  program: havacilik_elektrik
+  kaynak: [hubf_staj#madde-9, havacilik_elektrik_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["40"]
+
+- soru: Staj kaç gün sürüyor?
+  program: ucak_govde_motor
+  kaynak: [hubf_staj#madde-9, ucak_govde_motor_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["40"]
+
+- soru: Staj yapmak zorunlu mu?
+  program: havacilik_yonetimi
+  kaynak: [havacilik_yonetimi_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["isteğe bağlı"]
+
+- soru: Temel Eğitim Yeterlilik Sertifikası için kaç gün staj gerekir?
+  program: ucak_govde_motor
+  kaynak: [hubf_staj#madde-9]
+  anahtar: ["60 iş günü"]
+
+- soru: Staja en erken ne zaman başvurabilirim?
+  program: havacilik_elektrik
+  kaynak: [hubf_staj#madde-11]
+  anahtar: ["altıncı yarıyıl sonu"]
+
+- soru: Staja ne zaman başlayabilirim?
+  program: havacilik_yonetimi
+  kaynak: [hubf_staj#madde-11]
+  anahtar: ["dördüncü yarıyıl sonu"]
+
+- soru: Stajda devamsızlık hakkım ne kadar?
+  program: ucak_govde_motor
+  kaynak: [hubf_staj#madde-9]
+  anahtar: ["%10"]
+
+- soru: İşletme değerlendirme formundan kaç almam gerekiyor?
+  program: hava_trafik
+  kaynak: [hubf_staj#madde-15]
+  anahtar: ["en az 3"]
+
+- soru: Staj notuna itiraz süresi kaç gün?
+  program: havacilik_elektrik
+  kaynak: [hubf_staj#madde-15, hubf_staj#madde-16]
+  anahtar: ["5 (beş) iş"]
+
+- soru: Staj yerimi sonradan değiştirebilir miyim?
+  program: ucak_govde_motor
+  kaynak: [hubf_staj#madde-13]
+  anahtar: ["onayı"]
+
+- soru: Yurt dışında staj yapabilir miyim?
+  program: havacilik_yonetimi
+  kaynak: [hubf_staj#madde-12]
+  anahtar: ["Yurt dışında"]
+
+- soru: SGK işe giriş işlemlerini ne zaman yaptırmalıyım?
+  program: hava_trafik
+  kaynak: [hubf_staj#madde-14]
+  anahtar: ["10 gün önce"]
+
+- soru: Yatay geçişle geldim, eski stajım sayılır mı?
+  program: havacilik_elektrik
+  kaynak: [hubf_staj#madde-16]
+  anahtar: ["2 (iki) hafta"]
+
+- soru: Bölüme kaç öğrenci alınıyor?
+  program: hava_trafik
+  kaynak: [hava_trafik_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları]
+  anahtar: ["20 öğrenci"]
+
+- soru: Eğitim dili nedir?
+  program: havacilik_uzay_muh
+  kaynak: [havacilik_uzay_muh_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["İngilizce"]
+
+- soru: Mezun olunca nerelerde çalışabilirim?
+  program: havacilik_uzay_muh
+  kaynak: [havacilik_uzay_muh_program_bilgileri#bolum-İstihdam_Olanakları]
+  anahtar: ["Roketsan"]
+
+- soru: Güvenlik soruşturması yapılıyor mu?
+  program: ucak_govde_motor
+  kaynak: [ucak_govde_motor_program_bilgileri#bolum-Kabul_ve_Kayıt_Koşulları]
+  anahtar: ["güvenlik soruşturması"]
+
+- soru: Hava trafik bölümünün simülatör saatleri nedir?
+  program: hava_trafik
+  cevapsiz: true
+
+- soru: Havacılık yönetimi öğrencilerine uçuş eğitimi veriliyor mu?
+  program: havacilik_yonetimi
+  cevapsiz: true

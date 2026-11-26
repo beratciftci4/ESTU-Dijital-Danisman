@@ -19,10 +19,11 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 | Fen Fakültesi diğer bölümler | 13/16 | 1/2 | 0/2 | 14/16 | 14/16 |
 | Mühendislik Fakültesi | 14/18 | 1/2 | 0/2 | 17/18 | 16/18 |
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 | 0/2 | 15/15 | 15/15 |
+| Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 | 0/2 | 15/16 | 15/16 |
 
 ## Hatalı sonuçlar
 
-- [Ana set (eşik ayarında kullanıldı)] Kaydımı en fazla kaç dönem dondurabilirim? -> bulundu (benzerlik 0.864)
+- [Ana set (eşik ayarında kullanıldı)] Kaydımı en fazla kaç dönem dondurabilirim? -> bulundu (benzerlik 0.857)
 - [Kalibrasyon, cevapsız (eşik ayarında kullanıldı)] Erasmus için kaç dil puanı gerekiyor? -> bulundu (benzerlik 0.869)
 - [Doğrulama seti (eşikten sonra yazıldı)] Mezunlar derneğine nasıl üye olurum? -> bulundu (benzerlik 0.851)
 - [Doğrulama seti (eşikten sonra yazıldı)] Akademik takvime göre güz dönemi ne zaman bitiyor? -> bulundu (benzerlik 0.867)
@@ -39,6 +40,13 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 - [Bilgisayar ve Bilişim Bilimleri Fakültesi] Bilişim sistemlerinde eğitim dili nedir? -> bulundu (benzerlik 0.858)
 - [Bilgisayar ve Bilişim Bilimleri Fakültesi] Yapay zeka bölümünün hackathon takımı var mı? -> bulundu (benzerlik 0.853)
 - [Bilgisayar ve Bilişim Bilimleri Fakültesi] Bilişim sistemleri bölümünün laboratuvar saatleri nedir? -> bulundu (benzerlik 0.856)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Kaç gün staj yapmam gerekiyor? -> bulundu (benzerlik 0.881)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Staja ne zaman başlayabilirim? -> bulundu (benzerlik 0.877)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Yatay geçişle geldim, eski stajım sayılır mı? -> belirsiz (benzerlik 0.849)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Eğitim dili nedir? -> bulunamadi (benzerlik 0.823)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Güvenlik soruşturması yapılıyor mu? -> bulunamadi (benzerlik 0.82)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Hava trafik bölümünün simülatör saatleri nedir? -> bulundu (benzerlik 0.865)
+- [Havacılık ve Uzay Bilimleri Fakültesi] Havacılık yönetimi öğrencilerine uçuş eğitimi veriliyor mu? -> bulundu (benzerlik 0.859)
 
 ## Notlar
 

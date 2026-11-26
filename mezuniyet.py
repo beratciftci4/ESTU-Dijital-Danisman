@@ -20,12 +20,15 @@ KAYNAK_TEK_DERS = "tek_ders#bent-1"
 
 
 def staj_kurali(program):
-    """(gereken gün ya da None, kaynak parça id). Birim için staj_birimi()."""
+    """(gereken gün, None ya da "belirsiz", kaynak parça id). Birim için staj_birimi().
+    None: staj isteğe bağlı. "belirsiz": staj zorunlu ama süresi belgelerde yazmıyor."""
     from belge_kontrol import programlari_oku
     fakulteler, programlar = programlari_oku()
     p = next(x for x in programlar if x["id"] == program)
+    if p.get("staj_suresi_belirsiz"):
+        return "belirsiz", p.get("staj_kaynagi") or fakulteler[p["fakulte"]]["staj_listesi"]
     if p["staj_gunu"] is None:
-        return None, fakulteler[p["fakulte"]]["staj_listesi"]
+        return None, p.get("staj_kaynagi") or fakulteler[p["fakulte"]]["staj_listesi"]
     return p["staj_gunu"], p.get("staj_kaynagi") or fakulteler[p["fakulte"]]["staj_maddesi"]
 
 
@@ -66,7 +69,16 @@ def kontrol(akts, gno, notlar, staj_gunu, program="istatistik"):
     })
 
     gereken_staj, staj_kaynagi = staj_kurali(program)
-    if gereken_staj is None:
+    if gereken_staj == "belirsiz":
+        satirlar.append({
+            "ad": "Zorunlu staj (süresi belgelerde yok)",
+            "tamam": staj_gunu > 0,
+            "aciklama": "Ders planında zorunlu staj dersleri var ama süresi yönergede ve Bologna sayfasında "
+                        "yazmıyor; ne kadar staj yapman gerektiğini bölümüne sor.",
+            "kaynak": staj_kaynagi,
+        })
+        gereken_staj = 1
+    elif gereken_staj is None:
         satirlar.append({
             "ad": "Zorunlu staj yok",
             "tamam": True,

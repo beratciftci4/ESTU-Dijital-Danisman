@@ -54,6 +54,7 @@ BELGE_KISA_ADI = {
     "fen_staj": "Fen Fakültesi Staj Yönergesi",
     "muh_staj": "Mühendislik Fakültesi Staj Yönergesi",
     "bbbf_staj": "Bilgisayar ve Bilişim Bilimleri Fakültesi Staj Yönergesi",
+    "hubf_staj": "Havacılık ve Uzay Bilimleri Fakültesi Staj Yönergesi",
     "danismanlik": "Akademik Danışmanlık Yönergesi",
     "proje_temelli_staj": "Proje Temelli Staj Yönergesi",
     "hakli_nedenler": "Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar",
@@ -288,11 +289,14 @@ def bolum_staj_cumleleri():
         fak = fakulteler[p["fakulte"]]
         parca_id = p.get("staj_kaynagi") or fak["staj_listesi"]
         birim = p.get("staj_birimi") or fak["staj_birimi"]
-        if p["staj_gunu"]:
+        if p.get("staj_suresi_belirsiz"):
+            c = f"{p['ad']} bölümünde staj zorunludur. {p['staj_ek']}"
+        elif p["staj_gunu"]:
             c = (f"{p['ad']} bölümünde staj zorunludur; mezun olmak için toplam en az {p['staj_gunu']} {birim} "
                  "staj yapman gerekir." + (f" {p['staj_ek']}" if p.get("staj_ek") else ""))
         else:
-            c = f"{p['ad']} bölümünde staj zorunlu değildir, isteğe bağlıdır; mezuniyet için staj şartı yok."
+            c = (f"{p['ad']} bölümünde staj zorunlu değildir, isteğe bağlıdır; mezuniyet için staj şartı yok."
+                 + (f" {p['staj_ek']}" if p.get("staj_ek") else ""))
         sonuc.append((parca_id, c, p["id"]))
     return sonuc
 

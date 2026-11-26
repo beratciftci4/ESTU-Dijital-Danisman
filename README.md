@@ -9,10 +9,12 @@ Kısa cevap, her madde için önceden elle yazılmış özet cümlelerinden seç
 zekâ ile metin üretilmiyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da
 servis kullanmıyor.
 
-**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 17 bölüm var: Fen Fakültesi (Biyoloji,
+**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 22 bölüm var: Fen Fakültesi (Biyoloji,
 Fizik, İstatistik, Kimya, Matematik), Mühendislik Fakültesi (Bilgisayar, Çevre, Elektrik-Elektronik,
 Endüstri, İnşaat, Kimya, Makine, Malzeme Bilimi, Uçak) ve Bilgisayar ve Bilişim Bilimleri Fakültesi
-(Bilgi Güvenliği Teknolojisi, Bilişim Sistemleri ve Teknolojileri, Yapay Zeka ve Makine Öğrenmesi).
+(Bilgi Güvenliği Teknolojisi, Bilişim Sistemleri ve Teknolojileri, Yapay Zeka ve Makine Öğrenmesi),
+Havacılık ve Uzay Bilimleri Fakültesi (Hava Trafik Kontrolü, Havacılık Elektrik ve Elektroniği,
+Havacılık ve Uzay Mühendisliği, Havacılık Yönetimi, Uçak Gövde ve Motor Bakımı; Pilotaj şimdilik yok).
 Diğer fakülteler sırayla ekleniyor. Yönetmelik ve
 usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders planı ve program
 bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
@@ -36,6 +38,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Fen Fakültesi Staj Yönergesi | 05.10.2018 | 08.11.2022 |
 | Mühendislik Fakültesi Staj Yönergesi | 04.12.2018 | 16.07.2024 |
 | Bilgisayar ve Bilişim Bilimleri Fakültesi Staj Yönergesi | 22.09.2026 | |
+| Havacılık ve Uzay Bilimleri Fakültesi Staj Yönergesi | 28.02.2023 | |
 | Akademik Danışmanlık Yönergesi | 11.09.2025 | |
 | Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar | 11.09.2025 | |
 | Tek Ders Sınavı Uygulama Esasları | 18.12.2025 | |
@@ -43,10 +46,14 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Yaz Okulu Uygulama Esasları | 11.09.2025 | 10.03.2026 |
 | Not Karşılıkları ve Yabancı Dil Eşdeğerlikleri Uygulama Esasları | 10.07.2018 | 29.07.2025 |
 | Proje Temelli Staj Yönergesi | 04.01.2024 | 26.06.2025 |
-| 17 bölümün ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
+| 22 bölümün ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
 
 Not: Yönetmelik 2025'te tamamen yenilendi. İnternette hâlâ 2018 tarihli eski metin (RG 30540)
 dolaşıyor; buradaki metin mevzuat.gov.tr'deki güncel, değişiklikleri işlenmiş hali.
+
+Havacılık ve Uzay Mühendisliği'nin ders planında zorunlu Staj I ve II var ama fakülte staj
+yönergesi bu bölümü saymıyor ve süre hiçbir belgede yazmıyor. Uygulama bu bölümde staj süresini
+uydurmuyor, "bölüme sor" diyor.
 
 ## Nasıl çalışıyor
 
@@ -54,7 +61,7 @@ dolaşıyor; buradaki metin mevzuat.gov.tr'deki güncel, değişiklikleri işlen
 kaynaklar/*.pdf, *.html
    │  ayristir.py   madde madde parçalama (MADDE 10-, 1), 1- ...), sayfa ve başlık bilgisi
    ▼
-cikti/parcalar.jsonl  (267 parça, her birinde kapsam: genel / fakülte / bölüm)
+cikti/parcalar.jsonl  (672 parça, her birinde kapsam: genel / fakülte / bölüm)
    │  indeks.py     e5-small (ONNX, int8) ile vektörler + FAISS, BM25 için Türkçe kök
    ▼
 indeks/
@@ -114,6 +121,7 @@ Test setleri `tests/` altında, her sorunun cevabı belgelerden kontrol edildi.
 | Fen Fakültesi diğer bölümler (16 cevaplı) | 0.69 | 0.81 | 0.88 | 0.78 |
 | Mühendislik Fakültesi (18 cevaplı) | 0.61 | 0.78 | 0.89 | 0.73 |
 | Bilgisayar ve Bilişim Bilimleri Fakültesi (15 cevaplı) | 0.73 | 1.00 | 1.00 | 0.86 |
+| Havacılık ve Uzay Bilimleri Fakültesi (18 cevaplı) | 0.83 | 0.94 | 0.94 | 0.89 |
 
 Hibrit arama bütün setlerde sadece BM25'ten ve sadece e5'ten daha iyi ya da eşit.
 
@@ -129,9 +137,10 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Fen Fakültesi diğer bölümler | 13/16 | 1/2 |
 | Mühendislik Fakültesi | 14/18 | 1/2 |
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 |
+| Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 15/16.
 
 Yeni fakülte setlerinde cevabı olmayan soruların çoğuna ("laboratuvar önlüğü nereden alınır?",
 "kantin nerede?", "hackathon takımı var mı?") hâlâ "bulundu" deniyor. Belge sayısı arttıkça "bulamadım" eşiği zayıflıyor,

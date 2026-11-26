@@ -47,6 +47,7 @@ BICIM = {
     "fen_staj": "madde",
     "muh_staj": "madde",
     "bbbf_staj": "madde",
+    "hubf_staj": "madde",
     "danismanlik": "madde",
     "proje_temelli_staj": "madde",
     "hakli_nedenler": "numara",

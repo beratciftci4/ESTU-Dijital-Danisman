@@ -538,3 +538,101 @@
   kapsam: program:ucak_muh
   durum: aktif
   not: null
+
+- id: bbbf_staj
+  ad: Eskişehir Teknik Üniversitesi Bilgisayar ve Bilişim Bilimleri Fakültesi Staj Yönergesi
+  dosya: bbbf_staj_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/Uploads/www/files/yonergeler/Eski%C5%9Fehir%20Teknik%20%C3%9Cniversitesi%20Bilgisayar%20Ve%20Bili%C5%9Fim%20Bilimleri%20Fak%C3%BCltesi%20Staj%20Y%C3%B6nergesi%2022_09_2026.pdf
+  yayim: 2026-09-22          # Senato kararı 8/12
+  yururluk: 2026-09-22       # Senato'nun kabul ettiği tarihten itibaren (md. 18)
+  son_degisiklik: null
+  dayanak: Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği, Uygulamalı Eğitimler Çerçeve Yönetmeliği
+  indirme_tarihi: 2026-11-26
+  sha256: cd097ebfde6839b05c9094a3d98e454f02602f905969adca1408cc49e8f06fc6
+  kapsam: fakulte:bbbf
+  durum: aktif
+  not: Her biri en az 20 iş günü olmak üzere ders planındaki sayıda staj (md. 8).
+
+- id: bilgi_guvenligi_ders_plani
+  ad: Bilgi Güvenliği Teknolojisi Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: bilgi_guvenligi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2059/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: f543409de1711bc908dc9fb2c5292a0ca63c5b04c1070f7241c8c83fe26cf8f9
+  kapsam: program:bilgi_guvenligi
+  durum: aktif
+  not: null
+
+- id: bilgi_guvenligi_program_bilgileri
+  ad: Bilgi Güvenliği Teknolojisi Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: bilgi_guvenligi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2059/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: d5761fde6e4808dbbafa38c933e9362652f67c1d605757623725ac362ec0b64b
+  kapsam: program:bilgi_guvenligi
+  durum: aktif
+  not: null
+
+- id: bilisim_sistemleri_ders_plani
+  ad: Bilişim Sistemleri ve Teknolojileri Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: bilisim_sistemleri_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2060/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 2087f49bbef69013823aaefb30287ca56991132661bac76bb6e461b535a1ee96
+  kapsam: program:bilisim_sistemleri
+  durum: aktif
+  not: null
+
+- id: bilisim_sistemleri_program_bilgileri
+  ad: Bilişim Sistemleri ve Teknolojileri Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: bilisim_sistemleri_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2060/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 3c4d0a07a3de54e95febb24ea1df368e0ba36c7b6ad2a49d58edd0aaef3567f6
+  kapsam: program:bilisim_sistemleri
+  durum: aktif
+  not: null
+
+- id: yapay_zeka_ders_plani
+  ad: Yapay Zeka ve Makine Öğrenmesi Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: yapay_zeka_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/2087/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 89fb840f734fb789c3c853081df27fbbcb7f12bcff72bfe4cf45e759e900dc5f
+  kapsam: program:yapay_zeka
+  durum: aktif
+  not: null
+
+- id: yapay_zeka_program_bilgileri
+  ad: Yapay Zeka ve Makine Öğrenmesi Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: yapay_zeka_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/2087/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 909fed7f7cc41ddbcb654a5cdde20811c8ae380273436811802ca35994e0f137
+  kapsam: program:yapay_zeka
+  durum: aktif
+  not: null

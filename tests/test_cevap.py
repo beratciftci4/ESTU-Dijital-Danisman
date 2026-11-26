@@ -101,6 +101,12 @@ def test_fen_bolumleri(arayici):
     assert fen["cevapli_dogru"] >= 12 and fen["ozet_dogru"] >= 13
 
 
+def test_bbbf_bolumleri(arayici):
+    from degerlendir import BBBF_SET
+    bbbf = cevap_olc(arayici, sorulari_oku(BBBF_SET))
+    assert bbbf["cevapli_dogru"] >= 12 and bbbf["ozet_dogru"] >= 13
+
+
 def test_muhendislik_bolumleri(arayici):
     from degerlendir import MUH_SET
     muh = cevap_olc(arayici, sorulari_oku(MUH_SET))
@@ -163,6 +169,7 @@ def test_bulunamayinca_kisa_cevap_yok(arayici):
     ("endustri_muh", "45 iş günü", "staj zorunlu değildir"),
     ("makine_muh", "40 gün", "staj zorunlu değildir"),
     ("ucak_muh", "bölüme de sor", "staj zorunlu değildir"),
+    ("yapay_zeka", "40 iş günü", "staj zorunlu değildir"),
 ])
 def test_staj_cevabi_bolume_gore(arayici, program, olmali, olmamali):
     """Stajı isteğe bağlı bölüme "zorunlu" dememeli (genel kural 20 gün, istisna yönergenin ekinde)."""
@@ -176,5 +183,6 @@ def test_staj_suresi_niyeti():
         assert staj_suresi_soruluyor(s), s
     for s in ["Staj notuna itiraz süresi ne kadar?", "Stajı ne zaman yapabilirim?",
               "Proje temelli staj kaç gün?", "Staj başvurusunu kaç gün önceden yapmalıyım?", "Kaç AKTS alabilirim?",
-              "Stajın başarılı sayılması için değerlendirme notu en az kaç olmalı?"]:
+              "Stajın başarılı sayılması için değerlendirme notu en az kaç olmalı?",
+              "Staj yerindeki sorumlu kişinin bilişim alanında yetkin olması gerekir mi?"]:
         assert not staj_suresi_soruluyor(s), s

@@ -1,0 +1,85 @@
+# Bilgisayar ve Bilişim Bilimleri Fakültesi soru seti (2026-11-26).
+# Sonuçlara bakmadan, belgeler okunarak yazıldı.
+
+- soru: Kaç gün staj yapmam gerekiyor?
+  program: yapay_zeka
+  kaynak: [bbbf_staj#madde-8]
+  anahtar: ["her biri 20 iş gününden az olmamak"]
+
+- soru: Staja ne zaman başlayabilirim?
+  program: bilgi_guvenligi
+  kaynak: [bbbf_staj#madde-8]
+  anahtar: ["dördüncü yarıyılın sonu"]
+
+- soru: Staj başvurusunu kaç gün önceden yapmalıyım?
+  program: bilisim_sistemleri
+  kaynak: [bbbf_staj#madde-11]
+  anahtar: ["en az 15 (on beş) gün önce"]
+
+- soru: Staj yerindeki sorumlu kişinin bilişim alanında yetkin olması gerekir mi?
+  program: yapay_zeka
+  kaynak: [bbbf_staj#madde-12]
+  anahtar: ["bilişim alanında mesleki yetkinliğe"]
+
+- soru: Stajda devamsızlık hakkım ne kadar?
+  program: bilgi_guvenligi
+  kaynak: [bbbf_staj#madde-9]
+  anahtar: ["%10"]
+
+- soru: Staj değerlendirmesine itiraz edebilir miyim?
+  program: bilisim_sistemleri
+  kaynak: [bbbf_staj#madde-15, bbbf_staj#madde-16]
+  anahtar: ["5 (beş) iş"]
+
+- soru: Çalıştığım şirketteki iş stajdan sayılır mı?
+  program: yapay_zeka
+  kaynak: [bbbf_staj#madde-16]
+  anahtar: ["stajdan muaf tutulabilir"]
+
+- soru: Proje temelli staj zorunlu stajın yerine geçer mi?
+  program: bilgi_guvenligi
+  kaynak: [bbbf_staj#madde-8, proje_temelli_staj#madde-10, proje_temelli_staj#madde-16]
+  anahtar: ["zorunlu stajlardan birinin yerine", "bir zorunlu stajın yerine", "zorunlu staj olarak kabul"]
+
+- soru: Kriptoloji dersi hangi dönemde?
+  program: bilgi_guvenligi
+  kaynak: [bilgi_guvenligi_ders_plani#bolum-V.YARIYIL]
+  anahtar: ["Cryptology"]
+
+- soru: Derin öğrenme dersi kaçıncı yarıyılda?
+  program: yapay_zeka
+  kaynak: [yapay_zeka_ders_plani#bolum-VI.YARIYIL]
+  anahtar: ["Deep Learning"]
+
+- soru: Birinci yarıyılda hangi dersleri alacağım?
+  program: bilisim_sistemleri
+  kaynak: [bilisim_sistemleri_ders_plani#bolum-I.YARIYIL]
+  anahtar: ["Introduction to Programming"]
+
+- soru: Bilişim sistemlerinde eğitim dili nedir?
+  program: bilisim_sistemleri
+  kaynak: [bilisim_sistemleri_program_bilgileri#bolum-Program_Profili]
+  anahtar: ["%100 İngilizce"]
+
+- soru: Yapay zeka bölüm başkanı kim?
+  program: yapay_zeka
+  kaynak: [yapay_zeka_program_bilgileri#bolum-Bölüm_Bşk._ve_AKTS_Koord.]
+  anahtar: ["NİHAL İNCE"]
+
+- soru: Bilgi güvenliği mezunları hangi işlerde çalışabilir?
+  program: bilgi_guvenligi
+  kaynak: [bilgi_guvenligi_program_bilgileri#bolum-İstihdam_Olanakları]
+  anahtar: ["Siber Güvenlik Analisti"]
+
+- soru: Mezun olmak için kaç AKTS gerekiyor?
+  program: yapay_zeka
+  kaynak: [yonetmelik#madde-25, yapay_zeka_program_bilgileri#bolum-Mezuniyet_Koşulları, yapay_zeka_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları, danismanlik#madde-10]
+  anahtar: ["240"]
+
+- soru: Yapay zeka bölümünün hackathon takımı var mı?
+  program: yapay_zeka
+  cevapsiz: true
+
+- soru: Bilişim sistemleri bölümünün laboratuvar saatleri nedir?
+  program: bilisim_sistemleri
+  cevapsiz: true

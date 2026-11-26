@@ -18,6 +18,7 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 | Doğrulama seti (eşikten sonra yazıldı) | 8/8 | 6/8 | 2/8 | 8/8 | 7/8 |
 | Fen Fakültesi diğer bölümler | 13/16 | 1/2 | 0/2 | 14/16 | 14/16 |
 | Mühendislik Fakültesi | 14/18 | 1/2 | 0/2 | 17/18 | 16/18 |
+| Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 | 0/2 | 15/15 | 15/15 |
 
 ## Hatalı sonuçlar
 
@@ -34,6 +35,10 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 - [Mühendislik Fakültesi] İnşaat mühendisleri nerede çalışabilir? -> bulundu (benzerlik 0.874)
 - [Mühendislik Fakültesi] Uçak mühendisliğinde kaç AKTS ile mezun olunur? -> bulundu (benzerlik 0.872)
 - [Mühendislik Fakültesi] Makine mühendisliği bölümünün kantini nerede? -> bulundu (benzerlik 0.852)
+- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Birinci yarıyılda hangi dersleri alacağım? -> bulundu (benzerlik 0.86)
+- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Bilişim sistemlerinde eğitim dili nedir? -> bulundu (benzerlik 0.858)
+- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Yapay zeka bölümünün hackathon takımı var mı? -> bulundu (benzerlik 0.853)
+- [Bilgisayar ve Bilişim Bilimleri Fakültesi] Bilişim sistemleri bölümünün laboratuvar saatleri nedir? -> bulundu (benzerlik 0.856)
 
 ## Notlar
 

@@ -20,6 +20,7 @@ DOGRULAMA_SET = KLASOR / "tests" / "soru_seti_dogrulama.yaml"
 KALIBRASYON = KLASOR / "tests" / "kalibrasyon_cevapsiz.yaml"
 FEN_SET = KLASOR / "tests" / "soru_seti_fen.yaml"
 MUH_SET = KLASOR / "tests" / "soru_seti_muhendislik.yaml"
+BBBF_SET = KLASOR / "tests" / "soru_seti_bbbf.yaml"
 
 
 def sorulari_oku(yol=SORU_SETI):
@@ -139,6 +140,7 @@ def main():
     satirlar += tablo(arayici, sorulari_oku(FEN_SET),
                       "Fen Fakültesi diğer bölümler (tests/soru_seti_fen.yaml, Biyoloji/Fizik/Kimya/Matematik)")
     satirlar += tablo(arayici, sorulari_oku(MUH_SET), "Mühendislik Fakültesi (tests/soru_seti_muhendislik.yaml, 9 bölüm)")
+    satirlar += tablo(arayici, sorulari_oku(BBBF_SET), "Bilgisayar ve Bilişim Bilimleri Fakültesi (tests/soru_seti_bbbf.yaml, 3 bölüm)")
     satirlar += ["## Notlar", "",
                  "- Eş anlamlı listesi (\"üst sınır\" -> \"en çok\" gibi) ve soru kalıbı listesi ana test "
                  "setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.",
@@ -176,6 +178,9 @@ def main():
                  "\"haftada 3 tam gün dersin yoksa\" ya da proje temelli staj (45-90 gün) cümleleri öne çıkıyordu. "
                  "Soru stajın süresini/zorunluluğunu soruyorsa (staj_suresi_soruluyor, kurala dayalı) bölümün "
                  "staj cümlesi doğrudan ilk sıraya konuyor; itiraz, başvuru, PTS gibi staj soruları bu kurala girmiyor.",
+                 "- Bilgisayar ve Bilişim Bilimleri (2026-11-26): yönerge md. 8 \"her biri en az 20 iş günü, ders "
+                 "planındaki sayıda staj\"; üç programda da iki staj dersi var (kodlarında SJ), toplam 40 iş günü. "
+                 "Cevabı olmayan iki sorunun ikisine de \"bulundu\" deniyor; bölüm sayısı arttıkça eşik zayıflıyor.",
                  "- Ders planı sorularında \"birinci dönem\" ile \"I.YARIYIL\" eşleşmesi için yarıyıl numarası "
                  "arama metnine ve eş anlamlılara eklendi.",
                  "- \"Bütünleme\" sorusu bilerek cevapsız: yeni yönetmelikte bütünleme sınavı yok. "
@@ -188,7 +193,8 @@ def main():
               ("Ayrık set", sorulari_oku(AYRIK_SET)),
               ("Doğrulama seti (eşikten sonra yazıldı)", sorulari_oku(DOGRULAMA_SET)),
               ("Fen Fakültesi diğer bölümler", sorulari_oku(FEN_SET)),
-              ("Mühendislik Fakültesi", sorulari_oku(MUH_SET))]
+              ("Mühendislik Fakültesi", sorulari_oku(MUH_SET)),
+              ("Bilgisayar ve Bilişim Bilimleri Fakültesi", sorulari_oku(BBBF_SET))]
     satirlar = cevap_tablosu(arayici, setler)
     satirlar += ["", "## Notlar", "",
                  "- Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra "

@@ -46,6 +46,7 @@ BICIM = {
     "yonetmelik": "madde",
     "fen_staj": "madde",
     "muh_staj": "madde",
+    "bbbf_staj": "madde",
     "danismanlik": "madde",
     "proje_temelli_staj": "madde",
     "hakli_nedenler": "numara",
@@ -169,6 +170,8 @@ def _pdf_satirlari_oku(yol):
             kenarlar.update(set(sayfadakiler[:6] + sayfadakiler[-3:]))
         tekrar = {s for s, n in kenarlar.items() if n >= 3 and len(s) < 120}
         satirlar = [(p, s) for p, s in satirlar if s not in tekrar]
+        # "Sayfa 3/28" gibi sayfa başlıkları (her sayfada farklı olduğu için tekrar kuralına girmiyor)
+        satirlar = [(p, s) for p, s in satirlar if not re.fullmatch(r"\s*Sayfa \d+/\d+\s*", s)]
         # sayfa numarası: sayfanın ilk ya da son satırı sadece o sayfanın numarasıysa
         kenar_satir = set()
         for sayfa_no in {p for p, _ in satirlar}:

@@ -53,6 +53,7 @@ BELGE_KISA_ADI = {
     "yonetmelik": "Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği",
     "fen_staj": "Fen Fakültesi Staj Yönergesi",
     "muh_staj": "Mühendislik Fakültesi Staj Yönergesi",
+    "bbbf_staj": "Bilgisayar ve Bilişim Bilimleri Fakültesi Staj Yönergesi",
     "danismanlik": "Akademik Danışmanlık Yönergesi",
     "proje_temelli_staj": "Proje Temelli Staj Yönergesi",
     "hakli_nedenler": "Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar",
@@ -301,7 +302,7 @@ def staj_suresi_soruluyor(soru):
     s = turkce_kucuk(soru)
     return ("staj" in s and bool(re.search(r"kaç|ne kadar|süre|zorunlu|gerek|lazım|şart", s))
             and not re.search(r"proje temelli|pts|itiraz|başvur|ne zaman|nerede|değiş|muaf|sigorta|rapor|"
-                              r"devamsız|not|puan|başarı|değerlendir", s))
+                              r"devamsız|not|puan|başarı|değerlendir|yeri|yerin|yetkin|sorumlu", s))
 
 
 BOLUM_STAJ_CUMLESI = {}

@@ -77,6 +77,20 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 - Çevre mühendisliğinde sosyal seçmeli kaç kredi? (sıra: 4; ilk 3: cevre_muh_ders_plani#bolum-VII.YARIYIL, cevre_muh_ders_plani#bolum-VIII.YARIYIL, cevre_muh_ders_plani#bolum-Mesleki_Seçmeli_Dersler)
 - Uçak mühendisliğinde kaç AKTS ile mezun olunur? (sıra: 9; ilk 3: ucak_muh_ders_plani#bolum-VII.YARIYIL, ucak_muh_ders_plani#bolum-VIII.YARIYIL, ucak_muh_program_bilgileri#bolum-İstihdam_Olanakları)
 
+## Bilgisayar ve Bilişim Bilimleri Fakültesi (tests/soru_seti_bbbf.yaml, 3 bölüm)
+
+17 soru (15 cevaplı, 2 cevapsız). Ölçüler cevaplı sorular üzerinden.
+
+| Yöntem | hit@1 | hit@3 | hit@5 | MRR |
+|---|---|---|---|---|
+| bm25 | 0.47 | 0.73 | 0.93 | 0.62 |
+| e5 | 0.47 | 0.80 | 1.00 | 0.67 |
+| hibrit | 0.73 | 1.00 | 1.00 | 0.86 |
+
+Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
+
+- Yok.
+
 ## Notlar
 
 - Eş anlamlı listesi ("üst sınır" -> "en çok" gibi) ve soru kalıbı listesi ana test setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.
@@ -90,5 +104,6 @@ Hibrit aramada doğru kaynağı ilk 3'e giremeyen sorular:
 - Bologna "program hakkında" sayfalarında İstatistik'tekiyle kelimesi kelimesine aynı olan bölümlerin (kabul, üst derece, ölçme ...) özetleri şablondan üretiliyor, farklı olanlar elle yazıldı.
 - Bilinen hata: "Elektrik elektronik mühendisliğinde kaç tane staj var?" sorusunda doğru madde özet sıralamasında 1., ama BM25 "staj" ile "stajın" kelimelerini farklı köke ayırıyor (ilk 5 harf). Özet sıralamasına 1,5 ve 2 ağırlık denendi, toplam MRR değişmedi (.827/.832/.825), eşit ağırlıkta kalındı.
 - Bölümün staj cümlesi, bağlı olduğu madde aramada ilk 5'e girmese de kısa cevaba aday (Endüstri'nin süresi Bologna sayfasında). Benzerlikle seçince "kaç gün staj" sorusunda "haftada 3 tam gün dersin yoksa" ya da proje temelli staj (45-90 gün) cümleleri öne çıkıyordu. Soru stajın süresini/zorunluluğunu soruyorsa (staj_suresi_soruluyor, kurala dayalı) bölümün staj cümlesi doğrudan ilk sıraya konuyor; itiraz, başvuru, PTS gibi staj soruları bu kurala girmiyor.
+- Bilgisayar ve Bilişim Bilimleri (2026-11-26): yönerge md. 8 "her biri en az 20 iş günü, ders planındaki sayıda staj"; üç programda da iki staj dersi var (kodlarında SJ), toplam 40 iş günü. Cevabı olmayan iki sorunun ikisine de "bulundu" deniyor; bölüm sayısı arttıkça eşik zayıflıyor.
 - Ders planı sorularında "birinci dönem" ile "I.YARIYIL" eşleşmesi için yarıyıl numarası arama metnine ve eş anlamlılara eklendi.
 - "Bütünleme" sorusu bilerek cevapsız: yeni yönetmelikte bütünleme sınavı yok. "bütünleme" kelimesi "ek sınav"a eşlenmedi, çünkü ikisi aynı şey değil.

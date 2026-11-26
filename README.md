@@ -9,9 +9,11 @@ Kısa cevap, her madde için önceden elle yazılmış özet cümlelerinden seç
 zekâ ile metin üretilmiyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da
 servis kullanmıyor.
 
-**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 14 bölüm var: Fen Fakültesi (Biyoloji,
-Fizik, İstatistik, Kimya, Matematik) ve Mühendislik Fakültesi (Bilgisayar, Çevre, Elektrik-Elektronik,
-Endüstri, İnşaat, Kimya, Makine, Malzeme Bilimi, Uçak). Diğer fakülteler sırayla ekleniyor. Yönetmelik ve
+**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 17 bölüm var: Fen Fakültesi (Biyoloji,
+Fizik, İstatistik, Kimya, Matematik), Mühendislik Fakültesi (Bilgisayar, Çevre, Elektrik-Elektronik,
+Endüstri, İnşaat, Kimya, Makine, Malzeme Bilimi, Uçak) ve Bilgisayar ve Bilişim Bilimleri Fakültesi
+(Bilgi Güvenliği Teknolojisi, Bilişim Sistemleri ve Teknolojileri, Yapay Zeka ve Makine Öğrenmesi).
+Diğer fakülteler sırayla ekleniyor. Yönetmelik ve
 usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders planı ve program
 bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
 (`programlar.yaml`, belgelerdeki `kapsam` alanı).
@@ -33,6 +35,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Ön Lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği (RG 33012) | 22.09.2025 | 08.02.2026 (RG 33162) |
 | Fen Fakültesi Staj Yönergesi | 05.10.2018 | 08.11.2022 |
 | Mühendislik Fakültesi Staj Yönergesi | 04.12.2018 | 16.07.2024 |
+| Bilgisayar ve Bilişim Bilimleri Fakültesi Staj Yönergesi | 22.09.2026 | |
 | Akademik Danışmanlık Yönergesi | 11.09.2025 | |
 | Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar | 11.09.2025 | |
 | Tek Ders Sınavı Uygulama Esasları | 18.12.2025 | |
@@ -40,7 +43,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Yaz Okulu Uygulama Esasları | 11.09.2025 | 10.03.2026 |
 | Not Karşılıkları ve Yabancı Dil Eşdeğerlikleri Uygulama Esasları | 10.07.2018 | 29.07.2025 |
 | Proje Temelli Staj Yönergesi | 04.01.2024 | 26.06.2025 |
-| 14 bölümün ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
+| 17 bölümün ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
 
 Not: Yönetmelik 2025'te tamamen yenilendi. İnternette hâlâ 2018 tarihli eski metin (RG 30540)
 dolaşıyor; buradaki metin mevzuat.gov.tr'deki güncel, değişiklikleri işlenmiş hali.
@@ -110,6 +113,7 @@ Test setleri `tests/` altında, her sorunun cevabı belgelerden kontrol edildi.
 | Doğrulama seti (İstatistik, 8 cevaplı) | 0.88 | 1.00 | 1.00 | 0.92 |
 | Fen Fakültesi diğer bölümler (16 cevaplı) | 0.69 | 0.81 | 0.88 | 0.78 |
 | Mühendislik Fakültesi (18 cevaplı) | 0.61 | 0.78 | 0.89 | 0.73 |
+| Bilgisayar ve Bilişim Bilimleri Fakültesi (15 cevaplı) | 0.73 | 1.00 | 1.00 | 0.86 |
 
 Hibrit arama bütün setlerde sadece BM25'ten ve sadece e5'ten daha iyi ya da eşit.
 
@@ -124,12 +128,13 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Doğrulama (eşikten sonra yazıldı) | 8/8 | 6/8 |
 | Fen Fakültesi diğer bölümler | 13/16 | 1/2 |
 | Mühendislik Fakültesi | 14/18 | 1/2 |
+| Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15.
 
-Fen ve Mühendislik setlerinde cevabı olmayan ikişer sorudan birine ("laboratuvar önlüğü nereden
-alınır?", "kantin nerede?") hâlâ "bulundu" deniyor. Belge sayısı arttıkça "bulamadım" eşiği zayıflıyor,
+Yeni fakülte setlerinde cevabı olmayan soruların çoğuna ("laboratuvar önlüğü nereden alınır?",
+"kantin nerede?", "hackathon takımı var mı?") hâlâ "bulundu" deniyor. Belge sayısı arttıkça "bulamadım" eşiği zayıflıyor,
 tekrar ayarlanması gerekecek.
 
 Ayrıntılar ve hatalı sorular: [raporlar/4_arama.md](raporlar/4_arama.md),

@@ -13,6 +13,12 @@ fakulteler:
     staj_maddesi: fen_staj#madde-7      # staj süresinin yazdığı madde
     staj_listesi: fen_staj#ek-4         # hangi bölümde zorunlu, hangisinde isteğe bağlı (EK-3 notu)
     staj_birimi: iş günü
+  bbbf:
+    ad: Bilgisayar ve Bilişim Bilimleri Fakültesi
+    staj_belgesi: bbbf_staj
+    staj_maddesi: bbbf_staj#madde-8     # ders planındaki her staj en az 20 iş günü
+    staj_listesi: bbbf_staj#madde-8
+    staj_birimi: iş günü
   muhendislik:
     ad: Mühendislik Fakültesi
     staj_belgesi: muh_staj
@@ -122,3 +128,24 @@ programlar:
     staj_gunu: 40
     staj_notu: Bologna sayfasında süre yok, yönerge md. 8 (toplam en az 40 gün)
     staj_ek: Uçak Mühendisliği yönergenin bölüm listesinde (md. 3) adıyla geçmiyor ama yönerge bütün Mühendislik Fakültesi öğrencileri için; kesin süreyi bölüme de sor.
+  - id: bilgi_guvenligi
+    ad: Bilgi Güvenliği Teknolojisi
+    fakulte: bbbf
+    bologna: 2059
+    staj_gunu: 40
+    staj_notu: Yönerge md. 8 (her staj en az 20 iş günü) x ders planındaki 2 staj dersi (BGTSJ3002, BGTSJ4002)
+    staj_ek: Ders planında iki staj dersi var, her biri en az 20 iş günü.
+  - id: bilisim_sistemleri
+    ad: Bilişim Sistemleri ve Teknolojileri
+    fakulte: bbbf
+    bologna: 2060
+    staj_gunu: 40
+    staj_notu: Yönerge md. 8 (her staj en az 20 iş günü) x ders planındaki 2 staj dersi (BSTSJ3001, BSTSJ4001)
+    staj_ek: Ders planında iki staj dersi var, her biri en az 20 iş günü.
+  - id: yapay_zeka
+    ad: Yapay Zeka ve Makine Öğrenmesi
+    fakulte: bbbf
+    bologna: 2087
+    staj_gunu: 40
+    staj_notu: Yönerge md. 8 (her staj en az 20 iş günü) x ders planındaki 2 staj dersi (YZMSJ3001, YZMSJ4001)
+    staj_ek: Ders planında iki staj dersi var, her biri en az 20 iş günü.

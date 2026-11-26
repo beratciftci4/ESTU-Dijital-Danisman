@@ -16,25 +16,40 @@ import streamlit as st
 import yaml
 
 
+MODULLER = ["belge_kontrol", "indeks", "arama", "cevap", "mezuniyet"]
+VERI_DOSYALARI = ["programlar.yaml", "belgeler.yaml", "ozetler.yaml", "indeks/parcalar.json"]
+
+
+def son_degisiklik():
+    """Yerel modüllerin ve modüllerin import sırasında okuduğu veri dosyalarının en yeni mtime'ı."""
+    klasor = os.path.dirname(os.path.abspath(__file__))
+    dosyalar = [f"{ad}.py" for ad in MODULLER] + VERI_DOSYALARI
+    return max(os.path.getmtime(os.path.join(klasor, d)) for d in dosyalar if os.path.exists(os.path.join(klasor, d)))
+
+
 def eski_modulleri_yenile():
     """Streamlit Cloud yeni kodu çekince app.py'yi yeniden çalıştırıyor ama import edilmiş modüllerin
-    eski hali bellekte kalabiliyor (ImportError, AttributeError). Dosyası yüklendiğinden sonra değişen
-    yerel modülleri bağımlılık sırasıyla yeniden yüklüyoruz; böylece elle Reboot gerekmiyor."""
-    for ad in ["belge_kontrol", "indeks", "arama", "cevap", "mezuniyet"]:
-        m = sys.modules.get(ad)
-        if m is None:
-            continue
-        degisme = os.path.getmtime(m.__file__)
-        if degisme > getattr(m, "_yuklenme", degisme):
-            m = importlib.reload(m)
-            m._yuklenme = degisme
+    eski hali bellekte kalabiliyor (ImportError, AttributeError, KeyError). Modüller ya da import
+    sırasında okudukları yaml/json dosyaları yüklendikten sonra değiştiyse hepsini bağımlılık sırasıyla
+    yeniden yüklüyoruz. Sadece değişen modülü yüklemek yetmiyor: dosyalar tek tek çekilirken bir modül
+    yeni koda ama eski programlar.yaml'a göre yüklenebiliyor."""
+    yuklu = [sys.modules[ad] for ad in MODULLER if ad in sys.modules]
+    if not yuklu:
+        return
+    simdi = son_degisiklik()
+    if simdi > min(getattr(m, "_yuklenme", simdi) for m in yuklu):
+        for ad in MODULLER:
+            if ad in sys.modules:
+                importlib.reload(sys.modules[ad])
+                sys.modules[ad]._yuklenme = simdi
 
 
 def yuklenme_zamanini_kaydet():
-    for ad in ["belge_kontrol", "indeks", "arama", "cevap", "mezuniyet"]:
+    simdi = son_degisiklik()
+    for ad in MODULLER:
         m = sys.modules[ad]
         if not hasattr(m, "_yuklenme"):
-            m._yuklenme = os.path.getmtime(m.__file__)
+            m._yuklenme = simdi
 
 
 eski_modulleri_yenile()

@@ -359,9 +359,10 @@ def ders_plani_sekmesi(program, plan_yili=None):
         for s in p["metin"].split("\n"):
             h = [x.strip() for x in s.split("|")]
             if len(h) == 5 and h[0] != "Ders Kodu":
-                satirlar.append({"Kod": h[0], "Ders": h[1], "Dil": h[2], "T+U": h[3], "AKTS": float(h[4])})
+                # telefonda dar ekranda önemli sütunlar solda görünsün
+                satirlar.append({"Ders": h[1], "AKTS": float(h[4]), "Kod": h[0], "Dil": h[2], "T+U": h[3]})
             elif len(h) == 2:
-                ekler.append(f"{h[0]}: {h[1]} AKTS")
+                ekler.append(f"{h[0]}: {float(h[1]):g} AKTS".replace(".", ","))
         return satirlar, ekler
 
     yariyillar = sorted((p for p in parcalar if p["no"].endswith(".YARIYIL")),

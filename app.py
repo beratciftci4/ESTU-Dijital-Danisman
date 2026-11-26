@@ -448,9 +448,14 @@ def mezuniyet_sekmesi(program):
     ozel = parcalar.get(f"{program}_program_bilgileri#bolum-Mezuniyet_Koşulları")
     standart = parcalar["istatistik_program_bilgileri#bolum-Mezuniyet_Koşulları"]
     if ozel and ozel["metin"] != standart["metin"]:
-        # bazı bölümlerin Bologna sayfasında ek koşul var (ör. Kimya: 72 AKTS İngilizce ders)
-        st.info(f'Bölümünün Bologna sayfasında ek mezuniyet koşulları var:\n\n'
-                f'{ozel["metin"].replace(standart["metin"], "").strip()}\n\nKaynak: {atif(ozel)}')
+        if standart["metin"] in ozel["metin"]:
+            # bazı bölümlerin Bologna sayfasında ek koşul var (ör. Kimya: 72 AKTS İngilizce ders)
+            st.info(f'Bölümünün Bologna sayfasında ek mezuniyet koşulları var:\n\n'
+                    f'{ozel["metin"].replace(standart["metin"], "").strip()}\n\nKaynak: {atif(ozel)}')
+        else:
+            # önlisans programlarının metni lisansınkinden farklı (120 AKTS); olduğu gibi göster
+            st.info(f'Programının Bologna sayfasındaki mezuniyet koşulları:\n\n{ozel["metin"]}\n\n'
+                    f'Kaynak: {atif(ozel)}')
     st.caption("Bölümün zorunlu/seçmeli ders dağılımı gibi programa özel şartlar burada kontrol edilmez; "
                "bunun için akademik danışmanınızla transkriptinizi birlikte inceleyin.")
 

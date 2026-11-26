@@ -117,3 +117,13 @@ def test_mimarlik_staji():
     assert "60 iş gününden az olamaz" in PARCALAR["mtf_staj#madde-14"]
     assert not kontrol(240, 2.5, HIC, 40, program="mimarlik")["mezun_olabilir"]
     assert kontrol(240, 2.5, HIC, 60, program="endustriyel_tasarim")["mezun_olabilir"]
+
+
+def test_spor_staji():
+    assert "40 (kırk) günden az olamaz" in PARCALAR["spor_staj#madde-8"]
+    assert "Beden Eğitimi ve Spor Öğretmenliği" in PARCALAR["spor_staj#madde-1"]
+    # beden eğitimi yönergenin kapsamında değil
+    assert kontrol(240, 2.5, HIC, 0, program="beden_egitimi")["mezun_olabilir"]
+    # diğer üç bölümde belgeler net değil: engellemiyor ama "bölüme sor" diyor
+    s = kontrol(240, 2.5, HIC, 0, program="rekreasyon")
+    assert s["mezun_olabilir"] and any(x.get("belirsiz") for x in s["satirlar"])

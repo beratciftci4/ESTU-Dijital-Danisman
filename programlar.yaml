@@ -6,6 +6,8 @@
 #   staj_notu : staj süresinin nereden geldiği
 #   staj_ek   : kısa cevaba eklenecek not (isteğe bağlı)
 #   staj_suresi_belirsiz: true ise staj zorunlu ama süresi belgelerde yazmıyor (staj_gunu null)
+#   staj_cumlesi: kısa cevapta kullanılacak, elle yazılmış staj cümlesi (isteğe bağlı)
+#   staj_durumu_belirsiz: true ise belgeler stajın zorunlu olup olmadığını netleştirmiyor (staj_gunu null)
 
 fakulteler:
   fen:
@@ -32,6 +34,12 @@ fakulteler:
     staj_maddesi: mtf_staj#madde-14     # zorunlu staj en az 60 iş günü, bütün bölümler
     staj_listesi: mtf_staj#madde-14
     staj_birimi: iş günü
+  spor:
+    ad: Spor Bilimleri Fakültesi
+    staj_belgesi: spor_staj
+    staj_maddesi: spor_staj#madde-8     # toplam staj en az 40 gün
+    staj_listesi: spor_staj#madde-8
+    staj_birimi: gün
   muhendislik:
     ad: Mühendislik Fakültesi
     staj_belgesi: muh_staj
@@ -230,3 +238,41 @@ programlar:
     staj_gunu: 60
     staj_notu: Yönerge md. 14 (ders planında Staj I ve Staj II)
     staj_ek: Ders planında 5. yarıyılda Staj I, 7. yarıyılda Staj II dersi var.
+  # Spor Bilimleri: yönerge Rekreasyon, Antrenörlük ve Spor Yöneticiliği için en az 40 gün staj diyor
+  # ama zorunlu stajı olmayan bölümleri kapsamadığını da söylüyor (geçici md. 2) ve güncel ders
+  # planlarında staj dersi yok. Uydurmamak için "bölüme sor" deniyor.
+  - id: antrenorluk
+    ad: Antrenörlük Eğitimi
+    fakulte: spor
+    bologna: 1856
+    staj_gunu: null
+    staj_durumu_belirsiz: true
+    staj_kaynagi: spor_staj#madde-8
+    staj_notu: Yönerge md. 3 bölümü sayıyor ve md. 8 en az 40 gün diyor; güncel ders planında staj dersi yok (7-8. yarıyılda Alan Uygulaması dersleri var)
+    staj_ek: Fakülte staj yönergesi bu bölüm için en az 40 gün staj öngörüyor, ama güncel ders planında staj dersi yok (7. ve 8. yarıyılda Alan Uygulaması dersleri var); staj yapman gerekip gerekmediğini bölümüne sor.
+  - id: beden_egitimi
+    ad: Beden Eğitimi ve Spor Öğretmenliği
+    fakulte: spor
+    bologna: 1858
+    staj_gunu: null
+    staj_kaynagi: spor_staj#madde-1
+    staj_notu: Yönerge md. 1 bu bölümü kapsamıyor; ders planında zorunlu Öğretmenlik Uygulaması I-II var
+    staj_cumlesi: Beden Eğitimi ve Spor Öğretmenliği bölümü fakülte staj yönergesinin kapsamında değil ve ders planında staj dersi yok; mezuniyet için staj şartı yok. Bunun yerine 7. ve 8. yarıyılda zorunlu Öğretmenlik Uygulaması I ve II dersleri var.
+  - id: rekreasyon
+    ad: Rekreasyon
+    fakulte: spor
+    bologna: 1859
+    staj_gunu: null
+    staj_durumu_belirsiz: true
+    staj_kaynagi: spor_staj#madde-8
+    staj_notu: Yönerge md. 8 en az 40 gün, geçici md. 1 ve 3 Rekreasyon'a özel; güncel ders planında staj dersi yok, 8. yarıyılda İşletmede Mesleki Eğitim var
+    staj_ek: Fakülte staj yönergesi bu bölüm için en az 40 gün staj öngörüyor (2020-2021'den önce kayıt olanlar hariç), ama güncel ders planında staj dersi yerine 8. yarıyılda İşletmede Mesleki Eğitim dersi var; staj yapman gerekip gerekmediğini bölümüne sor.
+  - id: spor_yoneticiligi
+    ad: Spor Yöneticiliği
+    fakulte: spor
+    bologna: 1860
+    staj_gunu: null
+    staj_durumu_belirsiz: true
+    staj_kaynagi: spor_staj#madde-8
+    staj_notu: Yönerge md. 3 bölümü sayıyor ve md. 8 en az 40 gün diyor; güncel ders planında staj dersi yok
+    staj_ek: Fakülte staj yönergesi bu bölüm için en az 40 gün staj öngörüyor, ama güncel ders planında staj dersi yok; staj yapman gerekip gerekmediğini bölümüne sor.

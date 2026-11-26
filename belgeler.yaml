@@ -930,3 +930,129 @@
   kapsam: program:tekstil_moda
   durum: aktif
   not: null
+
+- id: spor_staj
+  ad: Eskişehir Teknik Üniversitesi Spor Bilimleri Fakültesi Öğrenci Staj Yönergesi
+  dosya: spor_staj_yonergesi.pdf
+  url: https://www.eskisehir.edu.tr/Uploads/www/files/yonergeler/Eski%C5%9Fehir%20Teknik%20%C3%9Cniversitesi%20Spor%20Bilimleri%20Fak%C3%BCltesi%20%C3%96%C4%9Frenci%20Staj%20Y%C3%B6nergesi%2025_10_2022.pdf
+  yayim: 2020-06-12          # Senato 10/1 (ilk yayın)
+  yururluk: 2020-06-12
+  son_degisiklik: 2022-10-25 # Senato 26/2
+  dayanak: 2018 tarihli (eski) Önlisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği md. 8, Uygulamalı Eğitimler Çerçeve Yönetmeliği
+  indirme_tarihi: 2026-11-26
+  sha256: 7b1c6eea766e437456818dcc01991779b7048f56b2dcc0e9037ca5e7d4111fe5
+  kapsam: fakulte:spor
+  durum: aktif
+  not: Taranmış PDF; metin OCR ile okundu ve elle düzeltildi (spor_staj_yonergesi.ocr.txt). Beden Eğitimi ve Spor Öğretmenliği'ni kapsamıyor. Geçici maddeler madde 17'nin parçasına düşüyor.
+
+- id: antrenorluk_ders_plani
+  ad: Antrenörlük Eğitimi Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: antrenorluk_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/1856/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: a8f81b130853efacdc02f3b5898350e19d1843f2eda83e39706d3184821ffe57
+  kapsam: program:antrenorluk
+  durum: aktif
+  not: null
+
+- id: antrenorluk_program_bilgileri
+  ad: Antrenörlük Eğitimi Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: antrenorluk_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/1856/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: d3a0903581c33328f86e819dd97fd5ef831ded9736ac45814c9adc8992d37937
+  kapsam: program:antrenorluk
+  durum: aktif
+  not: null
+
+- id: beden_egitimi_ders_plani
+  ad: Beden Eğitimi ve Spor Öğretmenliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: beden_egitimi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/1858/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 643c77e394a51d20961bbfe6ec95ff3bb9a5d98df20e43995a17dc70bbc5e29a
+  kapsam: program:beden_egitimi
+  durum: aktif
+  not: null
+
+- id: beden_egitimi_program_bilgileri
+  ad: Beden Eğitimi ve Spor Öğretmenliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: beden_egitimi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/1858/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: 0e1b464cd53cec2624e07fe093926eb12c5eee5b6461e21d3db637861d203827
+  kapsam: program:beden_egitimi
+  durum: aktif
+  not: null
+
+- id: rekreasyon_ders_plani
+  ad: Rekreasyon Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: rekreasyon_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/1859/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: d0a56ec7d6379dc3389b2a509bce082859512b2f8618a2af4f05a20bc8425867
+  kapsam: program:rekreasyon
+  durum: aktif
+  not: null
+
+- id: rekreasyon_program_bilgileri
+  ad: Rekreasyon Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: rekreasyon_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/1859/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: fa03d4bb30c8aa854d66850ffcd712f78cecb0182dad35bdbfbf32f4edea10c4
+  kapsam: program:rekreasyon
+  durum: aktif
+  not: null
+
+- id: spor_yoneticiligi_ders_plani
+  ad: Spor Yöneticiliği Bölümü Dersler - AKTS Kredileri (Bologna)
+  dosya: spor_yoneticiligi_ders_plani.html
+  url: https://akts.eskisehir.edu.tr/tr/program/dersler/1860/13
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: a71ae4a3202f292be1342f89121968a1b5508a14207730b06410d384dde6b669
+  kapsam: program:spor_yoneticiligi
+  durum: aktif
+  not: null
+
+- id: spor_yoneticiligi_program_bilgileri
+  ad: Spor Yöneticiliği Bölümü Program Hakkında ve Mezuniyet Koşulları (Bologna)
+  dosya: spor_yoneticiligi_program_bilgileri.html
+  url: https://akts.eskisehir.edu.tr/tr/program/hakkinda/1860/25/1
+  yayim: null
+  yururluk: null
+  son_degisiklik: null
+  dayanak: null
+  indirme_tarihi: 2026-11-26
+  sha256: f18c33c29783cc787730f7b4215dff7164cd529f83e512bf7173f3cdd8fe3ea8
+  kapsam: program:spor_yoneticiligi
+  durum: aktif
+  not: null

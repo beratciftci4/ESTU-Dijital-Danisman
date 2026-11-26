@@ -23,6 +23,7 @@ MUH_SET = KLASOR / "tests" / "soru_seti_muhendislik.yaml"
 BBBF_SET = KLASOR / "tests" / "soru_seti_bbbf.yaml"
 HUBF_SET = KLASOR / "tests" / "soru_seti_hubf.yaml"
 MTF_SET = KLASOR / "tests" / "soru_seti_mtf.yaml"
+SPOR_SET = KLASOR / "tests" / "soru_seti_spor.yaml"
 
 
 def sorulari_oku(yol=SORU_SETI):
@@ -145,6 +146,7 @@ def main():
     satirlar += tablo(arayici, sorulari_oku(BBBF_SET), "Bilgisayar ve Bilişim Bilimleri Fakültesi (tests/soru_seti_bbbf.yaml, 3 bölüm)")
     satirlar += tablo(arayici, sorulari_oku(HUBF_SET), "Havacılık ve Uzay Bilimleri Fakültesi (tests/soru_seti_hubf.yaml, 5 bölüm)")
     satirlar += tablo(arayici, sorulari_oku(MTF_SET), "Mimarlık ve Tasarım Fakültesi (tests/soru_seti_mtf.yaml, 4 bölüm)")
+    satirlar += tablo(arayici, sorulari_oku(SPOR_SET), "Spor Bilimleri Fakültesi (tests/soru_seti_spor.yaml, 4 bölüm)")
     satirlar += ["## Notlar", "",
                  "- Eş anlamlı listesi (\"üst sınır\" -> \"en çok\" gibi) ve soru kalıbı listesi ana test "
                  "setindeki hatalara bakılarak eklendi. Bu yüzden ayrık sette ayrıca ölçüldü.",
@@ -200,7 +202,8 @@ def main():
               ("Mühendislik Fakültesi", sorulari_oku(MUH_SET)),
               ("Bilgisayar ve Bilişim Bilimleri Fakültesi", sorulari_oku(BBBF_SET)),
               ("Havacılık ve Uzay Bilimleri Fakültesi", sorulari_oku(HUBF_SET)),
-              ("Mimarlık ve Tasarım Fakültesi", sorulari_oku(MTF_SET))]
+              ("Mimarlık ve Tasarım Fakültesi", sorulari_oku(MTF_SET)),
+              ("Spor Bilimleri Fakültesi", sorulari_oku(SPOR_SET))]
     satirlar = cevap_tablosu(arayici, setler)
     satirlar += ["", "## Notlar", "",
                  "- Eşikler ana set + kalibrasyon sorularına bakılarak seçildi, doğrulama seti ondan sonra "

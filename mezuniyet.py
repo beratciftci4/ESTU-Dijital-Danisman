@@ -21,10 +21,13 @@ KAYNAK_TEK_DERS = "tek_ders#bent-1"
 
 def staj_kurali(program):
     """(gereken gün, None ya da "belirsiz", kaynak parça id). Birim için staj_birimi().
-    None: staj isteğe bağlı. "belirsiz": staj zorunlu ama süresi belgelerde yazmıyor."""
+    None: staj isteğe bağlı. "belirsiz": staj zorunlu ama süresi belgelerde yazmıyor.
+    "sor": belgeler stajın zorunlu olup olmadığını netleştirmiyor (Spor Bilimleri)."""
     from belge_kontrol import programlari_oku
     fakulteler, programlar = programlari_oku()
     p = next(x for x in programlar if x["id"] == program)
+    if p.get("staj_durumu_belirsiz"):
+        return "sor", p.get("staj_kaynagi") or fakulteler[p["fakulte"]]["staj_listesi"]
     if p.get("staj_suresi_belirsiz"):
         return "belirsiz", p.get("staj_kaynagi") or fakulteler[p["fakulte"]]["staj_listesi"]
     if p["staj_gunu"] is None:
@@ -69,7 +72,18 @@ def kontrol(akts, gno, notlar, staj_gunu, program="istatistik"):
     })
 
     gereken_staj, staj_kaynagi = staj_kurali(program)
-    if gereken_staj == "belirsiz":
+    if gereken_staj == "sor":
+        # belgeler çelişkili: mezuniyeti engellemiyoruz ama "tamam" da demiyoruz
+        satirlar.append({
+            "ad": "Staj (belgelerde net değil)",
+            "tamam": True,
+            "belirsiz": True,
+            "aciklama": "Fakülte staj yönergesi bu bölümde en az 40 gün staj öngörüyor, ama güncel ders "
+                        "planında staj dersi görünmüyor. Staj yapman gerekip gerekmediğini bölümüne sor.",
+            "kaynak": staj_kaynagi,
+        })
+        gereken_staj = 0
+    elif gereken_staj == "belirsiz":
         satirlar.append({
             "ad": "Zorunlu staj (süresi belgelerde yok)",
             "tamam": staj_gunu > 0,
@@ -82,7 +96,7 @@ def kontrol(akts, gno, notlar, staj_gunu, program="istatistik"):
         satirlar.append({
             "ad": "Zorunlu staj yok",
             "tamam": True,
-            "aciklama": "Bu bölümde staj isteğe bağlı, mezuniyet için şart değil.",
+            "aciklama": "Bu bölümde staj mezuniyet için şart değil.",
             "kaynak": staj_kaynagi,
         })
         gereken_staj = 0

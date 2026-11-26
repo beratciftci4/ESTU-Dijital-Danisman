@@ -50,6 +50,7 @@ BICIM = {
     "hubf_staj": "madde",
     "mtf_staj": "madde",
     "mtf_proje": "madde",
+    "spor_staj": "madde",
     "danismanlik": "madde",
     "proje_temelli_staj": "madde",
     "hakli_nedenler": "numara",

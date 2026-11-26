@@ -204,3 +204,15 @@ def test_pts_cumlesi_normal_staji_ezmiyor(arayici):
     from cevap import cevapla
     c = cevapla("Stajda devamsızlık hakkım var mı?", arayici, program="mimarlik")
     assert "PTS" not in c["ozet"]["metin"].split(".")[0]
+
+
+def test_spor_bolumleri(arayici):
+    from degerlendir import SPOR_SET
+    spor = cevap_olc(arayici, sorulari_oku(SPOR_SET))
+    assert spor["cevapli_dogru"] >= 12 and spor["ozet_dogru"] >= 13
+
+
+def test_spor_staj_uydurmuyor(arayici):
+    from cevap import cevapla
+    c = cevapla("Kaç gün staj yapmam gerekiyor?", arayici, program="spor_yoneticiligi")
+    assert "bölümüne sor" in c["ozet"]["metin"]

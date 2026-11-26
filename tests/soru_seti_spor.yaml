@@ -1,0 +1,90 @@
+# Spor Bilimleri Fakültesi soru seti (2026-11-26).
+# Sonuçlara bakmadan, belgeler okunarak yazıldı. Yönerge taranmış PDF, metin OCR'dan.
+
+- soru: Staj zorunlu mu?
+  program: spor_yoneticiligi
+  kaynak: [spor_staj#madde-8]
+  anahtar: ["40 (kırk)"]
+
+- soru: Kaç gün staj yapmam gerekiyor?
+  program: rekreasyon
+  kaynak: [spor_staj#madde-8]
+  anahtar: ["40 (kırk)"]
+
+- soru: Staj yapmak zorunda mıyım?
+  program: beden_egitimi
+  kaynak: [spor_staj#madde-1]
+  anahtar: ["kapsamaz"]
+
+- soru: 2019'da kayıt oldum, staj yapmam gerekiyor mu?
+  program: rekreasyon
+  kaynak: [spor_staj#madde-17]
+  anahtar: ["tabi değildir"]
+
+- soru: Staja ne zaman başvurabilirim?
+  program: antrenorluk
+  kaynak: [spor_staj#madde-10]
+  anahtar: ["IV. yarıyılın sonu"]
+
+- soru: Staj başvurusunu kaç gün önceden yapmalıyım?
+  program: spor_yoneticiligi
+  kaynak: [spor_staj#madde-10]
+  anahtar: ["en az 15"]
+
+- soru: Stajda devamsızlık hakkım var mı?
+  program: antrenorluk
+  kaynak: [spor_staj#madde-8]
+  anahtar: ["%10"]
+
+- soru: Önlisans diploması almak istersem staj yapmam gerekir mi?
+  program: rekreasyon
+  kaynak: [spor_staj#madde-8]
+  anahtar: ["yarısı kadar"]
+
+- soru: Staj notuna itiraz süresi ne kadar?
+  program: spor_yoneticiligi
+  kaynak: [spor_staj#madde-14, spor_staj#madde-15]
+  anahtar: ["5 (beş)"]
+
+- soru: Kurum değerlendirme formundan kaç almam gerekiyor?
+  program: antrenorluk
+  kaynak: [spor_staj#madde-14]
+  anahtar: ["en az 3"]
+
+- soru: Çalışıyorum, stajdan muaf olabilir miyim?
+  program: rekreasyon
+  kaynak: [spor_staj#madde-15]
+  anahtar: ["muaf tutulabilir"]
+
+- soru: Staj yerini değiştirebilir miyim?
+  program: spor_yoneticiligi
+  kaynak: [spor_staj#madde-12]
+  anahtar: ["onayı"]
+
+- soru: Öğretmenlik uygulaması hangi dönemde?
+  program: beden_egitimi
+  kaynak: [beden_egitimi_ders_plani#bolum-VII.YARIYIL, beden_egitimi_ders_plani#bolum-VIII.YARIYIL]
+  anahtar: ["Öğretmenlik Uygulaması"]
+
+- soru: Mezun olunca nerede çalışabilirim?
+  program: antrenorluk
+  kaynak: [antrenorluk_program_bilgileri#bolum-İstihdam_Olanakları]
+  anahtar: ["federasyon"]
+
+- soru: Mezun olmak için kaç AKTS gerekiyor?
+  program: spor_yoneticiligi
+  kaynak: [yonetmelik#madde-25, spor_yoneticiligi_program_bilgileri#bolum-Mezuniyet_Koşulları, spor_yoneticiligi_program_bilgileri#bolum-Yeterlilik_Koşulları_ve_Kuralları, danismanlik#madde-10]
+  anahtar: ["240"]
+
+- soru: Yurt dışında staj yapabilir miyim?
+  program: rekreasyon
+  kaynak: [spor_staj#madde-11]
+  anahtar: ["Yurt dışında"]
+
+- soru: Spor salonu kaçta açılıyor?
+  program: antrenorluk
+  cevapsiz: true
+
+- soru: Lisanslı sporcular derslere devam zorunluluğundan muaf mı?
+  program: spor_yoneticiligi
+  cevapsiz: true

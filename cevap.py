@@ -57,6 +57,7 @@ BELGE_KISA_ADI = {
     "hubf_staj": "Havacılık ve Uzay Bilimleri Fakültesi Staj Yönergesi",
     "mtf_staj": "Mimarlık ve Tasarım Fakültesi Staj Yönergesi",
     "mtf_proje": "Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi",
+    "spor_staj": "Spor Bilimleri Fakültesi Staj Yönergesi",
     "danismanlik": "Akademik Danışmanlık Yönergesi",
     "proje_temelli_staj": "Proje Temelli Staj Yönergesi",
     "hakli_nedenler": "Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar",
@@ -291,7 +292,11 @@ def bolum_staj_cumleleri():
         fak = fakulteler[p["fakulte"]]
         parca_id = p.get("staj_kaynagi") or fak["staj_listesi"]
         birim = p.get("staj_birimi") or fak["staj_birimi"]
-        if p.get("staj_suresi_belirsiz"):
+        if p.get("staj_cumlesi"):               # bölüme özel elle yazılmış cümle
+            c = p["staj_cumlesi"]
+        elif p.get("staj_durumu_belirsiz"):
+            c = f"{p['ad']} bölümünde staj zorunlu mu, belgelerden net anlaşılmıyor. {p['staj_ek']}"
+        elif p.get("staj_suresi_belirsiz"):
             c = f"{p['ad']} bölümünde staj zorunludur. {p['staj_ek']}"
         elif p["staj_gunu"]:
             c = (f"{p['ad']} bölümünde staj zorunludur; mezun olmak için toplam en az {p['staj_gunu']} {birim} "
@@ -309,8 +314,8 @@ PTS_PAYI = 0.05
 def staj_suresi_soruluyor(soru):
     """Soru stajın süresini ya da zorunlu olup olmadığını mı soruyor? (diğer staj konuları değil)"""
     s = turkce_kucuk(soru)
-    return ("staj" in s and bool(re.search(r"kaç|ne kadar|süre|zorunlu|gerek|lazım|şart", s))
-            and not re.search(r"proje temelli|proje tabanl|pts|itiraz|başvur|ne zaman|nerede|değiş|muaf|sigorta|rapor|"
+    return ("staj" in s and bool(re.search(r"kaç|ne kadar|süre|zorunlu|zorunda|gerek|lazım|şart", s))
+            and not re.search(r"proje temelli|proje tabanl|pts|önlisans|itiraz|başvur|ne zaman|nerede|değiş|muaf|sigorta|rapor|"
                               r"devamsız|not|puan|başarı|değerlendir|yeri|yerin|yetkin|sorumlu", s))
 
 

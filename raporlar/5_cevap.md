@@ -21,6 +21,7 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 | 0/2 | 15/15 | 15/15 |
 | Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 | 0/2 | 16/16 | 16/16 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 | 1/2 | 16/18 | 15/18 |
+| Spor Bilimleri Fakültesi | 13/16 | 1/2 | 1/2 | 14/15 | 14/15 |
 
 ## Hatalı sonuçlar
 
@@ -50,6 +51,10 @@ Eşikler: e5 benzerliği >= 0.85 ise "bulundu", < 0.825 ise "bulamadım", arası
 - [Havacılık ve Uzay Bilimleri Fakültesi] Havacılık yönetimi öğrencilerine uçuş eğitimi veriliyor mu? -> bulundu (benzerlik 0.859)
 - [Mimarlık ve Tasarım Fakültesi] Fabrika stajı kaç gün? -> bulundu (benzerlik 0.855)
 - [Mimarlık ve Tasarım Fakültesi] İç mimarlık bölümünde hangi çizim programları öğretiliyor? -> bulundu (benzerlik 0.869)
+- [Spor Bilimleri Fakültesi] Staj zorunlu mu? -> bulundu (benzerlik 0.891)
+- [Spor Bilimleri Fakültesi] Kaç gün staj yapmam gerekiyor? -> bulundu (benzerlik 0.882)
+- [Spor Bilimleri Fakültesi] Öğretmenlik uygulaması hangi dönemde? -> bulunamadi (benzerlik 0.82)
+- [Spor Bilimleri Fakültesi] Lisanslı sporcular derslere devam zorunluluğundan muaf mı? -> bulundu (benzerlik 0.874)
 
 ## Notlar
 

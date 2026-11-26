@@ -9,14 +9,14 @@ Kısa cevap, her madde için önceden elle yazılmış özet cümlelerinden seç
 zekâ ile metin üretilmiyor. Belgelerde cevap yoksa "bulamadım" diyor. Hiçbir ücretli API ya da
 servis kullanmıyor.
 
-**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 26 bölüm var: Fen Fakültesi (Biyoloji,
+**Hangi bölümler:** Öğrenci önce bölümünü seçiyor. Şu an 30 bölüm var: Fen Fakültesi (Biyoloji,
 Fizik, İstatistik, Kimya, Matematik), Mühendislik Fakültesi (Bilgisayar, Çevre, Elektrik-Elektronik,
 Endüstri, İnşaat, Kimya, Makine, Malzeme Bilimi, Uçak) ve Bilgisayar ve Bilişim Bilimleri Fakültesi
 (Bilgi Güvenliği Teknolojisi, Bilişim Sistemleri ve Teknolojileri, Yapay Zeka ve Makine Öğrenmesi),
 Havacılık ve Uzay Bilimleri Fakültesi (Hava Trafik Kontrolü, Havacılık Elektrik ve Elektroniği,
 Havacılık ve Uzay Mühendisliği, Havacılık Yönetimi, Uçak Gövde ve Motor Bakımı; Pilotaj şimdilik yok)
-ve Mimarlık ve Tasarım Fakültesi (Endüstriyel Tasarım, İç Mimarlık, Mimarlık, Tekstil ve Moda Tasarımı).
-Diğer fakülteler sırayla ekleniyor. Yönetmelik ve
+Mimarlık ve Tasarım Fakültesi (Endüstriyel Tasarım, İç Mimarlık, Mimarlık, Tekstil ve Moda Tasarımı) ve
+Spor Bilimleri Fakültesi (Antrenörlük Eğitimi, Beden Eğitimi ve Spor Öğretmenliği, Rekreasyon, Spor Yöneticiliği). Yönetmelik ve
 usul-esaslar bütün lisans öğrencileri için ortak; staj yönergesi fakülteye, ders planı ve program
 bilgileri bölüme özel. Bölüm seçilince arama sadece o bölüme uyan belgelerde yapılıyor
 (`programlar.yaml`, belgelerdeki `kapsam` alanı).
@@ -42,6 +42,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Havacılık ve Uzay Bilimleri Fakültesi Staj Yönergesi | 28.02.2023 | |
 | Mimarlık ve Tasarım Fakültesi Staj Yönergesi (taranmış, OCR) | 11.08.2017 | 28.02.2023 |
 | Mimarlık ve Tasarım Fakültesi Proje Dersleri Uygulama Yönergesi (taranmış, OCR) | 05.10.2021 | |
+| Spor Bilimleri Fakültesi Öğrenci Staj Yönergesi (taranmış, OCR) | 12.06.2020 | 25.10.2022 |
 | Akademik Danışmanlık Yönergesi | 11.09.2025 | |
 | Haklı ve Geçerli Nedenlere İlişkin Usul ve Esaslar | 11.09.2025 | |
 | Tek Ders Sınavı Uygulama Esasları | 18.12.2025 | |
@@ -49,7 +50,7 @@ Hepsi resmi sitelerden indirildi (`kaynaklar/`, ayrıntılar ve indirme tarihler
 | Yaz Okulu Uygulama Esasları | 11.09.2025 | 10.03.2026 |
 | Not Karşılıkları ve Yabancı Dil Eşdeğerlikleri Uygulama Esasları | 10.07.2018 | 29.07.2025 |
 | Proje Temelli Staj Yönergesi | 04.01.2024 | 26.06.2025 |
-| 26 bölümün ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
+| 30 bölümün ders planları ve program bilgileri (Bologna sayfaları) | web sayfası | |
 
 Not: Yönetmelik 2025'te tamamen yenilendi. İnternette hâlâ 2018 tarihli eski metin (RG 30540)
 dolaşıyor; buradaki metin mevzuat.gov.tr'deki güncel, değişiklikleri işlenmiş hali.
@@ -58,7 +59,12 @@ Havacılık ve Uzay Mühendisliği'nin ders planında zorunlu Staj I ve II var a
 yönergesi bu bölümü saymıyor ve süre hiçbir belgede yazmıyor. Uygulama bu bölümde staj süresini
 uydurmuyor, "bölüme sor" diyor.
 
-Mimarlık ve Tasarım Fakültesi'nin iki yönergesi taranmış PDF. Metin tesseract (Türkçe) ile okundu,
+Spor Bilimleri Fakültesi staj yönergesi Rekreasyon, Antrenörlük Eğitimi ve Spor Yöneticiliği için en az
+40 gün staj öngörüyor, ama zorunlu stajı olmayan bölümleri kapsamadığını da söylüyor ve bu üç bölümün
+güncel ders planında staj dersi yok. Belgeler net olmadığı için uygulama bu bölümlerde "bölüme sor" diyor,
+mezuniyet kontrolünde de staj satırını "Bölüme sor" olarak gösteriyor.
+
+Mimarlık ve Tasarım Fakültesi'nin iki yönergesi ve Spor Bilimleri'nin staj yönergesi taranmış PDF. Metin tesseract (Türkçe) ile okundu,
 OCR hataları sayfa görüntülerine bakılarak elle düzeltildi ve `kaynaklar/*.ocr.txt` olarak duruyor.
 Eklerdeki formlardan sadece başlıklar alındı. Arayüz bu belgelerden gelen alıntılarda "OCR ile okundu"
 uyarısı gösteriyor.
@@ -69,7 +75,7 @@ uyarısı gösteriyor.
 kaynaklar/*.pdf, *.html
    │  ayristir.py   madde madde parçalama (MADDE 10-, 1), 1- ...), sayfa ve başlık bilgisi
    ▼
-cikti/parcalar.jsonl  (819 parça, her birinde kapsam: genel / fakülte / bölüm)
+cikti/parcalar.jsonl  (933 parça, her birinde kapsam: genel / fakülte / bölüm)
    │  indeks.py     e5-small (ONNX, int8) ile vektörler + FAISS, BM25 için Türkçe kök
    ▼
 indeks/
@@ -131,6 +137,7 @@ Test setleri `tests/` altında, her sorunun cevabı belgelerden kontrol edildi.
 | Bilgisayar ve Bilişim Bilimleri Fakültesi (15 cevaplı) | 0.73 | 1.00 | 1.00 | 0.86 |
 | Havacılık ve Uzay Bilimleri Fakültesi (18 cevaplı) | 0.83 | 0.94 | 0.94 | 0.89 |
 | Mimarlık ve Tasarım Fakültesi (18 cevaplı) | 0.89 | 0.94 | 0.94 | 0.92 |
+| Spor Bilimleri Fakültesi (16 cevaplı) | 0.69 | 0.94 | 0.94 | 0.81 |
 
 Hibrit arama bütün setlerde sadece BM25'ten ve sadece e5'ten daha iyi ya da eşit.
 
@@ -148,9 +155,10 @@ asistan cevap bulduğunu iddia etmiyor mu):
 | Bilgisayar ve Bilişim Bilimleri Fakültesi | 13/15 | 0/2 |
 | Havacılık ve Uzay Bilimleri Fakültesi | 13/18 | 0/2 |
 | Mimarlık ve Tasarım Fakültesi | 17/18 | 1/2 |
+| Spor Bilimleri Fakültesi | 13/16 | 1/2 |
 
 **Kısa cevap** (dayandığı maddelerden biri doğru kaynak mı): ana set 24/27, ayrık set 10/10,
-doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 16/16, Mimarlık 16/18.
+doğrulama 8/8, Fen diğer bölümler 14/16, Mühendislik 17/18, Bilgisayar ve Bilişim 15/15, Havacılık 16/16, Mimarlık 16/18, Spor 14/15.
 
 Yeni fakülte setlerinde cevabı olmayan soruların çoğuna ("laboratuvar önlüğü nereden alınır?",
 "kantin nerede?", "hackathon takımı var mı?") hâlâ "bulundu" deniyor. Belge sayısı arttıkça "bulamadım" eşiği zayıflıyor,

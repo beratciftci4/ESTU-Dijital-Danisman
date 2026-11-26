@@ -103,6 +103,7 @@ div.kural { display: grid; grid-template-columns: 4.2rem 1fr; gap: .2rem .9rem; 
 div.kural .etiket { font-weight: 600; font-size: .85rem; padding-top: .1rem; }
 div.kural .etiket.tamam { color: var(--yesil); }
 div.kural .etiket.eksik { color: var(--bordo); }
+div.kural .etiket.sor { color: var(--amber); }
 div.kural .ad { font-weight: 600; }
 div.kural .kaynakca { color: var(--soluk); font-size: .82rem; grid-column: 2; }
 
@@ -292,7 +293,12 @@ def mezuniyet_sekmesi(program):
                     unsafe_allow_html=True)
     for s in sonuc["satirlar"]:
         p = parcalar[s["kaynak"]]
-        etiket = '<span class="etiket tamam">Tamam</span>' if s["tamam"] else '<span class="etiket eksik">Eksik</span>'
+        if s.get("belirsiz"):
+            etiket = '<span class="etiket sor">Bölüme sor</span>'
+        elif s["tamam"]:
+            etiket = '<span class="etiket tamam">Tamam</span>'
+        else:
+            etiket = '<span class="etiket eksik">Eksik</span>'
         st.markdown(f'<div class="kural">{etiket}<div><div class="ad">{html.escape(s["ad"])}</div>'
                     f'{html.escape(s["aciklama"])}</div>'
                     f'<div class="kaynakca">{html.escape(atif(p))}. {html.escape(gecerlilik(p))}.</div></div>',
